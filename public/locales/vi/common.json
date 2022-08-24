@@ -1,0 +1,287 @@
+{
+  "button":{
+    "all":"Xem tất cả",
+    "hidden":"Rút gọn",
+    "viewLocation":"Xem vị trí",
+    "viewPrice":"Xem giá ngay",
+    "comeBack":"Quay lại",
+    "search":"Tìm kiếm",
+    "save":"Lưu",
+    "share":"Chia sẻ",
+    "back":"Trở lại",
+    "next":"Tiếp theo",
+    "callNow":"Gọi ngay",
+    "message":"Nhắn tin",
+    "showMore":"Hiển thị thêm",
+    "seeMore":"Xem thêm",
+    "showLess":"Rút gọn",
+    "submit":"Gửi"
+  },
+  "unit":{
+    "copper":"Đồng",
+    "thousand":"Nghìn",
+    "hundredThousand":"Trăm nghìn",
+    "million":"Triệu",
+    "billion":"Tỷ",
+    "trillion":"Nghìn tỷ",
+    "quadrillion":"Triệu tỷ",
+    "deal":"Thỏa thuận"
+  },
+  "filter":{
+    "filterPrice":"Lọc theo giá cả",
+    "filterASC":"Giá từ thấp đến cao",
+    "filterDESC":"Giá từ cao đến thấp",
+    "sell":"Cần bán",
+    "lease":"Cho thuê",
+    "search":"Tìm kiếm BĐS",
+    "keyWord":"Từ khóa tìm kiếm",
+    "type":"Loại hình",
+    "selectType":"Chọn loại hình",
+    "typeRES":"Loại hình BĐS",
+    "selectTypeRES":"Chọn loại hình bđs",
+    "location":"Vị trí",
+    "price":"Mức giá",
+    "acreage":"Diện tích",
+    "direction":"Hướng",
+    "province":"Thành phố / Tỉnh",
+    "district":"Quận / Huyện",
+    "ward":"Phường/ Xã",
+    "selectProvince":"Chọn thành phố / tỉnh",
+    "selectDistrict":"Chọn quận / huyện",
+    "selectWard":"Chọn phường / xã"
+  },
+  "titleList":{
+    "latest":"Tổng hợp bất động sản mới nhất",
+    "main_floor":"Tổng hợp bài đăng chính chủ của chúng tôi",
+    "location":"Tổng hợp dự án gần bạn",
+    "price":"Tổng hợp dự án giá rẻ",
+    "project":"Tổng Hợp Dự Án Bất Động Sản Mới Nhất 2022",
+    "lease":"Tổng Hợp Dự Án Cho Thuê Bất Động Sản Mới Nhất 2022",
+    "sell":"Tổng Hợp Dự Án Mua bán Bất Động Sản Mới Nhất 2022",
+    "valuation":"Cập nhật giá Bất động sản mới nhất",
+    "brokerage_floor":"Tổng hợp các sàn môi giới 2022",
+    "agency":"Tổng Hợp Dự Án Môi Giới Bất Động Sản",
+    "news":"Tổng Hợp Tin Tức Bất Động Sản",
+    "notify":"Thông báo của bạn",
+    "saved":"Tổng hợp bài đăng bạn đã quan tâm"
+  },
+  "loading":{
+    "login":"Đang đăng nhập",
+    "logout":"Đang đăng xuất"
+  },
+  "common":{
+    "preResult":"Có",
+    "day":"ngày",
+    "subResult":"kết quả",
+    "noResult":"Không tìm thấy kết quả",
+    "preImage":"Xem tất cả",
+    "subImage":"hình ảnh",
+    "commission":"Hoa hồng",
+    "district":"Quận",
+    "month":"tháng"
+  },
+  "date":{
+    "second":"giây trước",
+    "minute":"phút trước",
+    "hour":"tiếng trước",
+    "day":"ngày trước",
+    "month":"tháng trước",
+    "year":"năm trước",
+    "new":"Vừa mới đăng"
+  },
+  "user":{
+    "login":"Đăng nhập / Đăng kí",
+    "tokenExp":"Tài khoản của bạn đã hết hạn. Vui lòng đăng nhập lại để tiếp tục dịch vụ của chúng tôi!",
+    "mustLogin":"Bạn cần đăng nhập để thực hiện chức năng này",
+    "saveSuccess":"Lưu thành công",
+    "saveFail":"Lưu thất bại",
+    "share":"Đã sao chép liên kết",
+    "deleteSuccess":"Đã xóa",
+    "deleteFail":"Xóa thất bại",
+    "payment":"Đổi xu để mở khoá Thông tin liên hệ"
+  },
+  "header":{
+    "logan1": "Find your sweet house",
+    "logan2": "World's Largest Themes based Apartments",
+    "logan3": "house",
+    "home":"Trang chủ",    
+    "sell":"Cần bán",
+    "main_floor":"Sàn chính chủ",
+    "valuation":"Định giá",
+    "brokerage_floor":"Sàn môi giới",
+    "lease":"Cho thuê",
+    "agency":"Môi giới",
+    "news":"Tin tức",
+    "manager":"Quản lý tin đăng",
+    "post":"Đăng tin",
+    "notify":"Thông báo",
+    "transaction":"Quản lý giao dịch",
+    "account":"Quản lý tài khoản",
+    "login":"Đăng nhập",
+    "logout":"Đăng xuất",
+    "viewNews":"Xem tin bán và cho thuê",
+    "saveNews":"Danh sách tin đã quan tâm",
+    "accountBalance":"Số dư tài khoản",
+    "transactionHistory":"Lịch sử giao dịch",
+    "presonalInfo":"Thông tin cá nhân",
+    "veritify":"Xác thực tài khoản",
+    "changePass":"Đổi mật khẩu"
+  },
+  "home":{
+    "discovery":"Khám phá danh mục bất động sản",
+    "realEstateLatest":"Bất động sản mới nhất",
+    "subHot":"Bao gồm tất cả các dự án nổi trội trên toàn quốc của chúng tôi",
+    "realEstateNear":"Bất động sản gần bạn",
+    "subNear":"Những dự án nổi trội bạn có thể quan tâm, xung quanh khu vực của mình",
+    "realEstateLowPrice":"Bất động sản giá rẻ",
+    "resMaybeCare":"Bất động sản bạn có thể quan tâm",
+    "subResMaybeCare":"Những bất động sản được gợi ý dựa trên tìm kiếm của bạn",
+    "realEstateSaved":"Bất động sản bạn đã quan tâm",
+    "subSaved":"Xem lại những dự án bạn đã quan tâm",
+    "searchPlaceholder":"Search in District 7, Ho Chi Minh or anywhere",
+    "noData": "Không có dữ liệu",
+    "loading": "Đang tải dữ liệu...",
+    "discover":{
+      "valuation":"Công cụ định giá",
+      "valuationTitle":"500,000 nhà đã ký gửi. Giá bán, quy trình rõ ràng.",
+      "recharge":"Nạp tiền",
+      "rechargeTitle":"Phương thức thanh toán nhanh chóng, an toàn.",
+      "news":"Danh sách tin tức",
+      "newsTitle":"Luôn cập nhật thông tin mới nhất và theo dõi thị trường BĐS"
+    }
+  },
+  "news":{
+    "otherNews":"Tin tức khác"
+  },
+  "valuation":{
+    "referHCM":"Tham khảo giá Bất động sản Hồ Chí Minh tại",
+    "referHN":"Tham khảo giá Bất động sản Hà Nội tại",
+    "average":"Trung bình",
+    "million/m2":"Triệu/ m2",
+    "priceHouse":"Giá",
+    "popularPrice":"Khoảng giá phổ biến Tháng",
+    "preBtn":"Xem",
+    "subBtn1":"tin đăng chính chủ",
+    "subBtn2":"tin đăng môi giới"
+  },
+  "detail":{
+    "title":"Chi tiết",
+    "noDetail":"Không tìm thấy bài đăng này",
+    "datePost": "Ngày đăng",
+    "price":"Giá bán",
+    "infoDescription":"Thông tin mô tả",
+    "features":"Đặc điểm bất động sản",
+    "commonPlace":"Ưu điểm xung quanh",
+    "widgetUser":{
+      "poster":"Người đăng bài",
+      "icognito":"Ẩn danh",
+      "host":"Chủ nhà",
+      "agency":"Môi giới",
+      "logged":"Phải đăng nhập để mở khóa",
+      "okLogin":"Đăng nhập",
+      "processing":"Hệ thống đang xử lí",
+      "payment":"Bạn có muốn đổi xu để mở khóa?",
+      "problem":"Hệ thống xảy ra vấn đề",
+      "okPayment":"Đổi xu",
+      "notEnough":"Bạn không đủ xu để mở khóa",
+      "paymenSuccessBefore":"Bạn đã dùng ",
+      "paymenSuccessAfter":" xu để mở khóa",
+      "cancel":"Không"
+    },
+    "location":{
+      "title":"Vị trí bất động sản",
+      "address":"Địa chỉ",
+      "ward":"Phường/ Xã",
+      "district":"Quận/ Huyện",
+      "province":"Tỉnh/ Thành"
+    },
+    "utility":"Tiện ích",
+    "video":"Video đính kèm",
+    "image":"Hình ảnh đính kèm thêm",
+    "utilityItem":{
+      "typeRealEstate":"Loại hình BĐS",
+      "type":"Loại hình",
+      "area":"Diện tích",
+      "price":"Giá",
+      "price/m2":"Giá/m2",
+      "direction":"Hướng nhà",
+      "deposits":"Cọc",
+      "long":"Chiều dài",
+      "width":"Chiều rộng",
+      "bedroom":"Số phòng ngủ",
+      "toilet":"Số phòng vệ sinh",
+      "furniture":"Nội thất",
+      "juridical":"Pháp lý",
+      "special":"Đặc điểm"
+    },
+    "report":{
+      "title":"Tin đăng này đã được kiểm duyệt. Nếu gặp vấn đề, vui lòng báo cáo tin đăng hoặc liên hệ CSKH để được trợ giúp",
+      "subTitle":"Đánh giá, báo cáo BĐS này",
+      "responeSuccess":"Đã gửi phản hồi của bạn",
+      "responseNull":"Xin hãy nhập giá trị",
+      "responseEmailFail":"Địa chỉ email không đúng",
+      "reportEmail":"Bạn vui lòng nhập email !",
+      "reportPhoneNumber":"Bạn vui lòng nhập số điện thoại !",
+      "popup":{
+        "whyChoice":"Tại sao bạn báo cáo bất động sản này?",
+        "subChoice":"Nội dung này sẽ không được chia sẻ với chủ nhà của bạn",
+        "listReport":{
+          "op1":"Nội dung không trung thực hoặc không chính xác",
+          "op2":"Lừa đảo",
+          "op3":"Trùng lặp",
+          "op4":"Không liên lạc được",
+          "op5":"Bất động sản không có thực",
+          "op6":"Đã bán",
+          "op7":"Vấn đề khác"
+        },
+        "moreInfo":{
+          "title":"Thông tin thêm",
+          "subTitle":"Vui lòng chia sẻ thêm thông tin để chúng tôi có thể hỗ trợ bạn tốt hơn",
+          "describeMore":"Mô tả nội dung chi tiết",
+          "descripbePlace":"Mô tả thêm chi tiết về vấn đề bạn gặp phải, sẽ giúp chúng tôi xử lý được vấn đề nhanh hơn. Cám ơn bạn",
+          "contact":"Thông tin để chúng tôi liên hệ với bạn khi cần thiết",
+          "phone":"Số điện thoại của bạn",
+          "email":"Email"          
+        }
+      }
+    }
+  },
+  "notify":{
+    "latest":"Mới nhất",
+    "recently":"Gần đây",
+    "noResult":"Không có thông báo mới"
+  },
+  "landing_page":{
+    "introduce":"Giới thiệu",
+    "introduce_title":"Giới thiệu",
+    "rules":"Nguyên tắc chung",
+    "rules_title":"Nguyên tắc chung",
+    "qa":"Q&A giải đáp thắc mắc",
+    "qa_title":"Q&A giải đáp thắc mắc"
+  },
+  "footer":{
+    "tooglelg":"Tiếng Việt",
+    "vietnamese":"Tiếng Việt",
+    "english":"Tiếng anh",
+    "dowloadapp":"Tải ngay ứng dụng",
+    "license":"Mã số thuế",
+    "contact":{
+      "title":"Liên hệ"      
+    },
+    "introduce":{
+      "title":"Giới thiệu",
+      "about":"Về chúng tôi",
+      "team":"Đội ngũ bán hàng",
+      "news":"Tin tức"
+    },
+    "discovery":{
+      "title":"Khám phá"
+    },
+    "rules":{
+      "title":"Điều khoản",
+      "regulation": "Quy chế hoạt động",
+      "safe":"Chính sách bảo mật",
+      "juridical":"Pháp lý"
+    }
+  }
+}

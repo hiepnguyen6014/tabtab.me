@@ -1,0 +1,17 @@
+FROM node:12-alpine
+
+USER node
+
+RUN mkdir -p /home/node/app
+
+WORKDIR /home/node/app
+
+COPY --chown=node:node ./frontend/package.json ./frontend/yarn.lock /home/node/app/
+
+RUN yarn
+
+COPY --chown=node:node ./frontend /home/node/app
+
+RUN export NODE_OPTIONS="--max-old-space-size=4096" && yarn export-test
+
+CMD yarn start-next
