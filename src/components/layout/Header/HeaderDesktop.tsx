@@ -173,7 +173,7 @@ const HeaderDesktop = (props: Props) => {
   return (
     <MainContentDesktop className="not-login">
       <LogoWrapper>
-      {/* <div>
+        {/* <div>
         <Image
           preview={false}
           style={{ cursor: 'pointer' }}
@@ -184,11 +184,11 @@ const HeaderDesktop = (props: Props) => {
           width={110}
         />
         </div> */}
-      <div>
-        {themeLight ? <Logo /> : <LogoDark />}
-      </div>
+        <div>
+          {themeLight ? <Logo height={44} width={110} style={{ cursor: 'pointer' }} onClick={() => onRedirect(ROUTES.HOME)} />
+            : <LogoDark height={44} width={110} style={{ cursor: 'pointer' }} onClick={() => onRedirect(ROUTES.HOME)} />}
+        </div>
 
-      {/* <Logo height={44} width={110} style={{ cursor: 'pointer' }} onClick={() => onRedirect(ROUTES.HOME)}/> */}
       </LogoWrapper>
       {/* <LinksWrap typeof={`${themeLight}`}>
         {Object.keys(PUBLIC_ROUTES).map((item, key) => (
