@@ -21,7 +21,7 @@ export const PaginationWrap = styled(Pagination)`
     border-color: transparent;
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin: 1px;
     width: 26px;
     height: 30px;
     background: transparent;
