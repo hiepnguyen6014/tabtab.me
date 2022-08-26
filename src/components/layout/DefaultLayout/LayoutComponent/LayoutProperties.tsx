@@ -19,11 +19,11 @@ import { ListWrapper } from "../../../shared/Utilities/Utilities.style"
 import { RowPriceLeft } from './Component.style';
 import { SRC_IMAGE } from '@constants';
 import RecommendProperty from '../../../pages/Home/HomeComponent/Recommend'
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const LayoutProperties = (props: { t: any; post: MPostDetail }) => {
   const { t, post } = props;
-  const [data, setData]= useState([])
+  const [data, setData] = useState([])
 
 
   const DynamicUtility = dynamic(
@@ -34,17 +34,17 @@ export const LayoutProperties = (props: { t: any; post: MPostDetail }) => {
       (mod: any) => mod.NotifyOutdate
     )
   );
-  useEffect(()=>{
+  useEffect(() => {
     getData()
-  })
-  const getData = async()=>{
+  }, [])
+  const getData = async () => {
     const listByRating: any = await getPostByRating();
     setData(listByRating.data)
   }
   return (
     <>
-      <DefaultWrapperWithBg style={{padding:10}}>
-        <RecommendProperty data={data} t={t} fontSize={28}/>
+      <DefaultWrapperWithBg style={{ padding: 10 }}>
+        <RecommendProperty data={data} t={t} fontSize={28} />
       </DefaultWrapperWithBg>
     </>
   );
