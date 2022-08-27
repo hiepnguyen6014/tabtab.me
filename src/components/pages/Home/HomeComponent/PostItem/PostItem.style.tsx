@@ -329,6 +329,7 @@ export const ContentInItem = styled.div`
       padding: 2px 0;
       margin-bottom: 8px;
       border-radius: 4px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     }
   }
   .pad-bottom {
@@ -344,6 +345,7 @@ export const ContentInItem = styled.div`
       padding: 2px 0;
       margin-bottom: 20px;
       border-radius: 4px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     }
   }
   .icon-text1 {
