@@ -29,7 +29,7 @@ export const PostThumbnail: React.FC<{
   };
 
   return (
-    <PostThumbnailWrapper onClick={handleRedirect}> 
+    <PostThumbnailWrapper onClick={handleRedirect}>
       <Image
         alt=""
         src={realEstateImage || 'error'}
@@ -43,37 +43,25 @@ export const PostThumbnail: React.FC<{
         <TypographyText>
           <ContentInItem>
             <div className="pad-bottom">
-            <div className="pad-top">
+              <div className="pad-top">
+                <div
+                  className='badge-sale-off'
+                >
+                  <Typography.Text className="inContentItem mx-2">
+                    SALE 15% OFF
+                  </Typography.Text>
+                </div>
+                <VectorHeart />
+              </div>
               <div
-                style={{
-                  width: 118,
-                  height: 24,
-                  background: '#FFFFFF',
-                  marginBottom: '8px',
-                  borderRadius: '4px',
-                }}
+                className='badge-cut-loss'
               >
                 <Typography.Text className="inContentItem mx-2">
-                  SALE 15% OFF
+                  Cắt lỗ 15%
                 </Typography.Text>
               </div>
-              <VectorHeart />
             </div>
-            <div
-              style={{
-                width: 98,
-                height: 24,
-                background: '#FFFFFF',
-                marginBottom: '20px',
-                borderRadius: '4px',
-              }}
-            >
-              <Typography.Text className="inContentItem mx-2">
-                Cắt lỗ 15%
-              </Typography.Text>
-            </div>
-            </div>
-            
+
             <div
               style={{ marginBottom: '28%' }}
               className="d-flex justify-content-between"

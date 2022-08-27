@@ -320,10 +320,32 @@ export const ContentInItem = styled.div`
   .pad-top {
     display: flex;
     justify-content: space-between;
+
+    .badge-sale-off {
+      width: 118px;
+      height: 24px;
+      /* text-align: center; */
+      background: #FFFFFF;
+      padding: 2px 0;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    }
   }
   .pad-bottom {
     @media ${device.maxMd} {
       margin-bottom: 70px;
+    }
+    
+    .badge-cut-loss {
+      width: 98px;
+      height: 24px;
+      background: #FFFFFF;
+      /* text-align: center; */
+      padding: 2px 0;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     }
   }
   .icon-text1 {
