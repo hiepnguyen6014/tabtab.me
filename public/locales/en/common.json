@@ -1,289 +1,291 @@
 {
-  "button":{
-    "all":"Show all",
-    "hidden":"Compact",
-    "viewLocation":"View location",
-    "viewPrice":"See price now",
-    "search":"Search",
-    "save":"Save",
-    "comeBack":"Come back",
-    "share":"Share",
-    "back":"Back",
-    "next":"Next",
-    "callNow":"Call now",
-    "message":"Message",
-    "showMore":"Show more",
-    "seeMore":"See more",
-    "showLess":"Compact",
-    "submit":"To send"
+  "button": {
+    "all": "Show all",
+    "hidden": "Compact",
+    "viewLocation": "View location",
+    "viewPrice": "See price now",
+    "search": "Search",
+    "save": "Save",
+    "comeBack": "Come back",
+    "share": "Share",
+    "back": "Back",
+    "next": "Next",
+    "callNow": "Call now",
+    "message": "Message",
+    "showMore": "Show more",
+    "seeMore": "See more",
+    "showLess": "Compact",
+    "submit": "To send"
   },
-  "unit":{
-    "copper":"Copper",
-    "thousand":"Thousand",
-    "hundredThousand":"Hundred thousand",
-    "million":"Million",
-    "billion":"Billion",
-    "trillion":"Trillion",
-    "quadrillion":"Quadrillion",
-    "deal":"Deal"
+  "unit": {
+    "copper": "Copper",
+    "thousand": "Thousand",
+    "hundredThousand": "Hundred thousand",
+    "million": "Million",
+    "billion": "Billion",
+    "trillion": "Trillion",
+    "quadrillion": "Quadrillion",
+    "deal": "Deal"
   },
-  "filter":{
-    "filterPricePre":"Filter by price",
-    "filterASC":"Price from low to high",
-    "filterDESC":"Price from high to low",
-    "sell":"For sell",
-    "lease":"Lease",
-    "search":"Real Estate Search",
-    "type":"Type",
-    "selectType":"Choose type",
-    "typeRES":"Real estate type",
-    "selectTypeRES":"Select type of property",
-    "location":"Position",
-    "keyWord":"Search keyword",
-    "price":"Price",
-    "acreage":"Acreage",
-    "direction":"Direction",
-    "province":"City / Province",
-    "district":"District",
-    "ward":"Wards",
-    "selectProvince":"Select city / province",
-    "selectDistrict":"Select district / district",
-    "selectWard":"Select ward / commune"
+  "filter": {
+    "filterPricePre": "Filter by price",
+    "filterASC": "Price from low to high",
+    "filterDESC": "Price from high to low",
+    "sell": "For sell",
+    "lease": "Lease",
+    "search": "Real Estate Search",
+    "type": "Type",
+    "selectType": "Choose type",
+    "typeRES": "Real estate type",
+    "selectTypeRES": "Select type of property",
+    "location": "Position",
+    "keyWord": "Search keyword",
+    "price": "Price",
+    "acreage": "Acreage",
+    "direction": "Direction",
+    "province": "City / Province",
+    "district": "District",
+    "ward": "Wards",
+    "selectProvince": "Select city / province",
+    "selectDistrict": "Select district / district",
+    "selectWard": "Select ward / commune"
   },
-  "titleList":{
-    "latest":"Summary of the latest real estate",
-    "rating":"Summary of outstanding projects",
-    "main_floor":"Summary of our main posts",
-    "location":"Summary of projects near you",
-    "price":"Summary of cheap projects",
-    "brokerage_floor":"Summary of brokerage floors 2022",
-    "project":"Summary of Latest Real Estate Projects 2022",
-    "lease":"Latest Real Estate Project Summary 2022",
-    "valuation":"Update the latest real estate prices",
-    "sell":"Summary of the Latest Real Estate Sales Projects 2022",
-    "agency":"Summary of Real Estate Brokerage Projects",
-    "news":"Real Estate News Summary",
-    "notify":"Your inform",
-    "saved":"Summary of posts you've been interested in"
+  "titleList": {
+    "latest": "Summary of the latest real estate",
+    "rating": "Summary of outstanding projects",
+    "main_floor": "Summary of our main posts",
+    "location": "Summary of projects near you",
+    "price": "Summary of cheap projects",
+    "brokerage_floor": "Summary of brokerage floors 2022",
+    "project": "Summary of Latest Real Estate Projects 2022",
+    "lease": "Latest Real Estate Project Summary 2022",
+    "valuation": "Update the latest real estate prices",
+    "sell": "Summary of the Latest Real Estate Sales Projects 2022",
+    "agency": "Summary of Real Estate Brokerage Projects",
+    "news": "Real Estate News Summary",
+    "notify": "Your inform",
+    "saved": "Summary of posts you've been interested in"
   },
-  "loading":{
-    "login":"Currently logged",
-    "logout":"Logging out"
+  "loading": {
+    "login": "Currently logged",
+    "logout": "Logging out"
   },
-  "common":{
-    "preResult":"About",
-    "day":"day",
-    "subResult":"results",
-    "noResult":"No results were found",
-    "preImage":"See all",
-    "subImage":"images",
-    "commission":"Commission",
-    " ":"District",
-    "month":"month"
+  "common": {
+    "preResult": "About",
+    "day": "day",
+    "subResult": "results",
+    "noResult": "No results were found",
+    "preImage": "See all",
+    "subImage": "images",
+    "commission": "Commission",
+    " ": "District",
+    "month": "month"
   },
-  "user":{
-    "mustLogin":"You need to login to perform this function",
-    "tokenExp":"Your account has expired. Please login again to continue our service!",
-    "share":"Link coppied",
-    "login":"Log in / Sign up",
-    "saveSuccess":"Save successfully",
-    "saveFail":"Save failed",
-    "deleteSuccess":"Deleted",
-    "deleteFail":"Delete failed",
-    "payment":"Redeem points to unlock Contact Info"
+  "user": {
+    "mustLogin": "You need to login to perform this function",
+    "tokenExp": "Your account has expired. Please login again to continue our service!",
+    "share": "Link coppied",
+    "login": "Log in / Sign up",
+    "saveSuccess": "Save successfully",
+    "saveFail": "Save failed",
+    "deleteSuccess": "Deleted",
+    "deleteFail": "Delete failed",
+    "payment": "Redeem points to unlock Contact Info"
   },
-  "date":{
-    "second":"seconds ago",
-    "minute":"minute ago",
-    "hour":"hour ago",
-    "day":"yesterday",
-    "month":"last month",
-    "year":"last year",
-    "new":"Just posted"
+  "date": {
+    "second": "seconds ago",
+    "minute": "minute ago",
+    "hour": "hour ago",
+    "day": "yesterday",
+    "month": "last month",
+    "year": "last year",
+    "new": "Just posted"
   },
-  "header":{
+  "header": {
     "logan1": "Meet all real estate needs",
     "logan2": "More than 5000 houses, 500 projects nationwide",
-    "home":"Home page",
-    "sell":"For sale",    
-    "main_floor":"Main floor",
-    "valuation":"Valuation",
-    "brokerage_floor":"Brokerage",
-    "lease":"Lease",
-    "agency":"Agency",
-    "news":"Hot news",
-    "manager":"Manager posts",
-    "post":"Post",
-    "notify":"Notifycation",
-    "transaction":"Transaction Management",
-    "account":"Account Management",
-    "login":"Log in",
-    "logout":"Log out",
-    "viewNews":"View news for sale and rent",
-    "saveNews":"Interested news list",
-    "accountBalance":"Account balance",
-    "transactionHistory":"Transaction history",
-    "presonalInfo":"Personal information",
-    "veritify":"Account Verification",
-    "changePass":"Change Password"
+    "home": "Home page",
+    "sell": "For sale",
+    "main_floor": "Main floor",
+    "valuation": "Valuation",
+    "brokerage_floor": "Brokerage",
+    "lease": "Lease",
+    "agency": "Agency",
+    "news": "Hot news",
+    "manager": "Manager posts",
+    "post": "Post",
+    "notify": "Notifycation",
+    "transaction": "Transaction Management",
+    "account": "Account Management",
+    "login": "Log in",
+    "logout": "Log out",
+    "viewNews": "View news for sale and rent",
+    "saveNews": "Interested news list",
+    "accountBalance": "Account balance",
+    "transactionHistory": "Transaction history",
+    "presonalInfo": "Personal information",
+    "veritify": "Account Verification",
+    "changePass": "Change Password"
   },
-  "home":{
-    "discovery":"Explore the real estate catalog",
-    "realEstateLatest":"Latest real estate",
-    "subHot":"Includes all of our nationally featured projects",
-    "realEstateNear":"Real Estate Near You",
-    "subNear":"Featured projects you may be interested in, around your area",
-    "realEstateLowPrice":"Cheap real estate",
-    "resMaybeCare":"Real estate you may be interested in",
-    "subResMaybeCare":"Recommended properties based on your search",
-    "subLowPrice":"Featured projects you may be interested in",
-    "realEstateSaved":"Real Estate You've Been Interested In",
-    "subSaved":"Review projects you've been interested in",
-    "searchPlaceholder":"What kind of real estate are you looking for?",
-    "discover":{
-      "valuation":"Valuation tool",
+  "home": {
+    "discovery": "Explore the real estate catalog",
+    "realEstateLatest": "Latest real estate",
+    "subHot": "Includes all of our nationally featured projects",
+    "realEstateNear": "Real Estate Near You",
+    "subNear": "Featured projects you may be interested in, around your area",
+    "realEstateLowPrice": "Cheap real estate",
+    "resMaybeCare": "Real estate you may be interested in",
+    "subResMaybeCare": "Recommended properties based on your search",
+    "subLowPrice": "Featured projects you may be interested in",
+    "realEstateSaved": "Real Estate You've Been Interested In",
+    "subSaved": "Review projects you've been interested in",
+    "searchPlaceholder": "What kind of real estate are you looking for?",
+    "discover": {
+      "valuation": "Valuation tool",
       "noData": "No data",
-      "valuationTitle":"500,000 houses have been deposited. Selling price, clear process.",
-      "recharge":"Recharge",
-      "rechargeTitle":"Support a variety of deposit methods",
-      "news":"News list",
-      "newsTitle":"Stay up to date with the latest information and monitor the real estate market"
+      "valuationTitle": "500,000 houses have been deposited. Selling price, clear process.",
+      "recharge": "Recharge",
+      "rechargeTitle": "Support a variety of deposit methods",
+      "news": "News list",
+      "newsTitle": "Stay up to date with the latest information and monitor the real estate market"
     }
   },
-  "news":{
-    "otherNews":"Other news"
+  "news": {
+    "otherNews": "Other news"
   },
-  "valuation":{
-    "referHCM":"See real estate prices in Ho Chi Minh at",
-    "referHN":"See Hanoi real estate prices at",
-    "average":"Average",
-    "million/m2":"Million/m2",
-    "priceHouse":"Price",
-    "popularPrice":"Popular price range",
-    "preBtn":"View",
-    "subBtn":"posts",
-    "subBtn1":"real post(s)",
-    "subBtn2":"agency post(s)"
+  "valuation": {
+    "referHCM": "See real estate prices in Ho Chi Minh at",
+    "referHN": "See Hanoi real estate prices at",
+    "average": "Average",
+    "million/m2": "Million/m2",
+    "priceHouse": "Price",
+    "popularPrice": "Popular price range",
+    "preBtn": "View",
+    "subBtn": "posts",
+    "subBtn1": "real post(s)",
+    "subBtn2": "agency post(s)"
   },
-  "detail":{
-    "title":"Detail",
+  "detail": {
+    "title": "Detail",
     "datePost": "Date Submitted",
-    "noDetail":"This post could not be found",
-    "price":"Price",
-    "infoDescription":"Description Information",
-    "features":"Real estate features",
-    "commonPlace":"Advantages around",
-    "widgetUser":{
-      "poster":"Poster",
-      "icognito":"Icognito",
-      "host":"Host",
-      "agency":"Agency",
-      "logged":"Must be logged in to unlock",
-      "okLogin":"Log in",
-      "processing":"The system is processing",
-      "payment":"Do you want to exchange coins to unlock?",
-      "problem":"There is a problem with the system",
-      "okPayment":"Coin exchange",
-      "paymentSuccess":"Successfully subtracting coins",
-      "notEnough":"You don't have enough coins to unlock",
-      "paymenSuccessBefore":"You spent ",
-      "paymenSuccessAfter":" coins to clock",
-      "cancel":"No"
+    "noDetail": "This post could not be found",
+    "price": "Price",
+    "description": "Description",
+    "feature": "Feature",
+    "infoDescription": "Description Information",
+    "features": "Real estate features",
+    "commonPlace": "Advantages around",
+    "widgetUser": {
+      "poster": "Poster",
+      "icognito": "Icognito",
+      "host": "Host",
+      "agency": "Agency",
+      "logged": "Must be logged in to unlock",
+      "okLogin": "Log in",
+      "processing": "The system is processing",
+      "payment": "Do you want to exchange coins to unlock?",
+      "problem": "There is a problem with the system",
+      "okPayment": "Coin exchange",
+      "paymentSuccess": "Successfully subtracting coins",
+      "notEnough": "You don't have enough coins to unlock",
+      "paymenSuccessBefore": "You spent ",
+      "paymenSuccessAfter": " coins to clock",
+      "cancel": "No"
     },
-    "location":{
-      "title":"Real estate location",
-      "address":"Address",
-      "ward":"Wards",
-      "district":"Districts",
-      "province":"Provinces"
+    "location": {
+      "title": "Real estate location",
+      "address": "Address",
+      "ward": "Wards",
+      "district": "Districts",
+      "province": "Provinces"
     },
-    "utility":"Utilities",
-    "video":"Attached video",
-    "image":"More pictures attached",
-    "utilityItem":{
-      "typeRealEstate":"Type of real estate",
-      "type":"Type",
-      "area":"Area",
-      "price":"Price",
-      "price/m2":"Price/m2",
-      "direction":"The direction of the house",
-      "long":"Longs",
-      "width":"Width",
-      "deposits":"Piles",
-      "bedroom":"Number of bedrooms",
-      "toilet":"Number of restrooms",
-      "furniture":"Furniture",
-      "juridical":"Juridical",
-      "special":"Characteristic"
+    "utility": "Utilities",
+    "video": "Attached video",
+    "image": "More pictures attached",
+    "utilityItem": {
+      "typeRealEstate": "Type of real estate",
+      "type": "Type",
+      "area": "Area",
+      "price": "Price",
+      "price/m2": "Price/m2",
+      "direction": "The direction of the house",
+      "long": "Longs",
+      "width": "Width",
+      "deposits": "Piles",
+      "bedroom": "Number of bedrooms",
+      "toilet": "Number of restrooms",
+      "furniture": "Furniture",
+      "juridical": "Juridical",
+      "special": "Characteristic"
     },
-    "report":{
-      "title":"This post has been moderated. If you have a problem, please report the post or contact customer service for help",
-      "subTitle":"Rate and report this property",
-      "responeSuccess":"Your feedback has been sent",
-      "responseNull":"Please enter the value",
-      "responseEmailFail":"Email address is incorrect",
-      "reportEmail":"Please enter your email !",
-      "reportPhoneNumber":"Please enter your phone number !",
-      "popup":{
-        "whyChoice":"Why are you reporting this property?",
-        "subChoice":"This content will not be shared with your host",
-        "listReport":{
-          "op1":"Inauthentic or inaccurate content",
-          "op2":"Cheat",
-          "op3":"Duplicate",
-          "op4":"Unable to contact",
-          "op5":"Real estate is not real",
-          "op6":"Sold",
-          "op7":"Other problems"
+    "report": {
+      "title": "This post has been moderated. If you have a problem, please report the post or contact customer service for help",
+      "subTitle": "Rate and report this property",
+      "responeSuccess": "Your feedback has been sent",
+      "responseNull": "Please enter the value",
+      "responseEmailFail": "Email address is incorrect",
+      "reportEmail": "Please enter your email !",
+      "reportPhoneNumber": "Please enter your phone number !",
+      "popup": {
+        "whyChoice": "Why are you reporting this property?",
+        "subChoice": "This content will not be shared with your host",
+        "listReport": {
+          "op1": "Inauthentic or inaccurate content",
+          "op2": "Cheat",
+          "op3": "Duplicate",
+          "op4": "Unable to contact",
+          "op5": "Real estate is not real",
+          "op6": "Sold",
+          "op7": "Other problems"
         },
-        "moreInfo":{
-          "title":"Add information",
-          "subTitle":"Please share more information with us, I can better assist you",
-          "describeMore":"Detailed content description",
-          "descripbePlace":"A more detailed description of your problem will help us resolve the issue faster. Thank you",
-          "contact":"Information for us to contact you when necessary",
-          "phone":"Your phone number",
-          "email":"Email"          
+        "moreInfo": {
+          "title": "Add information",
+          "subTitle": "Please share more information with us, I can better assist you",
+          "describeMore": "Detailed content description",
+          "descripbePlace": "A more detailed description of your problem will help us resolve the issue faster. Thank you",
+          "contact": "Information for us to contact you when necessary",
+          "phone": "Your phone number",
+          "email": "Email"
         }
       }
     }
   },
-  "notify":{
-    "latest":"Latest",
-    "recently":"Recently",
-    "noResult":"No new announcements"
+  "notify": {
+    "latest": "Latest",
+    "recently": "Recently",
+    "noResult": "No new announcements"
   },
-  "landing_page":{
-    "introduce":"Introduce",
-    "introduce_title":"About",
-    "rules":"General principles of",
-    "rules_title":"General principles of",
-    "qa":"Q&A of",
-    "qa_title":"Q&A of"
+  "landing_page": {
+    "introduce": "Introduce",
+    "introduce_title": "About",
+    "rules": "General principles of",
+    "rules_title": "General principles of",
+    "qa": "Q&A of",
+    "qa_title": "Q&A of"
   },
-  "footer":{
-    "tooglelg":"English",
-    "vietnamese":"Vietnamese",
-    "english":"English",
-    "dowloadapp":"Download app now",
-    "license":"License number",
-    "contact":{
-      "title":"Contact"      
+  "footer": {
+    "tooglelg": "English",
+    "vietnamese": "Vietnamese",
+    "english": "English",
+    "dowloadapp": "Download app now",
+    "license": "License number",
+    "contact": {
+      "title": "Contact"
     },
-    "introduce":{
-      "title":"Introduce",
-      "about":"About us",
-      "team":"Sales team",
-      "news":"News"
+    "introduce": {
+      "title": "Introduce",
+      "about": "About us",
+      "team": "Sales team",
+      "news": "News"
     },
-    "discovery":{
-      "title":"Discovery"
+    "discovery": {
+      "title": "Discovery"
     },
-    "rules":{
-      "title":"Rules",
+    "rules": {
+      "title": "Rules",
       "regulation": "Operational Regulations",
-      "safe":"Privacy Policy",
-      "juridical":"Juridical"
+      "safe": "Privacy Policy",
+      "juridical": "Juridical"
     }
   }
 }
