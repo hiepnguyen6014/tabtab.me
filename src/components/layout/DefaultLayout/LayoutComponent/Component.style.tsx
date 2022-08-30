@@ -115,6 +115,19 @@ export const ButtonVote = styled.div`
     padding:5px 10px;
 `
 
+export const ButtonRatingReview = styled.div`
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Inter;
+    display: flex;
+    gap:10px;
+    align-items: center;
+    color: #ffffff;
+    background-color: #003580;
+    border-radius: 6px 6px 6px 0;
+    padding:5px 10px;
+`
+
 export const AdGoogle = styled.div`
   height: 20px;
   @media ${device.maxSm}{
@@ -155,6 +168,7 @@ export const ListWrapper = styled.div`
         }
     }
 `
+
 export const ListWrapperForPartners = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -183,6 +197,7 @@ export const ListWrapperForPartners = styled.div`
         }
     }
 `
+
 export const BlockName = styled.div`
     display: flex;
     background-color: #F9C41F0D;
@@ -226,16 +241,16 @@ export const ColCustomQuipment = styled(Col)`
 }
 `
 
-export const DefaultContentInWrapper = styled(props=> <div {...props}/>)`
+export const DefaultContentInWrapper = styled(props => <div {...props} />)`
   max-width: 1200px;
   padding: 30px 0;
   width: 95%;
-  ${props => props.grid? {
+  ${props => props.grid ? {
     'grid-template-columns': "69% 30%",
     display: "grid"
 
-  }:{
-    'grid-template-columns':''
+  } : {
+    'grid-template-columns': ''
   }}
   margin: auto;
   justify-content: space-between;
@@ -249,16 +264,16 @@ export const DefaultContentInWrapper = styled(props=> <div {...props}/>)`
   }
 `;
 
-export const DefaultContentInWrapperBN = styled(props=> <div {...props}/>)`
+export const DefaultContentInWrapperBN = styled(props => <div {...props} />)`
   max-width: 1200px;
   padding: 30px 0;
   width: 95%;
-  ${props => props.grid? {
+  ${props => props.grid ? {
     'grid-template-columns': "69% 30%",
     display: "grid"
 
-  }:{
-    'grid-template-columns':''
+  } : {
+    'grid-template-columns': ''
   }}
   margin: auto;
   justify-content: space-between;
@@ -272,16 +287,16 @@ export const DefaultContentInWrapperBN = styled(props=> <div {...props}/>)`
   }
 `;
 
-export const DefaultContentInWrapperMajor = styled(props=> <div {...props}/>)`
+export const DefaultContentInWrapperMajor = styled(props => <div {...props} />)`
   max-width: 1200px;
   padding: 30px 0;
   width: 95%;
-  ${props => props.grid? {
+  ${props => props.grid ? {
     'grid-template-columns': "69% 30%",
     display: "grid"
 
-  }:{
-    'grid-template-columns':''
+  } : {
+    'grid-template-columns': ''
   }}
   margin: auto;
   justify-content: space-between;
