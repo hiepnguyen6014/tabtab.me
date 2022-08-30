@@ -29,9 +29,11 @@ import { getDataFilter } from '@root/src/core/services/dataFilter';
 import { useEffect, useState } from 'react';
 import { MPostDetail } from '@models/MPostDetail';
 import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
+import moment from 'moment';
 
 const ListUtility = (props: { post: MPostDetail; t: any }) => {
   const {
+    realEstateId,
     realEstateUnitPrice,
     realEstateHouseBedRooms,
     realEstatedeposits, // Tien dat coc
@@ -47,6 +49,8 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
     realEstateFurnitureName,
     derectionHouseName,
     shapeName,
+    updatedAt,
+    createdAt,
   } = props.post;
   const { t } = props;
   const [typeData, setTypeData] = useState({
@@ -162,17 +166,25 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
     },
     {
       icon: <IconApartement />,
-      value: "Apartment, Condo",
-      label: "Unit types:",
+      // value: "Apartment, Condo",
+      // label: "Unit types:",
+
+      value: getName(
+        typeData.type,
+        'realEstatePostTypeId',
+        'realEstatePostTypeName',
+        realEstatePostTypeId
+      ),
+      label: t('detail.utilityItem.type'),
     },
     {
       icon: <IconBedTabTab />,
-      value: "1 to 3",
+      value: realEstateHouseBedRooms,
       label: "Beds in a unit:",
     },
     {
       icon: <IconBluePrint />,
-      value: "49 m² to 163 m²",
+      value: realEstateLandRealitySquare + ' m²',
       label: "Floor areas:",
     },
     {
@@ -197,17 +209,17 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
     },
     {
       icon: <IconListed />,
-      value: "2 years ago",
+      value: moment(createdAt).fromNow(),
       label: "Listed",
     },
     {
       icon: <IconNewHouse />,
-      value: "3 weeks ago",
+      value: moment(updatedAt).fromNow(),
       label: "Updated:",
     },
     {
       icon: <IconProperty />,
-      value: "89424",
+      value: realEstateId,
       label: "Property ID:",
     }
   ]
@@ -216,15 +228,15 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
     <ListWrapper>
       {ListTabTab.map((prop, key) =>
         prop.value ? (
-          <div style={{ display: 'flex', marginBottom:15 }} role="item" key={key}>
-            <div style={{marginBottom:20, marginRight:12}}>
+          <div style={{ display: 'flex', marginBottom: 15 }} role="item" key={key}>
+            <div style={{ marginBottom: 20, marginRight: 12 }}>
               {prop.icon}
             </div>
             <div>
-              <div style={{fontSize:16, fontWeight:"500", fontFamily:'Inter'}}>
+              <div style={{ fontSize: 16, fontWeight: "500", fontFamily: 'Inter' }}>
                 {prop.label}
               </div>
-              <div style={{fontSize:16, fontWeight:"700", fontFamily:'Inter'}}>
+              <div style={{ fontSize: 16, fontWeight: "700", fontFamily: 'Inter' }}>
                 {prop.value}
               </div>
             </div>
