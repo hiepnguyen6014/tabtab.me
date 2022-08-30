@@ -7,6 +7,9 @@ import { useState } from "react";
 import { LockContact } from "./LockContact";
 import { WidgetAction, WidgetHeader, WidgetWrap, TicketProject, ButtonCall, ButtonMess } from "./Widget.style";
 import { RowPriceLeft } from '../../layout/DefaultLayout/LayoutComponent/Component.style';
+import { ButtonFollow } from '../../pages/FindPersonDetails/FindPersonDetails.style';
+import { censorEmail } from '../../../core/utils/helpers';
+
 export const WidgetUserInfo = (props: { post: MPostDetail, t: any }) => {
     const { t } = props
     const {
@@ -19,6 +22,7 @@ export const WidgetUserInfo = (props: { post: MPostDetail, t: any }) => {
         realEstatePhone,
         realEstateEmail,
         agency
+
     } = props.post
 
     const [contactRecord, setContactRecord] = useState({
@@ -38,6 +42,9 @@ export const WidgetUserInfo = (props: { post: MPostDetail, t: any }) => {
                         <span role="left">
                             <div>
                                 <Avatar src={userAvatar} size={70}>{lastName ? lastName.charAt(0).trim().toUpperCase() : 'A'}</Avatar>
+                                <ButtonFollow style={{ borderRadius: 8, height: 'auto', marginTop: '6px' }}>
+                                    <label style={{ fontSize: 16, fontWeight: '700', fontFamily: "Inter" }}>Follow</label>
+                                </ButtonFollow>
                             </div>
                             <span>
                                 <Typography.Title style={{ fontSize: 24, fontWeight: '700', fontFamily: "Inter" }}>{lastName || firstName ? firstName + " " + lastName : t('detail.widgetUser.icognito')}</Typography.Title>
@@ -76,21 +83,7 @@ export const WidgetUserInfo = (props: { post: MPostDetail, t: any }) => {
                             <IconEmailTabTab style={{ marginRight: 9, paddingTop: 1 }} />
                             <span style={{ fontSize: 16, fontWeight: 600, fontFamily: "Inter", color: '#7A7A7A' }}>Email</span>
                         </span>
-                        <span style={{ fontSize: 16, fontWeight: 600, fontFamily: "Inter" }}>mail@gmail.com</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-                        <span style={{ height: 'auto', width: '45%' }}>
-                            <IconMortage style={{ marginRight: 9, paddingTop: 1 }} />
-                            <span style={{ fontSize: 16, fontWeight: 600, fontFamily: "Inter", color: '#7A7A7A' }}>Chứng nhận</span>
-                        </span>
-                        <span style={{ fontSize: 16, fontWeight: 600, fontFamily: "Inter" }}>Chứng nhận</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-                        <span style={{ height: 'auto', width: '45%' }}>
-                            <IconChartTabTab style={{ marginRight: 9, paddingTop: 1 }} />
-                            <span style={{ fontSize: 16, fontWeight: 600, fontFamily: "Inter", color: '#7A7A7A' }}>Hạng</span>
-                        </span>
-                        <span style={{ fontSize: 16, fontWeight: 600, fontFamily: "Inter" }}>Top 1</span>
+                        <span style={{ fontSize: 16, fontWeight: 600, fontFamily: "Inter" }}>{censorEmail('testing@gmail.com')}</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
                         <span style={{ height: 'auto', width: '45%' }}>
@@ -105,14 +98,14 @@ export const WidgetUserInfo = (props: { post: MPostDetail, t: any }) => {
                         {/* <LockContact contactRecord={contactRecord} setContactFunc={setContactRecord} t={t} paymentRecords={paymentRecords} realEstateId={realEstateId?.toString()} /> */}
                         <TextPhoneNumber t={t} phone={contactRecord.phone}>
                             <ButtonCall className="disable-custom-btn" icon={<IconPhoneTabTab />}>
-                                <Typography style={{ whiteSpace: 'break-spaces' }}>091234****</Typography>
+                                <Typography style={{ whiteSpace: 'break-spaces' }}>{contactRecord.phone}</Typography>
                             </ButtonCall>
                         </TextPhoneNumber>
                         <br />
                         <TextEmail t={t} email={contactRecord.email}>
                             <Button type='primary' style={{ backgroundColor: "#F9C41F", borderRadius: 8, height: 'auto', padding: 13, marginTop: 24, width: '100%', whiteSpace: "break-spaces" }}>
                                 <IconMessTabTab />
-                                <label style={{ fontSize: 16, fontWeight: '700', fontFamily: "Inter" }}>Chat trực tiếp với anh An</label>
+                                <label style={{ fontSize: 16, fontWeight: '700', fontFamily: "Inter" }}>Chat trực tiếp với anh {lastName}</label>
                             </Button>
                         </TextEmail>
                     </WidgetAction>

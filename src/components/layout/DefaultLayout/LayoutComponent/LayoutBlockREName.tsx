@@ -12,7 +12,7 @@ import {
   DefaultRowTitle,
   DefaultWrapperWithBg,
 } from '..';
-import {DefaultContentInWrapperBN} from './Component.style'
+import { DefaultContentInWrapperBN } from './Component.style'
 import { ListWrapper } from "../../../shared/Utilities/Utilities.style"
 import { RowPriceLeft, BlockName } from './Component.style';
 import { SRC_IMAGE } from '@constants';
@@ -30,32 +30,58 @@ export const LayoutBlockREName = (props: { t: any; post: MPostDetail }) => {
 
   return (
     <>
-      <DefaultWrapperWithBg style={{marginTop:-70}}>
+      <DefaultWrapperWithBg style={{ marginTop: -70 }}>
         <DefaultContentInWrapperBN grid={true}>
           <RowPriceLeft>
             <DefaultRowTitle>
-                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Tên BDS hoặc tên dự án</label>
+              <label style={{ fontFamily: "Inter", fontSize: 28, fontWeight: "700", marginBottom: 20 }}>Tên BDS hoặc tên dự án</label>
             </DefaultRowTitle>
             <BlockName>
-              <Image src={SRC_IMAGE.BLOCKNAME}/>
+              <Image src={SRC_IMAGE.BLOCKNAME} />
               <div>
-                <div style={{ paddingLeft: 20, paddingTop: 30 }}>
-                  <div style={{ marginRight: 12, marginBottom: 7 }}>
-                    <IconApartement />
+                <div className="d-flex justify-content-between" style={{ paddingLeft: 20, paddingTop: 30 }}>
+                  <div>
+                    <div style={{ marginRight: 12, marginBottom: 7 }}>
+                      <IconApartement />
+                    </div>
+                    <span>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700", marginRight: 10, color: '#7A7A7A' }}>Tổng số căn hộ</label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>3000</label>
+                    </span>
                   </div>
-                  <span>
-                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700", marginRight: 10, color: '#7A7A7A' }}>Tổng số căn hộ</label>
-                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>3000</label>
-                  </span>
+                  <div style={{ marginLeft: 8 }}>
+                    <div style={{ marginRight: 12, marginBottom: 7 }}>
+                      <IconStair />
+                    </div>
+                    <span>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700", marginRight: 10, color: '#7A7A7A' }}>Số Block</label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>6</label>
+                    </span>
+                  </div>
+
                 </div>
                 <div style={{ paddingLeft: 20 }}>
-                  <div style={{ marginRight: 12, marginBottom: 7 }}>
-                    <IconStair />
+                  <div className="d-flex justify-content-between" >
+                    <div>
+                      <div style={{ marginRight: 12, marginBottom: 7 }}>
+                        <IconStair />
+                      </div>
+                      <span>
+                        <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700", marginRight: 10, color: '#7A7A7A' }}>Số Tầng</label>
+                        <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>42</label>
+                      </span>
+                    </div>
+                    <div>
+                      <div style={{ marginRight: 12, marginBottom: 7 }}>
+                        <IconStair />
+                      </div>
+                      <span>
+                        <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700", marginRight: 10, color: '#7A7A7A' }}>Biệt thự</label>
+                        <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>20</label>
+                      </span>
+                    </div>
                   </div>
-                  <span>
-                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700", marginRight: 10, color: '#7A7A7A' }}>Số Tầng</label>
-                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>42</label>
-                  </span>
+
                 </div>
                 <div style={{ paddingLeft: 20 }}>
                   <div style={{ marginRight: 12, marginBottom: 7 }}>
@@ -75,8 +101,8 @@ export const LayoutBlockREName = (props: { t: any; post: MPostDetail }) => {
                     <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>2021</label>
                   </span>
                 </div>
-                <div style={{ justifyContent: 'center', display: 'flex', paddingLeft: 20, paddingRight:20}}>
-                  <Button style={{ backgroundColor: "#F9C41F", borderRadius: 8, height: 'auto', marginTop: 5, marginBottom: 24, width:'100%', whiteSpace:'break-spaces' }}>
+                <div style={{ justifyContent: 'center', display: 'flex', paddingLeft: 20, paddingRight: 20 }}>
+                  <Button style={{ backgroundColor: "#F9C41F", borderRadius: 8, height: 'auto', marginTop: 5, marginBottom: 24, width: '100%', whiteSpace: 'break-spaces' }}>
                     <label style={{ fontSize: 16, fontWeight: '700', fontFamily: "Inter", paddingTop: 8, paddingBottom: 8 }}>XEM CHI TIẾT</label>
                   </Button>
                 </div>

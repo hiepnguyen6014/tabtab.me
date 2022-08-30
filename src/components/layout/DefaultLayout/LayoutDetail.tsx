@@ -8,9 +8,10 @@ import { POST_TYPE_PARAMS } from '@constants';
 import { getDetailPost } from '../../../core/services/post';
 import { getPostTypeId } from '@utils';
 import { Loading, PlaceHolderLoading } from '../../shared';
-import { Row, Col } from 'antd';
+import { Row, Col, Typography } from 'antd';
 import { IconFly, IconVirtual, IconMap, IconImage } from '@root/public/icons';
 import { ButtonWrap, ButtonWrapProperties } from './DefaultComponent.style'
+import Link from 'next/link';
 
 interface Props {
   t: any;
@@ -34,6 +35,7 @@ const LayoutDetail = (props: Props) => {
   const [dataDetail, setDataDetail] = useState(new MPostDetail({}));
   const [notFound, setNotFound] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     let mounted = true;
@@ -204,7 +206,7 @@ const LayoutDetail = (props: Props) => {
               />
               <DefaultWrapperWithBg />
               <DefaultWrapperWithBg typeof="fullScreen">
-                <DefaultContentNoGrid typeof="fullScreen">
+                <DefaultContentNoGrid style={{ paddingTop: '16px' }} typeof="fullScreen">
                   <DynamicBanner t={translate} images={dataDetail.arrayImage} />
                   <Row style={{ marginLeft: 16, marginRight: 16 }}>
                     <Col lg={4} md={6} sm={12} style={{ marginTop: 20, width: 1000 }}>
@@ -260,7 +262,10 @@ const LayoutDetail = (props: Props) => {
               <DynamicMap />
               <DynamicPriceCompare />
               <DynamicProperties t={translate} />
-              <DynamicRatingReview />
+              <div id="rating-review">
+                <DynamicRatingReview />
+
+              </div>
             </div>
           )}
           <DynamicRowPost
