@@ -4,9 +4,9 @@ import { MEDIA_TYPE, ACCEPT_TYPE } from '@constants';
 import Config from '@root/config';
 
 
-export const checkEmail = (email:string)=>{
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return mailformat.test(email)
+export const checkEmail = (email: string) => {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return mailformat.test(email)
 }
 
 
@@ -26,7 +26,7 @@ export const reactLocalStorage = {
     return JSON.parse(window.localStorage[key] || '{}');
   },
   clear: function () {
-    if(typeof window !== "undefined") {
+    if (typeof window !== "undefined") {
       forIn(window.localStorage, (value: string, objKey: string) => {
         if (objKey.startsWith('eko-') || objKey.startsWith('audio-')) {
           window.localStorage.removeItem(objKey);
@@ -139,8 +139,8 @@ export const getExtensionsUpload = (accept = '', isGif: boolean = true) => {
       return trim(currentValue) === 'image'
         ? concatAccumulator(extensions, imageExtensions)
         : trim(currentValue) === 'video'
-        ? concatAccumulator(extensions, videoExtensions)
-        : concatAccumulator(extensions, audioExtensions);
+          ? concatAccumulator(extensions, videoExtensions)
+          : concatAccumulator(extensions, audioExtensions);
     }, '');
     return result;
   }
@@ -447,7 +447,7 @@ export const getImagePreview = async (file) => {
     const srcBase64 = await toBase64(file);
     const base64Data = await resetOrientation(srcBase64, srcOrientation);
     return base64Data;
-  } catch {}
+  } catch { }
 };
 
 export const formatNumberToString = (n) => {
@@ -644,7 +644,7 @@ const getMobileDetect = (userAgent: NavigatorID['userAgent']) => {
   };
 };
 export const useMobileDetect = () => {
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
   const userAgent =
     typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
   return getMobileDetect(userAgent);
@@ -656,3 +656,12 @@ export const setHttp = (link) => {
   }
   return link ?? '';
 };
+
+const censorWord = (str: string) => {
+  return "*".repeat(str.length);
+}
+
+export const censorEmail = (email: string) => {
+  const splitEmail = email.split('@');
+  return splitEmail[0] + censorWord(splitEmail[1]);
+}
