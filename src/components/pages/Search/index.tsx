@@ -41,7 +41,7 @@ export default function Search({ translate }) {
     const [page, setPage] = useState(1)
     useEffect(() => {
         getData()
-    })
+    }, [])
     const getData = async () => {
         const listByRating: any = await getListRealEstate({});
         setData(listByRating.data)
@@ -397,7 +397,7 @@ export default function Search({ translate }) {
                 </Col>
             </Row>
 
-            <Row gutter={16} style={{marginTop:20}}>
+            <Row gutter={16} style={{ marginTop: 20 }}>
                 <Col span={12}>
                     <ButtonClear style={{ padding: 14, width: '100%', height: 'auto', marginTop: 16, borderRadius: 8 }}>
                         <text style={{ fontSize: 16, fontWeight: '700', fontFamily: "Inter", color: 'white' }}>Clear</text>
