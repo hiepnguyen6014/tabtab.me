@@ -19,8 +19,9 @@ import {
   DefaultRowTitle,
   DefaultWrapperWithBg,
 } from '..';
-import { TagProperty, RowPrice, RowActions, RowPriceLeft, RowPriceRight, ButtonVote } from './Component.style';
+import { TagProperty, RowPrice, RowActions, RowPriceLeft, RowPriceRight, ButtonVote, ButtonRatingReview } from './Component.style';
 import { device } from '@styles/theme/device';
+import Link from 'next/link';
 
 export const LayoutDetailTop = (props: {
   t: any;
@@ -49,6 +50,7 @@ export const LayoutDetailTop = (props: {
             <BreadcrumbCustom t={translate} arrHref={arrHref} />
             <Typography.Title style={{ fontFamily: 'Inter' }} level={3} ellipsis={{ rows: 2 }}>
               {post.realEstateTitle}
+
             </Typography.Title>
             {post.realEstateJuridical && (
               <TagProperty style={{ background: hrefMain.href == PUBLIC_ROUTES.BROKERAGE_FLOOR.href ? colors.common : colors.button }}>{post.realEstateJuridical}</TagProperty>
@@ -68,15 +70,15 @@ export const LayoutDetailTop = (props: {
                 <span style={{ marginTop: 20 }}>
                   <span style={{ marginRight: 25 }}>
                     <IconBed />
-                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16 }}>Beds</label>
-                    <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>2</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16, color: '#7A7A7A' }}>Beds</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>{post.realEstateHouseBedRooms}</label>
                   </span>
                   <span style={{ marginRight: 25 }}>
                     <IconBathub />
-                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16 }}>Bath</label>
-                    <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>2</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16, color: '#7A7A7A' }}>Bath</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>{post.realEstateHouseToilets}</label>
                   </span>
-                  <span style={{ marginRight: 10 }}>
+                  {/* <span style={{ marginRight: 10 }}>
                     <IconBed />
                     <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16 }}>Beds</label>
                     <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>2</label>
@@ -85,10 +87,10 @@ export const LayoutDetailTop = (props: {
                     <IconBed />
                     <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16 }}>Beds</label>
                     <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>2</label>
-                  </span>
+                  </span> */}
                 </span>
               </RowPriceLeft>
-              <RowPriceRight >
+              <div >
                 {
                   hrefMain.href == PUBLIC_ROUTES.BROKERAGE_FLOOR.href ? <div>
                     <label >{translate('common.commission')}</label>
@@ -108,13 +110,27 @@ export const LayoutDetailTop = (props: {
                     <a>
                       <ButtonShare t={translate} icon={<IconSharetabtab />} bg="white" borderColor="#F9C41F" />
                     </a>
-                    <ButtonVote style={{borderRadius:8}}>
+                    <div style={{ cursor: 'pointer' }} className='d-flex justify-space-between'>
+                      <Link href={'#rating-review'}>
+                        <div className='d-flex'>
+                          <div className='d-flex flex-column' style={{ textAlign: 'right', marginRight: '8px' }}>
+                            <span style={{ color: '#262626', fontSize: '16px', fontWeight: '700' }}>Tuyệt vời</span>
+                            <span style={{ color: '6B6B6B', fontSize: '12px' }}>270 đánh giá</span>
+                          </div>
+                          <ButtonRatingReview>
+                            <span>8.7</span>
+                          </ButtonRatingReview>
+                        </div>
+                      </Link>
+                    </div>
+                    {/* <ButtonVote style={{ borderRadius: 8 }}>
                       <IconStar />
                       4,88 · 17 đánh giá
-                    </ButtonVote>
+                    </ButtonVote> */}
+
                   </RowActions>
                 </div>
-              </RowPriceRight>
+              </div>
             </RowPrice>
             {/* <Divider />
             <DefaultRowTitle>

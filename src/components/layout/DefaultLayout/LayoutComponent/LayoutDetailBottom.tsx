@@ -58,7 +58,7 @@ export const LayoutDetailBottom = (props: {
           <div>
             <RowPrice>
               <RowPriceLeft>
-                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Highlight</label>
+                <label style={{ fontFamily: "Inter", fontSize: 28, fontWeight: "700", marginBottom: 20 }}>Highlight</label>
                 <Row>
                   <Col md={6} xl={4} xs={7} sm={11} style={{ marginRight: 12, marginBottom: 12 }}>
                     <Block>
@@ -126,12 +126,12 @@ export const LayoutDetailBottom = (props: {
               </RowPriceLeft>
             </RowPrice>
             <DefaultRowTitle style={{ marginTop: 80 }}>
-                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Project overview</label>
+              <label style={{ fontFamily: "Inter", fontSize: 28, fontWeight: "700", marginBottom: 20 }}>{translate('detail.description')}</label>
             </DefaultRowTitle>
             <TextParagraph t={translate} text={post.realEstateDescription} size={16} />
-            <div style={{marginTop:80}}>
+            <div style={{ marginTop: 80 }}>
               <DefaultRowTitle>
-                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Project overview</label>
+                <label style={{ fontFamily: "Inter", fontSize: 28, fontWeight: "700", marginBottom: 20 }}>{translate('detail.feature')}</label>
               </DefaultRowTitle>
               <DynamicUtility t={translate} post={post} />
             </div>
@@ -139,7 +139,7 @@ export const LayoutDetailBottom = (props: {
           <div>
             <RowActions />
             <WidgetUserInfo t={translate} post={props.post} />
-            <DynamicNotifyOutdate />
+            {/* <DynamicNotifyOutdate /> */}
           </div>
         </DefaultContentInWrapper>
       </DefaultWrapperWithBg>
