@@ -3,6 +3,8 @@ import { DownOutlined, MenuOutlined, UserOutlined } from '@ant-design/icons';
 import { PUBLIC_ROUTES, ROUTES, SRC_IMAGE, SRC_LOGO } from '@constants';
 import { UserContext } from '@contexts';
 import { useRouter } from 'next/router';
+import { FilterProvider } from '@root/src/core/contexts/filterContext';
+
 import {
   IconAccount,
   Logo,
@@ -38,6 +40,7 @@ import HeaderUserAction from './HeaderUserAction';
 import { Navigator, reactLocalStorage } from '@utils';
 import Config from '@root/config';
 import { REFormSearchInput } from '../RealEstateFilter/FilterSearch';
+import RealEstateFilter from '../RealEstateFilter';
 
 interface Props {
   t: any;
@@ -205,7 +208,14 @@ const HeaderDesktop = (props: Props) => {
       </LinksWrap> */}
 
       <TabTabWrap>
-        {themeLight ? <></> : <REFormSearchInput t={translate} />}
+        <FilterProvider>
+          {themeLight ? <></> : <REFormSearchInput t={translate} />}
+
+          {/* <RealEstateFilter toggleType={false} t={translate} /> */}
+        </FilterProvider>
+
+
+
         {/* {themeLight?
         <label className="text-primary">12312</label>
         :
@@ -317,7 +327,7 @@ const HeaderDesktop = (props: Props) => {
         onRedirect={onRedirect}
         t={props.t}
       /> */}
-    </MainContentDesktop>
+    </MainContentDesktop >
   );
 };
 
