@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Props } from "react";
 import DefaultLayout from "../../layout/DefaultLayout/DefaltLayout";
 import {
     AirConditioning,
@@ -35,16 +35,26 @@ import { Row, Col, Dropdown, Menu, Popover, Typography, Divider, Checkbox, Butto
 import { IconArrowDown, IconBell } from '@root/public/icons';
 import ListItem from "../Home/HomeComponent/ListItem";
 import { SRC_IMAGE } from "@core";
+import { MPostDetail } from "@models/MPostDetail";
 
-export default function Search({ translate }) {
-    const [data, setData] = useState([])
+interface Props {
+    posts: MPostDetail[];
+    t: any;
+}
+
+export default function Search(props: Props) {
+    const { t: translate, posts } = props;
+
     const [page, setPage] = useState(1)
     useEffect(() => {
-        getData()
+        // getData()
     }, [])
     const getData = async () => {
-        const listByRating: any = await getListRealEstate({});
-        setData(listByRating.data)
+        const listByRating: any = await getListRealEstate({
+            // "filter": {
+            //     "realEstateTitle": "a"
+            // }
+        });
     }
 
     const listData = [
@@ -477,7 +487,7 @@ export default function Search({ translate }) {
                         md: 24,
                         lg: 32,
                     }}>
-                    <ListItem t={translate} data={data.slice(0, 2)} type={2} />
+                    <ListItem t={translate} data={posts.slice(0, 2)} type={2} />
                     <Row >
                         <Col sm={24} lg={12} style={{ padding: 20 }}>
                             <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
@@ -487,7 +497,7 @@ export default function Search({ translate }) {
                         </Col>
                     </Row>
 
-                    <ListItem t={translate} data={data.slice(0, 2)} type={3} />
+                    <ListItem t={translate} data={posts.slice(0, 2)} type={3} />
                     <Row>
                         <Col sm={24} lg={12} style={{ padding: 20 }}>
                             <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
@@ -497,7 +507,7 @@ export default function Search({ translate }) {
                         </Col>
                     </Row>
 
-                    <ListItem t={translate} data={data.slice(0, 4)} type={1} />
+                    <ListItem t={translate} data={posts.slice(0, 4)} type={1} />
                     <Row>
                         <Col sm={24} lg={12} style={{ padding: 20 }}>
                             <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
@@ -507,7 +517,7 @@ export default function Search({ translate }) {
                         </Col>
                     </Row>
 
-                    <ListItem t={translate} data={data.slice(0, 4)} type={4} />
+                    <ListItem t={translate} data={posts.slice(0, 4)} type={4} />
 
                 </RowWrap>
 
