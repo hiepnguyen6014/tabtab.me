@@ -27,9 +27,10 @@ export const SearchHome = (props: { t: any }) => {
       ? { [filterKey.searchText.idQuery]: data.searchText }
       : {};
     router.push({
-      pathname: data.page || PUBLIC_ROUTES.MAIN_FLOOR.href,
+      pathname: data.page || PUBLIC_ROUTES.SEARCH_PAGE.href,
       query: dataSearch,
     });
+
   };
 
   const placeHolderSearch = () => {
@@ -41,7 +42,7 @@ export const SearchHome = (props: { t: any }) => {
   };
 
   const findPage = (e, path) => {
-    router.push(path)
+    router.push(path);
   }
 
   return (
@@ -151,10 +152,10 @@ export const SearchHome = (props: { t: any }) => {
                 </Form.Item>
               </ColItem>
 
-              <ColItem md={{ span: 4 }} sm={{ span: 4 }} xs={{ span: 4 }} style={{ margin: 0, display:"flex", justifyContent:"end", alignItems:"center" }}> 
+              <ColItem md={{ span: 4 }} sm={{ span: 4 }} xs={{ span: 4 }} style={{ margin: 0, display: "flex", justifyContent: "end", alignItems: "center" }}>
                 <Form.Item style={{ margin: 0 }}>
                   <ButtonSearch onClick={e => findPage(e, "/tim-kiem")}>
-                    <SearchOutlined style={{ fontSize: '5px', border:"none" }} />
+                    <SearchOutlined style={{ fontSize: '5px', border: "none" }} />
                   </ButtonSearch>
                 </Form.Item>
               </ColItem>

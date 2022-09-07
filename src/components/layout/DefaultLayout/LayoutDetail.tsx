@@ -246,19 +246,19 @@ const LayoutDetail = (props: Props) => {
               />
               <DynamicFacilites />
               <DynamicREName />
-              <DynamicCalculator
+              {/* <DynamicCalculator
                 t={translate}
                 post={dataDetail}
-                hrefMain={hrefMain} />
+                hrefMain={hrefMain} /> */}
               <DynamicTypeRoom />
-              <DynamicTenants
+              {/* <DynamicTenants
                 t={translate}
                 post={dataDetail}
                 hrefMain={hrefMain}
-              />
+              /> */}
               <DynamicAllProperties />
-              <DynamicPartners />
-              <DynamicPayment />
+              {/* <DynamicPartners /> */}
+              {/* <DynamicPayment /> */}
               <DynamicMap />
               <DynamicPriceCompare />
               <DynamicProperties t={translate} />
