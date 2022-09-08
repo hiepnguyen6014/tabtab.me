@@ -117,7 +117,7 @@ const SpotLight: React.FC<{}> = () => {
                 Những tin tức mới nhất phù hợp với Hùng
               </Typography.Title>
             </div>
-            <div onClick={e => setShowContent(showContent ? false : true)} style={{cursor:"pointer"}}>
+            <div onClick={e => setShowContent(showContent ? false : true)} style={{ cursor: "pointer" }}>
               <Typography.Text className="content-hide">HIDE</Typography.Text>
             </div>
           </div>
@@ -236,6 +236,11 @@ const SpotLight: React.FC<{}> = () => {
             );
           })}
         </Row>
+        <Col span={12} offset={6} style={{ marginTop: '20px' }}>
+          <Button shape="round" size={'large'} style={{ background: 'white', color: 'black' }}>
+            VIEW ALL
+          </Button>
+        </Col>
       </div>}
     </WrapperSpot>
   );

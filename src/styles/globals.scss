@@ -25,3 +25,12 @@ main{
 * {
   box-sizing: border-box;
 }
+
+.ant-carousel {
+  margin-bottom: 600px;
+  .slick-dots {
+    justify-content: end;
+    margin-right: 5%;
+  }
+}
+

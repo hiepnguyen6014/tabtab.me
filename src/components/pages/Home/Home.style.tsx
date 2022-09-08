@@ -52,8 +52,9 @@ export const Content = styled.div`
   margin: auto;
   text-align: left;
   .search-content {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+    left: 25%;
     margin-bottom: 7%;
     position: relative;
     @media ${device.maxMd} {
