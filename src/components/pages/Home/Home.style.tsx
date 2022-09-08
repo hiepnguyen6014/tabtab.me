@@ -69,11 +69,17 @@ export const Content = styled.div`
   }
   @media ${device.maxLg} {
     width: 95%;
+    .search-content {
+      left: 10%;
+    }
   }
   @media ${device.maxSm} {
     width: 75%;
     span {
       display: none;
+    }
+    .search-content {
+      left: 0%;
     }
   }
 `;
