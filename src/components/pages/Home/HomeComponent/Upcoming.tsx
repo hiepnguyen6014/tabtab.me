@@ -42,6 +42,14 @@ const Upcoming: React.FC<{}> = () => {
       address: '1 Sandal Road, London',
       calendar: <CalendarSun />,
     },
+    {
+      image: SRC_IMAGE.IMAGEPOST,
+      date: '21 DEC 2021 AT 13:00',
+      content:
+        'North Bondi block sells for $22m+ but duplex next door for sale.',
+      address: '1 Sandal Road, London',
+      calendar: <CalendarSun />,
+    },
   ];
 
   const [showContent, setShowContent] = useState(true)
@@ -58,7 +66,7 @@ const Upcoming: React.FC<{}> = () => {
                 anh Hùng đừng bỏ qua sự kiện sắp tới nha
               </Typography.Title>
             </div>
-            <div onClick={e => setShowContent(showContent ? false : true)} style={{cursor:"pointer"}}>
+            <div onClick={e => setShowContent(showContent ? false : true)} style={{ cursor: "pointer" }}>
               <Typography.Text className="content-hide">HIDE</Typography.Text>
             </div>
           </div>
@@ -79,9 +87,9 @@ const Upcoming: React.FC<{}> = () => {
             </ColA>
           );
         })}
-        <ColA className="gutter-row" sm={24} lg={6}>
-          <ItemBoostHub />
-        </ColA>
+        {/* <ColA className="gutter-row" sm={24} lg={6}> */}
+        {/* <ItemBoostHub /> */}
+        {/* </ColA> */}
       </Row>}
     </WrapperSpot>
   );
