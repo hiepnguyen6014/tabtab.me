@@ -12,7 +12,7 @@ module.exports = {
   },
   reactStrictMode: true,
   i18n,
-  webpack(config) {
+  webpack(config, options) {
     config.module.rules.push({
       test: /\.svg$/,
       // use: {
@@ -20,7 +20,11 @@ module.exports = {
       // },
       use: ['@svgr/webpack'],
     });
-  
+    options = {
+      minimize: {                   // <----
+        caseSensitive: false        // <----
+      }                             // <----
+    }
     return config;
   }
 }
