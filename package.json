@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.6.0",
     "@fontsource/inter": "^4.5.11",
     "@moxy/next-layout": "^2.2.3",
+    "@mui/base": "^5.0.0-alpha.97",
     "@mui/material": "^5.10.4",
     "@mui/system": "^5.10.4",
     "@mui/x-data-grid": "^5.17.2",
