@@ -98,11 +98,20 @@ export const TagProperty = styled.label`
 `
 
 export const Block = styled.div`
+  width: 122px;
+  font-size: 14px;
   border-radius: 8px;
   padding: 20px 18px;
-  background: #F9C41F;
-  text-align:center;
+  margin: 5px 5px 5px 0px;
+  background: radial-gradient(77.22% 75% at 97.5% 97.35%, #F9AF1F 0%, #F9C91F 100%);
+  text-align: center;
   height: 150px;
+
+  @media ${device.maxSm}{
+    width: 100px;
+    font-size: 12px;
+  }
+
 `
 export const ButtonVote = styled.div`
     font-size: 14px;
