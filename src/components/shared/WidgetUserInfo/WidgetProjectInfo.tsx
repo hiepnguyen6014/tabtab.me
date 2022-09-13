@@ -1,14 +1,15 @@
-import { TextEmail } from '../TextMail'
-import { TextPhoneNumber } from '../TextPhoneNumber/index'
 import { MPostDetail } from "@models/MPostDetail";
-import { Avatar, Typography, Image, Divider, Button } from "antd";
-import { IconChartTabTab, IconCoinTabTab, IconEmailTabTab, IconFBTabTab, IconIN, IconInstagramTabTab, IconKey, IconMessage, IconMessTabTab, IconMortage, IconPhoneCall, IconPhoneTabTab, IconReview, IconSocial, IconStartRating, IconTiktok } from 'public/icons'
+import { Button } from "@mui/material";
+import { Avatar, Divider, Typography } from "antd";
+import { IconCoinTabTab, IconEmailTabTab, IconFBTabTab, IconIN, IconInstagramTabTab, IconMessTabTab, IconPhoneTabTab, IconReview, IconSocial, IconStartRating, IconTiktok } from 'public/icons';
 import { useState } from "react";
-import { LockContact } from "./LockContact";
-import { WidgetAction, WidgetHeader, WidgetWrap, TicketProject, ButtonCall, ButtonMess } from "./Widget.style";
-import { RowPriceLeft } from '../../layout/DefaultLayout/LayoutComponent/Component.style';
-import { ButtonFollow } from '../../pages/FindPersonDetails/FindPersonDetails.style';
 import { censorEmail } from '../../../core/utils/helpers';
+import { ButtonFollow } from '../../pages/FindPersonDetails/FindPersonDetails.style';
+import { TextEmail } from '../TextMail';
+import { TextPhoneNumber } from '../TextPhoneNumber/index';
+import { ButtonCall, WidgetAction, WidgetHeader, WidgetWrap } from "./Widget.style";
+
+
 
 export const WidgetUserInfo = (props: { post: MPostDetail, t: any }) => {
     const { t } = props
@@ -42,7 +43,15 @@ export const WidgetUserInfo = (props: { post: MPostDetail, t: any }) => {
                         <span role="left">
                             <div>
                                 <Avatar src={userAvatar} size={70}>{lastName ? lastName.charAt(0).trim().toUpperCase() : 'A'}</Avatar>
-                                <ButtonFollow style={{ borderRadius: 8, height: 'auto', marginTop: '6px' }}>
+                                <ButtonFollow
+                                    sx={{
+                                        ':hover': {
+                                            bgcolor: 'rgba(105, 105, 105, 0.78)',
+                                            color: '#ffffff'
+                                        }
+                                    }}
+
+                                    disableElevation variant="contained" style={{ borderRadius: 8, height: 'auto', marginTop: '6px' }}>
                                     <label style={{ fontSize: 16, fontWeight: '700', fontFamily: "Inter" }}>Follow</label>
                                 </ButtonFollow>
                             </div>
@@ -97,13 +106,27 @@ export const WidgetUserInfo = (props: { post: MPostDetail, t: any }) => {
                     <WidgetAction>
                         {/* <LockContact contactRecord={contactRecord} setContactFunc={setContactRecord} t={t} paymentRecords={paymentRecords} realEstateId={realEstateId?.toString()} /> */}
                         <TextPhoneNumber t={t} phone={contactRecord.phone}>
-                            <ButtonCall className="disable-custom-btn" icon={<IconPhoneTabTab />}>
-                                <Typography style={{ whiteSpace: 'break-spaces' }}>{contactRecord.phone}</Typography>
+                            <ButtonCall color="primary" className="disable-custom-btn" startIcon={<IconPhoneTabTab />}>
+                                <Typography style={{ whiteSpace: 'break-spaces' }}>{contactRecord.phone ? contactRecord.phone : '0978 245***'}</Typography>
                             </ButtonCall>
                         </TextPhoneNumber>
-                        <br />
+                        <p></p>
                         <TextEmail t={t} email={contactRecord.email}>
-                            <Button type='primary' style={{ backgroundColor: "#F9C41F", borderRadius: 8, height: 'auto', padding: 13, marginTop: 24, width: '100%', whiteSpace: "break-spaces" }}>
+                            <Button disableElevation variant="contained"
+                                sx={{
+                                    ':hover': {
+                                        bgcolor: 'rgba(105, 105, 105, 0.78)',
+                                        color: '#ffffff'
+                                    }
+                                }}
+                                style={{
+                                    borderRadius: 8, height: 'auto',
+                                    width: '100%',
+                                    whiteSpace: "break-spaces",
+                                    textTransform: 'none'
+                                }}>
+
+
                                 <IconMessTabTab />
                                 <label style={{ fontSize: 16, fontWeight: '700', fontFamily: "Inter" }}>Chat trực tiếp với anh {lastName}</label>
                             </Button>

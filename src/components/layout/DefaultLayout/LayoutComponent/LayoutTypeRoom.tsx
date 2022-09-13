@@ -18,7 +18,7 @@ import {
   DefaultRowTitle,
   DefaultWrapperWithBg,
 } from '..';
-import {DefaultContentInWrapper} from './Component.style'
+import { DefaultContentInWrapper } from './Component.style'
 import { ListWrapper } from "../../../shared/Utilities/Utilities.style"
 import { RowPriceLeft, ColCustom, ColCustomPrice, ColCustomQuipment } from './Component.style';
 import { SRC_IMAGE } from '@constants';
@@ -40,11 +40,11 @@ export const LayoutTypeRoom = (props: { t: any; post: MPostDetail }) => {
         <DefaultContentInWrapper>
           <RowPriceLeft>
             <DefaultRowTitle>
-                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Loại phòng - Kinds of room</label>
+              <label style={{ fontSize: 28, fontWeight: "700", marginBottom: 20 }}>Loại phòng - Kinds of room</label>
             </DefaultRowTitle>
-            <Row style={{ backgroundColor: '#F2F2F2', padding: 12, borderRadius:8 }}>
+            <Row style={{ backgroundColor: '#F2F2F2', padding: 12, borderRadius: 8 }}>
               <Col xl={8} md={14} sm={23} xs={23} style={{ marginRight: 34 }}>
-                <Image src={SRC_IMAGE.TYPEROOM}  width={'100%'} />
+                <Image src={SRC_IMAGE.TYPEROOM} width={'100%'} />
                 <div style={{ display: 'flex', marginTop: 26 }}>
                   <span style={{ width: '50%' }}>
                     <IconBluePrint />
@@ -74,58 +74,58 @@ export const LayoutTypeRoom = (props: { t: any; post: MPostDetail }) => {
               </Col>
               <ColCustomQuipment xl={4} md={8} sm={22} xs={22}>
                 <div >
-                  <Typography.Title level={5} style={{ fontFamily: "Inter", color: "#F9BD06", marginBottom: 20 }}>Equipment</Typography.Title>
+                  <Typography.Title level={5} style={{ color: "#F9BD06", marginBottom: 20 }}>Equipment</Typography.Title>
                   <div style={{ marginBottom: 20 }}>
                     <span>
                       <IconPrinter />
-                      <label style={{ fontSize: 16, fontWeight: '500', fontFamily: "Inter", marginLeft: 10 }}>Printer</label>
+                      <label style={{ fontSize: 16, fontWeight: '500', marginLeft: 10 }}>Printer</label>
                     </span>
                   </div>
                   <div style={{ marginBottom: 20 }}>
                     <span>
                       <IconScanner />
-                      <label style={{ fontSize: 16, fontWeight: '500', fontFamily: "Inter", marginLeft: 10 }}>Scanner</label>
+                      <label style={{ fontSize: 16, fontWeight: '500', marginLeft: 10 }}>Scanner</label>
                     </span>
                   </div>
                   <div style={{ marginBottom: 20 }}>
                     <span>
                       <IconPhotoCopier />
-                      <label style={{ fontSize: 16, fontWeight: '500', fontFamily: "Inter", marginLeft: 10 }}>Photocopier</label>
+                      <label style={{ fontSize: 16, fontWeight: '500', marginLeft: 10 }}>Photocopier</label>
                     </span>
                   </div>
                   <div style={{ marginBottom: 20 }}>
                     <span>
                       <IconAppleTV />
-                      <label style={{ fontSize: 16, fontWeight: '500', fontFamily: "Inter", marginLeft: 10 }}>Apple tV</label>
+                      <label style={{ fontSize: 16, fontWeight: '500', marginLeft: 10 }}>Apple tV</label>
                     </span>
                   </div>
                   <div style={{ marginBottom: 20 }}>
                     <span>
                       <IconChromeCast />
-                      <label style={{ fontSize: 16, fontWeight: '500', fontFamily: "Inter", marginLeft: 10 }}>Chormecast</label>
+                      <label style={{ fontSize: 16, fontWeight: '500', marginLeft: 10 }}>Chormecast</label>
                     </span>
                   </div>
                   <div style={{ marginBottom: 20 }}>
                     <span>
                       <IconGreenScreen />
-                      <label style={{ fontSize: 16, fontWeight: '500', fontFamily: "Inter", marginLeft: 10 }}>Greenscreen</label>
+                      <label style={{ fontSize: 16, fontWeight: '500', marginLeft: 10 }}>Greenscreen</label>
                     </span>
                   </div>
                 </div>
               </ColCustomQuipment>
               <ColCustomPrice xl={5} md={22} sm={22} xs={22}>
-                <div style={{ marginBottom: 28, display:'flex', justifyContent:'end' }}>
-                  <label style={{ 
-                    fontSize: 14, 
-                    fontWeight: '600', 
-                    fontFamily: "Inter", 
-                    backgroundColor: "#FF0000", 
-                    borderRadius: 8, 
-                    padding: 8, 
-                    paddingLeft: 12, 
-                    paddingRight: 12, 
-                    color: 'white' 
-                    }}>
+                <div style={{ marginBottom: 28, display: 'flex', justifyContent: 'end' }}>
+                  <label style={{
+                    fontSize: 14,
+                    fontWeight: '600',
+
+                    backgroundColor: "#FF0000",
+                    borderRadius: 8,
+                    padding: 8,
+                    paddingLeft: 12,
+                    paddingRight: 12,
+                    color: 'white'
+                  }}>
                     Ưu đãi phút chót -30%
                   </label>
                 </div>
@@ -135,8 +135,8 @@ export const LayoutTypeRoom = (props: { t: any; post: MPostDetail }) => {
               <ColCustom xl={6} sm={22} md={22} xs={22}
                 className="d-flex align-items-center"
               >
-                <Button style={{ padding: 18, backgroundColor: "#F9C41F", borderRadius: 8, width:'100%', height:'auto'}}>
-                  <label style={{ fontSize: 20, fontWeight: "700", fontFamily: "Inter", display: 'flex', justifyContent: 'center' }}>Book</label>
+                <Button style={{ padding: 18, backgroundColor: "#F9C41F", borderRadius: 8, width: '100%', height: 'auto' }}>
+                  <label style={{ fontSize: 20, fontWeight: "700", display: 'flex', justifyContent: 'center' }}>Book</label>
                 </Button>
               </ColCustom>
             </Row>
