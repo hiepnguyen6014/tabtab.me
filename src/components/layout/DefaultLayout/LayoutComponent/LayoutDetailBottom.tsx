@@ -53,10 +53,10 @@ export const LayoutDetailBottom = (props: {
             <RowPrice>
               <RowPriceLeft>
                 <label style={{ fontSize: 28, fontWeight: "700" }}>Highlight</label>
-                <Grid container>
-                  <Grid item xs={4} md={4} lg={2}>
+                <Grid container spacing={2}>
+                  <Grid style={{ textAlign: 'center' }} item xs={4} md={4} lg={2}>
                     <Block>
-                      <div style={{ fontSize: 36, fontWeight: '900' }} variant="h4">7.0%</div>
+                      <div style={{ fontSize: 36, fontWeight: '900' }}>7.0%</div>
                       <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
                       <div style={{ fontWeight: '700' }}>Guaranteed Rental Return</div>
                     </Block>
