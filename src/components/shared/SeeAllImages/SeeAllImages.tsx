@@ -65,7 +65,7 @@ export const SeeAllImages = memo((props: Props) => {
               {
                 arrayImages.length - 1 == key ? <SwiperSlide >
                   <div style={{ height: '100%', backgroundColor: '#ffffff' }}>
-                    <Grid container spacing={2} style={{ width: '800px', display: 'flex', margin: 'auto', alignItems: 'center' }} >
+                    <Grid container spacing={2} style={{ width: '60%', display: 'flex', margin: 'auto', alignItems: 'center' }} >
                       <Grid item xs={12} md={6} lg={6}>
                         <DynamicAgentInfo />
                       </Grid>
