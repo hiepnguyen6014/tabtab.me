@@ -71,7 +71,7 @@ const BasicList = (props: Props) => {
         <Box>
             <List disablePadding className={classes.basicList}>
                 {items.map((item, index) =>
-                    <ListItemButton selected={selectedIndex === index} onClick={(event) => handleListItemClick(event, index)}>
+                    <ListItemButton key={index} selected={selectedIndex === index} onClick={(event) => handleListItemClick(event, index)}>
                         <span>{item.label}</span>
                         {/* <ListItemText primary={item} /> */}
                     </ListItemButton>)
