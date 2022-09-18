@@ -23,6 +23,7 @@ import {
 import { DefaultContentInWrapperMajor } from './Component.style'
 import { TagProperty, RowPrice, RowActions, RowPriceLeft, RowPriceRight } from './Component.style';
 import dynamic from 'next/dynamic';
+import BasicList from '@root/src/components/shared/mui/BasicList';
 
 interface DataType {
   key: React.Key;
@@ -41,6 +42,19 @@ for (let i = 0; i < 3; i++) {
   });
 }
 
+
+interface Item {
+  label: string,
+  value: string,
+}
+
+const list: Item[] = [
+  { label: 'Shopping', value: 'sale' },
+  { label: 'Food', value: 'rent' },
+  { label: 'Restaurant', value: 'sold' },
+  { label: 'Schools', value: 'rented' },
+];
+
 export const LayoutMap = (props: {
   t: any;
   hrefMain?: { name: string; href: string };
@@ -50,43 +64,46 @@ export const LayoutMap = (props: {
 
   return (
     <>
-      <DefaultWrapperWithBg style={{marginBottom:70, marginTop:50}}>
+      <DefaultWrapperWithBg style={{ marginBottom: 70, marginTop: 50 }}>
         <DefaultContentInWrapperMajor>
           <RowPrice>
             <RowPriceLeft className="container-fluid">
-                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Map</label>
-              <Row style={{marginBottom:5}}>
+              <div style={{ marginBottom: '10px' }}>
+                <BasicList items={list} />
+              </div>
+              {/* <label style={{ fontFamily: "Inter", fontSize: 28, fontWeight: "700", marginBottom: 20 }}>Map</label>
+              <Row style={{ marginBottom: 5 }}>
                 <Col>
-                  <label style={{ padding: 5, paddingLeft: 10,paddingRight:10, borderRadius:8 }}>
+                  <label style={{ padding: 5, paddingLeft: 10, paddingRight: 10, borderRadius: 8 }}>
                     Shopping
                   </label>
                 </Col>
                 <Col>
-                  <label style={{ padding: 5, paddingLeft: 10,paddingRight:10, backgroundColor:'#F9C41F', borderRadius:8}}>
+                  <label style={{ padding: 5, paddingLeft: 10, paddingRight: 10, backgroundColor: '#F9C41F', borderRadius: 8 }}>
                     Food
                   </label>
                 </Col>
                 <Col>
-                  <label style={{ padding: 5, paddingLeft: 10,paddingRight:10, borderRadius:8 }}>
+                  <label style={{ padding: 5, paddingLeft: 10, paddingRight: 10, borderRadius: 8 }}>
                     Restaurent
                   </label>
                 </Col>
                 <Col>
-                  <label style={{ padding: 5, paddingLeft: 10,paddingRight:10, borderRadius:8 }}>
+                  <label style={{ padding: 5, paddingLeft: 10, paddingRight: 10, borderRadius: 8 }}>
                     Schools
                   </label>
                 </Col>
                 <Col>
-                  <label style={{ padding: 5, paddingLeft: 10,paddingRight:10, borderRadius:8 }}>
+                  <label style={{ padding: 5, paddingLeft: 10, paddingRight: 10, borderRadius: 8 }}>
                     Shopping
                   </label>
                 </Col>
                 <Col>
-                  <label style={{ padding: 5, paddingLeft: 10,paddingRight:10, borderRadius:8 }}>
+                  <label style={{ padding: 5, paddingLeft: 10, paddingRight: 10, borderRadius: 8 }}>
                     Shopping
                   </label>
                 </Col>
-              </Row>
+              </Row> */}
               <img src={SRC_IMAGE.MAP} height='100%' width="100%" />
             </RowPriceLeft>
 
