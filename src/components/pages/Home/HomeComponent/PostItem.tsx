@@ -1,4 +1,6 @@
-import { Button, Col, Divider, Image, Row, Skeleton, Typography } from 'antd';
+import { Divider } from 'antd';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import {
   VectorBuilding,
   VectorCalendar,
@@ -61,22 +63,22 @@ const PostItemSell= ({post, t}) => {
         <PostContent onClick={()=> handleRedirect(realEstateId)}>
           <TypographyText>
             <PostTitle>
-              <Row>
-                <Col sm={18}>
-                  <Typography.Title className="price">
+              <div style={{display:'flex' , justifyContent:'space-between'}}>
+                <div >
+                  <Typography className="price">
                     {formatNumToUnit(post.realEstateValueSalePrice, t)}
-                  </Typography.Title>
-                  <Typography.Title
+                  </Typography>
+                  <Typography
                     className="wasPrice"
                     style={{ marginTop: '-13px' }}
                   >
                     {formatNumToUnit(post.realEstateValueSalePrice, t)}
-                  </Typography.Title>
-                </Col>
-                <Col sm={6}>
+                  </Typography>
+                </div>
+                <div >
                   <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Image
-                      preview={false}
+                    <img
+                      // preview={false}
                       style={{ borderRadius: '50%' }}
                       alt="userAvatar"
                       src={SRC_IMAGE.STAFF2}
@@ -84,19 +86,19 @@ const PostItemSell= ({post, t}) => {
                       height="40px"
                     />
                   </div>
-                </Col>
-              </Row>
-              <Row className='wrap-post'>
-                <Typography.Title className="detailPost" style={{overflow:'clip'}}>
+                </div>
+              </div>
+              <div>
+                <Typography className="detailPost" style={{overflow:'clip'}}>
                   {post.realEstateTitle}
-                </Typography.Title>
-                <Typography.Title
+                </Typography>
+                <Typography
                   className="addressPost"
                   style={{ marginTop: '0px' }}
                 >
                   {post.realEstateLocation}
-                </Typography.Title>
-              </Row>
+                </Typography>
+              </div>
             </PostTitle>
             <Divider />
 
@@ -105,10 +107,10 @@ const PostItemSell= ({post, t}) => {
                 {
                   <>
                     <VectorSquare />
-                    <Typography.Text className="textPostMiddle">
+                    <Typography className="textPostMiddle">
                       {/* {post.realEstateLandRealitySquare} */}
                       {parseFloat(post.realEstateLandRealitySquare).toLocaleString()}
-                    </Typography.Text>
+                    </Typography>
                   </>
                 }
               </PostMiddleItem>
@@ -117,9 +119,9 @@ const PostItemSell= ({post, t}) => {
                 {
                   <>
                     <VectorTree />
-                    <Typography.Text className="textPostMiddle">
+                    <Typography className="textPostMiddle">
                       ---
-                    </Typography.Text>
+                    </Typography>
                   </>
                 }
               </PostMiddleItem>
@@ -128,9 +130,9 @@ const PostItemSell= ({post, t}) => {
                 {
                   <>
                     <VectorUser />
-                    <Typography.Text className="textPostMiddle">
+                    <Typography className="textPostMiddle">
                       Chính chủ
-                    </Typography.Text>
+                    </Typography>
                   </>
                 }
               </PostMiddleItem>
@@ -140,10 +142,10 @@ const PostItemSell= ({post, t}) => {
                 {
                   <>
                     <VectorHouse />
-                    <Typography.Text className="textPostMiddle">
+                    <Typography className="textPostMiddle">
                     {/* {post.realEstateLandRealitySquare} */}
                     {parseFloat(post.realEstateLandRealitySquare).toLocaleString()}
-                    </Typography.Text>
+                    </Typography>
                   </>
                 }
               </PostMiddleItem>
@@ -152,9 +154,9 @@ const PostItemSell= ({post, t}) => {
                 {
                   <>
                     <VectorDirection />
-                    <Typography.Text className="textPostMiddle">
+                    <Typography className="textPostMiddle">
                       ---
-                    </Typography.Text>
+                    </Typography>
                   </>
                 }
               </PostMiddleItem>
@@ -163,9 +165,9 @@ const PostItemSell= ({post, t}) => {
                 {
                   <>
                     <VectorBuilding />
-                    <Typography.Text className="textPostMiddle">
+                    <Typography className="textPostMiddle">
                       Chung cư
-                    </Typography.Text>
+                    </Typography>
                   </>
                 }
               </PostMiddleItem>
@@ -174,11 +176,11 @@ const PostItemSell= ({post, t}) => {
             <PostMiddle className='wrap-post'>
               <PostMiddleFooter>
                 {
-                  <span style={{ display: 'flex', alignItems: 'center' }}>
+                  <span style={{ display: 'flex'}}>
                     <VectorCalendar />
-                    <Typography.Text className="textPostMiddle">
+                    <Typography className="textPostMiddle">
                       {`${post.realEstateTotalDate.total || ''} ${t(post.realEstateTotalDate.defineName)}`}
-                    </Typography.Text>
+                    </Typography>
                   </span>
                 }
               </PostMiddleFooter>
@@ -190,14 +192,15 @@ const PostItemSell= ({post, t}) => {
                       style={{
                         borderRadius: '6px',
                         display: 'flex',
-                        alignItems: 'center',
+                        // alignItems: 'center',
                         background: '#F9C41F',
+                        color: "#222222"
                       }}
                     >
                       <VectorTalk />
-                      <label className="textPostMiddle">
+                      {/* <label className="textPostMiddle"> */}
                         CHAT NOW
-                      </label>
+                      {/* </label> */}
                     </Button>
                   </>
                 }
