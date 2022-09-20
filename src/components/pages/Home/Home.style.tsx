@@ -1,7 +1,11 @@
 import { styled } from '@styles/theme';
 import { device } from '@styles/theme/device';
-import { Button, Carousel, Image, Typography, Col, Row } from 'antd';
-
+// import { Col, Row } from 'antd';
+import Carousel from 'react-material-ui-carousel';
+import Image from 'material-ui-image';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 export const BannerWrapper = styled.div`
   max-height: 900px;
   min-height: 800px;
@@ -19,26 +23,24 @@ export const BannerWrapper = styled.div`
   }
 `;
 export const CarouselInBanner = styled(Carousel)`
-  height: 100%;
-  width: 100%;
   text-align: center;
   object-fit: contain;
   object-position: center;
+  animation: slide;
+  duration: 500
 `;
 export const ImageBanner = styled(Image)`
-  height: 100%;
-  width: 100%;
   min-height: 750px;
-  
   @media ${device.maxSm} {
     height: 300px;
   }
 `;
 
 export const ContentInBanner = styled.div`
-  position: absolute;
-  bottom: 5%;
+  z-index: 99;
+  bottom: 2%;
   width: 100%;
+  position: absolute;
   @media ${device.maxMd} {
     width: 1200px;
   }
@@ -52,13 +54,14 @@ export const Content = styled.div`
   margin: auto;
   text-align: left;
   .search-content {
-    // display: flex;
-    // justify-content: center;
-    left: 25%;
-    margin-bottom: 7%;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    // margin-bottom: 2%;
     @media ${device.maxMd} {
-      margin-bottom: 0%;
+      display: none
+    }
+    @media ${device.maxSm} {
+      display: none
     }
   }
   .search-text {
@@ -201,7 +204,7 @@ export const ViewWrap = styled.div`
   }
 `;
 
-export const ColWrap = styled(Col)`
+export const ColWrap = styled(Grid)`
   .flex-wrap {
     display: flex;
     justify-content: center;
@@ -553,7 +556,7 @@ export const RightPostSpot = styled.div`
 
 export const ArticleWrap = styled.article`
   width: 100%;
-  height: 100%;
+  // height: 100%;
   position: relative;
   overflow: hidden;
   @media ${device.maxSm} {
@@ -721,14 +724,15 @@ export const HubText = styled(Typography)`
   }
 `;
 
-export const ColA = styled(Col)`
-  width: 100%;
+export const ColA = styled(Grid)`
+  // width: 100%;
   cursor: pointer;
   &:hover {
     transform: translateY(-3px);
   }
   @media ${device.maxSm} {
     padding-bottom: 20px;
+    background: rgba(249, 196, 31, 0.1);
   }
 `;
 

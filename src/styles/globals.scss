@@ -21,17 +21,14 @@ a {
 
 main {
   min-height: 400px;
+  .css-1m9128y {
+    position: absolute;
+    z-index: 99;
+    bottom: 2;
+    }
+  
 }
 
 * {
   box-sizing: border-box;
-}
-
-.ant-carousel {
-  margin-bottom: 600px;
-
-  .slick-dots {
-    justify-content: end;
-    margin-right: 5%;
-  }
 }

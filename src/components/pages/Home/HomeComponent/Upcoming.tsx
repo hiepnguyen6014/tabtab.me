@@ -1,4 +1,4 @@
-import { Row, Typography } from 'antd';
+import Typography from '@mui/material/Typography';
 import {
   WrapperSpot,
   ColA,
@@ -13,7 +13,6 @@ import {
 } from 'public/icons';
 import { SRC_IMAGE } from '@constants';
 import ItemPostUpComing from '../UpComing/ItemPostUpComing';
-import ItemBoostHub from '../UpComing/ItemBoostHub';
 import { useState } from 'react';
 
 const Upcoming: React.FC<{}> = () => {
@@ -57,32 +56,43 @@ const Upcoming: React.FC<{}> = () => {
   return (
     <WrapperSpot>
       <GeneralText>
-        <Typography.Title className="title-general">Upcoming</Typography.Title>
+        <Typography className="title-general">Upcoming</Typography>
         <GeneralWrap>
           <div className="general-between-wrap">
             <div className="general-wrap">
               <IconQuotes />
-              <Typography.Title className="content-general">
+              <Typography className="content-general">
                 anh Hùng đừng bỏ qua sự kiện sắp tới nha
-              </Typography.Title>
+              </Typography>
             </div>
             <div onClick={e => setShowContent(showContent ? false : true)} style={{ cursor: "pointer" }}>
-              <Typography.Text className="content-hide">HIDE</Typography.Text>
+              <Typography className="content-hide">HIDE</Typography>
             </div>
           </div>
         </GeneralWrap>
       </GeneralText>
-      {showContent && <Row
-        gutter={{
-          xs: 8,
-          sm: 16,
-          md: 24,
-          lg: 32,
-        }}
+      {showContent && <ColA
+        container
+         xs={8} sm={16} md={24} lg={32}
+        spacing={4}
+        sx={{ marginTop: '20px', marginBottom: '50px'}}
+      // sx={{ flexGrow: 1 }}
+      // gutter={{
+      //   xs: 8,
+      //   sm: 16,
+      //   md: 24,
+      //   lg: 32,
+      // }}
       >
         {UPCOMINGLIST.map((item, key) => {
           return (
-            <ColA className="gutter-row" sm={24} lg={6} key={key}>
+            <ColA key={key}
+              sx={{
+                // height: 140,
+                width: 300,
+                margin: 0.5
+              }}
+              >
               <ItemPostUpComing items={item} />
             </ColA>
           );
@@ -90,7 +100,7 @@ const Upcoming: React.FC<{}> = () => {
         {/* <ColA className="gutter-row" sm={24} lg={6}> */}
         {/* <ItemBoostHub /> */}
         {/* </ColA> */}
-      </Row>}
+      </ColA>}
     </WrapperSpot>
   );
 };
