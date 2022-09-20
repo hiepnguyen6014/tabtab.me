@@ -1,4 +1,5 @@
-import { Row, Typography, Image } from 'antd';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import {
   WrapperSpot,
   TextWrap,
@@ -18,54 +19,56 @@ const Opinion: React.FC<{}> = () => {
   return (
     <WrapperSpot>
       <GeneralText>
-        <Typography.Title className="title-general">Opinion</Typography.Title>
+        <Typography className="title-general">Opinion</Typography>
         <GeneralWrap>
           <div className="general-between-wrap">
             <div className="general-wrap">
               <IconQuotes />
-              <Typography.Title
+              <Typography
                 className="content-general"
               >
                 Nhận định chuyên gia cho riêng Hùng
-              </Typography.Title>
+              </Typography>
             </div>
-            <div onClick={e => setShowContent(showContent ? false : true)} style={{cursor:"pointer"}}>
-              <Typography.Text
+            <div onClick={e => setShowContent(showContent ? false : true)} style={{ cursor: "pointer" }}>
+              <Typography
                 className='content-hide'
               >
                 HIDE
-              </Typography.Text>
+              </Typography>
             </div>
           </div>
         </GeneralWrap>
       </GeneralText>
-      {showContent && <Row
-        gutter={{
-          xs: 8,
-          sm: 16,
-          md: 24,
-          lg: 32,
-        }}
+      {showContent && <Grid
+        container
+        xs={8} sm={16} md={24} lg={32}
+      // gutter={{
+      //   xs: 8,
+      //   sm: 16,
+      //   md: 24,
+      //   lg: 32,
+      // }}
       >
         <ColWrap className="gutter-row" xs={12} md={6}>
           <TextWrap>
             <div className="wrap-text">
-              <Typography.Paragraph className="text-opinion">
+              <Typography className="text-opinion">
                 There are fines of up to €3,000 if you don’t self-isolate on.
-              </Typography.Paragraph>
+              </Typography>
             </div>
 
-            <Typography.Paragraph className="text-name">
+            <Typography className="text-name">
               Darrell Steward
-            </Typography.Paragraph>
-            <Typography.Paragraph className="text-role">
+            </Typography>
+            <Typography className="text-role">
               Chief Operations Officer
-            </Typography.Paragraph>
+            </Typography>
             <div className="flex-wrap">
               <VerticalLine />
-              <Typography.Paragraph className="text-company">
+              <Typography className="text-company">
                 APPLE
-              </Typography.Paragraph>
+              </Typography>
               <VerticalLine />
             </div>
           </TextWrap>
@@ -79,12 +82,12 @@ const Opinion: React.FC<{}> = () => {
             }}
           >
             <div className="circle-wrap">
-              <Image
+              <img
                 src={SRC_IMAGE.CIRCLE}
                 alt="Picture of the author"
                 width="100%"
                 height="100%"
-                preview={false}
+                // preview={false}
                 style={{
                   justifyContent: 'center',
                   objectPosition: 'center',
@@ -94,14 +97,14 @@ const Opinion: React.FC<{}> = () => {
               />
             </div>
             <div className="image-wrap">
-              <Image
+              <img
                 src={SRC_IMAGE.STAFF3}
                 alt="Picture of the author"
                 width="100%"
                 height="100%"
-                preview={false}
+              // preview={false}
               />
-              <div className="horizotalLine" style={{marginTop:"-5px"}}/>
+              <div className="horizotalLine" style={{ marginTop: "-5px" }} />
             </div>
           </div>
           {/* <div className="horizotalLine"/> */}
@@ -109,23 +112,23 @@ const Opinion: React.FC<{}> = () => {
         <ColWrap className="gutter-row" xs={12} md={6}>
           <TextWrap>
             <div className="wrap-text">
-              <Typography.Paragraph className="text-opinion">
+              <Typography className="text-opinion">
                 Once neglected in favour of supposedly healthier products or
                 produced
-              </Typography.Paragraph>
+              </Typography>
             </div>
 
-            <Typography.Paragraph className="text-name">
+            <Typography className="text-name">
               Albert Flores
-            </Typography.Paragraph>
-            <Typography.Paragraph className="text-role">
+            </Typography>
+            <Typography className="text-role">
               Chief Operations Officer
-            </Typography.Paragraph>
+            </Typography>
             <div className="flex-wrap">
               <VerticalLine />
-              <Typography.Paragraph className="text-company">
+              <Typography className="text-company">
                 ANGIA
-              </Typography.Paragraph>
+              </Typography>
               <VerticalLine />
             </div>
           </TextWrap>
@@ -138,46 +141,46 @@ const Opinion: React.FC<{}> = () => {
             }}
           >
             <div className="circle-wrap">
-              <Image
+              <img
                 src={SRC_IMAGE.CIRCLE}
                 alt="Picture of the author"
                 width="100%"
                 height="100%"
-                preview={false}
+              // preview={false}
               />
             </div>
             <div className="image-wrap">
-              <Image
+              <img
                 src={SRC_IMAGE.STAFF1}
                 alt="Picture of the author"
                 width="100%"
                 height="100%"
-                preview={false}
+              // preview={false}
               />
-            <div className="horizotalLine" style={{marginTop:"-5px"}}/>
+              <div className="horizotalLine" style={{ marginTop: "-5px" }} />
             </div>
           </div>
-          
+
 
         </ColWrap>
         <ColWrap className="gutter-row" xs={12} md={6}>
           <TextWrap>
             <div className="wrap-text">
-              <Typography.Paragraph className="text-opinion">
+              <Typography className="text-opinion">
                 Better than ever, thanks to chefs who are adding bone marrow
-              </Typography.Paragraph>
+              </Typography>
             </div>
-            <Typography.Paragraph className="text-name">
+            <Typography className="text-name">
               Marvin McKinney
-            </Typography.Paragraph>
-            <Typography.Paragraph className="text-role">
+            </Typography>
+            <Typography className="text-role">
               Chief Operations Officer
-            </Typography.Paragraph>
+            </Typography>
             <div className="flex-wrap">
               <VerticalLine />
-              <Typography.Paragraph className="text-company">
+              <Typography className="text-company">
                 ANGIA
-              </Typography.Paragraph>
+              </Typography>
               <VerticalLine />
             </div>
           </TextWrap>
@@ -190,23 +193,23 @@ const Opinion: React.FC<{}> = () => {
             }}
           >
             <div className="circle-wrap">
-              <Image
+              <img
                 src={SRC_IMAGE.CIRCLE}
                 alt="Picture of the author"
                 width="100%"
                 height="100%"
-                preview={false}
+              // preview={false}
               />
             </div>
             <div className="image-wrap">
-              <Image
+              <img
                 src={SRC_IMAGE.STAFF2}
                 alt="Picture of the author"
                 width="100%"
                 height="100%"
-                preview={false}
+              // preview={false}
               />
-              <div className="horizotalLine" style={{marginTop:"-5px"}}/>
+              <div className="horizotalLine" style={{ marginTop: "-5px" }} />
             </div>
           </div>
 
@@ -214,22 +217,22 @@ const Opinion: React.FC<{}> = () => {
         <ColWrap className="gutter-row" xs={12} md={6}>
           <TextWrap>
             <div className="wrap-text">
-              <Typography.Paragraph className="text-opinion">
+              <Typography className="text-opinion">
                 It was in the Fat Duck that I first noticed it, around the turn
                 of the millennium
-              </Typography.Paragraph>
+              </Typography>
             </div>
-            <Typography.Paragraph className="text-name">
+            <Typography className="text-name">
               Kristin Watson
-            </Typography.Paragraph>
-            <Typography.Paragraph className="text-role">
+            </Typography>
+            <Typography className="text-role">
               Sale Manager
-            </Typography.Paragraph>
+            </Typography>
             <div className="flex-wrap">
               <VerticalLine />
-              <Typography.Paragraph className="text-company">
+              <Typography className="text-company">
                 REVER
-              </Typography.Paragraph>
+              </Typography>
               <VerticalLine />
             </div>
           </TextWrap>
@@ -243,28 +246,28 @@ const Opinion: React.FC<{}> = () => {
             }}
           >
             <div className="circle-wrap">
-              <Image
+              <img
                 src={SRC_IMAGE.CIRCLE}
                 alt="Picture of the author"
                 width="100%"
                 height="100%"
-                preview={false}
+              // preview={false}
               />
             </div>
             <div className="image-wrap">
-              <Image
+              <img
                 src={SRC_IMAGE.STAFF4}
                 alt="Picture of the author"
                 width="100%"
                 height="100%"
-                preview={false}
+              // preview={false}
               />
-              <div className="horizotalLine" style={{marginTop:"-5px"}}/>
+              <div className="horizotalLine" style={{ marginTop: "-5px" }} />
             </div>
           </div>
 
         </ColWrap>
-      </Row>}
+      </Grid>}
     </WrapperSpot>
   );
 };

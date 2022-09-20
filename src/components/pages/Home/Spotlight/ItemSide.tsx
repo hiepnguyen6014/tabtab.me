@@ -1,9 +1,13 @@
-import {  Image, Row, Typography } from 'antd';
+import { Row } from 'antd';
+import Image from 'material-ui-image';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import {
   ItemPostSpot,
   LeftPostSpot,
   RightPostSpot,
   SpotlightText,
+  ImageWrap
 } from '../Home.style';
 import { DivA, TextColor } from './ItemSpotlight.style';
 
@@ -19,20 +23,20 @@ const ItemSide = ({ item }) => {
                   <TextColor colorText={item.colorTitle}>
                     {item.title}
                   </TextColor>
-                  <Typography.Paragraph className="detailPostSpot">
+                  <Typography className="detailPostSpot">
                     {item.content}
-                  </Typography.Paragraph>
+                  </Typography>
                 </div>
               </SpotlightText>
             </ItemPostSpot>
           </LeftPostSpot>
           <RightPostSpot className="d-flex align-self-center justify-content-end">
-            <Image
+            <img
               alt="pic"
               src={item.image}
               height="84px"
               width="84px"
-              preview={false}
+              // preview={false}
             />
           </RightPostSpot>
           <div className="vertical-line" />
