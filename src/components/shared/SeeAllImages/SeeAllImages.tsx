@@ -70,7 +70,7 @@ export const SeeAllImages = memo((props: Props) => {
                         <DynamicAgentInfo />
                       </Grid>
                       <Grid item xs={12} md={6} lg={6}>
-                        <ContactForm onSubmit={() => console.log('hehe')} />
+                        <ContactForm onSubmit={() => console.log()} />
                       </Grid>
                     </Grid>
                   </div>

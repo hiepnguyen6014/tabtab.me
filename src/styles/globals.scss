@@ -32,3 +32,38 @@ main {
 * {
   box-sizing: border-box;
 }
+
+.ant-carousel {
+  margin-bottom: 600px;
+
+  .slick-dots {
+    justify-content: end;
+    margin-right: 5%;
+  }
+}
+
+/* Custom swiper pagination */
+.custom-swiper-pagination {
+  .swiper-pagination {
+    text-align: right;
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    right: 10px;
+    left: auto;
+  }
+
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 3px;
+    opacity: 0.7;
+    border-radius: 0;
+    background: #ffffff;
+    transition: all 0.5s;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #7A7A7A;
+    opacity: 1;
+  }
+}

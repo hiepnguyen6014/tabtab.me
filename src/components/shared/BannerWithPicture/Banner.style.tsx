@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { styled } from '@styles/theme';
 import { device } from '@styles/theme/device';
 import { Carousel, Image } from 'antd';
@@ -78,3 +79,32 @@ export const ButtonShowAllImageMobile = styled(ButtonShowAllImage)`
 position:absolute;
 z-index:9;
 `
+
+export const ButtonShowAllImages = styled(props => <Button {...props} />)`
+  position: absolute;
+  z-index: 9;
+  right: 1%;
+  bottom: 3%;
+  font-size: 16px;
+  text-transform: none;
+  padding: 4px 20px;
+  color: #4E4E4E;
+  background-color: "#ffffff";
+  border-color: "none";
+  background: ${props => props.bg ? props.bg : '#ffffff'};
+  border-radius: 8px;
+
+  &:hover {
+    color: #ffffff;
+    background: #222222;
+    border: 1px solid transparent;
+
+    svg {
+      path {
+        fill: #fff;
+        transition: all .2s ease;
+      }
+    }
+  }
+`
+
