@@ -1,27 +1,21 @@
 
-import { BreadcrumbCustom } from '../../../shared/Breadcrum/index';
-import { ButtonSave } from '../../../shared/ButtonSave/index';
-import { ButtonShare } from '../../../shared/ButtonShare';
-import { TextParagraph } from '../../../shared/TextParagraph';
-import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
-import { Block } from './Component.style';
-
-import { PUBLIC_ROUTES, ROUTES } from '@constants';
+import { ROUTES } from '@constants';
 import { filterKey } from '@contexts';
 import { MPostDetail } from '@models/MPostDetail';
-import { IconCheck, IconMark, IconTimer } from '@root/public/icons';
-import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
-import { colors } from '@styles/theme/colors';
-import { Col, Divider, Row, Typography } from 'antd';
+import { Grid, Typography } from '@mui/material';
+import { IconCheck } from '@root/public/icons';
+import { Col, Divider, Row } from 'antd';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import {
-  DefaultContentInWrapper,
-  DefaultLinkText,
-  DefaultRowTitle,
-  DefaultWrapperWithBg,
+  DefaultContentInWrapper, DefaultRowTitle,
+  DefaultWrapperWithBg
 } from '..';
-import { TagProperty, RowPrice, RowActions, RowPriceLeft, RowPriceRight } from './Component.style';
-import dynamic from 'next/dynamic';
+import { TextParagraph } from '../../../shared/TextParagraph';
+import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
+import { Block, RowActions, RowPrice, RowPriceLeft } from './Component.style';
+
+
 
 export const LayoutDetailBottom = (props: {
   t: any;
@@ -58,71 +52,52 @@ export const LayoutDetailBottom = (props: {
           <div>
             <RowPrice>
               <RowPriceLeft>
-                <label style={{ fontFamily: "Inter", fontSize: 28, fontWeight: "700", marginBottom: 20 }}>Highlight</label>
-                <Row>
-                  <Col md={6} xl={4} xs={7} sm={11} style={{ marginRight: 12, marginBottom: 12 }}>
-                    <Block>
-                      <div style={{ fontSize: 36, fontWeight: '900', fontFamily: "Inter" }}>7.0%</div>
-                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
-                      <div style={{ fontSize: 14, fontWeight: '700', fontFamily: "Inter" }}>Guaranteed Rental Return</div>
-                    </Block>
-                  </Col>
-                  <Col md={6} xl={4} xs={7} sm={11} style={{ marginRight: 12, marginBottom: 12 }}>
-                    <Block>
-                      <div style={{ fontSize: 36, fontWeight: '900', fontFamily: "Inter" }}>10%</div>
-                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
-                      <div style={{ fontSize: 14, fontWeight: '700', fontFamily: "Inter" }}>Downpayment Ratio</div>
-                    </Block>
-                  </Col>
-                  <Col md={6} xl={4} xs={7} sm={11} style={{ marginRight: 12, marginBottom: 12 }}>
-                    <Block>
-                      <div style={{ fontSize: 36, fontWeight: '900', fontFamily: "Inter" }}>40%</div>
-                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
-                      <div style={{ fontSize: 14, fontWeight: '700', fontFamily: "Inter" }}>Sold Rate</div>
-                    </Block>
-                  </Col>
-                  <Col md={6} xl={4} xs={7} sm={11} style={{ marginRight: 12, marginBottom: 12 }}>
-                    <Block>
-                      <div style={{ fontSize: 36, fontWeight: '900', fontFamily: "Inter" }}>12%</div>
-                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
-                      <div style={{ fontSize: 14, fontWeight: '700', fontFamily: "Inter" }}>Price Increase</div>
-                    </Block>
-                  </Col>
-                  <Col md={6} xl={4} xs={7} sm={11} style={{ marginRight: 12, marginBottom: 12 }}>
-                    <Block>
-                      <div style={{ fontSize: 36, fontWeight: '900', fontFamily: "Inter" }}>80%</div>
-                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
-                      <div style={{ fontSize: 14, fontWeight: '700', fontFamily: "Inter" }}>Contruction Progress</div>
-                    </Block>
-                  </Col>
-                  {/* <Col md={6} xl={3} xs={7} sm={11} style={{ marginRight: 12, marginBottom: 24 }}>
+                <label style={{ fontSize: 28, fontWeight: "700" }}>Highlight</label>
+                <Grid container spacing={2}>
+                  <Grid style={{ textAlign: 'center' }} item xs={4} md={4} lg={2}>
                     <Block>
                       <div style={{ fontSize: 36, fontWeight: '900' }}>7.0%</div>
-                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8 , backgroundColor:'#222222'}} />
-                      <div style={{ fontSize: 14, fontWeight: '700' }}>Guaranteed Rental Return</div>
+                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
+                      <div style={{ fontWeight: '700' }}>Guaranteed Rental Return</div>
                     </Block>
-                  </Col> */}
-                </Row>
-                <Row>
-                  <Col xl={8} md={12} xs={20}>
-                    <span>
-                      <IconCheck />
-                      <label style={{ marginLeft: 12, fontSize: 18, fontWeight: "700", fontFamily: "Inter" }}>High Return Yield</label>
-                    </span>
-                  </Col>
-                  <Col xl={8} md={12} xs={20}>
-                    <span>
-                      <IconCheck />
-                      <label style={{ marginLeft: 12, fontSize: 18, fontWeight: "700", fontFamily: "Inter" }}>Promotional Discount</label>
-                    </span>
-                  </Col>
-                  <Col xl={8} md={12} xs={20}>
-                    <span>
-                      <IconCheck />
-                      <label style={{ marginLeft: 12, fontSize: 18, fontWeight: "700", fontFamily: "Inter" }}>High Appreciation Value</label>
-                    </span>
-                  </Col>
-                </Row>
+                  </Grid>
+
+                  <Grid item xs={4} md={4} lg={2}>
+                    <Block>
+                      <div style={{ fontSize: 36, fontWeight: '900' }}>10%</div>
+                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
+                      <div style={{ fontWeight: '700' }}>Downpayment Ratio</div>
+                    </Block>
+                  </Grid>
+                  <Grid item xs={4} md={4} lg={2}>
+                    <Block>
+                      <div style={{ fontSize: 36, fontWeight: '900' }}>40%</div>
+                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
+                      <div style={{ fontWeight: '700' }}>Sold Rate</div>
+                    </Block>
+                  </Grid>
+                  <Grid item xs={4} md={4} lg={2}>
+                    <Block>
+                      <div style={{ fontSize: 36, fontWeight: '900' }}>12%</div>
+                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
+                      <div style={{ fontWeight: '700' }}>Price Increase</div>
+                    </Block>
+                  </Grid>
+                  <Grid item xs={4} md={4} lg={2}>
+                    <Block>
+                      <div style={{ fontSize: 36, fontWeight: '900' }}>80%</div>
+                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
+                      <div style={{ fontWeight: '700' }}>Contruction Progress</div>
+                    </Block>
+                  </Grid>
+                  <Grid item xs={4} md={4} lg={2}>
+                    <Block>
+                      <div style={{ fontSize: 36, fontWeight: '900' }}>2022</div>
+                      <Divider style={{ height: 2, marginTop: 8, marginBottom: 8, backgroundColor: '#222222' }} />
+                      <div style={{ fontWeight: '700' }}>Completion Year</div>
+                    </Block>
+                  </Grid>
+                </Grid>
               </RowPriceLeft>
             </RowPrice>
             <DefaultRowTitle style={{ marginTop: 80 }}>

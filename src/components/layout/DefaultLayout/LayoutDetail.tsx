@@ -9,10 +9,10 @@ import { getDetailPost } from '../../../core/services/post';
 import { getPostTypeId } from '@utils';
 import { Loading, PlaceHolderLoading } from '../../shared';
 import { Row, Col, Typography } from 'antd';
-import { IconFly, IconVirtual, IconMap, IconImage } from '@root/public/icons';
-import { ButtonWrap, ButtonWrapProperties } from './DefaultComponent.style'
+import { IconFly, IconVirtual, IconMap, IconImage, IconFloor } from '@root/public/icons';
+import { ButtonWrap, ButtonWrap1, ButtonWrapProperties } from './DefaultComponent.style'
 import Link from 'next/link';
-
+import { Box, Button, Grid, IconButton } from '@mui/material';
 interface Props {
   t: any;
   typePage?: string;
@@ -208,34 +208,17 @@ const LayoutDetail = (props: Props) => {
               <DefaultWrapperWithBg typeof="fullScreen">
                 <DefaultContentNoGrid style={{ paddingTop: '16px' }} typeof="fullScreen">
                   <DynamicBanner t={translate} images={dataDetail.arrayImage} />
-                  <Row style={{ marginLeft: 16, marginRight: 16 }}>
-                    <Col lg={4} md={6} sm={12} style={{ marginTop: 20, width: 1000 }}>
-                      <ButtonWrap icon={<IconImage />}>
-                        <span style={{ fontFamily: "Inter", fontSize: 16, fontWeight: '600' }}>Floor plan</span>
-                      </ButtonWrap>
-                    </Col>
-                    <Col lg={4} md={6} sm={12} style={{ marginTop: 20 }}>
-                      <ButtonWrap icon={<IconImage />}>
-                        <span style={{ fontFamily: "Inter", fontSize: 16, fontWeight: '600' }}>Floor plan</span>
-                      </ButtonWrap>
-                    </Col>
-                    <Col lg={4} md={6} sm={12} style={{ marginTop: 20 }}>
-                      <ButtonWrap icon={<IconVirtual />} style={{ marginRight: 10 }}>
-                        <span style={{ fontFamily: "Inter", fontSize: 16, fontWeight: '600' }}>Virtual tour</span>
-                      </ButtonWrap>
-                    </Col>
-                    <Col lg={4} md={6} sm={12} style={{ marginTop: 20 }}>
-                      <ButtonWrap icon={<IconMap />} style={{ marginRight: 10 }}>
-                        <span style={{ fontFamily: "Inter", fontSize: 16, fontWeight: '600' }}>Map view</span>
-                      </ButtonWrap>
-                    </Col>
-                    <Col lg={8} md={12} sm={24} style={{ justifyContent: 'flex-end', display: 'flex', marginTop: 20 }}>
-                      <ButtonWrapProperties background="#F9C41F1A" icon={<IconFly />}>
-                        <span style={{ fontFamily: "Inter", fontSize: 16, fontWeight: '600' }}>Way to this property</span>
-                      </ButtonWrapProperties>
-                    </Col>
-
-                  </Row>
+                  <Grid container mt={2}>
+                    <Grid item xs={12} md={8} lg={10}>
+                      <ButtonWrap1 sx={{ mt: 1 }} startIcon={<IconFloor />} variant="outlined">Floor plan</ButtonWrap1>
+                      <ButtonWrap1 sx={{ mt: 1 }} startIcon={<IconFloor />} variant="outlined">Floor plan</ButtonWrap1>
+                      <ButtonWrap1 sx={{ mt: 1 }} startIcon={<IconVirtual />} variant="outlined">Virtual tour</ButtonWrap1>
+                      <ButtonWrap1 sx={{ mt: 1 }} startIcon={<IconMap />} variant="outlined">Map view</ButtonWrap1>
+                    </Grid>
+                    <Grid display="flex" sx={{ mt: 1 }} justifyContent={{ lg: 'flex-end', xs: '' }} item xs={12} md={4} lg={2}>
+                      <ButtonWrap1 startIcon={<IconFly />} bg="rgba(249, 196, 31, 0.1)" style={{ minWidth: '234px', marginRight: '0px', borderColor: '#F9C41F' }} variant="outlined">Way to this property</ButtonWrap1>
+                    </Grid>
+                  </Grid>
                 </DefaultContentNoGrid>
               </DefaultWrapperWithBg>
 
