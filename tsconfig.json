@@ -34,6 +34,9 @@
       "@icons/*": [
         "public/images/icons/*"
       ],
+      "@public": [
+        "public/*"
+      ],
       "@core": [
         "src/core"
       ],
