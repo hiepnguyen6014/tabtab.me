@@ -4,9 +4,22 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import {
-  Account, Community, CRM, HelpCenter, Logo, LogoDark, Logout, Message, PMA, Properties, Roommate, SocialBlack, Transaction, VectorGlobal,
+  Account,
+  Community,
+  CRM,
+  HelpCenter,
+  Logo,
+  LogoDark,
+  Logout,
+  Message,
+  PMA,
+  Properties,
+  Roommate,
+  SocialBlack,
+  Transaction,
+  VectorGlobal,
   VectorMenuOutline,
-  VectorPeople
+  VectorPeople,
 } from '@root/public/icons';
 // import { Button, Image, Popover } from 'antd';
 
@@ -19,9 +32,7 @@ import Config from '@root/config';
 import { Navigator } from '@utils';
 import Link from 'next/link';
 import { useContext } from 'react';
-import {
-  ButtonWrap, ButtonWrapLogin, TextPost
-} from './Header.style';
+import { ButtonWrap, ButtonWrapLogin, Desktop, TextPost } from './Header.style';
 
 interface Props {
   t: any;
@@ -174,7 +185,7 @@ const HeaderDesktop = (props: Props) => {
 
   return (
     //OLD LAYOUT ANTDSIGN
-    
+
     // <MainContentDesktop className="not-login">
     //   <LogoWrapper>
     //     {/* <div>
@@ -330,146 +341,148 @@ const HeaderDesktop = (props: Props) => {
 
     // new mui layout
     <>
-      <Box>
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          sx={{
-            padding: '30px 50px 0px 50px',
-            height: '101px',
-          }}
-        >
-          <Box sx={{}}>
-            {themeLight ? (
-              <Logo
-                height={44}
-                width={110}
-                style={{ cursor: 'pointer' }}
-                onClick={() => onRedirect(ROUTES.HOME)}
-              />
-            ) : (
-              <LogoDark
-                height={44}
-                width={110}
-                style={{ cursor: 'pointer' }}
-                onClick={() => onRedirect(ROUTES.HOME)}
-              />
-            )}
-          </Box>
-          <Stack direction="row" alignItems="center">
-            <Box>
+      <Desktop>
+        <Box>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            sx={{
+              padding: '30px 50px 0px 50px',
+              height: '101px',
+            }}
+          >
+            <Box sx={{}}>
               {themeLight ? (
-                <div className="d-flex">
-                  <Link href="/find-person">
-                    <a>
-                      <TextPost
-                        style={{
-                          color: '#FEFFFF',
-                          marginRight: 40,
-                        }}
-                      >
-                        Find person
-                      </TextPost>
-                    </a>
-                  </Link>
-                  <Link href="https://user.tabtab.imazin.asia/post-news">
-                    <a>
-                      <TextPost style={{ color: '#FEFFFF' }}>
-                        Add listing
-                      </TextPost>
-                    </a>
-                  </Link>
-                </div>
+                <Logo
+                  height={44}
+                  width={110}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => onRedirect(ROUTES.HOME)}
+                />
               ) : (
-                <div className="d-flex">
-                  <Link href="/find-person">
-                    <a>
-                      <TextPost
-                        style={{
-                          color: '#222222',
-                          marginRight: 40,
-                        }}
-                      >
-                        Find person
-                      </TextPost>
-                    </a>
-                  </Link>
-                  <Link href="https://user.tabtab.imazin.asia/post-news">
-                    <a>
-                      <TextPost style={{ color: '#222222' }}>
-                        Add listing
-                      </TextPost>
-                    </a>
-                  </Link>
-                </div>
+                <LogoDark
+                  height={44}
+                  width={110}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => onRedirect(ROUTES.HOME)}
+                />
               )}
             </Box>
-            <Box mr="32px" ml="64px">
-              {themeLight ? (
-                <VectorGlobal style={{ marginLeft: 20, cursor: 'pointer' }} />
-              ) : (
-                <SocialBlack style={{ marginLeft: 20, cursor: 'pointer' }} />
-              )}
-            </Box>
-            <button
-              className="d-flex rounded-pill justify-content-between"
-              style={{
-                display: 'flex',
-                backgroundColor: '#F9C41F',
-                width: '80px',
-                height: '36px',
-                // cursor: 'pointer',
-                border: 'none',
-              }}
-              onClick={handleClick}
-            >
-              <div
-                style={{ flex: 1 }}
-                className="d-flex align-self-center justify-content-center"
+            <Stack direction="row" alignItems="center">
+              <Box>
+                {themeLight ? (
+                  <div className="d-flex">
+                    <Link href="/find-person">
+                      <a>
+                        <TextPost
+                          style={{
+                            color: '#FEFFFF',
+                            marginRight: 40,
+                          }}
+                        >
+                          Find person
+                        </TextPost>
+                      </a>
+                    </Link>
+                    <Link href="https://user.tabtab.imazin.asia/post-news">
+                      <a>
+                        <TextPost style={{ color: '#FEFFFF' }}>
+                          Add listing
+                        </TextPost>
+                      </a>
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="d-flex">
+                    <Link href="/find-person">
+                      <a>
+                        <TextPost
+                          style={{
+                            color: '#222222',
+                            marginRight: 40,
+                          }}
+                        >
+                          Find person
+                        </TextPost>
+                      </a>
+                    </Link>
+                    <Link href="https://user.tabtab.imazin.asia/post-news">
+                      <a>
+                        <TextPost style={{ color: '#222222' }}>
+                          Add listing
+                        </TextPost>
+                      </a>
+                    </Link>
+                  </div>
+                )}
+              </Box>
+              <Box mr="32px" ml="64px">
+                {themeLight ? (
+                  <VectorGlobal style={{ marginLeft: 20, cursor: 'pointer' }} />
+                ) : (
+                  <SocialBlack style={{ marginLeft: 20, cursor: 'pointer' }} />
+                )}
+              </Box>
+              <button
+                className="d-flex rounded-pill justify-content-between"
+                style={{
+                  display: 'flex',
+                  backgroundColor: '#F9C41F',
+                  width: '80px',
+                  height: '36px',
+                  // cursor: 'pointer',
+                  border: 'none',
+                }}
+                onClick={handleClick}
               >
-                <VectorMenuOutline className="d-flex align-self-center" />
-              </div>
-              <VectorPeople
-                className="d-flex align-self-center"
-                style={{ marginRight: 4 }}
-              />
-            </button>
-            <Menu
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
-              }}
-              anchorOrigin={{
-                vertical: 40,
-                horizontal: -200,
-              }}
-              sx={{
-                '&.MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper':
-                  {
-                    backgroundColor: 'red',
-                  },
-              }}
-            >
-              {Object.keys(currentUser).length ? content : content1}
-            </Menu>
+                <div
+                  style={{ flex: 1 }}
+                  className="d-flex align-self-center justify-content-center"
+                >
+                  <VectorMenuOutline className="d-flex align-self-center" />
+                </div>
+                <VectorPeople
+                  className="d-flex align-self-center"
+                  style={{ marginRight: 4 }}
+                />
+              </button>
+              <Menu
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  'aria-labelledby': 'basic-button',
+                }}
+                anchorOrigin={{
+                  vertical: 40,
+                  horizontal: -200,
+                }}
+                sx={{
+                  '&.MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper':
+                    {
+                      backgroundColor: 'red',
+                    },
+                }}
+              >
+                {Object.keys(currentUser).length ? content : content1}
+              </Menu>
+            </Stack>
           </Stack>
-        </Stack>
-        <Box
-          sx={{
-            background:
-              'linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%)',
-            opacity: '0.4',
-            position: 'absolute',
-            top: 0,
-            height: '101px',
-            width: '100%',
-            zIndex: '-1',
-          }}
-        ></Box>
-      </Box>
+          <Box
+            sx={{
+              background:
+                'linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%)',
+              opacity: '0.4',
+              position: 'absolute',
+              top: 0,
+              height: '101px',
+              width: '100%',
+              zIndex: '-1',
+            }}
+          ></Box>
+        </Box>
+      </Desktop>
     </>
   );
 };
