@@ -9,7 +9,6 @@ import { DefaultContentInWrapperMajor } from './Component.style'
 import { TagProperty, RowPrice, RowActions, RowPriceLeft, RowPriceRight } from './Component.style';
 import { SRC_IMAGE } from '@core';
 import { SpotlightText, SpotlightWrap } from '../../../pages/Spotlight/Spotlight.style';
-import { Grid } from '@mui/material';
 
 export const LayoutRatingReview = (props: {
   t: any;
@@ -24,9 +23,9 @@ export const LayoutRatingReview = (props: {
         <DefaultContentInWrapperMajor>
           <RowPrice>
             <RowPriceLeft className="container-fluid">
-              <label style={{ fontFamily: "Inter", fontSize: 28, fontWeight: "700", marginBottom: 20 }}>Rating & Review</label>
-              <Grid container style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Grid item lg={6} xl={6} md={6} sm={12} xs={12}>
+                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Rating & Review</label>
+              <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Col lg={24} xl={11} md={24} sm={24} xs={24}>
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700", marginBottom: 20 }}>
                       Most Liked
@@ -95,8 +94,8 @@ export const LayoutRatingReview = (props: {
                       Engaging Teacher
                     </label>
                   </div>
-                </Grid>
-                <Grid item lg={6} xl={6} md={6} sm={12} xs={12}>
+                </Col>
+                <Col lg={24} xl={11} md={24} sm={24} xs={24}>
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700", marginBottom: 10 }}>
                       Expectations Met?
@@ -120,7 +119,7 @@ export const LayoutRatingReview = (props: {
                     <div style={{ backgroundColor: '#E9E9E9', width: "70%", height: 12 }}>
                       <div style={{ backgroundColor: '#F9C41F', width: '60%', height: 12 }} />
                     </div>
-                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "500", color: '#7A7A7A', width: 30, marginLeft: 10 }}>
+                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "500", color: '#7A7A7A', width: 30, marginLeft:10 }}>
                       60%
                     </label>
                   </div>
@@ -142,7 +141,7 @@ export const LayoutRatingReview = (props: {
                     <div style={{ backgroundColor: '#E9E9E9', width: "70%", height: 12 }}>
                       <div style={{ backgroundColor: '#F9C41F', width: '20%', height: 12 }} />
                     </div>
-                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "500", color: '#7A7A7A', width: 30, marginLeft: 10 }}>
+                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "500", color: '#7A7A7A', width: 30, marginLeft:10 }}>
                       20%
                     </label>
                   </div>
@@ -164,7 +163,7 @@ export const LayoutRatingReview = (props: {
                     <div style={{ backgroundColor: '#E9E9E9', width: "70%", height: 12 }}>
                       <div style={{ backgroundColor: '#F9C41F', width: '5%', height: 12 }} />
                     </div>
-                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "500", color: '#7A7A7A', width: 30, marginLeft: 10 }}>
+                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "500", color: '#7A7A7A', width: 30, marginLeft:10 }}>
                       5%
                     </label>
                   </div>
@@ -186,12 +185,12 @@ export const LayoutRatingReview = (props: {
                     <div style={{ backgroundColor: '#E9E9E9', width: "70%", height: 12 }}>
                       <div style={{ backgroundColor: '#F9C41F', width: '81%', height: 12 }} />
                     </div>
-                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "500", color: '#7A7A7A', width: 30, marginLeft: 10 }}>
+                    <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "500", color: '#7A7A7A', width: 30 , marginLeft:10}}>
                       81%
                     </label>
                   </div>
-                </Grid>
-              </Grid>
+                </Col>
+              </Row>
 
               <SpotlightWrap>
                 <SpotlightText>
