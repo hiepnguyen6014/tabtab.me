@@ -5,12 +5,10 @@ import { reactLocalStorage } from '@core';
 import Config from '@root/config';
 import App from 'next/app';
 import { globalStyles } from '@styles/global';
-// import { theme } from '@styles/theme';
+import { theme } from '@styles/theme';
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
-// import { ThemeProvider } from '@emotion/react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-
+import { ThemeProvider } from '@emotion/react';
 import NextNprogress from 'nextjs-progressbar';
 import { UserContextProvider } from '@contexts';
 import { appWithTranslation, i18n } from 'next-i18next';
@@ -24,28 +22,6 @@ import * as ga from '../../lib/ga';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#FFC22B',
-      },
-      text: {
-      }
-    },
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 576,
-        md: 768,
-        lg: 1024,
-        xl: 1200,
-      }
-    },
-    typography: {
-      "fontFamily": "Inter"
-    }
-  });
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -71,7 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         {globalStyles}
         <NextNprogress
-          color={theme.palette.primary.main}
+          color={theme.colors.common}
           options={{ showSpinner: false }}
         />
         <UserContextProvider>
