@@ -191,7 +191,7 @@ export const ButtonWrap = styled(props => <Button {...props} />)`
 `
 
 export const ButtonWrap1 = styled(props => <Button {...props} />)`
-  // width: 153px;
+  width: 153px;
   margin-right: 12px; 
   font-size: 16px;
   text-transform: none;

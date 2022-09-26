@@ -63,10 +63,6 @@ export const WidgetLocked = styled(Button)`
   svg > path {
     fill: #d44640 !important;
   }
-
-  @media ${device.maxSm} {
-    font-size: 10px;
-  }
 `;
 
 export const WidgetAction = styled.div`

@@ -207,6 +207,9 @@ const LayoutDetail = (props: Props) => {
               <DefaultWrapperWithBg />
               <DefaultWrapperWithBg typeof="fullScreen">
                 <DefaultContentNoGrid style={{ paddingTop: '16px' }} typeof="fullScreen">
+                  <div>
+
+                  </div>
                   <DynamicBanner t={translate} images={dataDetail.arrayImage} />
                   <Grid container mt={2}>
                     <Grid item xs={12} md={8} lg={10}>
