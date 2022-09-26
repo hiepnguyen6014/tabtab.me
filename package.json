@@ -3,7 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"--max-old-space-size=6000\" next",
-    "build": "env-cmd -f .env next build",
+    "build-dev": "env-cmd -f .env.development next build",
+    "build-test": "env-cmd -f .env.test next build",
+    "build-prepro": "env-cmd -f .env.prepro next build",
+    "build": "env-cmd -f .env.production next build",
     "start": "next start"
   },
   "dependencies": {
