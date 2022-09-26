@@ -1,34 +1,30 @@
-import Radio from '@mui/material/Radio';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import { ColWrap, GeneralText, GeneralWrap, SpotlightText, WrapperSpot, ColA } from '../Home.style';
+import { Row, Typography, Radio, Button } from 'antd';
+import { ColWrap, GeneralText, GeneralWrap, SpotlightText, WrapperSpot } from '../Home.style';
 import { IconQuotes } from 'public/icons';
-import { RowWrap, TypographyText } from './PostItem/PostItem.style';
+import ItemPost from './PostItem';
+import { ButtonFix, RowWrap, TypographyText } from './PostItem/PostItem.style';
 import { RadioSearch } from '@root/src/components/shared/SearchHome/SearchHome.style';
-import React, { useState } from 'react';
-import ListItem from './ListItem';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
+import React, { useState } from 'react'
+import ListItem from './ListItem'
 
-const RecommendProperty = ({ data, t, fontSize }) => {
+const RecommendProperty = ({data, t, fontSize}) => {
 
   const [limitItems, setLimitItems] = React.useState(12);
   // layout for desktop only 8 products if screen is mobile, product will be 20 posts
 
-  const handleResize = (e: any) => {
-    if (e.target.outerWidth <= 1025 && e.target.outerWidth >= 768) {
+  const handleResize = (e:any)=>{
+    if (e.target.outerWidth <= 1025 && e.target.outerWidth >= 768 ) {
       setLimitItems(6); // Tablet will be 6 items on row
-    } else if (e.target.outerWidth <= 768) {
+    } else if (e.target.outerWidth <= 768 ) {
       setLimitItems(0); // List scroll
-    } else if (e.target.outerWidth > 1024) {
+    } else if (e.target.outerWidth > 1024 ) {
       setLimitItems(8); //
     }
   }
-  React.useEffect(() => {
-    window.addEventListener('resize', handleResize, true)
-    return () => window.removeEventListener('resize', handleResize, true)
-  }, [])
+  React.useEffect(()=>{
+    window.addEventListener('resize',handleResize,true)
+    return ()=> window.removeEventListener('resize',handleResize,true)
+  },[])
 
   const [showContent, setShowContent] = useState(true)
 
@@ -36,70 +32,74 @@ const RecommendProperty = ({ data, t, fontSize }) => {
   return (
     <WrapperSpot>
       <GeneralText>
-        <Typography className="title-general" style={{ fontSize: fontSize ? fontSize : '' }}>Recommend Property</Typography>
+        <Typography.Title className="title-general" style={{fontSize: fontSize? fontSize : ''}}>Recommend Property</Typography.Title>
         <GeneralWrap>
           <div className="general-between-wrap">
             <div className="general-wrap">
               <IconQuotes />
-              <Typography
+              <Typography.Title
                 className="content-general"
               >
                 anh Hùng đừng bỏ qua sự kiện sắp tới nha
-              </Typography>
+              </Typography.Title>
             </div>
-            <div onClick={e => setShowContent(showContent ? false : true)} style={{ cursor: "pointer" }}>
-              <Typography
+            <div onClick={e => setShowContent(showContent ? false : true)} style={{cursor:"pointer"}}>
+              <Typography.Text
                 className='content-hide'
               >
                 HIDE
-              </Typography>
+              </Typography.Text>
             </div>
           </div>
         </GeneralWrap>
       </GeneralText>
       {showContent && <TypographyText>
-        <Grid style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div >
-            <FormControl>
-              <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="female"
-                name="radio-buttons-group"
-                row
+        <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div>
+            <RadioSearch defaultValue="sell" buttonStyle="solid">
+              <Radio.Button
+                className="radio-active"
+                value="sell"
+                style={{ marginRight: '10px', borderRadius: '100px' }}
               >
-                <FormControlLabel value="male" control={<Radio />} label="Sell" />
-                <FormControlLabel value="other" control={<Radio />} label="Rent" />
-              </RadioGroup>
-            </FormControl>
+                <Typography.Text className="category">Sell</Typography.Text>
+              </Radio.Button>
+              <Radio.Button
+                className="radio-active"
+                value="rent"
+                style={{ borderRadius: '100px' }}
+              >
+                <Typography.Text className="category">Rent</Typography.Text>
+              </Radio.Button>
+            </RadioSearch>
           </div>
           <div style={{ display: 'flex' }} className="my-1">
             <div>
-              <Typography
+              <Typography.Link
                 style={{ textDecoration: 'underline' }}
                 className="linkShowPost"
               >
                 Show all(56+)
-              </Typography>
+              </Typography.Link>
             </div>
             <div>
-              <Typography className="linkShowPost">{'<'}</Typography>
+              <Typography.Link className="linkShowPost">{'<'}</Typography.Link>
             </div>
             <div>
-              <Typography className="linkShowPost">{'>'}</Typography>
+              <Typography.Link className="linkShowPost">{'>'}</Typography.Link>
             </div>
           </div>
-        </Grid>
-        {/* <Grid
-        gutter={{
-          xs: 8,
-          sm: 16,
-          md: 24,
-          lg: 32,
-        }}
-        > */}
-
-        <ListItem t={t} data={data} type={1} />
-        {/* <ColWrap className="gutter-row" sm={24} lg={6}>
+        </Row>
+        <RowWrap
+          gutter={{
+            xs: 8,
+            sm: 16,
+            md: 24,
+            lg: 32,
+          }}
+        >
+          <ListItem t={t} data={data}  type={1}/>
+          {/* <ColWrap className="gutter-row" sm={24} lg={6}>
             <ItemPost />
           </ColWrap>
           <ColWrap className="gutter-row" sm={24} lg={6}>
@@ -111,7 +111,7 @@ const RecommendProperty = ({ data, t, fontSize }) => {
           <ColWrap className="gutter-row" sm={24} lg={6}>
             <ItemPost />
           </ColWrap> */}
-        {/* </Grid> */}
+        </RowWrap>
       </TypographyText>}
     </WrapperSpot>
   );
