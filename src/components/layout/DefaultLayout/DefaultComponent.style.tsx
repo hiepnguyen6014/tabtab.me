@@ -1,10 +1,7 @@
-import { Button } from '@mui/material';
 import { styled } from '@styles/theme';
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
-// import { Button } from "antd"
-
-
+import { Button } from "antd"
 
 export const DefaultRowHeader = styled.div`
   height: 96px;
@@ -74,16 +71,16 @@ export const DefaultContentNoGrid = styled.div`
       width: ${props => props.typeof == "fullScreen" ? '100%' : ''};
   }
 `;
-export const DefaultContentInWrapper = styled(props => <div {...props} />)`
+export const DefaultContentInWrapper = styled(props=> <div {...props}/>)`
   max-width: 1200px;
   padding: 30px 0;
   width: 95%;
-  ${props => props.grid ? {
+  ${props => props.grid? {
     'grid-template-columns': "69% 30%",
     display: "grid"
 
-  } : {
-    'grid-template-columns': ''
+  }:{
+    'grid-template-columns':''
   }}
   margin: auto;
   justify-content: space-between;
@@ -136,88 +133,26 @@ export const LandingWrapContent = styled.div`
     line-height: 24px;
   }
 `
-// export const ButtonWrap = styled(props => <Button {...props} />)`
-//     width: 170px;
-//     display: flex;
-//     gap:10px;
-//     align-items: center;
-//     ${props => props.background ? {
-//     background: props.background
-//   } : {
-//     background: '#ffffff'
-//   }
-//   }
-//     padding-top: 24px;
-//     padding-left: 24px;
-//     padding-right: 24px;
-//     padding-bottom: 24px;
-//     border-radius: 8px;
-//   }
-// `
-
 export const ButtonWrap = styled(props => <Button {...props} />)`
-    width: ${props => props.width + 'px'};
-    height: 44px;
-    margin-right: 12px; 
-    text-transform: none;
-    background: ${props => props.bg ? props.bg : '#ffffff'};
-    border-radius: 8px;
-    border: 1px solid #7A7A7A;
-
-    @media ${device.maxSm} {
-      // min-width: 40px;
-      // height: 20px
-    }
-
-    
-    &:hover {
-      color: #ffffff;
-      background: #222222;
-
-      svg {
-        path {
-          fill: #fff;
-          transition: all .2s ease;
-        }
-      }
-    }
-    span {
-      font-size: 1rem;
-      font-weight: 600;
-      @media ${device.maxSm} {
-        font-size: 8.3px;
-      }
-    }
-`
-
-export const ButtonWrap1 = styled(props => <Button {...props} />)`
-  width: 153px;
-  margin-right: 12px; 
-  font-size: 16px;
-  text-transform: none;
-  color: #4E4E4E;
-  background: ${props => props.bg ? props.bg : '#ffffff'};
-  border: 1px solid #7A7A7A;
-  border-radius: 8px;
-
-  &:hover {
-    color: #ffffff;
-    background: #222222;
-    border: 1px solid transparent;
-
-    svg {
-      path {
-        fill: #fff;
-        transition: all .2s ease;
-      }
-    }
+    width: 170px;
+    display: flex;
+    gap:10px;
+    align-items: center;
+    ${props => props.background ? {
+    background: props.background
+  } : {
+    background: '#ffffff'
   }
-
+  }
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    border-radius: 8px;
+  }
 `
-
 
 export const ButtonWrapProperties = styled(props => <Button {...props} />)`
-
     display: flex;
     gap:10px;
     align-items: center;

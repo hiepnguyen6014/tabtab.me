@@ -56,7 +56,7 @@ export const LayoutDetailTop = (props: {
                 {post.realEstateLocation && (
                   <span>
                     {/* <IconMark /> */}
-                    <label style={{ fontWeight: "500", fontSize: 14 }}>{post.realEstateLocation}</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 14 }}>{post.realEstateLocation}</label>
                     {/* <DefaultLinkText target="_blank" href={post.linkLocation}>
                       {translate('button.viewLocation')}
                     </DefaultLinkText> */}
@@ -65,33 +65,23 @@ export const LayoutDetailTop = (props: {
                 <span style={{ marginTop: 20 }}>
                   <span style={{ marginRight: 25 }}>
                     <IconBed />
-                    <label style={{ fontWeight: "500", fontSize: 16, color: '#7A7A7A' }}>Beds</label>
-                    <label style={{ fontWeight: "700", fontSize: 16 }}>{post.realEstateHouseBedRooms}</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16, color: '#7A7A7A' }}>Beds</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>{post.realEstateHouseBedRooms}</label>
                   </span>
                   <span style={{ marginRight: 25 }}>
                     <IconBathub />
-                    <label style={{ fontWeight: "500", fontSize: 16, color: '#7A7A7A' }}>Bath</label>
-                    <label style={{ fontWeight: "700", fontSize: 16 }}>{post.realEstateHouseToilets}</label>
-                  </span>
-                  <span>
-                    <label style={{ fontWeight: "500", fontSize: 16, color: '#7A7A7A' }}>
-                      — / Sq. Ft.
-                    </label>
-                  </span>
-                  <span>
-                    <label style={{ fontWeight: "500", fontSize: 16, color: '#222222' }}>
-                      — / Sq. Ft.
-                    </label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16, color: '#7A7A7A' }}>Bath</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>{post.realEstateHouseToilets}</label>
                   </span>
                   {/* <span style={{ marginRight: 10 }}>
                     <IconBed />
-                    <label style={{  fontWeight: "500", fontSize: 16 }}>Beds</label>
-                    <label style={{  fontWeight: "700", fontSize: 16 }}>2</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16 }}>Beds</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>2</label>
                   </span>
                   <span style={{ marginRight: 25 }}>
                     <IconBed />
-                    <label style={{  fontWeight: "500", fontSize: 16 }}>Beds</label>
-                    <label style={{  fontWeight: "700", fontSize: 16 }}>2</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "500", fontSize: 16 }}>Beds</label>
+                    <label style={{ fontFamily: 'Inter', fontWeight: "700", fontSize: 16 }}>2</label>
                   </span> */}
                 </span>
               </RowPriceLeft>
@@ -104,10 +94,10 @@ export const LayoutDetailTop = (props: {
                 }
                 <div>
                   {/* <label>{translate('detail.price')}</label> */}
-                  <Typography variant="h1" style={{ color: '#FF8800', fontWeight: "700", fontSize: 28 }}>
+                  <Typography variant="h1" style={{ color: '#FF8800', fontFamily: 'Inter', fontWeight: "700", fontSize: 28 }}>
                     {formatNumToUnit(post.realEstateValueSalePrice, translate)}{post.realEstatePostTypeId === 2 ? "/" + translate('common.month') : ""}
                   </Typography>
-                  <Typography variant="h3" style={{ marginBottom: 50, color: '#7A7A7A', fontWeight: "700", fontSize: 18 }}>
+                  <Typography variant="h3" style={{ marginBottom: 50, color: '#7A7A7A', fontFamily: 'Inter', fontWeight: "700", fontSize: 18 }}>
                     {formatNumToUnit(post.realEstateValueSalePrice, translate)}{post.realEstatePostTypeId === 2 ? "/" + translate('common.month') : ""}
                   </Typography>
                   <RowActions style={{ marginTop: -15 }}>
