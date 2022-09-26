@@ -60,9 +60,8 @@ const TabList = (props: Props) => {
     return (
         <TabsUnstyled className={classes.tabList} defaultValue={0}>
             <TabsListUnstyled>
-                {items.map((item, key) => (
+                {items.map(item => (
                     <TabUnstyled
-                        key={key}
                         onClick={() => onClick(item.value)}
                         style={{ backgroundColor: type == 'property' ? 'transparent' : '#fff' }}
                     >{item.label}</TabUnstyled>
