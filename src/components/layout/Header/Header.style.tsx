@@ -49,15 +49,6 @@ export const HeaderWrapper = styled.header`
   }
 `;
 
-export const Desktop = styled.div`
-  @media ${device.maxLg} {
-    display: block;
-  }
-  @media ${device.maxMd} {
-    display: none;
-  }
-`;
-
 export const MainContentDesktop = styled.div`
   max-width: 1300px;
   width: 90%;
@@ -73,15 +64,6 @@ export const MainContentDesktop = styled.div`
   }
   @media ${device.maxMd} {
     display: none;
-  }
-`;
-
-export const Mobile = styled.div`
-  display: none;
-  z-index: 10;
-  width: 100%;
-  @media ${device.maxMd} {
-    display: block;
   }
 `;
 export const MainMobile = styled.div`
@@ -216,8 +198,8 @@ export const TextUserName = styled.span`
 
 export const DropdownAccount = styled.div`
   background: ${COLOR_LIGHT};
-  a {
-    color: #222222;
+  a{
+    color:#222222;
   }
   min-width: 200px;
   border-radius: 2px;
@@ -289,42 +271,40 @@ export const SearchMobile = styled.div`
   align-items: center;
   width: 95%;
   height: 40px;
-  border: 1px solid #e9e9e9;
+  border: 1px solid #E9E9E9;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   border-radius: 56px;
   box-sizing: border-box;
   position: absolute;
-  background: #e9e9e9;
+  background: #E9E9E9;
   top: 0%;
   bottom: 0%;
-  .vertical-line-search {
-    background: #a7a7a7;
+  .vertical-line-search{
+    background: #A7A7A7;
     border-radius: 37px;
     width: 2px;
     height: 16px;
   }
 `;
 
-// export const BoxSearch = styled.div``;
-
 export const ButtonOnSearch = styled(Button)`
   width: 32px;
-  overflow: hidden;
-  height: 32px;
-  border-radius: 100px;
-  background: #f9c41f;
+  overflow:hidden;
+  height:32px;
+  border-radius:100px;
+  background: #F9C41F;
   color: #fff !important;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  line-height: 12px;
+  line-height:12px;
   svg {
     path {
       fill: #fff;
     }
   }
-  &:hover {
+  &:hover{
     color: #ffff !important;
   }
 `;
@@ -332,38 +312,38 @@ export const ButtonOnSearch = styled(Button)`
 export const TextWrap = styled(Typography)`
   font-family: 'Inter';
   font-style: normal;
-  .text-select {
+  .text-select{
     font-weight: 700;
     font-size: 14px;
     line-height: 20px;
-    color: #4e4e4e;
+    color: #4E4E4E;
   }
-  .text-search {
+  .text-search{
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    color: #7a7a7a;
+    color: #7A7A7A;
   }
-`;
-export const ButtonWrap = styled((props) => <div {...props} />)`
-  display: flex;
+`
+export const ButtonWrap = styled(props => <div {...props} />)`
+  display:flex;
   padding: 5px;
   align-items: center;
   border-radius: 8px;
-  margin-bottom: 15px;
-  &:hover {
-    background-color: #0000000d;
+  margin-bottom:15px;
+  &:hover{
+    background-color: #0000000D
   }
-`;
-export const ButtonWrapLogin = styled((props) => <div {...props} />)`
-  display: flex;
+`
+export const ButtonWrapLogin = styled(props => <div {...props} />)`
+  display:flex;
   padding: 10px;
   align-items: center;
-  background-color: #f9c41f;
+  background-color: #F9C41F;
   border-radius: 8px;
   margin-bottom: 14px;
   justify-content: center;
-  &:hover {
-    background-color: #f9c41f;
+  &:hover{
+    background-color: #F9C41F
   }
-`;
+`
