@@ -1,5 +1,4 @@
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { Button, Col, Image, Row, Typography } from 'antd';
 import {
   BannerSpotWrapper,
   WrapperSpot,
@@ -9,8 +8,6 @@ import {
   ImageBannerWrap,
   GeneralText,
   GeneralWrap,
-  ImageWrap,
-  ColA,
 } from '../Home.style';
 import {
   IconQuotes,
@@ -21,10 +18,9 @@ import { SRC_IMAGE } from '@constants';
 import Link from 'next/link';
 import ItemSpotlight from '../Spotlight/ItemSpotlight';
 import ItemSide from '../Spotlight/ItemSide';
-// import { ColA } from '../Spotlight/ItemSpotlight.style';
+import { ColA } from '../Spotlight/ItemSpotlight.style';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Grid } from '@mui/material';
 
 const SpotLight: React.FC<{}> = () => {
   const router = useRouter();
@@ -108,39 +104,36 @@ const SpotLight: React.FC<{}> = () => {
       <GeneralText>
         <Link href="/spotlight-page">
           <a>
-            <Typography className="title-general">
+            <Typography.Title className="title-general">
               Spotlight
-            </Typography>
+            </Typography.Title>
           </a>
         </Link>
         <GeneralWrap>
           <div className="general-between-wrap">
             <div className="general-wrap">
               <IconQuotes />
-              <Typography className="content-general">
+              <Typography.Title className="content-general">
                 Những tin tức mới nhất phù hợp với Hùng
-              </Typography>
+              </Typography.Title>
             </div>
             <div onClick={e => setShowContent(showContent ? false : true)} style={{ cursor: "pointer" }}>
-              <Typography className="content-hide">HIDE</Typography>
+              <Typography.Text className="content-hide">HIDE</Typography.Text>
             </div>
           </div>
         </GeneralWrap>
       </GeneralText>
       {showContent && <div >
-        <ColA container
-          xs={8} sm={16} md={24} lg={32}>
-          <ColA>
+        <Row>
+          <Col sm={24} lg={16} className="my-2">
             <Link href="/spotlight-page">
               <a>
                 <BannerSpotWrapper>
                   <BannerWrap>
-                    <img
+                    <ImageBannerWrap
                       alt="imagePost"
                       src={SRC_IMAGE.IMAGEA}
-                      height="100%"
-                      width="700px"
-                    // preview={false}
+                      preview={false}
                     />
                     <DivWrap>
                       <div className="title-post">
@@ -161,11 +154,12 @@ const SpotLight: React.FC<{}> = () => {
                             style={{ width: 36, height: 36 }}
                             className="mx-2"
                           >
-                            <img
+                            <Image
                               alt="user"
                               src={SRC_IMAGE.STAFF3}
-                              height="100%"
-                              width="100%"
+                              width={36}
+                              height={36}
+                              className="rounded-circle"
                             />
                           </div>
                           <SpotlightText>
@@ -174,9 +168,9 @@ const SpotLight: React.FC<{}> = () => {
                             </Typography>
                             <Typography className="dateBanner">
                               by{' '}
-                              <Typography className="nameBanner">
+                              <Typography.Text className="nameBanner">
                                 Jenny Wilson
-                              </Typography>
+                              </Typography.Text>
                             </Typography>
                           </SpotlightText>
                         </div>
@@ -186,12 +180,12 @@ const SpotLight: React.FC<{}> = () => {
                 </BannerSpotWrapper>
               </a>
             </Link>
-          </ColA>
-          <ColA >
-            <div>
+          </Col>
+          <Col xs={0} sm={0} lg={8}>
+            <Row className="px-2">
               <SpotlightText>
-                <Button>
-                  <Typography
+                <Button type="text" danger>
+                  <Typography.Text
                     className="optionPostSpot"
                     style={{
                       borderBottom: '1px solid #F9C41F',
@@ -199,15 +193,15 @@ const SpotLight: React.FC<{}> = () => {
                     }}
                   >
                     LAST NEWS
-                  </Typography>
+                  </Typography.Text>
                 </Button>
-                <Button>
-                  <Typography className="optionPostSpot">
+                <Button type="text" danger>
+                  <Typography.Text className="optionPostSpot">
                     MOST VIEW
-                  </Typography>
+                  </Typography.Text>
                 </Button>
               </SpotlightText>
-            </div>
+            </Row>
             <div style={{ marginTop: '20px' }} className="px-2">
               {ITEMSPOTLIGHTSIDE.map((items, key) => {
                 return (
@@ -219,28 +213,20 @@ const SpotLight: React.FC<{}> = () => {
                 );
               })}
             </div>
-          </ColA>
-        </ColA>
+          </Col>
+        </Row>
 
-        <ColA
-          container
-          xs={8} sm={16} md={24} lg={32}
-          spacing={4}
-          sx={{ marginTop: '0px', marginBottom: '100px'}}
-        // gutter={{
-        //   xs: 8,
-        //   sm: 16,
-        //   md: 24,
-        //   lg: 32,
-        // }}
+        <Row
+          gutter={{
+            xs: 8,
+            sm: 16,
+            md: 24,
+            lg: 32,
+          }}
         >
           {ITEMSPOTLIGHTLIST.map((item, key) => {
             return (
-              <ColA key={key}
-                sx={{
-                  margin: 0.5
-                }}
-              >
+              <ColA className="gutter-row" sm={24} lg={6} key={key}>
                 <Link href="/detail-spotlight">
                   <a>
                     <ItemSpotlight item={item} />
@@ -249,12 +235,12 @@ const SpotLight: React.FC<{}> = () => {
               </ColA>
             );
           })}
-        </ColA>
-        <div>
-          <Button>
+        </Row>
+        <Col span={12} offset={6} style={{ marginTop: '20px' }}>
+          <Button shape="round" size={'large'} style={{ background: 'white', color: 'black' }}>
             VIEW ALL
           </Button>
-        </div>
+        </Col>
       </div>}
     </WrapperSpot>
   );

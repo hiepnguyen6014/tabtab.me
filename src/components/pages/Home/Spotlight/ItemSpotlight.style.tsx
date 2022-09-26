@@ -1,10 +1,7 @@
 import { styled } from '@styles/theme';
 import { device } from '@styles/theme/device';
-import { Col, Row } from 'antd';
-import Image from 'material-ui-image';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import { Col, Row, Typography } from 'antd';
+
 export const ItemWrapSpotlight = styled.div`
   width: 100%;
 `;
@@ -26,7 +23,7 @@ export const TextColor = styled((props) => <Typography {...props} />)`
   text-transform: uppercase;
 `;
 
-export const ColA = styled(Grid)`
+export const ColA = styled(Col)`
   width: 100%;
   cursor: pointer;
   &:hover {

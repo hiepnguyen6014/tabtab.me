@@ -9,7 +9,7 @@ export const PostWrapper = styled(props => <div {...props} />)`
   /* min-width: 280px; */
   width: 100%;
   max-width: 100%;
-  margin: 5px;
+  margin-top: 20px;
   font-size: 100% !important;
   /* max-width:280px; */
   border-radius: 6px;

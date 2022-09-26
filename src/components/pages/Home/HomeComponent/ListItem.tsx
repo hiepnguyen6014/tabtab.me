@@ -1,9 +1,14 @@
+import { PostItemSell } from '@components';
+import { ColWrap, SpotLightWrap, WrapperSpot } from '../Home.style';
 import React, { useEffect, useState } from 'react';
 import { MPostDetail } from '@models/MPostDetail';
+import dynamic from 'next/dynamic';
+import { ListWrapper } from '../../../shared/ListPostsHorizontal/ListPostHorizontal.style';
 import PostItem from './PostItem';
 import PostItemH from './PostItemH';
 import PostItemV from './PostItemV';
 import PostItemProp from './PostItemProp';
+
 interface Props {
   posts: MPostDetail[];
   noWrap?: boolean;
@@ -49,9 +54,9 @@ const ListItem = (props: Props) => {
         return (
           <>
             {listPost().map((item, key) => (
-              <div style={{ margin: '5px', height: '100%', width: '290px' }}>
+              <ColWrap key={key} className="gutter-row" sm={24} lg={6} md={8}>
                 <PostItem post={item} t={t} />
-              </div>
+              </ColWrap>
             )
             )}
           </>
@@ -60,9 +65,9 @@ const ListItem = (props: Props) => {
         return (
           <>
             {listPost().map((item, key) => (
-              <div style={{ margin: '5px', height: '100%', width: '290px' }}>
+              <ColWrap key={key} className="gutter-row" sm={24} lg={12}>
                 <PostItemV post={item} t={t} />
-              </div>
+              </ColWrap>
             )
             )}
           </>
@@ -71,9 +76,9 @@ const ListItem = (props: Props) => {
         return (
           <>
             {listPost().map((item, key) => (
-              <div style={{ margin: '5px', height: '100%', width: '290px' }}>
+              <ColWrap key={key} className="gutter-row" sm={24} lg={12}>
                 <PostItemH post={item} t={t} />
-              </div>
+              </ColWrap>
             )
             )}
           </>
@@ -82,9 +87,9 @@ const ListItem = (props: Props) => {
         return (
           <>
             {listPost().map((item, key) => (
-              <div style={{ margin: '5px', height: '100%', width: '290px' }}>
+              <ColWrap key={key} className="gutter-row" sm={24} lg={6} md={8}>
                 <PostItemProp post={item} t={t} />
-              </div>
+              </ColWrap>
             )
             )}
           </>
@@ -94,9 +99,9 @@ const ListItem = (props: Props) => {
   }
 
   const renderList = data ? (
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <>
       {RenderItem(type)}
-    </div>
+    </>
   ) : (
     <></>
   );
