@@ -9,7 +9,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Inter';
+  font-family: 'Barlow';
   min-height: 100vh;
 }
 
@@ -19,19 +19,18 @@ a {
   text-decoration: none;
 }
 
-main {
+main{
   min-height: 400px;
 }
-
 * {
   box-sizing: border-box;
 }
 
 .ant-carousel {
   margin-bottom: 600px;
-
   .slick-dots {
     justify-content: end;
     margin-right: 5%;
   }
 }
+

@@ -1,9 +1,8 @@
 
-import { Button } from "@mui/material";
 import { styled } from "@styles/theme";
 import { colors } from "@styles/theme/colors";
 import { device } from "@styles/theme/device";
-import { Col, Radio, Row, Typography } from "antd";
+import { Button, Col, Radio, Row, Typography } from "antd";
 
 export const FDesktop = styled(props => <div {...props} />)`
   position: relative;
@@ -220,14 +219,14 @@ export const ButtonCall = styled(Button)`
 `
 
 export const ButtonFollow = styled(Button)`
-  /* background: white; */
+  background: white;
   border-color: #F9C41F;
   &:focus{
     background: #F9C41F !important;
     border-color: #F9C41F;
   }
   &:not(.disable-custom-btn):not(.disable-hover):hover{
-    /* background: #F9C41F !important; */
+    background: #F9C41F !important;
   }
 `
 export const ButtonChat = styled(Button)`

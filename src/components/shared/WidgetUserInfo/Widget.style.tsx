@@ -1,7 +1,7 @@
 import { styled } from '@styles/theme';
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
-import { Button } from '@mui/material';
+import { Button } from 'antd';
 
 // Layout for all
 export const WidgetWrap = styled.div`
@@ -66,6 +66,7 @@ export const WidgetLocked = styled(Button)`
 `;
 
 export const WidgetAction = styled.div`
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -83,7 +84,7 @@ export const WidgetAction = styled.div`
 export const ButtonCall = styled(Button)`
    background-color: transparent !important;
    color: #222222;
-   font-size: 16px;
+   font-size:16px;
    font-weight: 700;
    font-family: Inter;
    border-radius: 8px;
