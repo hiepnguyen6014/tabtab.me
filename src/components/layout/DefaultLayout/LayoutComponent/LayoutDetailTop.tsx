@@ -1,23 +1,27 @@
 
-import { PUBLIC_ROUTES, ROUTES } from '@constants';
-import { filterKey } from '@contexts';
-import { MPostDetail } from '@models/MPostDetail';
-// import Button from '@mui/material/Button';
-import { Typography } from "@mui/material";
-import { IconBathub, IconBed, IconSharetabtab, IconStartabtab } from '@root/public/icons';
-import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
-import { colors } from '@styles/theme/colors';
-import Link from 'next/link';
-import { useState } from 'react';
-import {
-  DefaultContentInWrapper, DefaultWrapperWithBg
-} from '..';
 import { BreadcrumbCustom } from '../../../shared/Breadcrum/index';
 import { ButtonSave } from '../../../shared/ButtonSave/index';
 import { ButtonShare } from '../../../shared/ButtonShare';
-import { ButtonRatingReview, RowActions, RowPrice, RowPriceLeft, TagProperty } from './Component.style';
+import { TextParagraph } from '../../../shared/TextParagraph';
+import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
 
-
+import { PUBLIC_ROUTES, ROUTES } from '@constants';
+import { filterKey } from '@contexts';
+import { MPostDetail } from '@models/MPostDetail';
+import { IconMark, IconTimer, IconBed, IconBathub, IconStarWhite, IconShare, IconSharetabtab, IconStar, IconStartabtab } from '@root/public/icons';
+import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
+import { colors } from '@styles/theme/colors';
+import { Divider, Typography } from 'antd';
+import { useState } from 'react';
+import {
+  DefaultContentInWrapper,
+  DefaultLinkText,
+  DefaultRowTitle,
+  DefaultWrapperWithBg,
+} from '..';
+import { TagProperty, RowPrice, RowActions, RowPriceLeft, RowPriceRight, ButtonVote, ButtonRatingReview } from './Component.style';
+import { device } from '@styles/theme/device';
+import Link from 'next/link';
 
 export const LayoutDetailTop = (props: {
   t: any;
@@ -44,15 +48,16 @@ export const LayoutDetailTop = (props: {
         <DefaultContentInWrapper>
           <div>
             <BreadcrumbCustom t={translate} arrHref={arrHref} />
-            <Typography noWrap variant="h3">
+            <Typography.Title style={{ fontFamily: 'Inter' }} level={3} ellipsis={{ rows: 2 }}>
               {post.realEstateTitle}
-            </Typography>
+
+            </Typography.Title>
             {post.realEstateJuridical && (
               <TagProperty style={{ background: hrefMain.href == PUBLIC_ROUTES.BROKERAGE_FLOOR.href ? colors.common : colors.button }}>{post.realEstateJuridical}</TagProperty>
             )}
             <RowPrice>
               <RowPriceLeft gap={true}>
-                <Typography variant="h5">The Brevoort</Typography>
+                <Typography.Title style={{ fontFamily: 'Inter' }} level={5}>The Brevoort</Typography.Title>
                 {post.realEstateLocation && (
                   <span>
                     {/* <IconMark /> */}
@@ -89,17 +94,17 @@ export const LayoutDetailTop = (props: {
                 {
                   hrefMain.href == PUBLIC_ROUTES.BROKERAGE_FLOOR.href ? <div>
                     <label >{translate('common.commission')}</label>
-                    <Typography variant="h1">{post.agencyPercent} %</Typography>
+                    <h1>{post.agencyPercent} %</h1>
                   </div> : null
                 }
                 <div>
                   {/* <label>{translate('detail.price')}</label> */}
-                  <Typography variant="h1" style={{ color: '#FF8800', fontFamily: 'Inter', fontWeight: "700", fontSize: 28 }}>
+                  <h1 style={{ color: '#FF8800', fontFamily: 'Inter', fontWeight: "700", fontSize: 28 }}>
                     {formatNumToUnit(post.realEstateValueSalePrice, translate)}{post.realEstatePostTypeId === 2 ? "/" + translate('common.month') : ""}
-                  </Typography>
-                  <Typography variant="h3" style={{ marginBottom: 50, color: '#7A7A7A', fontFamily: 'Inter', fontWeight: "700", fontSize: 18 }}>
+                  </h1>
+                  <Typography.Title delete={true} level={3} style={{ marginBottom: 50, color: '#7A7A7A', fontFamily: 'Inter', fontWeight: "700", fontSize: 18 }}>
                     {formatNumToUnit(post.realEstateValueSalePrice, translate)}{post.realEstatePostTypeId === 2 ? "/" + translate('common.month') : ""}
-                  </Typography>
+                  </Typography.Title>
                   <RowActions style={{ marginTop: -15 }}>
                     <ButtonSave t={translate} idPost={post.realEstateId} IconDefault={<IconStartabtab />} bg="#F9C41F" />
                     <a>
@@ -110,7 +115,7 @@ export const LayoutDetailTop = (props: {
                         <div className='d-flex'>
                           <div className='d-flex flex-column' style={{ textAlign: 'right', marginRight: '8px' }}>
                             <span style={{ color: '#262626', fontSize: '16px', fontWeight: '700' }}>Tuyệt vời</span>
-                            <span style={{ color: '#6B6B6B', fontSize: '12px' }}>270 đánh giá</span>
+                            <span style={{ color: '6B6B6B', fontSize: '12px' }}>270 đánh giá</span>
                           </div>
                           <ButtonRatingReview>
                             <span>8.7</span>
