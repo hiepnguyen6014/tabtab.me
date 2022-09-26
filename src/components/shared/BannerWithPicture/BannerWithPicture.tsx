@@ -5,17 +5,15 @@ import {
   BannerMobile,
   ButtonShowAllImage,
   ButtonShowAllImageMobile,
-  ButtonShowAllImages,
 } from './Banner.style';
 import { Layout3Pictures } from './Layout3Pictures';
 import { Layout4Pictures } from './Layout4Pictures';
 import { Image } from 'antd';
 import { memo, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Lazy, Navigation, Pagination } from 'swiper';
-import { ButtonWrap1 } from '../../layout';
-import 'swiper/css/pagination';
+import SwiperCore, { Autoplay, Lazy } from 'swiper';
 
+SwiperCore.use([Autoplay, Lazy]);
 interface Props {
   images: string[];
   t: any;
@@ -30,8 +28,6 @@ const BannerWithPicture = (props: Props) => {
   useEffect(() => {
     imageCustom()
   }, [])
-
-  SwiperCore.use([Autoplay, Pagination, Navigation]);
 
   const imageCustom = () => {
     let newImage = []
@@ -59,20 +55,16 @@ const BannerWithPicture = (props: Props) => {
           <Layout4Pictures images4={newImages} />
         )}
         {newImages.length < 5 ? (<>
-          <ButtonShowAllImages
-            startIcon={<IconImage />} onClick={() => setIsVisible(true)}>Show all photo</ButtonShowAllImages>
-          {/* <ButtonShowAllImageMobile onClick={() => setIsVisible(true)}>
+          <ButtonShowAllImageMobile onClick={() => setIsVisible(true)}>
             <IconImage />
-            <p>Show all images</p>
-          </ButtonShowAllImageMobile> */}
+            <p>{imgCurrent} / {images.length} </p>
+          </ButtonShowAllImageMobile>
         </>) : (
           <ButtonShowAllImage onClick={() => setIsVisible(true)}>
-            {/* <IconImage />
+            <IconImage />
             <p>
               {t('common.preImage')} {newImages.length} {t('common.subImage')}
-            </p> */}
-            <ButtonWrap1 sx={{ mt: 1 }} startIcon={<IconImage />} variant="outlined">Show all images</ButtonWrap1>
-
+            </p>
           </ButtonShowAllImage>
         )}
       </BannerDesktop>
@@ -83,20 +75,13 @@ const BannerWithPicture = (props: Props) => {
       />
       <BannerMobile>
         <Swiper
-          className="custom-swiper-pagination"
           spaceBetween={10}
           lazy={true}
           onSnapIndexChange={onSnapChange}
-          pagination={{
-            bulletClass: `swiper-pagination-bullet`,
-            // el: '.swiper-pagination',
-            clickable: true,
-            renderBullet: (index, className) => {
-              return '<span class="' + className + '">' + ' ' + '</span>';
-            }
-          }
-          }
-          navigation
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
         >
           {images.map((value, key) => (
             <>
@@ -110,10 +95,10 @@ const BannerWithPicture = (props: Props) => {
 
           ))}
         </Swiper>
-        {/* <ButtonShowAllImageMobile onClick={() => setIsVisible(true)}>
+        <ButtonShowAllImageMobile onClick={() => setIsVisible(true)}>
           <IconImage />
           <p>{imgCurrent} / {images.length} </p>
-        </ButtonShowAllImageMobile> */}
+        </ButtonShowAllImageMobile>
       </BannerMobile>
     </>
   );
