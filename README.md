@@ -10,7 +10,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 ### Environment variables 
-rename `.env.development` or `.env.local` to `.env`
+To set up your environment variables change `.env.development` to `.env.production`
+
 ## Project Structure (Vietnamese)
 
 ```
