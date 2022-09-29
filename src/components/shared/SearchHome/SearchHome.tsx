@@ -43,7 +43,7 @@ export const SearchHome = (props: { t: any }) => {
 
   const findPage = (e, path) => {
     router.push(path);
-  }
+  };
 
   return (
     <>
@@ -53,7 +53,10 @@ export const SearchHome = (props: { t: any }) => {
             defaultValue="sell"
             buttonStyle="solid"
             size="middle"
-            style={{ display: 'flex', justifyItems: 'center' }}
+            style={{
+              display: 'flex',
+              justifyItems: 'center',
+            }}
           >
             <Radio.Button
               style={{
@@ -62,7 +65,8 @@ export const SearchHome = (props: { t: any }) => {
                 display: 'flex',
                 alignItems: 'center',
                 borderRadius: '12px 0px 0px 0px',
-                justifyContent: 'center'
+                backgroundColor: '#E9E9E9',
+                justifyContent: 'center',
               }}
               value="sell"
               className="radio-active"
@@ -80,7 +84,8 @@ export const SearchHome = (props: { t: any }) => {
                 display: 'flex',
                 alignItems: 'center',
                 borderRadius: '0px 0px 0px 0px',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                backgroundColor: '#E9E9E9',
               }}
               value="rent"
               className="radio-active"
@@ -98,7 +103,8 @@ export const SearchHome = (props: { t: any }) => {
                 display: 'flex',
                 alignItems: 'center',
                 borderRadius: '0px 0px 0px 0px',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                backgroundColor: '#E9E9E9',
               }}
               value="auction"
               className="radio-active"
@@ -116,7 +122,8 @@ export const SearchHome = (props: { t: any }) => {
                 display: 'flex',
                 alignItems: 'center',
                 borderRadius: '0px 12px 0px 0px',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                backgroundColor: '#E9E9E9',
               }}
               value="tranfer"
               className="radio-active"
@@ -139,10 +146,7 @@ export const SearchHome = (props: { t: any }) => {
               }}
             >
               <ColItem md={{ span: 20 }} sm={{ span: 20 }} xs={{ span: 20 }}>
-                <Form.Item
-                  name="searchText"
-                  style={{ margin: 0 }}
-                >
+                <Form.Item name="searchText" style={{ margin: 0 }}>
                   <TextSearchWrap>
                     <InputSearch
                       placeholder={t('home.searchPlaceholder')}
@@ -152,10 +156,22 @@ export const SearchHome = (props: { t: any }) => {
                 </Form.Item>
               </ColItem>
 
-              <ColItem md={{ span: 4 }} sm={{ span: 4 }} xs={{ span: 4 }} style={{ margin: 0, display: "flex", justifyContent: "end", alignItems: "center" }}>
+              <ColItem
+                md={{ span: 4 }}
+                sm={{ span: 4 }}
+                xs={{ span: 4 }}
+                style={{
+                  margin: 0,
+                  display: 'flex',
+                  justifyContent: 'end',
+                  alignItems: 'center',
+                }}
+              >
                 <Form.Item style={{ margin: 0 }}>
-                  <ButtonSearch onClick={e => findPage(e, "/tim-kiem")}>
-                    <SearchOutlined style={{ fontSize: '5px', border: "none" }} />
+                  <ButtonSearch onClick={(e) => findPage(e, '/tim-kiem')}>
+                    <SearchOutlined
+                      style={{ fontSize: '5px', border: 'none' }}
+                    />
                   </ButtonSearch>
                 </Form.Item>
               </ColItem>
