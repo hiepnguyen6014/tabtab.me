@@ -120,4 +120,5 @@ export const SRC_IMAGE={
   INTEREST:"static/boxinterestperson.png",
   IMGVIDEO: "static/imgVideo.png",
   AVATARTEACHER: "static/AvatarTeacher.png",
+  TENXLOGO: "static/Ten-X-Logo.png",
 }
