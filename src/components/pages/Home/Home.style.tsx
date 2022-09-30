@@ -29,7 +29,7 @@ export const ImageBanner = styled(Image)`
   height: 100%;
   width: 100%;
   min-height: 750px;
-  
+
   @media ${device.maxSm} {
     height: 300px;
   }
@@ -166,6 +166,8 @@ export const WrapperSpot = styled.div`
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
     border-radius: 8px;
     padding: 5px;
+    &:hover: {
+    }
   }
   .horizotalLine {
     background: #f9c41f;
@@ -238,8 +240,8 @@ export const ColWrap = styled(Col)`
     }
   }
   @media ${device.maxSm} {
-      margin-bottom: 30px;
-    }
+    margin-bottom: 30px;
+  }
 `;
 
 export const TextWrap = styled(Typography)`
@@ -351,6 +353,7 @@ export const SpotlightText = styled(Typography)`
   font-family: 'Inter';
   font-style: normal;
   text-align: start;
+  margin-top: 12px;
   .titlePostSpot {
     font-size: 14px;
     line-height: 17px;
@@ -367,6 +370,8 @@ export const SpotlightText = styled(Typography)`
     line-height: 24px;
     font-weight: 700;
     color: #222222;
+    margin: 6px 0px 20px 0px !important;
+
     @media ${device.maxMd} {
       font-size: 18px;
       line-height: 24px;
@@ -378,6 +383,7 @@ export const SpotlightText = styled(Typography)`
     line-height: 16px;
     margin-left: 10px;
     color: #7a7a7a;
+    margin-bottom: 2px !important;
     @media ${device.maxMd} {
       font-size: 16px;
       line-height: 19px;
@@ -522,7 +528,8 @@ export const SpotlightText = styled(Typography)`
 
 export const ItemPostSpot = styled.div`
   display: flex;
-  text-align: start;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 export const ItemUpcoming = styled.div`
@@ -556,6 +563,9 @@ export const ArticleWrap = styled.article`
   height: 100%;
   position: relative;
   overflow: hidden;
+  &:hover {
+    transform: scale(1.05);
+  }
   @media ${device.maxSm} {
     min-height: 228px;
   }
@@ -725,7 +735,7 @@ export const ColA = styled(Col)`
   width: 100%;
   cursor: pointer;
   &:hover {
-    transform: translateY(-3px);
+    transform: scale(1.05);
   }
   @media ${device.maxSm} {
     padding-bottom: 20px;
@@ -749,6 +759,7 @@ export const GeneralWrap = styled.div`
 export const GeneralText = styled(Typography)`
   font-family: 'Inter';
   font-style: normal;
+  margin: 0px 0px 20px 0px;
   .title-general {
     font-weight: 700;
     font-size: 32px;
@@ -758,7 +769,7 @@ export const GeneralText = styled(Typography)`
     @media ${device.maxSm} {
       font-size: 24px;
       line-height: 32px;
-  }
+    }
   }
   .content-general {
     font-weight: 500;
@@ -768,7 +779,7 @@ export const GeneralText = styled(Typography)`
     @media ${device.maxSm} {
       font-size: 14px;
       line-height: 17px;
-  }
+    }
   }
   .content-hide {
     font-weight: 600;
@@ -779,6 +790,22 @@ export const GeneralText = styled(Typography)`
     @media ${device.maxSm} {
       font-size: 16px;
       line-height: 20px;
+    }
   }
-  }
+`;
+
+//Recommend
+export const ButtonTag = styled.button<any>`
+  border-radius: 100px;
+  border: none;
+  background-color: ${(props) => (props.active ? '#222222' : 'white')};
+  color: ${(props) => (props.active ? 'white' : '#4E4E4E')};
+  padding: 8px 20px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin-right: 5px;
 `;

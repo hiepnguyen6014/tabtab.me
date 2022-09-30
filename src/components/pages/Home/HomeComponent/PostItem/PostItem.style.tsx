@@ -4,7 +4,7 @@ import { device } from '@styles/theme/device';
 import { Button, Col, Image, Radio, Row, Typography } from 'antd';
 
 // PROJECT, AGENCY
-export const PostWrapper = styled(props => <div {...props} />)`
+export const Wrapper = styled((props) => <div {...props} />)`
   height: 520px;
   /* min-width: 280px; */
   width: 100%;
@@ -31,7 +31,7 @@ export const PostWrapper = styled(props => <div {...props} />)`
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px, rgba(0, 0, 0, 0.1) 0px 6px 6px;
   }
   @media ${device.maxLg} {
-    height: 500px;  
+    height: 500px;
     width: 100%;
   }
   @media ${device.maxSm} {
@@ -44,7 +44,7 @@ export const PostContent = styled.div`
   height: 100%;
 `;
 
-export const PostThumbnailWrapper = styled(props => <div {...props} />)`
+export const PostThumbnailWrapper = styled((props) => <div {...props} />)`
   width: 100%;
   height: 36%;
   border-radius: 6px 6px 0 0;
@@ -120,7 +120,7 @@ export const PostTitle = styled.div`
       margin-right: 5px;
     }
   }
-  .wrap-post{
+  .wrap-post {
     min-height: 90px;
     @media ${device.maxSm} {
       min-height: auto;
@@ -235,6 +235,12 @@ export const TypographyText = styled(Typography)`
   font-family: 'Inter';
   font-style: normal;
   text-align: start;
+  .list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
   .price {
     font-size: 20px;
     line-height: 28px;
@@ -325,7 +331,7 @@ export const ContentInItem = styled.div`
       width: 118px;
       height: 24px;
       /* text-align: center; */
-      background: #FFFFFF;
+      background: #ffffff;
       padding: 2px 0;
       margin-bottom: 8px;
       border-radius: 4px;
@@ -336,11 +342,11 @@ export const ContentInItem = styled.div`
     @media ${device.maxMd} {
       margin-bottom: 70px;
     }
-    
+
     .badge-cut-loss {
       width: 98px;
       height: 24px;
-      background: #FFFFFF;
+      background: #ffffff;
       /* text-align: center; */
       padding: 2px 0;
       margin-bottom: 20px;

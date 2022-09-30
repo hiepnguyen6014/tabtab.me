@@ -1,9 +1,19 @@
-import { SRC_IMAGE } from "@core";
-import { CalendarTue, VectorCalendar, VectorLocation } from "@root/public/icons";
-import { Button, Typography } from "antd";
-import { ArticleWrap, DivWrap, ImageWrap, ItemUpcoming, SpotlightText } from "../Home.style";
+import { SRC_IMAGE } from '@core';
+import {
+  CalendarTue,
+  VectorCalendar,
+  VectorLocation,
+} from '@root/public/icons';
+import { Button, Typography } from 'antd';
+import {
+  ArticleWrap,
+  DivWrap,
+  ImageWrap,
+  ItemUpcoming,
+  SpotlightText,
+} from '../Home.style';
 
-const ItemPostUpComing = ({items}) => {
+const ItemPostUpComing = ({ items }) => {
   return (
     <div className="shadowA">
       <div>
@@ -16,18 +26,16 @@ const ItemPostUpComing = ({items}) => {
             preview={false}
           />
           <DivWrap>
-            <div className="info-calendar">
-              {items.calendar}
-            </div>
+            <div className="info-calendar">{items.calendar}</div>
           </DivWrap>
         </ArticleWrap>
 
         <SpotlightText className="mt-1">
           <Typography.Title className="date-upcoming">
-          {items.date}
+            {items.date}
           </Typography.Title>
           <Typography.Title className="contentPostSpot">
-          {items.content}
+            {items.content}
           </Typography.Title>
         </SpotlightText>
       </div>
@@ -38,7 +46,7 @@ const ItemPostUpComing = ({items}) => {
             <Typography.Text>{items.address}</Typography.Text>
           </SpotlightText>
         </div>
-        <Button
+        <button
           style={{
             width: '100%',
             background: 'rgba(249, 196, 31, 0.1)',
@@ -48,9 +56,13 @@ const ItemPostUpComing = ({items}) => {
             alignItems: 'center',
             borderRadius: '8px',
             cursor: 'pointer',
+            marginBottom: '15px',
+            padding: '9px 0px',
           }}
-          icon={<VectorCalendar />}
+          // icon={<VectorCalendar />}
         >
+          {/* <Image src={VectorCalendar} width={20} height={20} /> */}
+          <VectorCalendar />
           <label
             style={{
               fontSize: '14px',
@@ -62,7 +74,7 @@ const ItemPostUpComing = ({items}) => {
           >
             Add to Calendar
           </label>
-        </Button>
+        </button>
       </ItemUpcoming>
     </div>
   );
