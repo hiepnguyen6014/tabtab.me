@@ -1,8 +1,9 @@
-import { styled } from '@styles/theme';
+import { Button, Col, Row, Select, Typography } from 'antd';
+
+import Image from 'next/image';
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
-import { Button, Col, Row, Select, Typography } from 'antd';
-import Image from 'next/image';
+import { styled } from '@styles/theme';
 
 const COLOR_LIGHT = '#fff';
 const COLOR_DARK = '#222222';
@@ -43,6 +44,7 @@ export const HeaderWrapper = styled.header`
   color: ${COLOR_LIGHT};
   font-size: 18px;
   @media ${device.maxMd} {
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1) !important;
     background-color: transparent;
     border: none;
     top: 3%;

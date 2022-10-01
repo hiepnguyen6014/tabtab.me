@@ -1,5 +1,6 @@
-import { SRC_IMAGE } from '@core';
 import {
+  ArrowRight,
+  DollarMoney,
   Heart,
   VectorCoin,
   VectorFacebook,
@@ -8,6 +9,8 @@ import {
   VectorTag,
 } from '@root/public/icons';
 import { Button, Col, Image, Row, Typography } from 'antd';
+
+import { SRC_IMAGE } from '@core';
 import { SpotlightText } from '../Spotlight.style';
 
 const ColContent: React.FC<{}> = () => {
@@ -15,7 +18,7 @@ const ColContent: React.FC<{}> = () => {
     <>
       <div className="breadcrumb-detail">
         <Typography className="header-content">Tên Section</Typography>
-        <Typography className="header-content">/</Typography>
+        <ArrowRight className="header-content" />
         <Typography className="header-content">Tên trang đang mở</Typography>
       </div>
       <div className="breadcrumb-detail">
@@ -83,7 +86,10 @@ const ColContent: React.FC<{}> = () => {
                 <Typography className="mx-1 role-user">|</Typography>
                 <Typography className="role-user">Zalo</Typography>
               </div>
-              <Typography className="coin-user">24t </Typography>
+              <div className="d-flex align-items-center gap-2">
+                <Typography className="coin-user">24t </Typography>
+                <DollarMoney />
+              </div>
             </div>
           </div>
           <div className="button-review d-flex my-3">

@@ -1,10 +1,3 @@
-import { SRC_IMAGE } from '@core';
-import {
-  VectorBookmark,
-  VectorPlay,
-  VectorPodcast,
-  VectorStar,
-} from '@root/public/icons';
 import {
   ArticleWrap,
   DivWrap,
@@ -12,10 +5,24 @@ import {
   ItemPostSpot,
   TypographyWrap,
 } from '@root/src/components/pages/Home/Home.style';
+import { ButtonClick, SpotlightText, SpotlightWrap } from '../Spotlight.style';
 import { Col, Image, Row, Typography } from 'antd';
-import { SpotlightText, SpotlightWrap } from '../Spotlight.style';
+import {
+  VectorBookmark,
+  VectorPlay,
+  VectorPodcast,
+  VectorStar,
+  VectorUp
+} from '@root/public/icons';
 
-const CheckOutArticles: React.FC<{}> = () => {
+import Link from 'next/link';
+import { SRC_IMAGE } from '@core';
+
+interface CheckoutProps {
+  clicktoPageHeader: () => void;
+}
+
+const CheckOutArticles: React.FC<CheckoutProps> = ({clicktoPageHeader}) => {
   return (
     <>
       <div
@@ -251,6 +258,13 @@ const CheckOutArticles: React.FC<{}> = () => {
             </SpotlightText>
           </ItemPostSpot>
         </Col>
+       <Link href="/detail-spotlight">
+       <ButtonClick
+                    // onClick={(e) => clicktoPageHeader()}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <VectorUp />
+                  </ButtonClick></Link>
       </Row>
     </>
   );

@@ -1,7 +1,8 @@
-import { styled } from '@styles/theme';
+import { Button, Image, Typography } from 'antd';
+
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
-import { Image, Typography } from 'antd';
+import { styled } from '@styles/theme';
 
 export const SpotlightWrap = styled.div`
   width: 100%;
@@ -10,16 +11,28 @@ export const SpotlightWrap = styled.div`
   .row-header {
     padding: 22px 10px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)),
+    @media ${device.maxMd} {
+      display: none !important;
+    }
       #ffffff;
   }
   .col-header {
     margin-right: 16px;
+    @media ${device.maxMd} {
+      display: none !important;
+    }
   }
   .breadcrumb-detail {
     /* padding: 10px 50px; */
     margin-top: 30px;
     margin-left: 10px;
+    algin-items:center;
     display: flex;
+  }
+  .breadcrumb-detail:nth-child(1) {
+    @media ${device.maxSm} {
+      margin-top:14px !important;
+    }
   }
   .horizontal-line {
     width: 100%;
@@ -62,7 +75,7 @@ export const SpotlightWrap = styled.div`
     order: 1;
     flex-grow: 0;
     background: #222222;
-    width: 200px;
+    width: 190px;
     margin-top: 20px;
     height: 2px;
   }
@@ -139,6 +152,16 @@ export const SpotlightText = styled(Typography)`
     color: #7a7a7a;
     margin-left: 8px;
   }
+
+  .header-content:nth-child(3) {
+    @media ${device.maxSm} {
+      color: #f9c41f !important;
+    }
+  }
+  .header-content:nth-child(2) {
+    margin-top: -3px !important;
+  }
+
   .title-content {
     font-weight: 700;
     font-size: 32px;
@@ -265,6 +288,7 @@ export const SpotlightText = styled(Typography)`
     font-size: 14px;
     line-height: 17px;
     font-weight: 700;
+    margin-top: 15px !important;
     margin-bottom: -15px;
     text-transform: uppercase;
     color: #33a7e2;
@@ -305,4 +329,16 @@ export const SpotlightText = styled(Typography)`
       line-height: 21px;
     }
   }
+`;
+
+export const ButtonClick = styled(Button)`
+  position: fixed;
+  right: 280px;
+  bottom: 5px;
+  width: 58px;
+  height: 58px;
+  padding:10px;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
+  background-color:"#ffff";
+  border-radius: 50%;
 `;

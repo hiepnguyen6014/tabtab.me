@@ -1,7 +1,7 @@
-import { styled } from '@styles/theme';
-import { device } from '@styles/theme/device';
 import { Input, Typography } from 'antd';
 
+import { device } from '@styles/theme/device';
+import { styled } from '@styles/theme';
 
 export const ChatWrap = styled.div`
   position: fixed;
@@ -34,6 +34,8 @@ export const ChatSmallWrap = styled.div`
     display: none;
   }
 `;
+
+
 
 export const Flex = styled.div`
   display: flex;
