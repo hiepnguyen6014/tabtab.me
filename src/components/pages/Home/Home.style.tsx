@@ -794,6 +794,22 @@ export const GeneralText = styled(Typography)`
   }
 `;
 
+export const ButtonViewAll = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 28px;
+
+  border: 0.7px solid #d3d3d3;
+  border-radius: 100px;
+  background: white;
+
+  
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+`;
+
 //Recommend
 export const ButtonTag = styled.button<any>`
   border-radius: 100px;
@@ -808,4 +824,25 @@ export const ButtonTag = styled.button<any>`
   font-size: 16px;
   line-height: 20px;
   margin-right: 5px;
+`;
+
+export const ButtonNav = styled.button`
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e9e9e9;
+  border-radius: 50%;
+  background: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > svg > path {
+    stroke-width: 1px;
+  }
+`;
+
+export const AllItem = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 `;

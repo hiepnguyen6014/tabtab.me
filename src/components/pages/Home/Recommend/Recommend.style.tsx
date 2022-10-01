@@ -10,7 +10,7 @@ export const Wrapper = styled((props) => <div {...props} />)`
   /* align-items: center; */
   flex-direction: column;
 
-  height: 484px;
+  height: auto;
   /* min-width: 280px; */
   width: 282px;
   max-width: 100%;
@@ -24,7 +24,7 @@ export const Wrapper = styled((props) => <div {...props} />)`
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-3px);
+    transform: scale(1.05);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px, rgba(0, 0, 0, 0.1) 0px 6px 6px;
   }
   @media ${device.maxLg} {
@@ -44,7 +44,7 @@ export const CardThumbnail = styled.div`
     position: absolute;
     top: 12px;
     left: 8px;
-    z-index: 1;
+    z-index: 9;
 
     color: #000000;
     background: #ffffff;
@@ -60,7 +60,7 @@ export const CardThumbnail = styled.div`
     position: absolute;
     top: 12px;
     right: 8px;
-    z-index: 1;
+    z-index: 9;
   }
 
   .btn-prev {
@@ -70,7 +70,7 @@ export const CardThumbnail = styled.div`
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: 9;
 
     display: flex;
     justify-content: center;
@@ -87,7 +87,7 @@ export const CardThumbnail = styled.div`
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: 9;
 
     display: flex;
     justify-content: center;
@@ -96,6 +96,34 @@ export const CardThumbnail = styled.div`
     background: #ffffff;
     border-radius: 50%;
     border: none;
+  }
+
+  .btn-next.swiper-button-disabled {
+    display: none;
+  }
+  .btn-prev.swiper-button-disabled {
+    display: none;
+  }
+
+  .swiper-pagiantion {
+  }
+  .swiper .swiper-pagination-bullet {
+    background-color: rgba(254, 255, 255, 0.8);
+    transition: all 0.3s;
+    margin-bottom: 10px;
+  }
+  .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active-prev-prev,
+  .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active-next-next {
+    transform: scale(0.6) !important;
+  }
+
+  .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active-prev,
+  .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active-next {
+    transform: scale(0.8) !important;
+  }
+
+  .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active-main {
+    background-color: #feffff;
   }
 `;
 

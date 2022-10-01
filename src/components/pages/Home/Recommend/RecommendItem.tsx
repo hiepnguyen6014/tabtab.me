@@ -1,4 +1,6 @@
 import { Button, Col, Divider, Row, Skeleton, Typography } from 'antd';
+import React, { useState } from 'react';
+
 import {
   VectorBuilding,
   VectorCalendar,
@@ -36,72 +38,103 @@ import { useRouter } from 'next/router';
 import { ROUTES } from '@constants';
 import TenXLogo from '@root/public/static/Ten-X-Logo.png';
 import ThumbnailCard from '@root/public/static/images-recommend.png';
+import ThumbnailCard2 from '@root/public/static/thumbnail2.png';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-export function RecommendItem() {
+export interface PostItem {
+  price?: string;
+  wasPrice?: string;
+  title?: string;
+}
+
+export function RecommendItem(props: PostItem) {
+  const prevRef = React.useRef(null);
+  const nextRef = React.useRef(null);
+  const detailItemList = [
+    { id: 1, icon: <VectorSquare />, content: '72m²' },
+    { id: 2, icon: <VectorTree />, content: '---' },
+    { id: 3, icon: <VectorUser />, content: 'Chính chủ' },
+    { id: 4, icon: <VectorHouse />, content: '4m' },
+    { id: 5, icon: <VectorDirection />, content: 'West' },
+    { id: 6, icon: <VectorBuilding />, content: 'Chung cư' },
+  ];
+
+  const imageSrc = [
+    { src: ThumbnailCard, id: 1 },
+    { src: ThumbnailCard2, id: 2 },
+    { src: ThumbnailCard, id: 3 },
+    { src: ThumbnailCard2, id: 4 },
+  ];
+
   return (
     <>
       <Wrapper>
         <CardThumbnail>
           <div className="sale-off">sale 15% off</div>
-          <button className="btn-prev">
+          <button className="btn-prev" ref={prevRef}>
             <PrevArrow />
           </button>
-          <button className="btn-next">
+          <button className="btn-next" ref={nextRef}>
             <NextArrow />
           </button>
           <div className="icon-favorite">
             <SFavorite />
           </div>
-          <Image src={ThumbnailCard} alt="" width={282} height={188} />
+
+          <Swiper
+            modules={[Navigation, Pagination]}
+            pagination={{ dynamicBullets: true }}
+            draggable
+            spaceBetween={10}
+            slidesPerGroup={1}
+            speed={750}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+          >
+            {imageSrc.map((item, idx) => {
+              return (
+                <SwiperSlide key={item.id}>
+                  <Image src={item.src} alt="" width={282} height={188} />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+
+          {/* <Image src={imageSrc[1].src} alt="" width={282} height={188} /> */}
         </CardThumbnail>
 
         <PostContent>
           <Prices>
             <div>
-              <div className="now-price">3.000.000$</div>
-              <div className="was-price">was 4.500.000$ </div>
+              <div className="now-price">{props.price}</div>
+              <div className="was-price">was {props.wasPrice} </div>
             </div>
             <div>
               <Image src={TenXLogo} width={76} height={24} />
             </div>
           </Prices>
           <CardTitle>
-            <div>
-              Sir Francis Drake Blvd. Retail /Office 312 Sir Francis Drake
-            </div>
+            <div>{props.title}</div>
             <div className="sub-title">23 Willow Way, Bletchley, USA</div>
           </CardTitle>
 
           <DetailItem>
-            <div className="item">
-              <VectorSquare />
-              <div className="item-content">72m²</div>
-            </div>
-            <div className="item">
-              <VectorTree /> <div className="item-content">---</div>
-            </div>
-
-            <div className="item">
-              <VectorUser />
-              <div className="item-content">Chính chủ</div>
-            </div>
-
-            <div className="item">
-              <VectorHouse /> <div className="item-content">4m</div>
-            </div>
-
-            <div className="item">
-              <VectorDirection />
-              <div className="item-content">West</div>
-            </div>
-            <div className="item">
-              <VectorBuilding />
-              <div className="item-content">Chung cư</div>
-            </div>
+            {detailItemList.map((item) => (
+              <div className="item" key={item.id}>
+                {item.icon}
+                <div className="item-content">{item.content}</div>
+              </div>
+            ))}
           </DetailItem>
 
-          <Divider style={{ marginTop: '5px', marginBottom: '7px' }} />
+          <Divider style={{ marginTop: '16px', marginBottom: '12px' }} />
 
           <CardBottom>
             <div className="time">
