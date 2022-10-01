@@ -99,3 +99,5 @@ export const BoxLogoX = styled.div`
   border-radius: 8px;
   padding: 2px 6px;
 `;
+
+
