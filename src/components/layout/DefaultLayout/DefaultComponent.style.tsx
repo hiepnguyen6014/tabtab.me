@@ -1,13 +1,13 @@
 import { styled } from '@styles/theme';
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
-import { Button } from "antd"
+import { Button, Radio } from 'antd';
 
 export const DefaultRowHeader = styled.div`
   height: 96px;
   display: block;
   width: 100%;
-  background:transparent;
+  background: transparent;
   @media ${device.maxMd} {
     display: none;
   }
@@ -18,46 +18,44 @@ export const DefaultHeaderForMobile = styled.div`
   display: block;
   display: none;
   background-color: ${colors.common};
-  @media ${device.maxMd}{
+  @media ${device.maxMd} {
     display: block;
   }
-`
+`;
 
 export const DefaultWrapperWithBg = styled.div`
   &:nth-of-type(even) {
     background: #ffffff;
     width: 100%;
   }
-  &:last-child{
-    padding-bottom:100px;
+  &:last-child {
+    padding-bottom: 100px;
   }
-  abbr{
-    color: ${colors.common}
+  abbr {
+    color: ${colors.common};
   }
-  @media ${device.maxMd}{
-      padding: ${props => props.typeof == "fullScreen" ? 0 : ''};
+  @media ${device.maxMd} {
+    padding: ${(props) => (props.typeof == 'fullScreen' ? 0 : '')};
   }
 `;
 
-
 export const DefaultProductWrapper = styled.div`
   display: grid;
-  grid-template-columns:24% 24% 24% 24%;
-  grid-template-rows:auto;
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-template-rows: auto;
   justify-content: space-between;
-  grid-column-gap:1%;
-  grid-row-gap:20px;
+  grid-column-gap: 1%;
+  grid-row-gap: 20px;
 
   @media ${device.maxLg} {
-    grid-template-columns:33% 33% 33%;
+    grid-template-columns: 33% 33% 33%;
   }
-  @media ${device.maxMd} {  
-    grid-template-columns:49% 49%;
-
+  @media ${device.maxMd} {
+    grid-template-columns: 49% 49%;
   }
   @media ${device.maxSm} {
-    grid-template-columns:100%;
-    justify-content: space-between;  
+    grid-template-columns: 100%;
+    justify-content: space-between;
   }
 `;
 
@@ -66,26 +64,28 @@ export const DefaultContentNoGrid = styled.div`
   width: 95%;
   margin: auto;
   padding: 30px 0;
-  @media ${device.maxMd}{
-      padding:${props => props.typeof == "fullScreen" ? '0' : ''};
-      width: ${props => props.typeof == "fullScreen" ? '100%' : ''};
+  @media ${device.maxMd} {
+    padding: ${(props) => (props.typeof == 'fullScreen' ? '0' : '')};
+    width: ${(props) => (props.typeof == 'fullScreen' ? '100%' : '')};
   }
 `;
-export const DefaultContentInWrapper = styled(props=> <div {...props}/>)`
+export const DefaultContentInWrapper = styled((props) => <div {...props} />)`
   max-width: 1200px;
   padding: 30px 0;
   width: 95%;
-  ${props => props.grid? {
-    'grid-template-columns': "69% 30%",
-    display: "grid"
-
-  }:{
-    'grid-template-columns':''
-  }}
+  ${(props) =>
+    props.grid
+      ? {
+          'grid-template-columns': '69% 30%',
+          display: 'grid',
+        }
+      : {
+          'grid-template-columns': '',
+        }}
   margin: auto;
   justify-content: space-between;
   column-gap: 10px;
-  grid-row-gap:20px;
+  grid-row-gap: 20px;
   @media ${device.maxMd} {
     grid-template-columns: 59% 40%;
   }
@@ -123,49 +123,59 @@ export const DefaultRowTitle = styled.div`
 `;
 
 export const LandingWrapContent = styled.div`
-  h1{
-    color:${colors.common} !important;
+  h1 {
+    color: ${colors.common} !important;
     font-size: 22px;
     line-height: 28px;
   }
-  p{
+  p {
     font-size: 18px;
     line-height: 24px;
   }
-`
-export const ButtonWrap = styled(props => <Button {...props} />)`
+`;
+export const ButtonWrap = styled((props) => <Button {...props} />)`
     width: 170px;
     display: flex;
     gap:10px;
     align-items: center;
-    ${props => props.background ? {
-    background: props.background
-  } : {
-    background: '#ffffff'
-  }
-  }
+    ${(props) =>
+      props.background
+        ? {
+            background: props.background,
+          }
+        : {
+            background: '#ffffff',
+          }}
     padding-top: 24px;
     padding-left: 24px;
     padding-right: 24px;
     padding-bottom: 24px;
     border-radius: 8px;
   }
-`
+`;
 
-export const ButtonWrapProperties = styled(props => <Button {...props} />)`
+export const ButtonWrapProperties = styled((props) => <Button {...props} />)`
     display: flex;
     gap:10px;
     align-items: center;
-    ${props => props.background ? {
-    background: props.background
-  } : {
-    background: '#ffffff'
-  }
-  }
+    ${(props) =>
+      props.background
+        ? {
+            background: props.background,
+          }
+        : {
+            background: '#ffffff',
+          }}
     padding-top: 24px;
     padding-left: 24px;
     padding-right: 24px;
     padding-bottom: 24px;
     border-radius: 8px;
   }
-`
+`;
+
+export const RadioWrap = styled(Radio.Group)`
+  background: #e9e9e9;
+  border-radius: 12px;
+  display: flex;
+`;
