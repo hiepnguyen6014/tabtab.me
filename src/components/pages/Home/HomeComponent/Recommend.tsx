@@ -1,14 +1,23 @@
-import { Row, Typography } from 'antd';
-import { IconQuotes } from 'public/icons';
+import { Pagination, Row, Typography } from 'antd';
+import { IconQuotes, PrevArrow, NextArrow } from 'public/icons';
 import React, { useState } from 'react';
+import { Autoplay, Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import {
-  ButtonTag, GeneralText,
-  GeneralWrap, WrapperSpot
+  AllItem,
+  ButtonNav,
+  ButtonTag,
+  GeneralText,
+  GeneralWrap,
+  WrapperSpot,
 } from '../Home.style';
-import { RecommendItem } from '../Recommend';
+import { PostItem, RecommendItem } from '../Recommend';
 import { TypographyText } from './PostItem/PostItem.style';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-const RecommendProperty = ({ data, t, fontSize }) => {
+const RecommendProperty = () => {
   const [limitItems, setLimitItems] = React.useState(12);
   // layout for desktop only 8 products if screen is mobile, product will be 20 posts
 
@@ -27,7 +36,11 @@ const RecommendProperty = ({ data, t, fontSize }) => {
   }, []);
 
   const [showContent, setShowContent] = useState(true);
+  const [showAll, setShowAll] = useState(false);
   const [active, setActive] = useState(1);
+
+  const prevRef = React.useRef(null);
+  const nextRef = React.useRef(null);
 
   const listTag = [
     { id: 1, value: 'Sell' },
@@ -36,8 +49,19 @@ const RecommendProperty = ({ data, t, fontSize }) => {
     { id: 4, value: 'Transfer' },
   ];
 
+  const postItem: PostItem = {
+    price: '3.000.000$',
+    wasPrice: '4.500.000$ ',
+    title: 'Sir Francis Drake Blvd. Retail /Office 312 Sir Francis Drake',
+  };
+
+  const listPost: PostItem[] = Array(16).fill(postItem);
+
   const handleBtnClick = (id: number) => {
     setActive(id);
+  };
+  const hanldeShowAll = () => {
+    setShowAll(true);
   };
 
   return (
@@ -45,7 +69,7 @@ const RecommendProperty = ({ data, t, fontSize }) => {
       <GeneralText>
         <Typography.Title
           className="title-general"
-          style={{ fontSize: fontSize ? fontSize : '' }}
+          // style={{ fontSize: fontSize ? fontSize : '' }}
         >
           Recommend Property
         </Typography.Title>
@@ -83,33 +107,64 @@ const RecommendProperty = ({ data, t, fontSize }) => {
               </div>
             </div>
 
-            <div style={{ display: 'flex' }} className="my-1">
+            <div
+              style={{ display: 'flex', alignItems: 'center' }}
+              className="my-1"
+            >
               <div>
                 <Typography.Link
-                  style={{ textDecoration: 'underline' }}
+                  style={{ textDecoration: 'underline', color: showAll ? "#7A7A7A":"" }}
                   className="linkShowPost"
+                  onClick={hanldeShowAll}
                 >
-                  Show all(56+)
+                  Show all(+{listPost.length})
                 </Typography.Link>
               </div>
-              <div>
-                <Typography.Link className="linkShowPost">
-                  {'<'}
-                </Typography.Link>
-              </div>
-              <div>
-                <Typography.Link className="linkShowPost">
-                  {'>'}
-                </Typography.Link>
-              </div>
+              <ButtonNav style={{ margin: '0px 12px 0px 16px' }} ref={prevRef}>
+                <PrevArrow />
+              </ButtonNav>
+              <ButtonNav ref={nextRef}>
+                <NextArrow />
+              </ButtonNav>
             </div>
           </Row>
-          <div className="list-item">
-            <RecommendItem />
-            <RecommendItem />
-            <RecommendItem />
-            <RecommendItem />
-          </div>
+
+          {showAll ? (
+            <AllItem>
+              {listPost.map((item, idx) => (
+                <RecommendItem {...item} key={idx} />
+              ))}
+            </AllItem>
+          ) : (
+            <div className="">
+              <Swiper
+                modules={[Navigation, Autoplay]}
+                draggable
+                spaceBetween={40}
+                speed={750}
+                grabCursor
+                navigation={{
+                  prevEl: prevRef.current,
+                  nextEl: nextRef.current,
+                }}
+                breakpoints={{
+                  '1024': {
+                    slidesPerView: 4,
+                    slidesPerGroup: 4,
+                    spaceBetween: 24,
+                  },
+                }}
+              >
+                {listPost.map((item, idx) => {
+                  return (
+                    <SwiperSlide key={idx}>
+                      <RecommendItem {...item} />
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
+          )}
         </TypographyText>
       )}
     </WrapperSpot>

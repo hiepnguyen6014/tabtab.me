@@ -8,6 +8,7 @@ import {
   ImageBannerWrap,
   GeneralText,
   GeneralWrap,
+  ButtonViewAll,
 } from '../Home.style';
 import { IconQuotes, VectorPlay, VectorPodcast } from 'public/icons';
 import { SRC_IMAGE } from '@constants';
@@ -17,6 +18,7 @@ import ItemSide from '../Spotlight/ItemSide';
 import { ColA } from '../Spotlight/ItemSpotlight.style';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { Flex } from '../../HelpCenter/HelpCenter.style';
 
 const SpotLight: React.FC<{}> = () => {
   const router = useRouter();
@@ -236,13 +238,24 @@ const SpotLight: React.FC<{}> = () => {
               );
             })}
           </Row>
-          <Col span={12} offset={6} style={{ marginTop: '50px' }}>
-            
-            <Button
+          <Col
+            span={12}
+            offset={6}
+            style={{
+              marginTop: '50px',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <ButtonViewAll>VIEW ALL</ButtonViewAll>
+            {/* <Button
               shape="round"
               size={'large'}
               style={{ background: 'white', color: 'black' }}
-            > VIEW ALL</Button>
+            >
+              {' '}
+              VIEW ALL
+            </Button> */}
           </Col>
         </div>
       )}
