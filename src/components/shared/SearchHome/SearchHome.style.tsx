@@ -6,7 +6,7 @@ import { colors } from '@styles/theme/colors';
 export const SearchWrapper = styled(Row)`
   width: 588px;
   height: 100%;
-  background: #FFFFFF;
+  background: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,35 +15,37 @@ export const SearchWrapper = styled(Row)`
   padding-left: 30px;
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
   margin-top: 0px;
-  div, span, input{
-    font-size:1.1rem !important;
+  div,
+  span,
+  input {
+    font-size: 1.1rem !important;
   }
-  @media ${device.maxMd}{   
+  @media ${device.maxMd} {
     width: 388px;
   }
-  @media ${device.maxSm}{
+  @media ${device.maxSm} {
     width: 288px;
-    span{
-      display: none
+    span {
+      display: none;
     }
   }
 `;
 export const ColItem = styled(Col)`
   padding: 5px 10px;
-  @media ${device.maxMd}{
+  @media ${device.maxMd} {
     padding: 10px 0px;
   }
-  @media ${device.maxSm}{
+  @media ${device.maxSm} {
     padding: 0;
   }
 `;
 
 export const ButtonSearch = styled(Button)`
   width: 40px;
-  overflow:hidden;
-  height:40px;
-  border-radius:100px;
-  background: #F9C41F;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 100px;
+  background: #f9c41f;
   color: #fff !important;
   display: flex;
   text-align: center;
@@ -51,19 +53,18 @@ export const ButtonSearch = styled(Button)`
   align-items: center;
   gap: 5px;
   float: right;
-  line-height:12px;
+  line-height: 12px;
   svg {
     path {
       fill: #fff;
     }
   }
-  &:hover{
-    color:${colors.common} !important;
+  &:hover {
+    color: ${colors.common} !important;
   }
-  @media ${device.maxSm}{
+  @media ${device.maxSm} {
     width: 45px;
     height: 45px;
-    
   }
 `;
 export const InputSearch = styled(Input)`
@@ -73,16 +74,14 @@ export const InputSearch = styled(Input)`
   padding: 0;
   border: none;
   box-shadow: none;
-  .ant-input{
+  .ant-input {
     width: 100%;
-    background: #F2F2F2
+    background: #f2f2f2;
   }
-  @media ${device.maxSm}{
+  @media ${device.maxSm} {
     padding-left: 5px;
   }
-
 `;
-
 
 export const TextSearchWrap = styled(Typography)`
   font-family: 'Inter';
@@ -90,19 +89,20 @@ export const TextSearchWrap = styled(Typography)`
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  color: #7A7A7A
-`
+  color: #7a7a7a;
+`;
 
 export const RadioSearch = styled(Radio.Group)`
-  .radio-active{
-    &:active{
-      background: #F9C41F !important;
+  .radio-active {
+    border-right: none;
+    &:active {
+      background: #f9c41f !important;
     }
-  } 
-  @media ${device.maxSm}{
+  }
+  @media ${device.maxSm} {
     width: 155px;
-    span{
-        display: none;
+    span {
+      display: none;
     }
   }
 `;
