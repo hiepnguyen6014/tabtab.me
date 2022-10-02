@@ -9,11 +9,12 @@ import React, { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Image } from 'antd';
+import { ImageHome } from '../../pages/Search/Search.style';
 
 interface SwipperSlice {
   arrayImage: any[];
-  width:string;
-  height:string;
+  width: string;
+  height: string;
 }
 
 const SwiperGlobal: FC<SwipperSlice> = ({ arrayImage, width, height }) => {
@@ -31,7 +32,7 @@ const SwiperGlobal: FC<SwipperSlice> = ({ arrayImage, width, height }) => {
     >
       {arrayImage.map((image) => (
         <SwiperSlide key={image.id}>
-          <Image
+          <ImageHome
             width={width}
             height={height}
             preview={false}

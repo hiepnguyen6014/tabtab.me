@@ -1,6 +1,5 @@
-import { Button, Image, Radio, Row } from 'antd';
+import { Button, Image, Row } from 'antd';
 
-import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
 import { styled } from '@styles/theme';
 
@@ -61,12 +60,33 @@ export const ButtonApply = styled(Button)`
 
 export const WrapperHideMap = styled(Row)`
   margin-top: 16px;
+  @media ${device.maxMd} {
+    margin-top:30px;
+  }
 `;
 
 export const ImageHome = styled(Image)`
   position: relative;
   object-fit: cover;
   border-radius: 6px 6px 0px 0px;
+`;
+
+export const BoxIntroduce = styled.div`
+  margin-top: 120px;
+  @media ${device.maxSm} {
+    margin-top: 0;
+  }
+`
+
+export const BoxWrapper = styled.div`
+  background: #ffffff;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  height: 551px;
+  @media ${device.maxSm} {
+    margin:0 3px 0 12px;
+    height: 510px;
+  }
 `;
 
 export const BoxSalePrice = styled.div`
@@ -78,6 +98,9 @@ export const BoxSalePrice = styled.div`
   top: 10px;
   left: 30px;
   padding: 2px 8px;
+  @media ${device.maxSm} {
+    padding: 1.16667px 4.66667px;
+  }
 `;
 
 export const SpanPrice = styled.span`
@@ -87,17 +110,37 @@ export const SpanPrice = styled.span`
   line-height: 20px;
   text-transform: uppercase;
   color: #000000;
+  @media ${device.maxSm} {
+    font-size: 8.16667px;
+  }
 `;
 
 export const BoxLogoX = styled.div`
-  bottom: -10px;
-  right:22px;
+  transform: translateY(-25px);
+  right: 22px;
   z-index: 1;
   position: absolute;
   background: #ffffff;
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
   padding: 2px 6px;
+  
+`;
+
+export const BoxFavorite = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 30px;
+  cursor:pointer;
+  @media ${device.maxSm} {
+    right: 15px;
+  }
 `;
 
 
+export const BoxHiddenMobile = styled.div`
+@media ${device.maxSm} {
+  display:none;
+}
+`
