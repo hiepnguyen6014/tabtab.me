@@ -34,12 +34,13 @@ export const globalStyles = (
         color:#141414 !important;
         font-weight: 600; !important;
       }
-      .swiper-pagination-bullet {
+      /* .swiper-pagination-bullet {
         background: rgba(254, 255, 255, 0.8) !important;
         opacity:1;
       .swiper-pagination-bullet-active {
         background-color: #fff !important;
-   }
+   } */
+
     `}
   />
 );

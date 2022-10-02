@@ -1,7 +1,7 @@
-import { Pagination, Row, Typography } from 'antd';
+import { Row, Typography } from 'antd';
 import { IconQuotes, PrevArrow, NextArrow } from 'public/icons';
 import React, { useState } from 'react';
-import { Autoplay, Navigation } from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   AllItem,
@@ -9,6 +9,7 @@ import {
   ButtonTag,
   GeneralText,
   GeneralWrap,
+  WrapperContent,
   WrapperSpot,
 } from '../Home.style';
 import { PostItem, RecommendItem } from '../Recommend';
@@ -72,6 +73,7 @@ const RecommendProperty = () => {
           // style={{ fontSize: fontSize ? fontSize : '' }}
         >
           Recommend Property
+          <Typography.Text className="title-hide">HIDE</Typography.Text>
         </Typography.Title>
         <GeneralWrap>
           <div className="general-between-wrap">
@@ -91,7 +93,7 @@ const RecommendProperty = () => {
         </GeneralWrap>
       </GeneralText>
       {showContent && (
-        <TypographyText>
+        <WrapperContent>
           <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>
               <div>
@@ -113,7 +115,10 @@ const RecommendProperty = () => {
             >
               <div>
                 <Typography.Link
-                  style={{ textDecoration: 'underline', color: showAll ? "#7A7A7A":"" }}
+                  style={{
+                    textDecoration: 'underline',
+                    color: showAll ? '#7A7A7A' : '',
+                  }}
                   className="linkShowPost"
                   onClick={hanldeShowAll}
                 >
@@ -136,13 +141,14 @@ const RecommendProperty = () => {
               ))}
             </AllItem>
           ) : (
-            <div className="">
+            <div>
               <Swiper
-                modules={[Navigation, Autoplay]}
+                modules={[Navigation, Autoplay, Pagination]}
                 draggable
                 spaceBetween={40}
                 speed={750}
                 grabCursor
+                pagination={{ dynamicBullets: true }}
                 navigation={{
                   prevEl: prevRef.current,
                   nextEl: nextRef.current,
@@ -154,6 +160,7 @@ const RecommendProperty = () => {
                     spaceBetween: 24,
                   },
                 }}
+                className="container"
               >
                 {listPost.map((item, idx) => {
                   return (
@@ -165,7 +172,7 @@ const RecommendProperty = () => {
               </Swiper>
             </div>
           )}
-        </TypographyText>
+        </WrapperContent>
       )}
     </WrapperSpot>
   );
