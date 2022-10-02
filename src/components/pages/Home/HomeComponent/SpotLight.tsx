@@ -8,12 +8,9 @@ import {
   ImageBannerWrap,
   GeneralText,
   GeneralWrap,
+  ButtonViewAll,
 } from '../Home.style';
-import {
-  IconQuotes,
-  VectorPlay,
-  VectorPodcast,
-} from 'public/icons';
+import { IconQuotes, VectorPlay, VectorPodcast } from 'public/icons';
 import { SRC_IMAGE } from '@constants';
 import Link from 'next/link';
 import ItemSpotlight from '../Spotlight/ItemSpotlight';
@@ -21,6 +18,7 @@ import ItemSide from '../Spotlight/ItemSide';
 import { ColA } from '../Spotlight/ItemSpotlight.style';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { Flex } from '../../HelpCenter/HelpCenter.style';
 
 const SpotLight: React.FC<{}> = () => {
   const router = useRouter();
@@ -97,7 +95,7 @@ const SpotLight: React.FC<{}> = () => {
     },
   ];
 
-  const [showContent, setShowContent] = useState(true)
+  const [showContent, setShowContent] = useState(true);
 
   return (
     <WrapperSpot>
@@ -117,131 +115,150 @@ const SpotLight: React.FC<{}> = () => {
                 Những tin tức mới nhất phù hợp với Hùng
               </Typography.Title>
             </div>
-            <div onClick={e => setShowContent(showContent ? false : true)} style={{ cursor: "pointer" }}>
+            <div
+              onClick={(e) => setShowContent(showContent ? false : true)}
+              style={{ cursor: 'pointer' }}
+            >
               <Typography.Text className="content-hide">HIDE</Typography.Text>
             </div>
           </div>
         </GeneralWrap>
       </GeneralText>
-      {showContent && <div >
-        <Row>
-          <Col sm={24} lg={16} className="my-2">
-            <Link href="/spotlight-page">
-              <a>
-                <BannerSpotWrapper>
-                  <BannerWrap>
-                    <ImageBannerWrap
-                      alt="imagePost"
-                      src={SRC_IMAGE.IMAGEA}
-                      preview={false}
-                    />
-                    <DivWrap>
-                      <div className="title-post">
-                        <SpotlightText>
-                          <Typography className="titleBannerTop">
-                            Genres
-                          </Typography>
-                          <Typography className="titleBannerMiddle">
-                            Keep up with the rest of the world
-                          </Typography>
-                          <Typography className="titleBannerBottom">
-                            Here, four sixtysomethings offer advice to those in
-                            their.
-                          </Typography>
-                        </SpotlightText>
-                        <div className="d-flex info-group pb-1">
-                          <div
-                            style={{ width: 36, height: 36 }}
-                            className="mx-2"
-                          >
-                            <Image
-                              alt="user"
-                              src={SRC_IMAGE.STAFF3}
-                              width={36}
-                              height={36}
-                              className="rounded-circle"
-                            />
-                          </div>
+      {showContent && (
+        <div>
+          <Row>
+            <Col sm={24} lg={16} className="my-2">
+              <Link href="/spotlight-page">
+                <a>
+                  <BannerSpotWrapper>
+                    <BannerWrap>
+                      <ImageBannerWrap
+                        alt="imagePost"
+                        src={SRC_IMAGE.IMAGEA}
+                        preview={false}
+                      />
+                      <DivWrap>
+                        <div className="title-post">
                           <SpotlightText>
-                            <Typography className="dateBanner">
-                              26/05/2021
+                            <Typography className="titleBannerTop">
+                              Genres
                             </Typography>
-                            <Typography className="dateBanner">
-                              by{' '}
-                              <Typography.Text className="nameBanner">
-                                Jenny Wilson
-                              </Typography.Text>
+                            <Typography className="titleBannerMiddle">
+                              Keep up with the rest of the world
+                            </Typography>
+                            <Typography className="titleBannerBottom">
+                              Here, four sixtysomethings offer advice to those
+                              in their.
                             </Typography>
                           </SpotlightText>
+                          <div className="d-flex info-group pb-1">
+                            <div
+                              style={{ width: 36, height: 36 }}
+                              className="mx-2"
+                            >
+                              <Image
+                                alt="user"
+                                src={SRC_IMAGE.STAFF3}
+                                width={36}
+                                height={36}
+                                className="rounded-circle"
+                              />
+                            </div>
+                            <SpotlightText>
+                              <Typography className="dateBanner">
+                                26/05/2021
+                              </Typography>
+                              <Typography className="dateBanner">
+                                by{' '}
+                                <Typography.Text className="nameBanner">
+                                  Jenny Wilson
+                                </Typography.Text>
+                              </Typography>
+                            </SpotlightText>
+                          </div>
                         </div>
-                      </div>
-                    </DivWrap>
-                  </BannerWrap>
-                </BannerSpotWrapper>
-              </a>
-            </Link>
-          </Col>
-          <Col xs={0} sm={0} lg={8}>
-            <Row className="px-2">
-              <SpotlightText>
-                <Button type="text" danger>
-                  <Typography.Text
-                    className="optionPostSpot"
-                    style={{
-                      borderBottom: '1px solid #F9C41F',
-                      paddingBottom: 15,
-                    }}
-                  >
-                    LAST NEWS
-                  </Typography.Text>
-                </Button>
-                <Button type="text" danger>
-                  <Typography.Text className="optionPostSpot">
-                    MOST VIEW
-                  </Typography.Text>
-                </Button>
-              </SpotlightText>
-            </Row>
-            <div style={{ marginTop: '20px' }} className="px-2">
-              {ITEMSPOTLIGHTSIDE.map((items, key) => {
-                return (
-                  <Link href="/detail-spotlight" key={key}>
+                      </DivWrap>
+                    </BannerWrap>
+                  </BannerSpotWrapper>
+                </a>
+              </Link>
+            </Col>
+            <Col xs={0} sm={0} lg={8}>
+              <Row className="px-2">
+                <SpotlightText>
+                  <Button type="text" danger>
+                    <Typography.Text
+                      className="optionPostSpot"
+                      style={{
+                        borderBottom: '1px solid #F9C41F',
+                        paddingBottom: 15,
+                      }}
+                    >
+                      LAST NEWS
+                    </Typography.Text>
+                  </Button>
+                  <Button type="text" danger>
+                    <Typography.Text className="optionPostSpot">
+                      MOST VIEW
+                    </Typography.Text>
+                  </Button>
+                </SpotlightText>
+              </Row>
+              <div style={{ marginTop: '20px' }} className="px-2">
+                {ITEMSPOTLIGHTSIDE.map((items, key) => {
+                  return (
+                    <Link href="/detail-spotlight" key={key}>
+                      <a>
+                        <ItemSide item={items} />
+                      </a>
+                    </Link>
+                  );
+                })}
+              </div>
+            </Col>
+          </Row>
+
+          <Row
+            gutter={{
+              xs: 8,
+              sm: 16,
+              md: 24,
+              lg: 32,
+            }}
+          >
+            {ITEMSPOTLIGHTLIST.map((item, key) => {
+              return (
+                <ColA className="gutter-row" sm={24} lg={6} key={key}>
+                  <Link href="/detail-spotlight">
                     <a>
-                      <ItemSide item={items} />
+                      <ItemSpotlight item={item} />
                     </a>
                   </Link>
-                );
-              })}
-            </div>
+                </ColA>
+              );
+            })}
+          </Row>
+          <Col
+            span={12}
+            offset={6}
+            style={{
+              marginTop: '50px',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <ButtonViewAll>VIEW ALL</ButtonViewAll>
+            {/* <Button
+              shape="round"
+              size={'large'}
+              style={{ background: 'white', color: 'black' }}
+            >
+              {' '}
+              VIEW ALL
+            </Button> */}
           </Col>
-        </Row>
-
-        <Row
-          gutter={{
-            xs: 8,
-            sm: 16,
-            md: 24,
-            lg: 32,
-          }}
-        >
-          {ITEMSPOTLIGHTLIST.map((item, key) => {
-            return (
-              <ColA className="gutter-row" sm={24} lg={6} key={key}>
-                <Link href="/detail-spotlight">
-                  <a>
-                    <ItemSpotlight item={item} />
-                  </a>
-                </Link>
-              </ColA>
-            );
-          })}
-        </Row>
-        <Col span={12} offset={6} style={{ marginTop: '20px' }}>
-          <Button shape="round" size={'large'} style={{ background: 'white', color: 'black' }}>
-            VIEW ALL
-          </Button>
-        </Col>
-      </div>}
+        </div>
+      )}
     </WrapperSpot>
   );
 };
