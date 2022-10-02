@@ -24,16 +24,17 @@ import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import { useRouter } from 'next/router';
 import {ROUTES} from "@constants"
 
-const PostItemSell= ({post, t}) => {
+const PostItemSell= () => {
 
-  const {
-    realEstateId,
-    agency,
-    realEstatePostTypeId,
-    realEstateValueSalePrice,
-    realEstateJuridical,
-    realEstateLocation,
-  } = post;
+  // const {
+  //   realEstateId,
+  //   agency,
+  //   realEstatePostTypeId,
+  //   realEstateValueSalePrice,
+  //   realEstateJuridical,
+  //   realEstateLocation,
+  // } = post;
+
   const router = useRouter();
   const handleRedirect = (idPost: number) => {
     const pathname = {
@@ -50,27 +51,27 @@ const PostItemSell= ({post, t}) => {
   return (
     <>
       <ItemWrapper>
-        <PostThumbnail 
+        {/* <PostThumbnail 
         post={post}
         t={t}
         demo={{
           name: realEstateJuridical,
           action: () => handleRedirect(realEstateId)
         }}
-        />
-        <PostContent onClick={()=> handleRedirect(realEstateId)}>
+        /> */}
+        <PostContent >
           <TypographyText>
             <PostTitle>
               <Row>
                 <Col sm={18}>
                   <Typography.Title className="price">
-                    {formatNumToUnit(post.realEstateValueSalePrice, t)}
+                    {/* {formatNumToUnit(post.realEstateValueSalePrice, t)} */}
                   </Typography.Title>
                   <Typography.Title
                     className="wasPrice"
                     style={{ marginTop: '-13px' }}
                   >
-                    {formatNumToUnit(post.realEstateValueSalePrice, t)}
+                    {/* {formatNumToUnit(post.realEstateValueSalePrice, t)} */}
                   </Typography.Title>
                 </Col>
                 <Col sm={6}>
@@ -88,13 +89,11 @@ const PostItemSell= ({post, t}) => {
               </Row>
               <Row className='wrap-post'>
                 <Typography.Title className="detailPost" style={{overflow:'clip'}}>
-                  {post.realEstateTitle}
                 </Typography.Title>
                 <Typography.Title
                   className="addressPost"
                   style={{ marginTop: '0px' }}
                 >
-                  {post.realEstateLocation}
                 </Typography.Title>
               </Row>
             </PostTitle>
@@ -107,7 +106,7 @@ const PostItemSell= ({post, t}) => {
                     <VectorSquare />
                     <Typography.Text className="textPostMiddle">
                       {/* {post.realEstateLandRealitySquare} */}
-                      {parseFloat(post.realEstateLandRealitySquare).toLocaleString()}
+                      {/* {parseFloat(post.realEstateLandRealitySquare).toLocaleString()} */}
                     </Typography.Text>
                   </>
                 }
@@ -142,7 +141,7 @@ const PostItemSell= ({post, t}) => {
                     <VectorHouse />
                     <Typography.Text className="textPostMiddle">
                     {/* {post.realEstateLandRealitySquare} */}
-                    {parseFloat(post.realEstateLandRealitySquare).toLocaleString()}
+                    {/* {parseFloat(post.realEstateLandRealitySquare).toLocaleString()} */}
                     </Typography.Text>
                   </>
                 }
@@ -177,7 +176,7 @@ const PostItemSell= ({post, t}) => {
                   <span style={{ display: 'flex', alignItems: 'center' }}>
                     <VectorCalendar />
                     <Typography.Text className="textPostMiddle">
-                      {`${post.realEstateTotalDate.total || ''} ${t(post.realEstateTotalDate.defineName)}`}
+                      {/* {`${post.realEstateTotalDate.total || ''} ${t(post.realEstateTotalDate.defineName)}`} */}
                     </Typography.Text>
                   </span>
                 }

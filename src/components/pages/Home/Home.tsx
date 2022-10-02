@@ -39,7 +39,7 @@ const HomePage = (props: Props) => {
       <Opinion />
       <AdWords />
       {/* <Academy /> */}
-      <RecommendProperty data={postsByRating} t={t} />
+      <RecommendProperty />
       {/* <SocialNetwork /> */}
     </div>
   );

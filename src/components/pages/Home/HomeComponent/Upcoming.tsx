@@ -57,7 +57,7 @@ const Upcoming: React.FC<{}> = () => {
   return (
     <WrapperSpot>
       <GeneralText>
-        <Typography.Title className="title-general">Upcoming</Typography.Title>
+        <Typography.Title className="titgeneralle-">Upcoming</Typography.Title>
         <GeneralWrap>
           <div className="general-between-wrap">
             <div className="general-wrap">
