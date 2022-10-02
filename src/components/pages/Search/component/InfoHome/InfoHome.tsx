@@ -18,6 +18,7 @@ import {
   BoxDescriptionHome,
   BoxDetailDescription,
   BoxDetailHome,
+  BoxDetailHomeColumn,
   BoxInfo,
   BoxPriceInfoMation,
   BoxTitle,
@@ -32,9 +33,10 @@ import { SearchOutlined } from '@ant-design/icons';
 
 interface InfoHomeTypeProps {
   dataHome: any;
+  row?: boolean;
 }
 
-const InfoHome: FC<InfoHomeTypeProps> = ({ dataHome }) => {
+const InfoHome: FC<InfoHomeTypeProps> = ({ dataHome, row }) => {
   return (
     <BoxWrapper>
       <BoxTitle>{dataHome.totalDisCountMoney}</BoxTitle>
@@ -45,39 +47,68 @@ const InfoHome: FC<InfoHomeTypeProps> = ({ dataHome }) => {
       </BoxPriceInfoMation>
       <BoxTitleHome>{dataHome.title}</BoxTitleHome>
       <BoxDescriptionHome>{dataHome.description}</BoxDescriptionHome>
-      <BoxDetailHome>
-        <BoxDetailDescription>
-          <IconBluePrint className="iConSm"/>
-          <BoxInfo>{dataHome.area}</BoxInfo>
-        </BoxDetailDescription>
-        <BoxDetailDescription>
-          <IconPark />
-          <BoxInfo>{dataHome.other}</BoxInfo>
-        </BoxDetailDescription>
-        <BoxDetailDescription>
-          <AgentIcon />
-          <BoxInfo>{dataHome.info}</BoxInfo>
-        </BoxDetailDescription>
-        <BoxDetailDescription>
-          <IconSafari />
-          <BoxInfo>{dataHome.direction}</BoxInfo>
-        </BoxDetailDescription>
-        <BoxDetailDescription>
-          <Building />
-          <BoxInfo>{dataHome.typeHome}</BoxInfo>
-        </BoxDetailDescription>
-      </BoxDetailHome>
+      {!row ? (
+        <BoxDetailHome>
+          <BoxDetailDescription>
+            <IconBluePrint className="iConSm" />
+            <BoxInfo>{dataHome.area}</BoxInfo>
+          </BoxDetailDescription>
+          <BoxDetailDescription>
+            <IconPark />
+            <BoxInfo>{dataHome.other}</BoxInfo>
+          </BoxDetailDescription>
+          <BoxDetailDescription>
+            <AgentIcon />
+            <BoxInfo>{dataHome.info}</BoxInfo>
+          </BoxDetailDescription>
+          <BoxDetailDescription>
+            <IconSafari />
+            <BoxInfo>{dataHome.direction}</BoxInfo>
+          </BoxDetailDescription>
+          <BoxDetailDescription>
+            <Building />
+            <BoxInfo>{dataHome.typeHome}</BoxInfo>
+          </BoxDetailDescription>
+        </BoxDetailHome>
+      ) : (
+        <BoxDetailHomeColumn>
+          <BoxDetailHome>
+            <BoxDetailDescription>
+              <IconBluePrint className="iConSm" />
+              <BoxInfo>{dataHome.area}</BoxInfo>
+            </BoxDetailDescription>
+            <BoxDetailDescription>
+              <IconPark />
+              <BoxInfo>{dataHome.other}</BoxInfo>
+            </BoxDetailDescription>
+            <BoxDetailDescription>
+              <AgentIcon />
+              <BoxInfo>{dataHome.info}</BoxInfo>
+            </BoxDetailDescription>
+          </BoxDetailHome>
+          <BoxDetailHome>
+            <BoxDetailDescription>
+              <AgentIcon />
+              <BoxInfo>{dataHome.info}</BoxInfo>
+            </BoxDetailDescription>
+            <BoxDetailDescription>
+              <IconSafari />
+              <BoxInfo>{dataHome.direction}</BoxInfo>
+            </BoxDetailDescription>
+            <BoxDetailDescription>
+              <Building />
+              <BoxInfo>{dataHome.typeHome}</BoxInfo>
+            </BoxDetailDescription>
+          </BoxDetailHome>
+        </BoxDetailHomeColumn>
+      )}
       <Divider style={{ border: '1px solid #E9E9E9', margin: '14px 0' }} />
       <BoxContact>
         <BoxDetailDescription>
           <Advantage />
           <BoxInfo>{dataHome.timeUpdate}</BoxInfo>
         </BoxDetailDescription>
-        <ButtonMessage
-         
-          type="primary"
-          icon={<IconMessTabTab />}
-        >
+        <ButtonMessage type="primary" icon={<IconMessTabTab />}>
           CHAT NOW
         </ButtonMessage>
       </BoxContact>

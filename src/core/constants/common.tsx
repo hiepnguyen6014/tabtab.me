@@ -126,5 +126,6 @@ export const SRC_IMAGE={
   HOMETHREE:"static/eX3.png",
   HOMEFOUR:"static/eX2.png",
   HOMEFIVE:"static/eX1.png",
-  LOGOXIMAGE:"static/Ten-X-Logo.png"
+  LOGOXIMAGE:"static/Ten-X-Logo.png",
+  HOMEMINI: "static/HomeMini.png",
 }

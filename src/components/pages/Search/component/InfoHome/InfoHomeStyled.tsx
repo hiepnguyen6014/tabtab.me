@@ -155,3 +155,10 @@ export const ButtonMessage = styled(Button)`
     padding:4px 7px 3px 7px
   }
 `;
+
+
+export const BoxDetailHomeColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`
