@@ -200,16 +200,19 @@ import Logout from './logout.svg'
 import MaleFemale from './MaleFemale.svg'
 import MaleFemaleBlack from './MaleFemaleBlack.svg'
 import Message from './message.svg'
+import NextArrow from './next-arrow.svg'
 import OutdoorPublic from "./OutdoorPublic.svg"
 import PMA from './PMA.svg'
 import Patent from "./patent.svg"
 import Pet from "./Pet.svg"
 import Play from "./Play.svg"
 import Plus from './Plus.svg'
+import PrevArrow from './prev-arrow.svg'
 import PrivateOffice from "./PrivateOffice.svg"
 import Properties from './properties.svg'
 import ReceptionistAvailable from "./ReceptionistAvailable.svg"
 import Roommate from './roommate.svg'
+import SFavorite from './Favorite.svg'
 import SearchIcon from './SearchIcon.svg'
 import SearchSmall from './searchsmall.svg'
 import SearchYellow from './searchYellow.svg'
@@ -293,14 +296,16 @@ import VectorUser from './VectorUser.svg'
 import VectorVideoCamera from './video-camera.svg'
 import VirtualOfflice from "./VirtualOfflice.svg"
 import Water from "./Water.svg"
-
 export {
+    PrevArrow,
+    NextArrow,
+    SFavorite,
     IconDeposit,
     VectorTextMessageBlack,
     VectorLinkCircle,
     VectorPushCircle,
     VectorClose,
-    VectorAdjust,   
+    VectorAdjust,
     VectorSearchGrey,
     VectorDown,
     VectorUp,

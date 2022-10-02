@@ -37,7 +37,7 @@ const ItemSpotlight = ({ item }) => {
             )}
           </DivWrap>
         </ArticleWrap>
-        <SpotlightText className="mt-1">
+        <SpotlightText className="">
           <TextColor colorText={item.colorCategory}>
             {item.category}
           </TextColor>
