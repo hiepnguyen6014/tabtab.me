@@ -88,6 +88,12 @@ export const BoxWrapper = styled.div`
     height: 510px;
   }
 `;
+export const BoxWrapperOne = styled.div`
+  display: flex;
+  background: #FFFFFF;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+border-radius: 8px;
+`;
 
 export const BoxSalePrice = styled.div`
   background: #ffffff;
@@ -127,11 +133,34 @@ export const BoxLogoX = styled.div`
   
 `;
 
+export const BoxLogoXOne = styled.div`
+  transform: translateY(-35px);
+  right:345px;
+  z-index: 1;
+  position: absolute;
+  background: #ffffff;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 1px 5px;
+  
+`;
+
 export const BoxFavorite = styled.div`
   position: absolute;
   z-index: 1;
   top: 10px;
   right: 30px;
+  cursor:pointer;
+  @media ${device.maxSm} {
+    right: 15px;
+  }
+`;
+
+export const BoxFavoriteOne = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left:260px;
   cursor:pointer;
   @media ${device.maxSm} {
     right: 15px;

@@ -33,11 +33,14 @@ import {
 } from '@root/public/icons';
 import {
   BoxFavorite,
+  BoxFavoriteOne,
   BoxHiddenMobile,
   BoxIntroduce,
   BoxLogoX,
+  BoxLogoXOne,
   BoxSalePrice,
   BoxWrapper,
+  BoxWrapperOne,
   ButtonApply,
   ButtonClasses,
   ButtonClear,
@@ -1149,7 +1152,6 @@ export default function Search(props: Props) {
               {SEARCH_DATA.map((search, index) => (
                 <BoxWrapper key={index}>
                   <SwiperGlobal
-                    type="column"
                     width="100%"
                     height="300px"
                     arrayImage={search.imageHome}
@@ -1165,6 +1167,54 @@ export default function Search(props: Props) {
                     <Favorite />
                   </BoxFavorite>
                 </BoxWrapper>
+              ))}
+            </Col>
+            <Col sm={24} lg={12}>
+            {SEARCH_DATA.map((search, index) => (
+                <BoxWrapperOne key={index}>
+                  <div style={{maxWidth:"282px"}}>
+                  <SwiperGlobal
+                    width="100%"
+                    height="304px"
+                    arrayImage={search.imageHome}
+                    hidden
+                  />
+                  <BoxSalePrice>
+                    <SpanPrice>sale {search.sale} off</SpanPrice>
+                  </BoxSalePrice>
+                  <BoxLogoXOne>
+                    <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                  </BoxLogoXOne>
+                  <BoxFavoriteOne>
+                    <Favorite />
+                  </BoxFavoriteOne>
+                  </div>
+                  <InfoHome dataHome={search} row/>
+                </BoxWrapperOne>
+              ))}
+            </Col>
+            <Col sm={24} lg={12}>
+            {SEARCH_DATA.map((search, index) => (
+                <BoxWrapperOne key={index}>
+                  <div style={{maxWidth:"282px"}}>
+                  <SwiperGlobal
+                    width="100%"
+                    height="304px"
+                    arrayImage={search.imageHome}
+                    hidden
+                  />
+                  <BoxSalePrice>
+                    <SpanPrice>sale {search.sale} off</SpanPrice>
+                  </BoxSalePrice>
+                  <BoxLogoXOne>
+                    <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                  </BoxLogoXOne>
+                  <BoxFavoriteOne>
+                    <Favorite />
+                  </BoxFavoriteOne>
+                  </div>
+                  <InfoHome dataHome={search} row/>
+                </BoxWrapperOne>
               ))}
             </Col>
           </WrapperHideMap>
