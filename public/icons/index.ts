@@ -1,10 +1,14 @@
 import Account from './account.svg'
+import Advantage from "./advantage.svg"
 import AgentBig from "./AgentBig.svg"
+import AgentIcon from './Agent.svg'
 import AirConditioning from "./AirConditioning.svg"
 import AppStore from './Apps/appStore.svg'
+import ArealIcon from "./AreaIcon.svg"
 import ArrowRight from './ArrowRight.svg'
 import AvartarDefault from './AvartarDefault.svg'
 import BikeStorage from "./bike-storage.svg"
+import Building from "./Buildings.svg"
 import CERTIFICATION from './CERTIFICATION.svg'
 import CHPlayStore from './Apps/chPlay.svg'
 import CRM from './CRM.svg'
@@ -26,6 +30,7 @@ import DollarMoney from './DollarMoney.svg'
 import Electricity from "./Electricity.svg"
 import Enterprise from "./Enterprise.svg"
 import FactoryWarehouse from "./FactoryWarehouse.svg"
+import Favorite from "./Favorite.svg"
 import Favorited from './Favorited.svg'
 import Heart from './Heart.svg'
 import HelpCenter from './HelpCenter.svg'
@@ -200,6 +205,7 @@ import Logout from './logout.svg'
 import MaleFemale from './MaleFemale.svg'
 import MaleFemaleBlack from './MaleFemaleBlack.svg'
 import Message from './message.svg'
+import MessageIcon from "MessageIcon.svg"
 import OutdoorPublic from "./OutdoorPublic.svg"
 import PMA from './PMA.svg'
 import Patent from "./patent.svg"
@@ -293,7 +299,6 @@ import VectorUser from './VectorUser.svg'
 import VectorVideoCamera from './video-camera.svg'
 import VirtualOfflice from "./VirtualOfflice.svg"
 import Water from "./Water.svg"
-
 export {
     IconDeposit,
     VectorTextMessageBlack,
@@ -589,5 +594,10 @@ export {
     CleaningService,
     OutdoorPublic,
     DollarMoney,
-    ArrowRight
+    ArrowRight,
+    ArealIcon,
+    AgentIcon,
+    Building,
+    Advantage,
+    Favorite,
 }

@@ -2,7 +2,6 @@ import HomeOne from "@root/public/static/eX1.png"
 import { SRC_IMAGE } from '@core';
 export const SEARCH_DATA = [
   {
-    idHome:"1",
     totalDisCountMoney: '3.000.000$',
     cost: '4.500.000$',
     priceArea: '400$/m²',
@@ -14,6 +13,8 @@ export const SEARCH_DATA = [
     home: '4m',
     direction: 'West',
     typeHome: 'Chung cư',
+    sale:"15%",
+    timeUpdate: '15 giờ trước',
     imageHome:[{
       id:"1",
       image:SRC_IMAGE.HOMEONE

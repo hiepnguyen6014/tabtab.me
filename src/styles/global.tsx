@@ -36,6 +36,7 @@ export const globalStyles = (
       }
       .swiper-pagination-bullet {
         background: rgba(254, 255, 255, 0.8) !important;
+        opacity:1;
       .swiper-pagination-bullet-active {
         background-color: #fff !important;
    }

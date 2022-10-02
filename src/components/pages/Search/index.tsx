@@ -14,6 +14,7 @@ import {
   Electricity,
   Enterprise,
   FactoryWarehouse,
+  Favorite,
   HelpCenter,
   HoursSecurity,
   HouseManager,
@@ -31,8 +32,12 @@ import {
   Water,
 } from '@root/public/icons';
 import {
+  BoxFavorite,
+  BoxHiddenMobile,
+  BoxIntroduce,
   BoxLogoX,
   BoxSalePrice,
+  BoxWrapper,
   ButtonApply,
   ButtonClasses,
   ButtonClear,
@@ -66,6 +71,7 @@ import { getListRealEstate, getPostByRating } from '../../../core/services';
 
 import DefaultLayout from '../../layout/DefaultLayout/DefaltLayout';
 import { FilterProvider } from '@root/src/core/contexts/filterContext';
+import InfoHome from './component/InfoHome';
 import ListItem from '../Home/HomeComponent/ListItem';
 import { MPostDetail } from '@models/MPostDetail';
 import { SEARCH_DATA } from './component/SearchData';
@@ -889,184 +895,187 @@ export default function Search(props: Props) {
 
   return (
     <FDesktop>
-      <div
-        style={{
-          fontFamily: 'Inter',
-          fontSize: 16,
-          fontWeight: '700',
-          color: '#7A7A7A',
-          marginTop: 120,
-        }}
-      >
-        Hơn 300 nhà
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div style={{ fontFamily: 'Inter', fontSize: 32, fontWeight: '700' }}>
-          Nhà ở tại Quận 7
+      <BoxIntroduce>
+        <h2
+          style={{
+            fontFamily: 'Inter',
+            fontSize: 16,
+            fontWeight: '700',
+            color: '#7A7A7A',
+          }}
+        >
+          Hơn 300 nhà
+        </h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ fontFamily: 'Inter', fontSize: 32, fontWeight: '700' }}>
+            Nhà ở tại Quận 7
+          </div>
+          <Button onClick={handleHideMap}>
+            {hideMap ? 'SHOW MAPS' : 'HIDE MAPS'}
+          </Button>
         </div>
-        <Button onClick={handleHideMap}>
-          {hideMap ? 'SHOW MAPS' : 'HIDE MAPS'}
-        </Button>
-      </div>
+      </BoxIntroduce>
       <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 24 }}>
         <Col span={hideMap ? 24 : 12}>
-          <Row style={{ display: 'flex', marginTop: 20 }}>
-            <Col style={{ marginBottom: 20 }}>
-              <Popover
-                placement="bottomRight"
-                content={PriceContent}
-                trigger="click"
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '5px 20px 5px 20px',
-                    justifyContent: 'center',
-                    border: '1px solid #7A7A7A',
-                    borderRadius: 24,
-                    marginRight: 15,
-                  }}
+          <BoxHiddenMobile>
+            <Row style={{ display: 'flex', marginTop: 20 }}>
+              <Col style={{ marginBottom: 20 }}>
+                <Popover
+                  placement="bottomRight"
+                  content={PriceContent}
+                  trigger="click"
                 >
-                  <label
+                  <div
                     style={{
-                      fontFamily: 'Inter',
-                      fontSize: 16,
-                      fontWeight: '550',
-                      marginRight: 10,
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '5px 20px 5px 20px',
+                      justifyContent: 'center',
+                      border: '1px solid #7A7A7A',
+                      borderRadius: 24,
+                      marginRight: 15,
                     }}
                   >
-                    Price
-                  </label>
-                  <IconArrowDown />
-                </div>
-              </Popover>
-            </Col>
-            <Col style={{ marginBottom: 20 }}>
-              <Popover
-                placement="bottomRight"
-                content={PropertyContent}
-                trigger="click"
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '5px 20px 5px 20px',
-                    justifyContent: 'center',
-                    border: '1px solid #7A7A7A',
-                    borderRadius: 24,
-                    marginRight: 15,
-                  }}
+                    <label
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: 16,
+                        fontWeight: '550',
+                        marginRight: 10,
+                      }}
+                    >
+                      Price
+                    </label>
+                    <IconArrowDown />
+                  </div>
+                </Popover>
+              </Col>
+              <Col style={{ marginBottom: 20 }}>
+                <Popover
+                  placement="bottomRight"
+                  content={PropertyContent}
+                  trigger="click"
                 >
-                  <label
+                  <div
                     style={{
-                      fontFamily: 'Inter',
-                      fontSize: 16,
-                      fontWeight: '550',
-                      marginRight: 10,
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '5px 20px 5px 20px',
+                      justifyContent: 'center',
+                      border: '1px solid #7A7A7A',
+                      borderRadius: 24,
+                      marginRight: 15,
                     }}
                   >
-                    New Projects
-                  </label>
-                  <IconArrowDown />
-                </div>
-              </Popover>
-            </Col>
-            <Col style={{ marginBottom: 20 }}>
-              <Popover
-                placement="bottomRight"
-                content={PropertyContent}
-                trigger="click"
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '5px 20px 5px 20px',
-                    justifyContent: 'center',
-                    border: '1px solid #7A7A7A',
-                    borderRadius: 24,
-                    marginRight: 15,
-                  }}
+                    <label
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: 16,
+                        fontWeight: '550',
+                        marginRight: 10,
+                      }}
+                    >
+                      New Projects
+                    </label>
+                    <IconArrowDown />
+                  </div>
+                </Popover>
+              </Col>
+              <Col style={{ marginBottom: 20 }}>
+                <Popover
+                  placement="bottomRight"
+                  content={PropertyContent}
+                  trigger="click"
                 >
-                  <label
+                  <div
                     style={{
-                      fontFamily: 'Inter',
-                      fontSize: 16,
-                      fontWeight: '550',
-                      marginRight: 10,
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '5px 20px 5px 20px',
+                      justifyContent: 'center',
+                      border: '1px solid #7A7A7A',
+                      borderRadius: 24,
+                      marginRight: 15,
                     }}
                   >
-                    Property types
-                  </label>
-                  <IconArrowDown />
-                </div>
-              </Popover>
-            </Col>
-            <Col style={{ marginBottom: 20 }}>
-              <Popover
-                placement="bottomRight"
-                content={BedRoomContent}
-                trigger="click"
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '5px 20px 5px 20px',
-                    justifyContent: 'center',
-                    border: '1px solid #7A7A7A',
-                    borderRadius: 24,
-                    marginRight: 15,
-                  }}
+                    <label
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: 16,
+                        fontWeight: '550',
+                        marginRight: 10,
+                      }}
+                    >
+                      Property types
+                    </label>
+                    <IconArrowDown />
+                  </div>
+                </Popover>
+              </Col>
+              <Col style={{ marginBottom: 20 }}>
+                <Popover
+                  placement="bottomRight"
+                  content={BedRoomContent}
+                  trigger="click"
                 >
-                  <label
+                  <div
                     style={{
-                      fontFamily: 'Inter',
-                      fontSize: 16,
-                      fontWeight: '550',
-                      marginRight: 10,
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '5px 20px 5px 20px',
+                      justifyContent: 'center',
+                      border: '1px solid #7A7A7A',
+                      borderRadius: 24,
+                      marginRight: 15,
                     }}
                   >
-                    Bedrooms
-                  </label>
-                  <IconArrowDown />
-                </div>
-              </Popover>
-            </Col>
-            <Col style={{ marginBottom: 20 }}>
-              <Popover
-                placement="bottomRight"
-                content={MoreFilter}
-                trigger="click"
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '5px 20px 5px 20px',
-                    justifyContent: 'center',
-                    border: '1px solid #7A7A7A',
-                    borderRadius: 24,
-                    marginRight: 15,
-                  }}
+                    <label
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: 16,
+                        fontWeight: '550',
+                        marginRight: 10,
+                      }}
+                    >
+                      Bedrooms
+                    </label>
+                    <IconArrowDown />
+                  </div>
+                </Popover>
+              </Col>
+              <Col style={{ marginBottom: 20 }}>
+                <Popover
+                  placement="bottomRight"
+                  content={MoreFilter}
+                  trigger="click"
                 >
-                  <label
+                  <div
                     style={{
-                      fontFamily: 'Inter',
-                      fontSize: 16,
-                      fontWeight: '550',
-                      marginRight: 10,
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '5px 20px 5px 20px',
+                      justifyContent: 'center',
+                      border: '1px solid #7A7A7A',
+                      borderRadius: 24,
+                      marginRight: 15,
                     }}
                   >
-                    More filters
-                  </label>
-                  <IconArrowDown />
-                </div>
-              </Popover>
-            </Col>
-          </Row>
+                    <label
+                      style={{
+                        fontFamily: 'Inter',
+                        fontSize: 16,
+                        fontWeight: '550',
+                        marginRight: 10,
+                      }}
+                    >
+                      More filters
+                    </label>
+                    <IconArrowDown />
+                  </div>
+                </Popover>
+              </Col>
+            </Row>
+          </BoxHiddenMobile>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <IconBell />
             <label
@@ -1109,33 +1118,53 @@ export default function Search(props: Props) {
           </Col>
         )}
         {hideMap && (
-          <WrapperHideMap gutter={{ xs: 8, sm: 16, md: 24, lg: 24 }}>
-            <Col span={12}>
+          <WrapperHideMap
+            gutter={[
+              { xs: 0, sm: 0, md: 24, lg: 24 },
+              { xs: 24, sm: 24, md: 24, lg: 32 },
+            ]}
+          >
+            <Col sm={24} lg={12}>
               {SEARCH_DATA.map((search, index) => (
-                <div key={index}>
+                <BoxWrapper key={index}>
                   <SwiperGlobal
                     width="100%"
                     height="300px"
                     arrayImage={search.imageHome}
                   />
                   <BoxSalePrice>
-                    <SpanPrice>sale 15% off</SpanPrice>
+                    <SpanPrice>sale {search.sale} off</SpanPrice>
                   </BoxSalePrice>
                   <BoxLogoX>
                     <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
                   </BoxLogoX>
-                </div>
+                  <BoxFavorite>
+                    <Favorite />
+                  </BoxFavorite>
+                  <InfoHome dataHome={search} />
+                </BoxWrapper>
               ))}
             </Col>
-            <Col span={12}>
+            <Col sm={24} lg={12}>
               {SEARCH_DATA.map((search, index) => (
-                <div key={index}>
+                <BoxWrapper key={index}>
                   <SwiperGlobal
+                    type="column"
                     width="100%"
                     height="300px"
                     arrayImage={search.imageHome}
                   />
-                </div>
+                  <BoxSalePrice>
+                    <SpanPrice>sale {search.sale} off</SpanPrice>
+                  </BoxSalePrice>
+                  <BoxLogoX>
+                    <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                  </BoxLogoX>
+                  <InfoHome dataHome={search} />
+                  <BoxFavorite>
+                    <Favorite />
+                  </BoxFavorite>
+                </BoxWrapper>
               ))}
             </Col>
           </WrapperHideMap>
