@@ -70,6 +70,7 @@ import ListItem from '../Home/HomeComponent/ListItem';
 import { MPostDetail } from '@models/MPostDetail';
 import { SEARCH_DATA } from './component/SearchData';
 import { SRC_IMAGE } from '@core';
+import SwiperGlobal from '../../shared/SwiperGlobal';
 
 interface Props {
   posts: MPostDetail[];
@@ -1111,29 +1112,12 @@ export default function Search(props: Props) {
           <WrapperHideMap gutter={{ xs: 8, sm: 16, md: 24, lg: 24 }}>
             <Col span={12}>
               {SEARCH_DATA.map((search, index) => (
-                <div>
-                  <Swiper
-                    cssMode={true}
-                    navigation={true}
-                    pagination={{
-                      dynamicBullets: true,
-                    }}
-                    mousewheel={true}
-                    keyboard={true}
-                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                    className="mySwiper"
-                  >
-                    {search.imageHome.map((image) => (
-                      <SwiperSlide key={image.id}>
-                        <ImageHome
-                          width="100%"
-                          height="300px"
-                          preview={false}
-                          src={image.image}
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                <div key={index}>
+                  <SwiperGlobal
+                    width="100%"
+                    height="300px"
+                    arrayImage={search.imageHome}
+                  />
                   <BoxSalePrice>
                     <SpanPrice>sale 15% off</SpanPrice>
                   </BoxSalePrice>
@@ -1145,29 +1129,12 @@ export default function Search(props: Props) {
             </Col>
             <Col span={12}>
               {SEARCH_DATA.map((search, index) => (
-                <div>
-                  <Swiper
-                    cssMode={true}
-                    navigation={true}
-                    pagination={{
-                      dynamicBullets: true,
-                    }}
-                    mousewheel={true}
-                    keyboard={true}
-                    modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                    className="mySwiper"
-                  >
-                    {search.imageHome.map((image) => (
-                      <SwiperSlide key={image.id}>
-                        <ImageHome
-                          width="100%"
-                          height="300px"
-                          preview={false}
-                          src={image.image}
-                        />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                <div key={index}>
+                  <SwiperGlobal
+                    width="100%"
+                    height="300px"
+                    arrayImage={search.imageHome}
+                  />
                 </div>
               ))}
             </Col>
