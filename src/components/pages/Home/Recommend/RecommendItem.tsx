@@ -1,50 +1,31 @@
-import { Button, Col, Divider, Row, Skeleton, Typography } from 'antd';
-import React, { useState } from 'react';
+import { Divider } from 'antd';
+import React from 'react';
 
+import ThumbnailCard from '@root/public/static/images-recommend.png';
+import TenXLogo from '@root/public/static/Ten-X-Logo.png';
+import ThumbnailCard2 from '@root/public/static/thumbnail2.png';
+import Image from 'next/image';
 import {
-  VectorBuilding,
+  NextArrow,
+  PrevArrow, SFavorite, VectorBuilding,
   VectorCalendar,
   VectorDirection,
   VectorHouse,
   VectorSquare,
   VectorTalk,
   VectorTree,
-  VectorUser,
-  Favorited,
-  SFavorite,
-  NextArrow,
-  PrevArrow,
+  VectorUser
 } from 'public/icons';
-import { ItemWrapper } from './PostItem/PostItemWrapper';
-import { PostThumbnail } from './PostItem/PostComponent/PostThumbnail';
-import {
-  PostContent,
-  PostMiddle,
-  PostMiddleItem,
-  PostTitle,
-  PostMiddleFooter,
-  TypographyText,
-  Wrapper,
-  Prices,
-  DetailItem,
-  CardTitle,
-  CardBottom,
-  CardButton,
-  CardThumbnail,
-} from './Recommend.style';
-import { SRC_IMAGE } from '@core';
-import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
-import { useRouter } from 'next/router';
-import { ROUTES } from '@constants';
-import TenXLogo from '@root/public/static/Ten-X-Logo.png';
-import ThumbnailCard from '@root/public/static/images-recommend.png';
-import ThumbnailCard2 from '@root/public/static/thumbnail2.png';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import {
+  CardBottom,
+  CardButton,
+  CardThumbnail, CardTitle, DetailItem, ImageWapper, PostContent, Prices, Wrapper
+} from './Recommend.style';
 
 export interface PostItem {
   price?: string;
@@ -97,11 +78,14 @@ export function RecommendItem(props: PostItem) {
               prevEl: prevRef.current,
               nextEl: nextRef.current,
             }}
+            className="swiper-img"
           >
             {imageSrc.map((item, idx) => {
               return (
                 <SwiperSlide key={item.id}>
-                  <Image src={item.src} alt="" width={282} height={188} />
+                  <ImageWapper>
+                    <Image src={item.src} alt="" width={400} />
+                  </ImageWapper>
                 </SwiperSlide>
               );
             })}

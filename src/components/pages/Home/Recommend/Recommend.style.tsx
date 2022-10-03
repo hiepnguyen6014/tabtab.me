@@ -23,17 +23,20 @@ export const Wrapper = styled((props) => <div {...props} />)`
   /* transition: all.2s ease; */
   cursor: pointer;
 
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px, rgba(0, 0, 0, 0.1) 0px 6px 6px;
-  }
   @media ${device.maxLg} {
     /* height: 500px;  
     width: 100%; */
   }
+  @media ${device.minSm} {
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px,
+        rgba(0, 0, 0, 0.1) 0px 6px 6px;
+    }
+  }
   @media ${device.maxSm} {
-    /* height: auto;
-    width: 100%; */
+    height: auto;
+    width: 100%;
   }
 `;
 
@@ -105,7 +108,8 @@ export const CardThumbnail = styled.div`
     display: none;
   }
 
-  .swiper-pagiantion {
+  .swiper-pagination {
+    display: block;
   }
   .swiper .swiper-pagination-bullet {
     background-color: rgba(254, 255, 255, 0.8);
@@ -125,6 +129,12 @@ export const CardThumbnail = styled.div`
   .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active-main {
     background-color: #feffff;
   }
+`;
+
+export const ImageWapper = styled.div`
+  /* & > img {
+    width: 342px;
+  } */
 `;
 
 export const PostContent = styled.div`
