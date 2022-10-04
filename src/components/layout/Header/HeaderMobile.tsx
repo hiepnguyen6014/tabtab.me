@@ -27,7 +27,7 @@ const HeaderMobile = (props: Props) => {
   const { tabCurrent, onRedirect, themeLight, t: translate } = props;
 
   return (
-    <MainMobile style={{position : themeLight ? 'absolute' : 'relative' }}>
+    <MainMobile style={{ position: themeLight ? 'absolute' : 'relative' }}>
       <MainContentMobile>
         {/* <LogoWrapper>
           <Image
@@ -52,6 +52,7 @@ const HeaderMobile = (props: Props) => {
               </a>
             </Link>
           </ColContentMobile>
+
           <ColContentMobile span={18}>
             <SearchMobile>
               <Col span={5} className="d-flex">
@@ -67,11 +68,12 @@ const HeaderMobile = (props: Props) => {
                 <div className="vertical-line-search" />
               </Col>
               <Col span={14}>
-                <TextWrap>
-                  <Typography className="text-search">
-                    Bắt đầu tìm kiếm
-                  </Typography>
-                </TextWrap>
+                {/* <TextWrap>
+                    <Typography className="text-search">
+                      Bắt đầu tìm kiếm
+                    </Typography>
+                  </TextWrap> */}
+                <input className="inputSearch" placeholder="Bắt đầu tìm kiếm" />
               </Col>
               <Col span={4} className="d-flex justify-content-end">
                 <ButtonOnSearch className="mx-1">

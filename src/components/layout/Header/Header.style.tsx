@@ -267,34 +267,47 @@ export const ColContentMobile = styled(Col)`
   align-items: center;
 `;
 
-export const SearchMobile = styled.div`
+export const SearchMobile = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 95%;
   height: 40px;
-  border: 1px solid #E9E9E9;
+  border: 1px solid #e9e9e9;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   border-radius: 56px;
   box-sizing: border-box;
   position: absolute;
-  background: #E9E9E9;
+  background: #ffffff;
   top: 0%;
   bottom: 0%;
-  .vertical-line-search{
-    background: #A7A7A7;
+  .vertical-line-search {
+    background: #a7a7a7;
     border-radius: 37px;
     width: 2px;
     height: 16px;
   }
+  .inputSearch {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    border: none;
+    width: 100%;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
 `;
 
-export const ButtonOnSearch = styled(Button)`
+export const ButtonOnSearch = styled.button`
   width: 32px;
-  overflow:hidden;
-  height:32px;
-  border-radius:100px;
-  background: #F9C41F;
+  overflow: hidden;
+  height: 32px;
+  border: none;
+  border-radius: 100px;
+  background: #f9c41f;
   color: #fff !important;
   display: flex;
   text-align: center;

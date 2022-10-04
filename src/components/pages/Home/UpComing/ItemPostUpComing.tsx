@@ -56,7 +56,6 @@ const ItemPostUpComing = ({ items }) => {
             alignItems: 'center',
             borderRadius: '8px',
             cursor: 'pointer',
-            marginBottom: '15px',
             padding: '9px 0px',
           }}
           // icon={<VectorCalendar />}
