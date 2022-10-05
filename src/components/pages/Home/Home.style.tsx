@@ -91,7 +91,7 @@ export const ButtonShowAll = styled(Button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media ${device.maxSm} {
+  @media ${device.maxSm} { 
     display: none;
   }
 `;
@@ -165,7 +165,7 @@ export const WrapperSpot = styled.div`
     background: #ffffff;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
     border-radius: 8px;
-    padding: 5px;
+    padding: 12px 12px 15px 12px;
   }
   .horizotalLine {
     background: #f9c41f;
@@ -176,10 +176,23 @@ export const WrapperSpot = styled.div`
     border: 1px solid #e9e9e9;
     width: 100%;
   }
+
+  .container {
+    padding-bottom: 35px;
+  }
+  .swiper-pagination-bullet-active {
+    background: black;
+    transition: all 0.3s;
+  }
+  .swiper-pagination {
+    bottom: 0px !important;
+  }
+
   /* @media ${device.maxMd} {
     margin: 15px;
     min-height: 250px;
   } */
+
   @media ${device.maxSm} {
     padding: 16px;
     min-height: 550px;
@@ -351,7 +364,6 @@ export const SpotlightText = styled(Typography)`
   font-family: 'Inter';
   font-style: normal;
   text-align: start;
-  margin-top: 12px;
   .titlePostSpot {
     font-size: 14px;
     line-height: 17px;
@@ -368,7 +380,7 @@ export const SpotlightText = styled(Typography)`
     line-height: 24px;
     font-weight: 700;
     color: #222222;
-    margin: 6px 0px 20px 0px !important;
+    margin: 6px 0px 0px 0px !important;
 
     @media ${device.maxMd} {
       font-size: 18px;
@@ -534,11 +546,12 @@ export const ItemUpcoming = styled.div`
   text-align: start;
   .button-calendar {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 17px;
   }
   @media ${device.maxSm} {
-    margin-bottom: 30px;
   }
 `;
 

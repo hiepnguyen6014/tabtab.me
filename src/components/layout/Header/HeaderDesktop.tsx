@@ -124,10 +124,10 @@ const HeaderDesktop = (props: Props) => {
   const content1 = (
     <div style={{ width: 280 }}>
       <a href={Config.USER_LOGIN}>
-        <ButtonWrapLogin>
-          <label>Signup / Login</label>
-        </ButtonWrapLogin>
-      </a>
+          <ButtonWrapLogin>
+            <label>Signup / Login</label>
+          </ButtonWrapLogin>
+        </a>
       <a href={Config.USER_ACCOUNT}>
         <ButtonWrap style={{ paddingLeft: 8 }}>
           <Account />
@@ -188,10 +188,22 @@ const HeaderDesktop = (props: Props) => {
         />
         </div> */}
         <div>
-          {themeLight ? <Logo height={44} width={110} style={{ cursor: 'pointer' }} onClick={() => onRedirect(ROUTES.HOME)} />
-            : <LogoDark height={44} width={110} style={{ cursor: 'pointer' }} onClick={() => onRedirect(ROUTES.HOME)} />}
+          {themeLight ? (
+            <Logo
+              height={44}
+              width={110}
+              style={{ cursor: 'pointer' }}
+              onClick={() => onRedirect(ROUTES.HOME)}
+            />
+          ) : (
+            <LogoDark
+              height={44}
+              width={110}
+              style={{ cursor: 'pointer' }}
+              onClick={() => onRedirect(ROUTES.HOME)}
+            />
+          )}
         </div>
-
       </LogoWrapper>
       {/* <LinksWrap typeof={`${themeLight}`}>
         {Object.keys(PUBLIC_ROUTES).map((item, key) => (
@@ -213,8 +225,6 @@ const HeaderDesktop = (props: Props) => {
 
           {/* <RealEstateFilter toggleType={false} t={translate} /> */}
         </FilterProvider>
-
-
 
         {/* {themeLight?
         <label className="text-primary">12312</label>
@@ -327,7 +337,7 @@ const HeaderDesktop = (props: Props) => {
         onRedirect={onRedirect}
         t={props.t}
       /> */}
-    </MainContentDesktop >
+    </MainContentDesktop>
   );
 };
 
