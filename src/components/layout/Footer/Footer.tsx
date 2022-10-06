@@ -83,7 +83,7 @@ export default function Footer(props: { t: any }) {
                     Follow Us
                   </Typography.Title>
                 </FooterText>
-                <div className="d-flex justify-content-between w-75">
+                <div className="d-flex justify-content-between w-75  followus">
                   <IconTabFacebook style={{ cursor: 'pointer' }} />
                   <IconTabInstagram style={{ cursor: 'pointer' }} />
                   <IconTabTwitter style={{ cursor: 'pointer' }} />
@@ -94,6 +94,8 @@ export default function Footer(props: { t: any }) {
                 </div>
               </div>
             </Col>
+            
+            
             <Col sm={12} md={5} lg={6}>
               <div className="px-4">
                 <FooterText>
@@ -124,6 +126,7 @@ export default function Footer(props: { t: any }) {
                 </FooterText>
               </div>
             </Col>
+
             <Col sm={12} md={7} lg={8}>
               <div className="px-4">
                 <FooterText>
@@ -161,7 +164,11 @@ export default function Footer(props: { t: any }) {
                   </span>
                 </FooterText>
               </div>
+            
+            
+           
             </Col>
+            
           </FooterMainTop>
         </FooterBackgroundTop>
 

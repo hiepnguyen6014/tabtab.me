@@ -69,6 +69,10 @@ export const FooterMainTop = styled(Row)`
     span {
       display: none;
     }
+
+    .followus {
+      width: 100% !important;
+    }
   }
 `;
 export const FooterMainMiddle = styled(FooterMainTop)`
@@ -238,5 +242,5 @@ export const FooterDefault = styled.div`
 export const Flex = styled.div`
   display: flex;
   align-items: center;
-  gap: 40px
+  gap: 40px;
 `;
