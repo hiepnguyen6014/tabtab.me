@@ -1,10 +1,10 @@
 import { PUBLIC_ROUTES, ROUTES } from '@constants';
-import { PostWrapper } from './PostItem.style';
+import { Wrapper } from './PostItem.style';
 
 interface Props {
   children?: any;
 }
 
 export const ItemWrapper = (props: Props) => {
-  return <PostWrapper>{props.children}</PostWrapper>;
+  return <Wrapper>{props.children}</Wrapper>;
 };
