@@ -91,7 +91,7 @@ export const ButtonShowAll = styled(Button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media ${device.maxSm} { 
+  @media ${device.maxSm} {
     display: none;
   }
 `;
@@ -163,9 +163,13 @@ export const WrapperSpot = styled.div`
   position: relative;
   .shadowA {
     background: #ffffff;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.16);
     border-radius: 8px;
     padding: 12px 12px 15px 12px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
   .horizotalLine {
     background: #f9c41f;

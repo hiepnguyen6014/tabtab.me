@@ -97,7 +97,7 @@ export default function Footer(props: { t: any }) {
             
             
             <Col sm={12} md={5} lg={6}>
-              <div className="px-4">
+              <div className="followUs-ctx">
                 <FooterText>
                   <Typography.Title className="titleTextFooter">
                     Follow Us
@@ -128,7 +128,7 @@ export default function Footer(props: { t: any }) {
             </Col>
 
             <Col sm={12} md={7} lg={8}>
-              <div className="px-4">
+              <div className="company">
                 <FooterText>
                   <Typography.Title className="titleTextFooter">
                     Company
