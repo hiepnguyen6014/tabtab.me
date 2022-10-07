@@ -62,6 +62,7 @@ export const WrapperHideMap = styled(Row)`
   margin-top: 16px;
   @media ${device.maxMd} {
     margin-top: 30px;
+    padding:0 16px;
   }
 `;
 
@@ -80,7 +81,6 @@ export const BoxWrapper = styled.div`
   border-radius: 8px;
   height: 551px;
   @media ${device.maxSm} {
-    margin: 0 3px 0 12px;
     height: 510px;
   }
 `;
@@ -97,11 +97,23 @@ export const BoxWrapperMini = styled.div`
 background: #ffffff;
 box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
 border-radius: 8px;
-height: 514px;
+height: 498px;
 // @media ${device.maxSm} {
 //   margin: 0 3px 0 12px;
 //   height: 444px;
 // }
+`
+
+export const BoxWrapperFooter = styled.div`
+background: #ffffff;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+border-radius: 8px;
+height: 404px;
+// @media ${device.maxSm} {
+//   margin: 0 3px 0 12px;
+//   height: 444px;
+// }
+
 `
 
 export const BoxSalePrice = styled.div`
