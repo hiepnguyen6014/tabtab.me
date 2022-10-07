@@ -38,8 +38,11 @@ import {
   BoxIntroduce,
   BoxLogoX,
   BoxLogoXOne,
+  BoxPaddingRow,
   BoxSalePrice,
+  BoxStopLoss,
   BoxWrapper,
+  BoxWrapperMini,
   BoxWrapperOne,
   ButtonApply,
   ButtonClasses,
@@ -69,6 +72,11 @@ import {
 import { IconArrowDown, IconBell } from '@root/public/icons';
 import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
 import React, { useEffect, useState } from 'react';
+import {
+  SEARCH_DATA,
+  SEARCH_DATA_MINI,
+  SEARCH_DATA_ROW,
+} from './component/SearchData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { getListRealEstate, getPostByRating } from '../../../core/services';
 
@@ -77,7 +85,6 @@ import { FilterProvider } from '@root/src/core/contexts/filterContext';
 import InfoHome from './component/InfoHome';
 import ListItem from '../Home/HomeComponent/ListItem';
 import { MPostDetail } from '@models/MPostDetail';
-import { SEARCH_DATA } from './component/SearchData';
 import { SRC_IMAGE } from '@core';
 import SwiperGlobal from '../../shared/SwiperGlobal';
 
@@ -1127,8 +1134,8 @@ export default function Search(props: Props) {
               { xs: 24, sm: 24, md: 24, lg: 32 },
             ]}
           >
-            <Col sm={24} lg={12}>
-              {SEARCH_DATA.map((search, index) => (
+            {SEARCH_DATA.map((search, index) => (
+              <Col sm={24} lg={12} key={index}>
                 <BoxWrapper key={index}>
                   <SwiperGlobal
                     width="100%"
@@ -1144,79 +1151,97 @@ export default function Search(props: Props) {
                   <BoxFavorite>
                     <Favorite />
                   </BoxFavorite>
-                  <InfoHome dataHome={search} />
-                </BoxWrapper>
-              ))}
-            </Col>
-            <Col sm={24} lg={12}>
-              {SEARCH_DATA.map((search, index) => (
-                <BoxWrapper key={index}>
-                  <SwiperGlobal
-                    width="100%"
-                    height="300px"
-                    arrayImage={search.imageHome}
-                  />
-                  <BoxSalePrice>
-                    <SpanPrice>sale {search.sale} off</SpanPrice>
-                  </BoxSalePrice>
-                  <BoxLogoX>
-                    <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
-                  </BoxLogoX>
-                  <InfoHome dataHome={search} />
-                  <BoxFavorite>
-                    <Favorite />
-                  </BoxFavorite>
-                </BoxWrapper>
-              ))}
-            </Col>
-            <Col sm={24} lg={12}>
-            {SEARCH_DATA.map((search, index) => (
-                <BoxWrapperOne key={index}>
-                  <div style={{maxWidth:"282px"}}>
-                  <SwiperGlobal
-                    width="100%"
-                    height="304px"
-                    arrayImage={search.imageHome}
-                    hidden
-                  />
-                  <BoxSalePrice>
-                    <SpanPrice>sale {search.sale} off</SpanPrice>
-                  </BoxSalePrice>
-                  <BoxLogoXOne>
-                    <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
-                  </BoxLogoXOne>
-                  <BoxFavoriteOne>
-                    <Favorite />
-                  </BoxFavoriteOne>
+                  <div style={{ padding: '14px 16px 16px 18px' }}>
+                    <InfoHome dataHome={search}/>
                   </div>
-                  <InfoHome dataHome={search} row/>
-                </BoxWrapperOne>
-              ))}
-            </Col>
-            <Col sm={24} lg={12}>
-            {SEARCH_DATA.map((search, index) => (
-                <BoxWrapperOne key={index}>
-                  <div style={{maxWidth:"282px"}}>
-                  <SwiperGlobal
-                    width="100%"
-                    height="304px"
-                    arrayImage={search.imageHome}
-                    hidden
-                  />
-                  <BoxSalePrice>
-                    <SpanPrice>sale {search.sale} off</SpanPrice>
-                  </BoxSalePrice>
-                  <BoxLogoXOne>
-                    <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
-                  </BoxLogoXOne>
-                  <BoxFavoriteOne>
-                    <Favorite />
-                  </BoxFavoriteOne>
+                </BoxWrapper>
+              </Col>
+            ))}
+            {SEARCH_DATA_ROW.map((search, index) => (
+              <Col sm={24} lg={12}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    background: '#FFFFFF',
+                    boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.16)',
+                    borderRadius: '8px',
+                    maxHeight: '304px',
+                  }}
+                  key={index}
+                >
+                  <div style={{ maxWidth: '282px' }}>
+                    <SwiperGlobal
+                      width="100%"
+                      height="304px"
+                      arrayImage={search.imageHome}
+                    />
+                    <BoxSalePrice>
+                      <SpanPrice>sale {search.sale} off</SpanPrice>
+                    </BoxSalePrice>
+                    <BoxLogoXOne>
+                      <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                    </BoxLogoXOne>
+                    <BoxFavoriteOne>
+                      <Favorite />
+                    </BoxFavoriteOne>
                   </div>
-                  <InfoHome dataHome={search} row/>
-                </BoxWrapperOne>
+
+                  <BoxPaddingRow>
+                    <InfoHome dataHome={search} row />
+                  </BoxPaddingRow>
+                </div>
+              </Col>
+            ))}
+            <Row>
+              <Col sm={24} lg={12} style={{ padding: 10 }}>
+                <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
+              </Col>
+              <Col sm={24} lg={12} style={{ padding: 10 }}>
+                <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
+              </Col>
+            </Row>
+            <Row
+              gutter={[
+                { xs: 6, sm: 12, md: 24, lg: 24 },
+                { xs: 24, sm: 24, md: 24, lg: 0 },
+              ]}
+            >
+              {SEARCH_DATA_MINI.map((search, index) => (
+                <Col xs={24} sm={12} md={12} lg={6} key={index}>
+                  <BoxWrapperMini key={index}>
+                    <SwiperGlobal
+                      width="100%"
+                      height="188px"
+                      arrayImage={search.imageHome}
+                    />
+                    <BoxSalePrice>
+                      <SpanPrice>sale {search.sale} off</SpanPrice>
+                    </BoxSalePrice>
+                    <BoxStopLoss>
+                      <SpanPrice>CẮT LỖ {search.stopLoss}</SpanPrice>
+                    </BoxStopLoss>
+                    <BoxLogoX>
+                      <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                    </BoxLogoX>
+                    <BoxFavorite>
+                      <Favorite />
+                    </BoxFavorite>
+                    <div style={{ padding: '14px 7px 16px 8px' }}>
+                      <InfoHome dataHome={search} row hiddenPrice changeImage/>
+                    </div>
+                  </BoxWrapperMini>
+                </Col>
               ))}
-            </Col>
+            </Row>
+            <Row>
+              <Col sm={24} lg={12} style={{ padding: 10 }}>
+                <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
+              </Col>
+              <Col sm={24} lg={12} style={{ padding: 10 }}>
+                <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
+              </Col>
+            </Row>
           </WrapperHideMap>
         )}
       </Row>
