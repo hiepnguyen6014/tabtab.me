@@ -65,9 +65,40 @@ export const FooterBackgroundBottom = styled.div`
 export const FooterMainTop = styled(Row)`
   width: 100%;
   margin: auto;
+  .followUs-ctx {
+    padding: 0 12px;
+  }
+  .company {
+    padding: 0px;
+    margin-left: 0px;
+  }
+
   @media ${device.maxSm} {
     span {
       display: none;
+    }
+
+    .followus {
+      width: 100% !important;
+    }
+
+    .followUs-ctx {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 0px;
+    }
+
+    .company {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 0px;
+    }
+  }
+  @media screen and (min-width: 375px) {
+    .company {
+      margin-left: 55px;
     }
   }
 `;
@@ -238,5 +269,5 @@ export const FooterDefault = styled.div`
 export const Flex = styled.div`
   display: flex;
   align-items: center;
-  gap: 40px
+  gap: 40px;
 `;

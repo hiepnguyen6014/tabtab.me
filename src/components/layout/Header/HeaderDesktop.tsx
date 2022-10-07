@@ -55,7 +55,7 @@ const HeaderDesktop = (props: Props) => {
   const isLogin = Object.keys(currentUser).length > 0;
 
   const content = (
-    <div>
+    <div style={{ width: 282 }}>
       <a>
         <ButtonWrap>
           <Message />
@@ -124,10 +124,10 @@ const HeaderDesktop = (props: Props) => {
   const content1 = (
     <div style={{ width: 280 }}>
       <a href={Config.USER_LOGIN}>
-          <ButtonWrapLogin>
-            <label>Signup / Login</label>
-          </ButtonWrapLogin>
-        </a>
+        <ButtonWrapLogin>
+          <label>Signup / Login</label>
+        </ButtonWrapLogin>
+      </a>
       <a href={Config.USER_ACCOUNT}>
         <ButtonWrap style={{ paddingLeft: 8 }}>
           <Account />
@@ -305,7 +305,7 @@ const HeaderDesktop = (props: Props) => {
         <div>
           <Popover
             placement="bottomRight"
-            content={Object.keys(currentUser).length ? content : content1}
+            content={Object.keys(currentUser).length ? content : content}
             trigger="click"
           >
             <div
