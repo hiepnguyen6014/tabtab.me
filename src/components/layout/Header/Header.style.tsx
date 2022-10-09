@@ -15,7 +15,7 @@ export const LogoWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  margin-left: 50px;
+  margin-left: 48px;
   align-items: center;
   position: relative;
   & > span {
@@ -43,6 +43,12 @@ export const HeaderWrapper = styled.header`
   z-index: 99;
   color: ${COLOR_LIGHT};
   font-size: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.4; */
   @media ${device.maxMd} {
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1) !important;
     background-color: transparent;
@@ -53,17 +59,31 @@ export const HeaderWrapper = styled.header`
 
 export const MainContentDesktop = styled.div`
   max-width: 1300px;
-  width: 90%;
+  width: 100%;
   height: 101px;
-  margin: auto;
-  display: grid;
+  margin: 0;
+  /* display: grid;
   grid-template-columns: 16%49%35%;
+  justify-content: space-between;
+  align-items: center; */
+
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
-  @media ${device.maxLg} {
-    grid-template-columns: 18%50%30%;
+  .blur {
+    width: 1300px;
+    height: 100%;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.4;
+
+    position: absolute;
+    z-index: -1;
   }
+
+  /* @media ${device.maxLg} {
+    grid-template-columns: 18%50%30%;
+  } */
   @media ${device.maxMd} {
     display: none;
   }
@@ -118,6 +138,7 @@ export const TabTabWrap = styled.div`
   width: 100%;
   min-width: 250px;
   height: 100%;
+  margin-right: 48px;
   color: ${(props) => changeTheme(props.typeof)};
   a {
     position: relative;
@@ -200,8 +221,8 @@ export const TextUserName = styled.span`
 
 export const DropdownAccount = styled.div`
   background: ${COLOR_LIGHT};
-  a{
-    color:#222222;
+  a {
+    color: #222222;
   }
   min-width: 200px;
   border-radius: 2px;
@@ -313,13 +334,13 @@ export const ButtonOnSearch = styled.button`
   text-align: center;
   justify-content: center;
   align-items: center;
-  line-height:12px;
+  line-height: 12px;
   svg {
     path {
       fill: #fff;
     }
   }
-  &:hover{
+  &:hover {
     color: #ffff !important;
   }
 `;
@@ -327,38 +348,38 @@ export const ButtonOnSearch = styled.button`
 export const TextWrap = styled(Typography)`
   font-family: 'Inter';
   font-style: normal;
-  .text-select{
+  .text-select {
     font-weight: 700;
     font-size: 14px;
     line-height: 20px;
-    color: #4E4E4E;
+    color: #4e4e4e;
   }
-  .text-search{
+  .text-search {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    color: #7A7A7A;
+    color: #7a7a7a;
   }
-`
-export const ButtonWrap = styled(props => <div {...props} />)`
-  display:flex;
+`;
+export const ButtonWrap = styled((props) => <div {...props} />)`
+  display: flex;
   padding: 5px;
   align-items: center;
   border-radius: 8px;
-  margin-bottom:15px;
-  &:hover{
-    background-color: #0000000D
+  margin-bottom: 15px;
+  &:hover {
+    background-color: #0000000d;
   }
-`
-export const ButtonWrapLogin = styled(props => <div {...props} />)`
-  display:flex;
+`;
+export const ButtonWrapLogin = styled((props) => <div {...props} />)`
+  display: flex;
   padding: 10px;
   align-items: center;
-  background-color: #F9C41F;
+  background-color: #f9c41f;
   border-radius: 8px;
   margin-bottom: 14px;
   justify-content: center;
-  &:hover{
-    background-color: #F9C41F
+  &:hover {
+    background-color: #f9c41f;
   }
-`
+`;

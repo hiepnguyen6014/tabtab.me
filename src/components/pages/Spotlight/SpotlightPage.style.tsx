@@ -19,6 +19,13 @@ export const SpotlightWrap = styled.div`
     padding-top: 40px;
     padding-bottom: 40px;
   }
+  .event-right-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-left: 24px;
+  }
 `;
 
 export const Flex = styled.div`

@@ -36,7 +36,7 @@ const Event = () => {
           </div>
           <PaginationWrapCustom defaultCurrent={1} total={50} />
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="event-right-col">
           <Project />
           <PaginationWrapCustom defaultCurrent={1} total={50} />
         </Col>

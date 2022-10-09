@@ -7,7 +7,7 @@ export const BannerWrapper = styled.div`
   min-height: 800px;
   overflow: hidden;
   width: 100%;
-  max-width: 1900px;
+  max-width: 1300px;
   margin: auto;
   object-position: center;
   position: relative;

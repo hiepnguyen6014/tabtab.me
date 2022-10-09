@@ -25,18 +25,18 @@ const SpotLightPage: React.FC<{}> = () => {
   const { t: translate } = useTranslation('common');
   return (
     <DefaultLayout t={translate}>
-    <div className="container-fluid d-flex justify-content-center">
-    <SpotlightWrap>
-        <SpotlightText>
-          <HeaderSpotlightPage />
-          <Advertising className="padding-y40" />
-          <Event />
-          <Expert />
-          <Xprofile />
-          <Discovery />
-        </SpotlightText>
-    </SpotlightWrap>
-    </div>
+      <div className="container-fluid d-flex justify-content-center">
+        <SpotlightWrap>
+          <SpotlightText>
+            <HeaderSpotlightPage />
+            <Advertising className="padding-y40" />
+            <Event />
+            <Expert />
+            <Xprofile />
+            <Discovery />
+          </SpotlightText>
+        </SpotlightWrap>
+      </div>
     </DefaultLayout>
   );
 };
