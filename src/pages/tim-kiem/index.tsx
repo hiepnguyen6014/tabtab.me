@@ -1,19 +1,20 @@
+import { ButtonClasses, FDesktop, RowWrap } from '../../components/pages/Search/Search.style'
+import { Col, Divider, Dropdown, Menu, Popover, Row, Typography } from 'antd'
+import { IconArrowDown, IconBell } from '@root/public/icons';
 import { PARAMS, POST_TYPE_PARAMS, PUBLIC_ROUTES, ROUTES } from '@constants';
-import { getListRealEstate, getPostByRating } from '@root/src/core/services';
+import { UserContext, filterKey } from '@contexts';
 import { checkIsHomePage, removeEmptyType } from '@utils';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
+import { getListRealEstate, getPostByRating } from '@root/src/core/services';
+
+import { FilterBackground } from '@root/src/components/layout/LayoutCategory/Container.style';
+import { FilterProvider } from '@root/src/core/contexts/filterContext';
+import HeaderComponent from '@root/src/components/layout/Header';
 import { MFilter } from '@models/MFilter';
 import { MPostDetail } from '@models/MPostDetail';
-import { filterKey, UserContext } from '@contexts';
-import { FilterProvider } from '@root/src/core/contexts/filterContext';
-import { FDesktop, RowWrap, ButtonClasses } from '../../components/pages/Search/Search.style'
-import { Row, Col, Dropdown, Menu, Popover, Typography, Divider } from 'antd'
-import { IconArrowDown, IconBell } from '@root/public/icons';
-import Search from "../../components/pages/Search"
-import HeaderComponent from '@root/src/components/layout/Header';
-import { FilterBackground } from '@root/src/components/layout/LayoutCategory/Container.style';
 import RealEstateFilter from '@root/src/components/layout/RealEstateFilter';
+import Search from "../../components/pages/Search/Search"
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const SearchPage: React.FC<{
     postList: MPostDetail[];

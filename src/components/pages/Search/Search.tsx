@@ -75,7 +75,9 @@ import { getListRealEstate, getPostByRating } from '../../../core/services';
 
 import InfoHome from './component/InfoHome';
 import { MPostDetail } from '@models/MPostDetail';
+import MoreFiler from './component/MoreFiler';
 import PriceContent from './component/PriceContent';
+import PropertyContent from './component/PropertyContent';
 import { SRC_IMAGE } from '@core';
 import SwiperGlobal from '../../shared/SwiperGlobal';
 
@@ -86,7 +88,7 @@ interface Props {
 
 export default function Search(props: Props) {
   const { t: translate, posts } = props;
-  const [hideMap, setHideMap] = useState(false);
+  const [hideMap, setHideMap] = useState(true);
   const [page, setPage] = useState(1);
   useEffect(() => {
     // getData()
@@ -102,403 +104,6 @@ export default function Search(props: Props) {
   const handleHideMap = () => {
     setHideMap(!hideMap);
   };
-
-  const listData = [
-    {
-      title: 'Outdoor Public Space',
-      icon: <OutdoorPublic />,
-    },
-    {
-      title: 'Admin Support',
-      icon: <HouseManager />,
-    },
-    {
-      title: 'Cleaning Included',
-      icon: <CleaningService />,
-    },
-    {
-      title: 'Bike Storage Available',
-      icon: <BikeStorage />,
-    },
-    {
-      title: 'Electricity Included',
-      icon: <Electricity />,
-    },
-    {
-      title: 'Disabled Access',
-      icon: <DisabledAccess />,
-    },
-    {
-      title: 'Kitchen',
-      icon: <IconKitchen />,
-    },
-    {
-      title: 'Collaborative Public Space',
-      icon: <Collaborative />,
-    },
-    {
-      title: 'After Hours Security',
-      icon: <HoursSecurity />,
-    },
-    {
-      title: 'Pet Friendly',
-      icon: <Pet />,
-    },
-    {
-      title: 'Ground Floor Concierge',
-      icon: <HelpCenter />,
-    },
-    {
-      title: 'Air Conditioning',
-      icon: <AirConditioning />,
-    },
-    {
-      title: 'Car Parking In Building',
-      icon: <CarParking />,
-    },
-    {
-      title: 'High Speed Lift',
-      icon: <Lift />,
-    },
-    {
-      title: 'Receptionist Available',
-      icon: <ReceptionistAvailable />,
-    },
-    {
-      title: 'Cafe/Retail in Building',
-      icon: <IconCaffe />,
-    },
-    {
-      title: 'Storage Available',
-      icon: <FactoryWarehouse />,
-    },
-    {
-      title: 'Shower Facility Included',
-      icon: <IconShower />,
-    },
-    {
-      title: '24/7 Access',
-      icon: <Support247 />,
-    },
-    {
-      title: 'Water/Sink in Room',
-      icon: <Water />,
-    },
-  ];
-
-
-  const PropertyContent = (
-    <div style={{ padding: 12, width: 350 }}>
-      <Typography
-        style={{
-          fontSize: 20,
-          fontFamily: 'Inter',
-          fontWeight: '700',
-          marginBottom: 24,
-        }}
-      >
-        Property types
-      </Typography>
-      <Checkbox
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          paddingLeft: 8,
-          marginBottom: 24,
-        }}
-      >
-        <div style={{ paddingRight: 30 }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <PrivateOffice />
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                marginLeft: 8,
-              }}
-            >
-              Private Office
-            </text>
-          </div>
-          <text
-            style={{
-              fontSize: 14,
-              fontWeight: '400',
-              fontFamily: 'Inter',
-              color: '#7A7A7A',
-            }}
-          >
-            Lockable private office within a shared, serviced or coworking
-            space.
-          </text>
-        </div>
-      </Checkbox>
-      <Checkbox
-        style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}
-      >
-        <div style={{ paddingRight: 30 }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <CoworkingSpace />
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                marginLeft: 8,
-              }}
-            >
-              Coworking Space
-            </text>
-          </div>
-          <text
-            style={{
-              fontSize: 14,
-              fontWeight: '400',
-              fontFamily: 'Inter',
-              color: '#7A7A7A',
-            }}
-          >
-            Furnished open plan desk(s) located in a dedicated coworking space.
-          </text>
-        </div>
-      </Checkbox>
-      <Checkbox
-        style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}
-      >
-        <div style={{ paddingRight: 30 }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <SharedOffice />
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                marginLeft: 8,
-              }}
-            >
-              Shared Office
-            </text>
-          </div>
-          <text
-            style={{
-              fontSize: 14,
-              fontWeight: '400',
-              fontFamily: 'Inter',
-              color: '#7A7A7A',
-            }}
-          >
-            Open plan desk(s) inside another business who is sharing their
-            space.
-          </text>
-        </div>
-      </Checkbox>
-      <Checkbox
-        style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}
-      >
-        <div style={{ paddingRight: 30 }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Enterprise />
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                marginLeft: 8,
-              }}
-            >
-              Enterprise Space
-            </text>
-          </div>
-          <text
-            style={{
-              fontSize: 14,
-              fontWeight: '400',
-              fontFamily: 'Inter',
-              color: '#7A7A7A',
-            }}
-          >
-            Dedicated space for bigger teams with private rooms, facilities
-          </text>
-        </div>
-      </Checkbox>
-      <Checkbox
-        style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}
-      >
-        <div style={{ paddingRight: 30 }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <VirtualOfflice />
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                marginLeft: 8,
-              }}
-            >
-              Virtual Office
-            </text>
-          </div>
-          <text
-            style={{
-              fontSize: 14,
-              fontWeight: '400',
-              fontFamily: 'Inter',
-              color: '#7A7A7A',
-            }}
-          >
-            Professional business address, telephone number and casual office
-          </text>
-        </div>
-      </Checkbox>
-      <Checkbox
-        style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}
-      >
-        <div style={{ paddingRight: 30 }}>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Convention />
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                marginLeft: 8,
-              }}
-            >
-              Sublet/Conventional Space
-            </text>
-          </div>
-          <text
-            style={{
-              fontSize: 14,
-              fontWeight: '400',
-              fontFamily: 'Inter',
-              color: '#7A7A7A',
-            }}
-          >
-            Lockable private office within a shared, serviced or coworking
-            space.
-          </text>
-        </div>
-      </Checkbox>
-      <Row gutter={16}>
-        <Col span={12}>
-          <ButtonClear
-            style={{
-              padding: 14,
-              width: '100%',
-              height: 'auto',
-              marginTop: 16,
-              borderRadius: 8,
-            }}
-          >
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                color: 'white',
-              }}
-            >
-              Clear
-            </text>
-          </ButtonClear>
-        </Col>
-        <Col span={12}>
-          <ButtonApply
-            style={{
-              padding: 14,
-              width: '100%',
-              height: 'auto',
-              marginTop: 16,
-              borderRadius: 8,
-            }}
-          >
-            <text
-              style={{ fontSize: 16, fontWeight: '700', fontFamily: 'Inter' }}
-            >
-              Apply
-            </text>
-          </ButtonApply>
-        </Col>
-      </Row>
-    </div>
-  );
-
-  const MoreFilter = (
-    <div style={{ padding: 12, width: 650 }}>
-      <Typography
-        style={{
-          fontSize: 20,
-          fontFamily: 'Inter',
-          fontWeight: '700',
-          marginBottom: 24,
-        }}
-      >
-        Property types
-      </Typography>
-      <Row gutter={24}>
-        {listData.map((item, key) => (
-          <Col span={12} key={key}>
-            <Checkbox style={{ marginBottom: 24 }}>
-              <text
-                style={{
-                  fontSize: 16,
-                  fontWeight: '700',
-                  fontFamily: 'Inter',
-                  marginLeft: 8,
-                }}
-              >
-                {item.icon}
-                <text style={{ marginLeft: 8 }}>{item.title}</text>
-              </text>
-            </Checkbox>
-          </Col>
-        ))}
-      </Row>
-      <Row gutter={16}>
-        <Col span={12}>
-          <ButtonClear
-            style={{
-              padding: 14,
-              width: '100%',
-              height: 'auto',
-              marginTop: 16,
-              borderRadius: 8,
-            }}
-          >
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                color: 'white',
-              }}
-            >
-              Clear
-            </text>
-          </ButtonClear>
-        </Col>
-        <Col span={12}>
-          <ButtonApply
-            style={{
-              padding: 14,
-              width: '100%',
-              height: 'auto',
-              marginTop: 16,
-              borderRadius: 8,
-            }}
-          >
-            <text
-              style={{ fontSize: 16, fontWeight: '700', fontFamily: 'Inter' }}
-            >
-              Apply
-            </text>
-          </ButtonApply>
-        </Col>
-      </Row>
-    </div>
-  );
 
   const BedRoomContent = (
     <div style={{ padding: 12, width: 400 }}>
@@ -812,7 +417,7 @@ export default function Search(props: Props) {
               <Col style={{ marginBottom: 20 }}>
                 <Popover
                   placement="bottomRight"
-                  content={MoreFilter}
+                  content={MoreFiler}
                   trigger="click"
                 >
                   <div
@@ -857,74 +462,76 @@ export default function Search(props: Props) {
             </label>
           </div>
           {!hideMap && (
-            <WrapperHideMap  gutter={[
-              { xs: 0, sm: 0, md: 12, lg: 24 },
-              { xs: 24, sm: 24, md: 24, lg: 28 },
-            ]} className="wrapperHideMap">
-             
-            {SEARCH_DATA.slice(0,1).map((search, index) => (
-              <Col sm={24} lg={24} key={index}>
-                <BoxWrapper key={index}>
-                  <SwiperGlobal
-                    width="100%"
-                    height="300px"
-                    arrayImage={search.imageHome}
-                  />
-                  <BoxSalePrice>
-                    <SpanPrice>sale {search.sale} off</SpanPrice>
-                  </BoxSalePrice>
-                  <BoxLogoX>
-                    <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
-                  </BoxLogoX>
-                  <BoxFavorite>
-                    <Favorite />
-                  </BoxFavorite>
-                  <div style={{ padding: '14px 16px 16px 18px' }}>
-                    <InfoHome dataHome={search} titleDownPx/>
-                  </div>
-                </BoxWrapper>
-              </Col>
-            ))}
-            {SEARCH_DATA_ROW.slice(0,1).map((search, index) => (
-              <Col sm={24} lg={24}>
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    background: '#FFFFFF',
-                    boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.16)',
-                    borderRadius: '8px',
-                    maxHeight: '304px',
-                  }}
-                  key={index}
-                >
-                  <div style={{ maxWidth: '282px' }}>
+            <WrapperHideMap
+              gutter={[
+                { xs: 0, sm: 0, md: 12, lg: 24 },
+                { xs: 24, sm: 24, md: 24, lg: 28 },
+              ]}
+              className="wrapperHideMap"
+            >
+              {SEARCH_DATA.slice(0, 1).map((search, index) => (
+                <Col sm={24} lg={24} key={index}>
+                  <BoxWrapper key={index}>
                     <SwiperGlobal
                       width="100%"
-                      height="304px"
+                      height="300px"
                       arrayImage={search.imageHome}
                     />
                     <BoxSalePrice>
                       <SpanPrice>sale {search.sale} off</SpanPrice>
                     </BoxSalePrice>
-                    <BoxLogoXOne>
+                    <BoxLogoX>
                       <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
-                    </BoxLogoXOne>
-                    <BoxFavoriteOne>
+                    </BoxLogoX>
+                    <BoxFavorite>
                       <Favorite />
-                    </BoxFavoriteOne>
+                    </BoxFavorite>
+                    <div style={{ padding: '14px 16px 16px 18px' }}>
+                      <InfoHome dataHome={search} titleDownPx />
+                    </div>
+                  </BoxWrapper>
+                </Col>
+              ))}
+              {SEARCH_DATA_ROW.slice(0, 1).map((search, index) => (
+                <Col sm={24} lg={24}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      background: '#FFFFFF',
+                      boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.16)',
+                      borderRadius: '8px',
+                      maxHeight: '304px',
+                    }}
+                    key={index}
+                  >
+                    <div style={{ maxWidth: '282px' }}>
+                      <SwiperGlobal
+                        width="100%"
+                        height="304px"
+                        arrayImage={search.imageHome}
+                      />
+                      <BoxSalePrice>
+                        <SpanPrice>sale {search.sale} off</SpanPrice>
+                      </BoxSalePrice>
+                      <BoxLogoXOne>
+                        <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                      </BoxLogoXOne>
+                      <BoxFavoriteOne>
+                        <Favorite />
+                      </BoxFavoriteOne>
+                    </div>
+                    <BoxPaddingRow>
+                      <InfoHome dataHome={search} row />
+                    </BoxPaddingRow>
                   </div>
-                  <BoxPaddingRow>
-                    <InfoHome dataHome={search} row/>
-                  </BoxPaddingRow>
-                </div>
-              </Col>
-            ))}
-          
+                </Col>
+              ))}
+
               <Col sm={24} lg={24} style={{ padding: 10 }}>
                 <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
               </Col>
-              {SEARCH_DATA_MINI.slice(0,2).map((search, index) => (
+              {SEARCH_DATA_MINI.slice(0, 2).map((search, index) => (
                 <Col xs={24} sm={24} md={24} lg={12} key={index}>
                   <BoxWrapperMini key={index}>
                     <SwiperGlobal
@@ -950,10 +557,10 @@ export default function Search(props: Props) {
                   </BoxWrapperMini>
                 </Col>
               ))}
-               <Col sm={24} lg={24} style={{ padding: 10 }}>
+              <Col sm={24} lg={24} style={{ padding: 10 }}>
                 <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
               </Col>
-              {SEARCH_DATA_MINI.slice(0,2).map((search, index) => (
+              {SEARCH_DATA_MINI.slice(0, 2).map((search, index) => (
                 <Col xs={24} sm={24} md={24} lg={12} key={index}>
                   <BoxWrapperFooter key={index}>
                     <SwiperGlobal
@@ -971,7 +578,13 @@ export default function Search(props: Props) {
                       <Favorite />
                     </BoxFavorite>
                     <div style={{ padding: '14px 7px 16px 8px' }}>
-                      <InfoHome dataHome={search} row hiddenPrice changeImage hiddenInfoHome/>
+                      <InfoHome
+                        dataHome={search}
+                        row
+                        hiddenPrice
+                        changeImage
+                        hiddenInfoHome
+                      />
                     </div>
                   </BoxWrapperFooter>
                 </Col>
@@ -1016,7 +629,7 @@ export default function Search(props: Props) {
                     <Favorite />
                   </BoxFavorite>
                   <div style={{ padding: '14px 16px 16px 18px' }}>
-                    <InfoHome dataHome={search} titleDownPx/>
+                    <InfoHome dataHome={search} titleDownPx />
                   </div>
                 </BoxWrapper>
               </Col>
@@ -1051,7 +664,7 @@ export default function Search(props: Props) {
                     </BoxFavoriteOne>
                   </div>
                   <BoxPaddingRow>
-                    <InfoHome dataHome={search} row/>
+                    <InfoHome dataHome={search} row />
                   </BoxPaddingRow>
                 </div>
               </Col>
@@ -1129,7 +742,13 @@ export default function Search(props: Props) {
                       <Favorite />
                     </BoxFavorite>
                     <div style={{ padding: '14px 7px 16px 8px' }}>
-                      <InfoHome dataHome={search} row hiddenPrice changeImage hiddenInfoHome/>
+                      <InfoHome
+                        dataHome={search}
+                        row
+                        hiddenPrice
+                        changeImage
+                        hiddenInfoHome
+                      />
                     </div>
                   </BoxWrapperFooter>
                 </Col>
@@ -1138,47 +757,6 @@ export default function Search(props: Props) {
           </WrapperHideMap>
         )}
       </Row>
-
-      {/* <RowWrap
-                    gutter={{
-                        xs: 8,
-                        sm: 16,
-                        md: 24,
-                        lg: 32,
-                    }}>
-                    <ListItem t={translate} data={posts.slice(0, 2)} type={2} />
-                    <Row >
-                        <Col sm={24} lg={12} style={{ padding: 20 }}>
-                            <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
-                        </Col>
-                        <Col sm={24} lg={12} style={{ padding: 20 }}>
-                            <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
-                        </Col>
-                    </Row>
-
-                    <ListItem t={translate} data={posts.slice(0, 2)} type={3} />
-                    <Row>
-                        <Col sm={24} lg={12} style={{ padding: 20 }}>
-                            <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
-                        </Col>
-                        <Col sm={24} lg={12} style={{ padding: 20 }}>
-                            <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
-                        </Col>
-                    </Row>
-
-                    <ListItem t={translate} data={posts.slice(0, 4)} type={1} />
-                    <Row>
-                        <Col sm={24} lg={12} style={{ padding: 20 }}>
-                            <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
-                        </Col>
-                        <Col sm={24} lg={12} style={{ padding: 20 }}>
-                            <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
-                        </Col>
-                    </Row>
-
-                    <ListItem t={translate} data={posts.slice(0, 4)} type={4} />
-
-                </RowWrap> */}
     </FDesktop>
   );
 }
