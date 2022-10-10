@@ -53,7 +53,7 @@ const HeaderDesktop = (props: Props) => {
   const { currentUser } = useContext(UserContext);
   const router = useRouter();
   const isLogin = Object.keys(currentUser).length > 0;
-
+  const isHome = router.asPath === '/';
   const content = (
     <div style={{ width: 282 }}>
       <a>
@@ -337,6 +337,8 @@ const HeaderDesktop = (props: Props) => {
         onRedirect={onRedirect}
         t={props.t}
       /> */}
+
+      <div className={isHome ? 'blur' : null}></div>
     </MainContentDesktop>
   );
 };

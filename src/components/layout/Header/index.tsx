@@ -1,9 +1,7 @@
 import { PUBLIC_ROUTES } from '@constants';
 import { useRouter } from 'next/router';
 import React, { useEffect, useMemo } from 'react';
-import {
-  HeaderWrapper,
-} from './Header.style';
+import { HeaderWrapper } from './Header.style';
 import dynamic from 'next/dynamic';
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
@@ -16,7 +14,7 @@ interface Props {
 export default function HeaderComponent(props?: Props) {
   const { themeLight = false, t, showHeaderMobile = true } = props;
   const router = useRouter();
-  
+
   // Tab current
   let tabCurrent = useMemo(() => {
     const pathCurrent = router.pathname;
@@ -35,14 +33,14 @@ export default function HeaderComponent(props?: Props) {
 
   return (
     <>
-    <HeaderWrapper>
-      <HeaderDesktop
-        t={t}
-        themeLight={themeLight}
-        tabCurrent={tabCurrent?.href}
-        onRedirect={onRedirect}
-      />
-    </HeaderWrapper>
+      <HeaderWrapper>
+        <HeaderDesktop
+          t={t}
+          themeLight={themeLight}
+          tabCurrent={tabCurrent?.href}
+          onRedirect={onRedirect}
+        />
+      </HeaderWrapper>
       {showHeaderMobile && (
         <HeaderMobile
           t={t}
