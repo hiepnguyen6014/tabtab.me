@@ -1,35 +1,33 @@
 /* eslint-disable react/jsx-no-target-blank */
-import { INFOMATION_ROUTES, SRC_IMAGE } from '@constants';
+import { SRC_IMAGE } from '@constants';
 import { UserContext } from '@contexts';
-import React, { useContext } from 'react';
 import {
-  ColInFooter,
-  FlexFooter,
-  FooterBackgroundBottom,
-  FooterBackgroundTop,
-  FooterMainBottom,
-  FooterMainMiddle,
-  FooterMainTop,
-  FooterText,
-  FooterWrapper,
-  RowInCol,
-} from './Footer.style';
+  IconGlobalLang,
+  VectorEarth,
+  VectorMoney,
+  VectorRuler,
+} from '@root/public/icons';
+import { Col, Image, Typography } from 'antd';
+import Link from 'next/dist/client/link';
+import { useRouter } from 'next/router';
 import {
   IconTabFacebook,
   IconTabInstagram,
   IconTabLinkedin,
   IconTabRSS,
   IconTabSpotify,
-  IconTabYoutube,
   IconTabTwitter,
+  IconTabYoutube,
 } from 'public/icons';
-import { FooterBottom } from './FooterBottom';
-import { FooterMiddle } from './FooterMiddle';
-import { RoutesContact } from './RoutesFooter';
-import Link from 'next/dist/client/link';
-import { Col, Row, Typography, Image, Space } from 'antd';
-import Router, { useRouter } from 'next/router';
-
+import { useContext } from 'react';
+import { Flex, FooterDefault } from '../Footer/Footer.style';
+import {
+  FlexFooter,
+  FooterBackgroundTop,
+  FooterMainTop,
+  FooterText,
+  FooterWrapper,
+} from './Footer.style';
 export default function Footer(props: { t: any }) {
   const { t } = props;
   const { systemConfig } = useContext(UserContext);
@@ -94,8 +92,7 @@ export default function Footer(props: { t: any }) {
                 </div>
               </div>
             </Col>
-            
-            
+
             <Col sm={12} md={5} lg={6}>
               <div className="followUs-ctx">
                 <FooterText>
@@ -151,55 +148,106 @@ export default function Footer(props: { t: any }) {
                   >
                     Help Center
                   </Typography.Title>
-                  <span>
-                    <Typography.Title
-                      className="textFooter pt-3"
-                      onClick={(e) => findPage(e, '/policy')}
-                    >
-                      Privacy Policy
-                    </Typography.Title>
-                    <Typography.Title className="textFooter">
-                      Responsible Disclosure
-                    </Typography.Title>
-                  </span>
                 </FooterText>
               </div>
-            
-            
-           
             </Col>
-            
           </FooterMainTop>
         </FooterBackgroundTop>
 
-        {/* <FooterBackgroundBottom>
-          <FooterMainBottom>
-            <FooterBottom t={t} />
-          </FooterMainBottom>
-        </FooterBackgroundBottom> */}
-        {/* <div className="footer-bottom-wrap">
-          <FooterText>
-            <Typography className="footer-bottom-text">
-              Giấy phép thiết lập MXH số 69/GP-BTTTT, Ký ngày 29/01/2021
-            </Typography>
-          </FooterText>
-        </div> */}
-        <FooterText>
-          <div className="footer-bottom-wrap1">
-            <Typography.Text className="text-Footer">
-              © 2021 Tabtab
-            </Typography.Text>
-            <Link href="/policy">
-              <a>
-                <Typography.Text className="text-Footer">
-                  Privacy Policy
+        <FooterText className="d-none d-md-block">
+          <div
+            className="d-flex justify-content-center"
+            style={{
+              background: '#f6f6f6',
+              position: 'relative',
+              borderTop: '1px solid #E9E9E9',
+            }}
+          >
+            <FooterDefault>
+              <Flex style={{ gap: 15 }}>
+                <div className="footerBottom">
+                  <Typography.Text className="text-Footer">
+                    © 2021 Tabtab
+                  </Typography.Text>
+                </div>
+                <Typography.Text
+                  style={{
+                    fontSize: '25px',
+                    display: 'flex',
+                    marginBottom: '12px',
+                  }}
+                >
+                  .
                 </Typography.Text>
-              </a>
-            </Link>
-
-            <Typography.Text className="text-Footer">
-              Responsible Disclosure
-            </Typography.Text>
+                <div className="footerBottom">
+                  <Link href="/policy">
+                    <a>
+                      <Typography.Text className="text-Footer">
+                        Privacy Policy
+                      </Typography.Text>
+                    </a>
+                  </Link>
+                </div>
+                <Typography.Text
+                  style={{
+                    fontSize: '25px',
+                    display: 'flex',
+                    marginBottom: '12px',
+                  }}
+                >
+                  .
+                </Typography.Text>
+                <div className="footerBottom">
+                  <Typography.Text className="text-Footer">
+                    Responsible Disclosure
+                  </Typography.Text>
+                </div>
+                <Typography.Text
+                  style={{
+                    fontSize: '25px',
+                    display: 'flex',
+                    marginBottom: '12px',
+                  }}
+                >
+                  .
+                </Typography.Text>
+                <div className="footerBottom">
+                  <Typography.Text className="text-Footer">
+                    Site map
+                  </Typography.Text>
+                </div>
+              </Flex>
+              <Flex>
+                <span className="footerBottom">
+                  <VectorEarth className="mx-2" />
+                  <Typography.Text className="text-Footer">
+                    <span style={{ textDecoration: 'underline' }}>
+                      Việt Nam
+                    </span>
+                  </Typography.Text>
+                </span>
+                <span className="footerBottom">
+                  <IconGlobalLang className="mx-2" />
+                  <Typography.Text className="text-Footer">
+                    <span style={{ textDecoration: 'underline' }}>
+                      Tiếng Việt
+                    </span>
+                  </Typography.Text>
+                </span>
+                <span className="footerBottom">
+                  <VectorMoney className="mx-2" />
+                  <Typography.Text className="text-Footer">
+                    <span style={{ textDecoration: 'underline' }}>USD</span>
+                  </Typography.Text>
+                </span>
+                <span className="footerBottom">
+                  <VectorRuler className="mx-2" />
+                  <Typography.Text className="text-Footer">
+                    <span style={{ textDecoration: 'underline' }}>met</span>
+                  </Typography.Text>
+                </span>
+              </Flex>
+            </FooterDefault>
           </div>
         </FooterText>
       </div>

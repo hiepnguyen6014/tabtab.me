@@ -34,10 +34,10 @@ const DefaultLayout = (props: Props) => {
       </>
 
       <main style={{ position: 'relative' }}>{props.children}</main>
+      <ChatCustom />
 
       <Footer t={translate} />
-      <ChatCustom />
-      <FooterText className="d-none d-md-block">
+      {/* <FooterText className="d-none d-md-block">
         <div
           className="d-flex container-fluid justify-content-center"
           style={{ background: '#f6f6f6', position: 'relative' }}
@@ -126,7 +126,7 @@ const DefaultLayout = (props: Props) => {
             </Flex>
           </FooterDefault>
         </div>
-      </FooterText>
+      </FooterText> */}
     </>
   );
 };

@@ -305,7 +305,7 @@ const HeaderDesktop = (props: Props) => {
         <div>
           <Popover
             placement="bottomRight"
-            content={Object.keys(currentUser).length ? content : content}
+            content={Object.keys(currentUser).length ? content : content1}
             trigger="click"
           >
             <div

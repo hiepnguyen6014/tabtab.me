@@ -55,7 +55,7 @@ export const FooterWrapper = styled.footer`
 
 export const FooterBackgroundTop = styled.div`
   width: 100%;
-  padding: 30px;
+  padding: 48px 0px;
 `;
 export const FooterBackgroundBottom = styled.div`
   background: #f6f6f6;
@@ -194,6 +194,7 @@ export const FooterText = styled(Typography)`
 
 export const FlexFooter = styled.div`
   display: flex;
+  max-width: 1300px;
   .footerBottom {
     margin-right: 20px;
   }
