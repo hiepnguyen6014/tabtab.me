@@ -19,9 +19,9 @@ import {
   BoxInfo,
   BoxInfoPrice,
   BoxPriceInfoMation,
-  BoxSale,
   BoxTitle,
   BoxTitleHome,
+  BoxTitleHomeMini,
   BoxWrapper,
   ButtonMessage,
 } from './InfoHomeStyled';
@@ -35,6 +35,8 @@ interface InfoHomeTypeProps {
   row?: boolean;
   hiddenPrice?: boolean;
   changeImage?: boolean;
+  hiddenInfoHome?: boolean;
+  titleDownPx?: boolean;
 }
 
 const InfoHome: FC<InfoHomeTypeProps> = ({
@@ -42,6 +44,8 @@ const InfoHome: FC<InfoHomeTypeProps> = ({
   row,
   hiddenPrice,
   changeImage,
+  hiddenInfoHome,
+  titleDownPx,
 }) => {
   return (
     <BoxWrapper>
@@ -54,7 +58,6 @@ const InfoHome: FC<InfoHomeTypeProps> = ({
               ''
             ) : (
               <>
-                {' '}
                 <span style={{ marginBottom: '4px' }}>•</span>
                 <BoxArea>{dataHome.priceArea}</BoxArea>
               </>
@@ -77,63 +80,73 @@ const InfoHome: FC<InfoHomeTypeProps> = ({
           />
         )}
       </BoxFlex>
-      <BoxTitleHome>{dataHome.title}</BoxTitleHome>
-      <BoxDescriptionHome>{dataHome.description}</BoxDescriptionHome>
-      {!row ? (
-        <BoxDetailHome>
-          <BoxDetailDescription>
-            <IconBluePrint className="iConSm" />
-            <BoxInfo>{dataHome.area}</BoxInfo>
-          </BoxDetailDescription>
-          <BoxDetailDescription>
-            <IconPark />
-            <BoxInfo>{dataHome.other}</BoxInfo>
-          </BoxDetailDescription>
-          <BoxDetailDescription>
-            <AgentIcon />
-            <BoxInfo>{dataHome.info}</BoxInfo>
-          </BoxDetailDescription>
-          <BoxDetailDescription>
-            <IconSafari />
-            <BoxInfo>{dataHome.direction}</BoxInfo>
-          </BoxDetailDescription>
-          <BoxDetailDescription>
-            <Building />
-            <BoxInfo>{dataHome.typeHome}</BoxInfo>
-          </BoxDetailDescription>
-        </BoxDetailHome>
+      {!titleDownPx ? (
+        <BoxTitleHomeMini>{dataHome.title}</BoxTitleHomeMini>
       ) : (
-        <BoxDetailHomeColumn>
-          <BoxDetailHome>
-            <BoxDetailDescription>
-              <IconBluePrint className="iConSm" />
-              <BoxInfo>{dataHome.area}</BoxInfo>
-            </BoxDetailDescription>
-            <BoxDetailDescription>
-              <IconPark />
-              <BoxInfo>{dataHome.other}</BoxInfo>
-            </BoxDetailDescription>
-            <BoxDetailDescription>
-              <AgentIcon />
-              <BoxInfo>{dataHome.info}</BoxInfo>
-            </BoxDetailDescription>
-          </BoxDetailHome>
-          <BoxDetailHome>
-            <BoxDetailDescription>
-              <AgentIcon />
-              <BoxInfo>{dataHome.info}</BoxInfo>
-            </BoxDetailDescription>
-            <BoxDetailDescription>
-              <IconSafari />
-              <BoxInfo>{dataHome.direction}</BoxInfo>
-            </BoxDetailDescription>
-            <BoxDetailDescription>
-              <Building />
-              <BoxInfo>{dataHome.typeHome}</BoxInfo>
-            </BoxDetailDescription>
-          </BoxDetailHome>
-        </BoxDetailHomeColumn>
+        <BoxTitleHome>{dataHome.title}</BoxTitleHome>
       )}
+      <BoxDescriptionHome>{dataHome.description}</BoxDescriptionHome>
+      <>
+        {!hiddenInfoHome && (
+          <>
+            {!row ? (
+              <BoxDetailHome>
+                <BoxDetailDescription>
+                  <IconBluePrint className="iConSm" />
+                  <BoxInfo>{dataHome.area}</BoxInfo>
+                </BoxDetailDescription>
+                <BoxDetailDescription>
+                  <IconPark />
+                  <BoxInfo>{dataHome.other}</BoxInfo>
+                </BoxDetailDescription>
+                <BoxDetailDescription>
+                  <AgentIcon />
+                  <BoxInfo>{dataHome.info}</BoxInfo>
+                </BoxDetailDescription>
+                <BoxDetailDescription>
+                  <IconSafari />
+                  <BoxInfo>{dataHome.direction}</BoxInfo>
+                </BoxDetailDescription>
+                <BoxDetailDescription>
+                  <Building />
+                  <BoxInfo>{dataHome.typeHome}</BoxInfo>
+                </BoxDetailDescription>
+              </BoxDetailHome>
+            ) : (
+              <BoxDetailHomeColumn>
+                <BoxDetailHome>
+                  <BoxDetailDescription>
+                    <IconBluePrint className="iConSm" />
+                    <BoxInfo>{dataHome.area}</BoxInfo>
+                  </BoxDetailDescription>
+                  <BoxDetailDescription>
+                    <IconPark />
+                    <BoxInfo>{dataHome.other}</BoxInfo>
+                  </BoxDetailDescription>
+                  <BoxDetailDescription>
+                    <AgentIcon />
+                    <BoxInfo>{dataHome.info}</BoxInfo>
+                  </BoxDetailDescription>
+                </BoxDetailHome>
+                <BoxDetailHome>
+                  <BoxDetailDescription>
+                    <AgentIcon />
+                    <BoxInfo>{dataHome.info}</BoxInfo>
+                  </BoxDetailDescription>
+                  <BoxDetailDescription>
+                    <IconSafari />
+                    <BoxInfo>{dataHome.direction}</BoxInfo>
+                  </BoxDetailDescription>
+                  <BoxDetailDescription>
+                    <Building />
+                    <BoxInfo>{dataHome.typeHome}</BoxInfo>
+                  </BoxDetailDescription>
+                </BoxDetailHome>
+              </BoxDetailHomeColumn>
+            )}
+          </>
+        )}
+      </>
       <Divider style={{ border: '1px solid #E9E9E9', margin: '14px 0' }} />
       <BoxContact>
         <BoxDetailDescription>

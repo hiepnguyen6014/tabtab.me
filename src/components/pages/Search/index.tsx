@@ -42,16 +42,13 @@ import {
   BoxSalePrice,
   BoxStopLoss,
   BoxWrapper,
+  BoxWrapperFooter,
   BoxWrapperMini,
-  BoxWrapperOne,
   ButtonApply,
   ButtonClasses,
   ButtonClear,
   DivPrice,
   FDesktop,
-  ImageHome,
-  RowWrap,
-  SalePrice,
   SpanPrice,
   WrapperHideMap,
 } from './Search.style';
@@ -61,30 +58,24 @@ import {
   Col,
   Divider,
   Dropdown,
-  Grid,
   Image,
   Menu,
   Popover,
-  Radio,
   Row,
   Typography,
 } from 'antd';
 import { IconArrowDown, IconBell } from '@root/public/icons';
-import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
 import React, { useEffect, useState } from 'react';
 import {
   SEARCH_DATA,
   SEARCH_DATA_MINI,
   SEARCH_DATA_ROW,
 } from './component/SearchData';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { getListRealEstate, getPostByRating } from '../../../core/services';
 
-import DefaultLayout from '../../layout/DefaultLayout/DefaltLayout';
-import { FilterProvider } from '@root/src/core/contexts/filterContext';
 import InfoHome from './component/InfoHome';
-import ListItem from '../Home/HomeComponent/ListItem';
 import { MPostDetail } from '@models/MPostDetail';
+import PriceContent from './component/PriceContent';
 import { SRC_IMAGE } from '@core';
 import SwiperGlobal from '../../shared/SwiperGlobal';
 
@@ -195,241 +186,6 @@ export default function Search(props: Props) {
     },
   ];
 
-  const menu = (
-    <Menu
-      items={[
-        {
-          key: '1',
-          label: 'label 1',
-        },
-        {
-          key: '2',
-          label: 'label 2',
-        },
-        {
-          key: '3',
-          label: 'label 3',
-        },
-      ]}
-    />
-  );
-
-  const PriceContent = (
-    <div style={{ padding: 12 }}>
-      <Typography
-        style={{ fontSize: 20, fontFamily: 'Inter', fontWeight: '700' }}
-      >
-        Price
-      </Typography>
-      <Typography
-        style={{
-          fontSize: 16,
-          fontFamily: 'Inter',
-          fontWeight: '700',
-          marginTop: 24,
-          marginBottom: 16,
-        }}
-      >
-        Select Type
-      </Typography>
-      <div
-        style={{
-          borderRadius: 8,
-          padding: 4,
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <div
-          style={{
-            background: '#E9E9E9',
-            padding: '4px 0px 4px 4px',
-            borderTopLeftRadius: 8,
-            borderBottomLeftRadius: 8,
-          }}
-        >
-          <ButtonClasses>
-            <label
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                padding: '6px 24px 6px 24px',
-                whiteSpace: 'break-spaces',
-              }}
-            >
-              Hour
-            </label>
-          </ButtonClasses>
-        </div>
-        <Divider
-          type="vertical"
-          style={{
-            marginRight: 0,
-            marginLeft: 0,
-            height: 50,
-            borderColor: '#D3D3D3',
-          }}
-        />
-        <div style={{ background: '#E9E9E9', padding: '4px 0px 4px 0px' }}>
-          <ButtonClasses>
-            <label
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                padding: '6px 24px 6px 24px',
-                whiteSpace: 'break-spaces',
-              }}
-            >
-              Day
-            </label>
-          </ButtonClasses>
-        </div>
-        <Divider
-          type="vertical"
-          style={{
-            marginRight: 0,
-            marginLeft: 0,
-            height: 50,
-            borderColor: '#D3D3D3',
-          }}
-        />
-        <div style={{ background: '#E9E9E9', padding: '4px 0px 4px 0px' }}>
-          <ButtonClasses>
-            <label
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                padding: '6px 24px 6px 24px',
-                whiteSpace: 'break-spaces',
-              }}
-            >
-              Week
-            </label>
-          </ButtonClasses>
-        </div>
-        <Divider
-          type="vertical"
-          style={{
-            marginRight: 0,
-            marginLeft: 0,
-            height: 50,
-            borderColor: '#D3D3D3',
-          }}
-        />
-        <div
-          style={{
-            background: '#E9E9E9',
-            padding: '4px 4px 4px 0px',
-            borderTopRightRadius: 8,
-            borderBottomRightRadius: 8,
-          }}
-        >
-          <ButtonClasses>
-            <label
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                padding: '6px 24px 6px 24px',
-                whiteSpace: 'break-spaces',
-              }}
-            >
-              Month
-            </label>
-          </ButtonClasses>
-        </div>
-      </div>
-
-      <Typography
-        style={{
-          fontSize: 16,
-          fontFamily: 'Inter',
-          fontWeight: '700',
-          marginTop: 28,
-          marginBottom: 16,
-        }}
-      >
-        Select Type
-      </Typography>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
-        <Dropdown overlay={menu} placement="bottomLeft" trigger={['click']}>
-          <DivPrice>
-            <label
-              style={{ fontFamily: 'Inter', fontSize: 16, fontWeight: '550' }}
-            >
-              $ Any
-            </label>
-            <IconArrowDown />
-          </DivPrice>
-        </Dropdown>
-        <Typography
-          style={{ fontSize: 16, fontFamily: 'Inter', fontWeight: '700' }}
-        >
-          to
-        </Typography>
-        <Dropdown overlay={menu} placement="bottomLeft" trigger={['click']}>
-          <DivPrice>
-            <label
-              style={{ fontFamily: 'Inter', fontSize: 16, fontWeight: '550' }}
-            >
-              $ Any
-            </label>
-            <IconArrowDown />
-          </DivPrice>
-        </Dropdown>
-      </div>
-      <Row gutter={16}>
-        <Col span={12}>
-          <ButtonClear
-            style={{
-              padding: 14,
-              width: '100%',
-              height: 'auto',
-              marginTop: 16,
-              borderRadius: 8,
-            }}
-          >
-            <text
-              style={{
-                fontSize: 16,
-                fontWeight: '700',
-                fontFamily: 'Inter',
-                color: 'white',
-              }}
-            >
-              Clear
-            </text>
-          </ButtonClear>
-        </Col>
-        <Col span={12}>
-          <ButtonApply
-            style={{
-              padding: 14,
-              width: '100%',
-              height: 'auto',
-              marginTop: 16,
-              borderRadius: 8,
-            }}
-          >
-            <text
-              style={{ fontSize: 16, fontWeight: '700', fontFamily: 'Inter' }}
-            >
-              Apply
-            </text>
-          </ButtonApply>
-        </Col>
-      </Row>
-    </div>
-  );
 
   const PropertyContent = (
     <div style={{ padding: 12, width: 350 }}>
@@ -1101,17 +857,125 @@ export default function Search(props: Props) {
             </label>
           </div>
           {!hideMap && (
-            <WrapperHideMap className="wrapperHideMap">
-              <Col span={24}>
-                <div>
-                  <Image
-                    src={SRC_IMAGE.MAPS}
-                    alt="Map"
+            <WrapperHideMap  gutter={[
+              { xs: 0, sm: 0, md: 12, lg: 24 },
+              { xs: 24, sm: 24, md: 24, lg: 28 },
+            ]} className="wrapperHideMap">
+             
+            {SEARCH_DATA.slice(0,1).map((search, index) => (
+              <Col sm={24} lg={24} key={index}>
+                <BoxWrapper key={index}>
+                  <SwiperGlobal
                     width="100%"
-                    height="100%"
+                    height="300px"
+                    arrayImage={search.imageHome}
                   />
+                  <BoxSalePrice>
+                    <SpanPrice>sale {search.sale} off</SpanPrice>
+                  </BoxSalePrice>
+                  <BoxLogoX>
+                    <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                  </BoxLogoX>
+                  <BoxFavorite>
+                    <Favorite />
+                  </BoxFavorite>
+                  <div style={{ padding: '14px 16px 16px 18px' }}>
+                    <InfoHome dataHome={search} titleDownPx/>
+                  </div>
+                </BoxWrapper>
+              </Col>
+            ))}
+            {SEARCH_DATA_ROW.slice(0,1).map((search, index) => (
+              <Col sm={24} lg={24}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    background: '#FFFFFF',
+                    boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.16)',
+                    borderRadius: '8px',
+                    maxHeight: '304px',
+                  }}
+                  key={index}
+                >
+                  <div style={{ maxWidth: '282px' }}>
+                    <SwiperGlobal
+                      width="100%"
+                      height="304px"
+                      arrayImage={search.imageHome}
+                    />
+                    <BoxSalePrice>
+                      <SpanPrice>sale {search.sale} off</SpanPrice>
+                    </BoxSalePrice>
+                    <BoxLogoXOne>
+                      <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                    </BoxLogoXOne>
+                    <BoxFavoriteOne>
+                      <Favorite />
+                    </BoxFavoriteOne>
+                  </div>
+                  <BoxPaddingRow>
+                    <InfoHome dataHome={search} row/>
+                  </BoxPaddingRow>
                 </div>
               </Col>
+            ))}
+          
+              <Col sm={24} lg={24} style={{ padding: 10 }}>
+                <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
+              </Col>
+              {SEARCH_DATA_MINI.slice(0,2).map((search, index) => (
+                <Col xs={24} sm={24} md={24} lg={12} key={index}>
+                  <BoxWrapperMini key={index}>
+                    <SwiperGlobal
+                      width="100%"
+                      height="188px"
+                      arrayImage={search.imageHome}
+                    />
+                    <BoxSalePrice>
+                      <SpanPrice>sale {search.sale} off</SpanPrice>
+                    </BoxSalePrice>
+                    <BoxStopLoss>
+                      <SpanPrice>CẮT LỖ {search.stopLoss}</SpanPrice>
+                    </BoxStopLoss>
+                    <BoxLogoX>
+                      <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                    </BoxLogoX>
+                    <BoxFavorite>
+                      <Favorite />
+                    </BoxFavorite>
+                    <div style={{ padding: '14px 7px 16px 8px' }}>
+                      <InfoHome dataHome={search} row hiddenPrice changeImage />
+                    </div>
+                  </BoxWrapperMini>
+                </Col>
+              ))}
+               <Col sm={24} lg={24} style={{ padding: 10 }}>
+                <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
+              </Col>
+              {SEARCH_DATA_MINI.slice(0,2).map((search, index) => (
+                <Col xs={24} sm={24} md={24} lg={12} key={index}>
+                  <BoxWrapperFooter key={index}>
+                    <SwiperGlobal
+                      width="100%"
+                      height="188px"
+                      arrayImage={search.imageHome}
+                    />
+                    <BoxSalePrice>
+                      <SpanPrice>sale {search.sale} off</SpanPrice>
+                    </BoxSalePrice>
+                    <BoxLogoX>
+                      <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                    </BoxLogoX>
+                    <BoxFavorite>
+                      <Favorite />
+                    </BoxFavorite>
+                    <div style={{ padding: '14px 7px 16px 8px' }}>
+                      <InfoHome dataHome={search} row hiddenPrice changeImage hiddenInfoHome/>
+                    </div>
+                  </BoxWrapperFooter>
+                </Col>
+              ))}
             </WrapperHideMap>
           )}
         </Col>
@@ -1130,8 +994,8 @@ export default function Search(props: Props) {
         {hideMap && (
           <WrapperHideMap
             gutter={[
-              { xs: 0, sm: 0, md: 24, lg: 24 },
-              { xs: 24, sm: 24, md: 24, lg: 32 },
+              { xs: 0, sm: 0, md: 12, lg: 24 },
+              { xs: 24, sm: 24, md: 24, lg: 28 },
             ]}
           >
             {SEARCH_DATA.map((search, index) => (
@@ -1152,7 +1016,7 @@ export default function Search(props: Props) {
                     <Favorite />
                   </BoxFavorite>
                   <div style={{ padding: '14px 16px 16px 18px' }}>
-                    <InfoHome dataHome={search}/>
+                    <InfoHome dataHome={search} titleDownPx/>
                   </div>
                 </BoxWrapper>
               </Col>
@@ -1186,9 +1050,8 @@ export default function Search(props: Props) {
                       <Favorite />
                     </BoxFavoriteOne>
                   </div>
-
                   <BoxPaddingRow>
-                    <InfoHome dataHome={search} row />
+                    <InfoHome dataHome={search} row/>
                   </BoxPaddingRow>
                 </div>
               </Col>
@@ -1228,7 +1091,7 @@ export default function Search(props: Props) {
                       <Favorite />
                     </BoxFavorite>
                     <div style={{ padding: '14px 7px 16px 8px' }}>
-                      <InfoHome dataHome={search} row hiddenPrice changeImage/>
+                      <InfoHome dataHome={search} row hiddenPrice changeImage />
                     </div>
                   </BoxWrapperMini>
                 </Col>
@@ -1241,6 +1104,36 @@ export default function Search(props: Props) {
               <Col sm={24} lg={12} style={{ padding: 10 }}>
                 <img src={SRC_IMAGE.ADGOOGLE} height="100%" width="100%" />
               </Col>
+            </Row>
+            <Row
+              gutter={[
+                { xs: 6, sm: 12, md: 24, lg: 24 },
+                { xs: 24, sm: 24, md: 24, lg: 0 },
+              ]}
+            >
+              {SEARCH_DATA_MINI.map((search, index) => (
+                <Col xs={24} sm={12} md={12} lg={6} key={index}>
+                  <BoxWrapperFooter key={index}>
+                    <SwiperGlobal
+                      width="100%"
+                      height="188px"
+                      arrayImage={search.imageHome}
+                    />
+                    <BoxSalePrice>
+                      <SpanPrice>sale {search.sale} off</SpanPrice>
+                    </BoxSalePrice>
+                    <BoxLogoX>
+                      <Image preview={false} src={SRC_IMAGE.LOGOXIMAGE} />
+                    </BoxLogoX>
+                    <BoxFavorite>
+                      <Favorite />
+                    </BoxFavorite>
+                    <div style={{ padding: '14px 7px 16px 8px' }}>
+                      <InfoHome dataHome={search} row hiddenPrice changeImage hiddenInfoHome/>
+                    </div>
+                  </BoxWrapperFooter>
+                </Col>
+              ))}
             </Row>
           </WrapperHideMap>
         )}

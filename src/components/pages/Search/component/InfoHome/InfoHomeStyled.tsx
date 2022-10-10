@@ -75,6 +75,22 @@ export const BoxTitleHome = styled.div`
   color: #222222;
   @media ${device.maxSm} {
     margin-top: 0px;
+    font-size: 9.33333px;
+    line-height: 12px;
+  }
+`;
+
+export const BoxTitleHomeMini = styled.div`
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 8px;
+
+  color: #222222;
+  @media ${device.maxSm} {
+    margin-top: 0px;
     font-size: 11.6667px;
     line-height: 16px;
   }

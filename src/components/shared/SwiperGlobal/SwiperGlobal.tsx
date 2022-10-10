@@ -10,8 +10,6 @@ import { NextArrow, PrevArrow } from 'public/icons';
 import React, { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Image } from 'antd';
-
 interface SwipperSlice {
   arrayImage: any[];
   width: string;
