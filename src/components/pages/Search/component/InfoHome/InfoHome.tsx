@@ -1,13 +1,9 @@
 import {
   Advantage,
   AgentIcon,
-  ArealIcon,
   Building,
   IconBluePrint,
-  IconHouse,
   IconMessTabTab,
-  IconMessage,
-  IconMessages,
   IconPark,
   IconSafari,
 } from '@root/public/icons';
@@ -19,32 +15,68 @@ import {
   BoxDetailDescription,
   BoxDetailHome,
   BoxDetailHomeColumn,
+  BoxFlex,
   BoxInfo,
+  BoxInfoPrice,
   BoxPriceInfoMation,
+  BoxSale,
   BoxTitle,
   BoxTitleHome,
   BoxWrapper,
   ButtonMessage,
 } from './InfoHomeStyled';
-import { Button, Divider } from 'antd';
+import { Divider, Image } from 'antd';
 import React, { FC } from 'react';
 
-import { SearchOutlined } from '@ant-design/icons';
+import { SRC_IMAGE } from '@core';
 
 interface InfoHomeTypeProps {
   dataHome: any;
   row?: boolean;
+  hiddenPrice?: boolean;
+  changeImage?: boolean;
 }
 
-const InfoHome: FC<InfoHomeTypeProps> = ({ dataHome, row }) => {
+const InfoHome: FC<InfoHomeTypeProps> = ({
+  dataHome,
+  row,
+  hiddenPrice,
+  changeImage,
+}) => {
   return (
     <BoxWrapper>
-      <BoxTitle>{dataHome.totalDisCountMoney}</BoxTitle>
-      <BoxPriceInfoMation>
-        <BoxCost>was {dataHome.cost}</BoxCost>
-        <span style={{ marginBottom: '4px' }}>•</span>
-        <BoxArea>{dataHome.priceArea}</BoxArea>
-      </BoxPriceInfoMation>
+      <BoxFlex>
+        <BoxInfoPrice>
+          <BoxTitle>{dataHome.totalDisCountMoney}</BoxTitle>
+          <BoxPriceInfoMation>
+            <BoxCost>was {dataHome.cost}</BoxCost>
+            {hiddenPrice ? (
+              ''
+            ) : (
+              <>
+                {' '}
+                <span style={{ marginBottom: '4px' }}>•</span>
+                <BoxArea>{dataHome.priceArea}</BoxArea>
+              </>
+            )}
+          </BoxPriceInfoMation>
+        </BoxInfoPrice>
+        {!changeImage ? (
+          <Image
+            width={36}
+            height={36}
+            preview={false}
+            src={SRC_IMAGE.PERSON6}
+          />
+        ) : (
+          <Image
+            width={46}
+            height={46}
+            preview={false}
+            src={SRC_IMAGE.PERSON6}
+          />
+        )}
+      </BoxFlex>
       <BoxTitleHome>{dataHome.title}</BoxTitleHome>
       <BoxDescriptionHome>{dataHome.description}</BoxDescriptionHome>
       {!row ? (

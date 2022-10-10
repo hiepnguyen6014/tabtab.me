@@ -1,9 +1,7 @@
 import { Button } from 'antd';
 import { device } from '@styles/theme/device';
 import styled from '@emotion/styled';
-export const BoxWrapper = styled.div`
-  padding: 14px 16px 16px 18px;
-`;
+export const BoxWrapper = styled.div``;
 
 export const BoxTitle = styled.div`
   font-family: 'Inter';
@@ -17,8 +15,19 @@ export const BoxTitle = styled.div`
     line-height: 16px;
   }
 `;
+
+export const BoxInfoPrice = styled.div`
+  max-width: 230px;
+  width: 100%;
+`;
+
+export const BoxFlex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const BoxPriceInfoMation = styled.div`
-  max-width: 170px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -152,13 +161,12 @@ export const ButtonMessage = styled(Button)`
     max-height: 26px;
     font-size: 8.16667px;
     line-height: 12px;
-    padding:4px 7px 3px 7px
+    padding: 4px 7px 3px 7px;
   }
 `;
-
 
 export const BoxDetailHomeColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-`
+`;
