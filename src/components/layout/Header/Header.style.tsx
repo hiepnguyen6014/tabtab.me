@@ -58,8 +58,8 @@ export const HeaderWrapper = styled.header`
 `;
 
 export const MainContentDesktop = styled.div`
-  max-width: 1300px;
   width: 100%;
+  max-width: 1440px;
   height: 101px;
   margin: 0;
 
@@ -68,13 +68,13 @@ export const MainContentDesktop = styled.div`
   justify-content: space-between;
   align-items: center; */
 
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   .blur {
-    width: 1440px;
+    width: 100%;
+    max-width: 1440px;
     height: 100%;
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
     opacity: 0.4;
