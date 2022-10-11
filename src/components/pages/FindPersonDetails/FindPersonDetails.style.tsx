@@ -1,25 +1,26 @@
+import { styled } from '@styles/theme';
+import { colors } from '@styles/theme/colors';
+import { device } from '@styles/theme/device';
+import { Button, Col, Radio, Row, Typography } from 'antd';
 
-import { styled } from "@styles/theme";
-import { colors } from "@styles/theme/colors";
-import { device } from "@styles/theme/device";
-import { Button, Col, Radio, Row, Typography } from "antd";
-
-export const FDesktop = styled(props => <div {...props} />)`
+export const FDesktop = styled((props) => <div {...props} />)`
   position: relative;
-  max-width:1200px;
+  max-width: 1200px;
   width: 95%;
-  margin:auto;
-  ${props => props.grid ? {
-    'grid-template-columns': "30% 69%",
-    display: "grid"
-
-  } : {
-    'grid-template-columns': ''
-  }}
+  margin: auto;
+  ${(props) =>
+    props.grid
+      ? {
+          'grid-template-columns': '30% 69%',
+          display: 'grid',
+        }
+      : {
+          'grid-template-columns': '',
+        }}
   margin: auto;
   justify-content: space-between;
   column-gap: 10px;
-  grid-row-gap:20px;
+  grid-row-gap: 20px;
   @media ${device.maxLg} {
     grid-template-columns: 40% 50%;
   }
@@ -31,22 +32,31 @@ export const FDesktop = styled(props => <div {...props} />)`
   }
 `;
 
-export const FDesktopSecond = styled(props => <div {...props} />)`
-  position: relative;
-  max-width:1200px;
-  width: 95%;
-  margin:auto;
-  ${props => props.grid ? {
-    'grid-template-columns': "30% 69%",
-    display: "grid"
+export const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+`;
 
-  } : {
-    'grid-template-columns': ''
-  }}
+export const FDesktopSecond = styled((props) => <div {...props} />)`
+  position: relative;
+  max-width: 1200px;
+  width: 95%;
+  margin: auto;
+  ${(props) =>
+    props.grid
+      ? {
+          'grid-template-columns': '30% 69%',
+          display: 'grid',
+        }
+      : {
+          'grid-template-columns': '',
+        }}
   margin: auto;
   justify-content: space-between;
   column-gap: 10px;
-  grid-row-gap:20px;
+  grid-row-gap: 20px;
   @media ${device.maxLg} {
     grid-template-columns: 100%;
   }
@@ -63,13 +73,13 @@ export const RowWrap = styled(Row)`
 `;
 
 export const FilterContainer = styled.div`
-  border: 1px solid #D3D3D3;
-  display: flex; 
+  border: 1px solid #d3d3d3;
+  display: flex;
   justify-content: space-between;
-  padding:9px 16px 9px 16px; 
-  border-radius:8px;
-  background:#ffffff;
-`
+  padding: 9px 16px 9px 16px;
+  border-radius: 8px;
+  background: #ffffff;
+`;
 
 export const WidgetAction = styled.div`
   margin-top: 30px;
@@ -77,7 +87,7 @@ export const WidgetAction = styled.div`
   flex-direction: column;
   justify-content: space-around;
   height: 40%;
-  position:relative;
+  position: relative;
   button {
     display: flex;
     align-items: center;
@@ -90,7 +100,7 @@ export const WidgetAction = styled.div`
 
 export const WidgetHeader = styled.div`
   display: flex;
-  gap:10px;  
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
   height: 35%;
@@ -101,45 +111,45 @@ export const WidgetHeader = styled.div`
   [role='left'] {
     display: flex;
     align-items: center;
-    width:100%;
-    gap:5%;
-    span{
+    width: 100%;
+    gap: 5%;
+    span {
       width: 100%;
     }
-    h5{
-      font-size:14px;
-      margin:0;
+    h5 {
+      font-size: 14px;
+      margin: 0;
       text-align: left;
     }
   }
-  &>span:nth-of-type(2){
-    text-align:right;
-    width:auto;
+  & > span:nth-of-type(2) {
+    text-align: right;
+    width: auto;
   }
 `;
 
 export const WidgetHeaderAgent = styled.div`
   display: flex;
-  gap:10px;  
+  gap: 10px;
   align-items: center;
   height: 35%;
   a {
     text-decoration: underline;
     color: #ffc22b;
   }
-  &>span:nth-of-type(2){
-    text-align:right;
-    width:auto;
+  & > span:nth-of-type(2) {
+    text-align: right;
+    width: auto;
   }
 `;
 
 export const WidgetWrap = styled.div`
-  margin-top:25px;
+  margin-top: 25px;
   width: 100%;
-  overflow:hidden;
+  overflow: hidden;
   float: right;
   min-height: 200px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid rgba(118, 118, 118, 0.5);
   box-sizing: border-box;
   box-shadow: 0px 8px 12px rgba(34, 34, 34, 0.06);
@@ -149,7 +159,7 @@ export const WidgetWrap = styled.div`
   justify-content: space-between;
   &:hover {
     transform: translateY(-3px);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px, #F9C31F 0px 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px, #f9c31f 0px 6px 6px;
   }
   // padding: 15px;
   @media ${device.maxSm} {
@@ -158,9 +168,9 @@ export const WidgetWrap = styled.div`
 `;
 
 export const WidgetWrapContact = styled.div`
-  margin-top:15px;
+  margin-top: 15px;
   width: 100%;
-  overflow:hidden;
+  overflow: hidden;
   float: right;
   box-sizing: border-box;
   border-radius: 16px;
@@ -172,7 +182,7 @@ export const WidgetWrapContact = styled.div`
   }
 `;
 
-export const PostWrapper = styled(props => <div {...props} />)`
+export const PostWrapper = styled((props) => <div {...props} />)`
   overflow: hidden;
   box-shadow: 0px 4px 16px rgba(34, 34, 34, 0.08);
   border-radius: 16px;
@@ -199,92 +209,95 @@ export const PostWrapper = styled(props => <div {...props} />)`
   }
 `;
 
-
 export const ButtonCall = styled(Button)`
-   background-color: transparent !important;
-   color: #222222;
-   font-size:16px;
-   font-weight: 700;
-   font-family: Inter;
-   border-radius: 8px;
-   border:1px solid #767676;
-      svg {
-        path {
-          fill: #000;
-        }
-      }
-      &:hover{
-        background-color: #d44640;
-      }
-`
+  background-color: transparent !important;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Inter;
+  border-radius: 8px;
+  border: 1px solid #767676;
+  svg {
+    path {
+      fill: #000;
+    }
+  }
+  &:hover {
+    background-color: #d44640;
+  }
+`;
 
 export const ButtonFollow = styled(Button)`
   background: white;
-  border-color: #F9C41F;
-  &:focus{
-    background: #F9C41F !important;
-    border-color: #F9C41F;
+  border-color: #f9c41f;
+  &:focus {
+    background: #f9c41f !important;
+    border-color: #f9c41f;
   }
-  &:not(.disable-custom-btn):not(.disable-hover):hover{
-    background: #F9C41F !important;
+  &:not(.disable-custom-btn):not(.disable-hover):hover {
+    background: #f9c41f !important;
   }
-`
+`;
 export const ButtonChat = styled(Button)`
-  background: #F9C41F;
-  border-color: #F9C41F;
-  &:focus{
-    background: #F9C41F !important;
-    border-color: #F9C41F;
+  background: #f9c41f;
+  border-color: #f9c41f;
+  &:focus {
+    background: #f9c41f !important;
+    border-color: #f9c41f;
   }
-  &:not(.disable-custom-btn):not(.disable-hover):hover{
-    background: #F9C41F !important;
+  &:not(.disable-custom-btn):not(.disable-hover):hover {
+    background: #f9c41f !important;
   }
-`
+`;
 
 export const SwapAdd = styled.div`
-  border: 1px solid #D3D3D3;
+  border: 1px solid #d3d3d3;
   border-radius: 42px;
   padding: 0px 25px 0px 25px;
   display: flex;
   align-items: center;
-  [role = 'scale']{
-    @media ${device.maxSm}{
+  [role='scale'] {
+    @media ${device.maxSm} {
       display: none;
       padding: 0px;
     }
   }
-`
+`;
 export const DefaultWrapperWithBg = styled.div`
   &:nth-of-type(even) {
     background: #ffffff;
     width: 100%;
   }
-  &:last-child{
-    padding-bottom:100px;
+  &:last-child {
+    padding-bottom: 100px;
   }
-  abbr{
-    color: ${colors.common}
+  abbr {
+    color: ${colors.common};
   }
-  @media ${device.maxMd}{
-      padding: ${props => props.typeof == "fullScreen" ? 0 : ''};
+  @media ${device.maxMd} {
+    padding: ${(props) => (props.typeof == 'fullScreen' ? 0 : '')};
   }
 `;
 
-export const DefaultContentInWrapperMajor = styled(props => <div {...props} />)`
+export const DefaultContentInWrapperMajor = styled((props) => (
+  <div {...props} />
+))`
   max-width: 1200px;
   padding: 30px 0;
   width: 95%;
-  ${props => props.grid ? {
-    'grid-template-columns': "69% 30%",
-    display: "grid"
-
-  } : {
-    'grid-template-columns': ''
-  }}
+  ${(props) =>
+    props.grid
+      ? {
+          'grid-template-columns': '69% 30%',
+          display: 'grid',
+        }
+      : {
+          'grid-template-columns': '',
+        }}
   margin: auto;
   justify-content: space-between;
   column-gap: 10px;
-  grid-row-gap:20px;
+  grid-row-gap: 20px;
   @media ${device.maxLg} {
     grid-template-columns: 80%;
   }
@@ -294,29 +307,31 @@ export const DefaultContentInWrapperMajor = styled(props => <div {...props} />)`
 `;
 
 export const RowPrice = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media ${device.maxMd}{
-      display: block;
-    }
-`
-export const RowPriceLeft = styled(props => <div {...props} />)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media ${device.maxMd} {
+    display: block;
+  }
+`;
+export const RowPriceLeft = styled((props) => <div {...props} />)`
   span {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    ${props => props.gap ? {
-    gap: '12px'
-  } :
-    {
-      gap: ''
-    }}
+    ${(props) =>
+      props.gap
+        ? {
+            gap: '12px',
+          }
+        : {
+            gap: '',
+          }}
     font-size: 16px;
     margin-bottom: 14px;
     svg {
-      transform: scale(1.0);
+      transform: scale(1);
     }
     label {
       margin: 0;
@@ -360,8 +375,8 @@ export const ColWrap = styled(Col)`
     }
   }
   @media ${device.maxSm} {
-      margin-bottom: 30px;
-    }
+    margin-bottom: 30px;
+  }
 `;
 export const TypographyText = styled(Typography)`
   font-family: 'Inter';
@@ -425,7 +440,6 @@ export const TypographyText = styled(Typography)`
   }
 `;
 
-
 export const RadoCustom = styled(Radio.Button)`
 .ant-radio-button-checked{
   background: #222222;
@@ -434,4 +448,4 @@ export const RadoCustom = styled(Radio.Button)`
   .ant-typography{
     color: red !important;
 }
-`
+`;
