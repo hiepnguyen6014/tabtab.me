@@ -155,10 +155,16 @@ const RecommendProperty = () => {
                 }}
                 breakpoints={{
                   '1024': {
+                    slidesPerView: 3,
+                    slidesPerGroup: 3,
+                    spaceBetween: 30,
+                  },
+
+                  '1280': {
                     slidesPerView: 4,
                     slidesPerGroup: 4,
                     spaceBetween: 24,
-                  },
+                  }
                 }}
                 className="container"
               >
