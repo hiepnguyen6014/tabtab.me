@@ -21,6 +21,7 @@ export const ChatWrap = styled.div`
 
 export const ChatSmallWrap = styled.div`
   position: fixed;
+  z-index: 10;
   float: right;
   bottom: 0%;
   right: 0%;

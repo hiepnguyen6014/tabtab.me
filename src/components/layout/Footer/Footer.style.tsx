@@ -11,11 +11,12 @@ export const IconCompany = styled(IconApartment)`
 `;
 
 export const FooterWrapper = styled.footer`
-  position: relative;
+  /* position: relative; */
   clear: both;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  padding: 0 1rem;
+  /* display: flex;
+  justify-content: center; */
   font-size: 16px;
   line-height: 22px;
   color: #222222 !important;
@@ -259,12 +260,13 @@ export const HrefLink = styled.a`
 
 export const FooterDefault = styled.div`
   height: 69px;
-  width: 1300px;
+  max-width: 1300px;
   background: #f6f6f6;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid #e9e9e9;
 `;
 
 export const Flex = styled.div`

@@ -22,14 +22,15 @@ export const BannerHome = (props: { t: any }) => {
         autoplaySpeed={2000}
       >
         {arrayImg.map((value, key) => (
-          <ImageBanner
-            alt="tabtab"
-            key={key}
-            preview={false}
-            src={value}
-            width="100%"
-            height="100%"
-          />
+          <div key={key}>
+            <ImageBanner
+              alt="tabtab"
+              preview={false}
+              src={value}
+              width="100%"
+              height="100%"
+            />
+          </div>
         ))}
       </CarouselInBanner>
       <ContentInBanner>
