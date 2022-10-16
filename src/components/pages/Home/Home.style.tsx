@@ -16,6 +16,15 @@ export const BannerWrapper = styled.div`
   }
   @media ${device.maxSm} {
     height: 350px;
+
+    .ant-carousel .slick-slider {
+      position: static;
+    }
+    .ant-carousel .slick-dots {
+      justify-content: center;
+      margin: auto;
+      bottom: 10px;
+    }
   }
 `;
 export const CarouselInBanner = styled(Carousel)`
@@ -181,6 +190,9 @@ export const WrapperSpot = styled.div`
     width: 100%;
   }
 
+  .right > :nth-last-child(1) .vertical-line {
+    display: none;
+  }
   .container {
     padding-bottom: 35px;
   }
@@ -219,6 +231,7 @@ export const ViewWrap = styled.div`
 `;
 
 export const ColWrap = styled(Col)`
+  /* background: linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, #f5f5f5 100%); */
   .flex-wrap {
     display: flex;
     justify-content: center;
@@ -544,6 +557,7 @@ export const ItemPostSpot = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 20px;
 `;
 
 export const ItemUpcoming = styled.div`
@@ -578,6 +592,7 @@ export const ArticleWrap = styled.article`
   height: 100%;
   position: relative;
   overflow: hidden;
+  margin-bottom: 16px;
   &:hover {
     transform: scale(1.05);
   }
@@ -591,6 +606,13 @@ export const BannerWrap = styled.article`
   height: 100%;
   position: relative;
   overflow: hidden;
+
+  .bookmark {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    z-index: 9;
+  }
   @media ${device.maxSm} {
     min-height: 453px;
   }

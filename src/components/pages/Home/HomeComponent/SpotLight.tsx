@@ -19,6 +19,7 @@ import { ColA } from '../Spotlight/ItemSpotlight.style';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Flex } from '../../HelpCenter/HelpCenter.style';
+import { VectorBookmark } from '@root/public/icons';
 
 const SpotLight: React.FC<{}> = () => {
   const router = useRouter();
@@ -132,6 +133,9 @@ const SpotLight: React.FC<{}> = () => {
                 <a>
                   <BannerSpotWrapper>
                     <BannerWrap>
+                      <div className="bookmark">
+                        <VectorBookmark height="28px" width="28px" />
+                      </div>
                       <ImageBannerWrap
                         alt="imagePost"
                         src={SRC_IMAGE.IMAGEA}
@@ -204,7 +208,7 @@ const SpotLight: React.FC<{}> = () => {
                   </Button>
                 </SpotlightText>
               </Row>
-              <div style={{ marginTop: '20px' }} className="px-2">
+              <div style={{ marginTop: '20px' }} className="px-2 right">
                 {ITEMSPOTLIGHTSIDE.map((items, key) => {
                   return (
                     <Link href="/detail-spotlight" key={key}>

@@ -18,8 +18,9 @@ export const BannerHome = (props: { t: any }) => {
       <CarouselInBanner
         dotPosition="bottom"
         autoplay
-        speed={3000}
-        autoplaySpeed={2000}
+        // speed={1500}
+        autoplaySpeed={3000}
+        infinite
       >
         {arrayImg.map((value, key) => (
           <div key={key}>
