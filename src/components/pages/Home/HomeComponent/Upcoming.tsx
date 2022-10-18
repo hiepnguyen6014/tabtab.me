@@ -92,21 +92,56 @@ const Upcoming: React.FC<{}> = () => {
         //   {/* <ItemBoostHub /> */}
         //   {/* </ColA> */}
         // </Row>
-        <Row
-          gutter={{
-            xs: 8,
-            sm: 16,
-            lg: 24,
-          }}
-        >
-          {UPCOMINGLIST.map((item, idx) => {
-            return (
-              <Col key={idx} sm={24} lg={6}>
-                <ItemPostUpComing items={item} />;
-              </Col>
-            );
-          })}
-        </Row>
+
+
+        // <Row
+        //   gutter={{
+        //     xs: 8,
+        //     sm: 16,
+        //     lg: 24,
+        //   }}
+        // >
+        //   {UPCOMINGLIST.map((item, idx) => {
+        //     return (
+        //       <Col key={idx} sm={24} lg={6}>
+        //         <ItemPostUpComing items={item} />;
+        //       </Col>
+        //     );
+        //   })}
+        // </Row>
+
+        <div>
+          <Swiper
+            modules={[Navigation, Autoplay, Pagination]}
+            draggable
+            spaceBetween={40}
+            speed={750}
+            grabCursor
+            pagination={{ dynamicBullets: true }}
+            breakpoints={{
+              '1024': {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 50,
+              },
+
+              '1280': {
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+                spaceBetween: 24,
+              },
+            }}
+            className="container"
+          >
+            {UPCOMINGLIST.map((item, idx) => {
+              return (
+                <SwiperSlide key={idx}>
+                  <ItemPostUpComing items={item} />;
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
       )}
     </WrapperSpot>
   );

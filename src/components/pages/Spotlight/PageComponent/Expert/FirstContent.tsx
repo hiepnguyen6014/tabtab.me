@@ -5,7 +5,7 @@ import SlideExpert from './SlideExpert';
 const FirstContent = () => {
   return (
     <>
-      <Row>
+      <Row style={{ marginBottom: '21px' }}>
         <Col lg={18}>
           <BannerExpert />
         </Col>

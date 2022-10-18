@@ -4,6 +4,7 @@ import { device } from '@styles/theme/device';
 import { Button, Typography } from 'antd';
 
 export const ItemPostWrap = styled.div`
+  max-width: 280px;
   width: 100%;
   height: auto;
   display: flex;

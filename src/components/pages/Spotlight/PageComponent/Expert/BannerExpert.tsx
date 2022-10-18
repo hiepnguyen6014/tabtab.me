@@ -7,12 +7,16 @@ import {
   ImageBannerWrap,
   TextBanner,
 } from './Expert.style';
+import { VectorBookmark } from '@root/public/icons';
 
 const BannerExpert = () => {
   return (
     <>
       <BannerExpertWrap>
         <BannerWrap>
+          <div className="bookmark">
+            <VectorBookmark height="28px" width="28px" />
+          </div>
           <ImageBannerWrap
             alt="imagePost"
             src={SRC_IMAGE.IMAGEA}

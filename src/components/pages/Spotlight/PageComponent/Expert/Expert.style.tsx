@@ -4,8 +4,8 @@ import { device } from '@styles/theme/device';
 import { Divider, Image, Typography } from 'antd';
 
 export const BannerExpertWrap = styled.div`
-  max-height: 100%;
-  min-height: 553px;
+  height: 100%;
+  max-height: 553px;
   overflow: hidden;
   width: 100%;
   margin: auto;
@@ -13,6 +13,7 @@ export const BannerExpertWrap = styled.div`
   object-fit: contain;
   object-position: center;
   position: relative;
+
   @media ${device.maxMd} {
     min-height: 350px;
   }
@@ -24,11 +25,37 @@ export const BannerExpertWrap = styled.div`
   }
 `;
 
+export const WrapperSpotPage = styled.div`
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  max-width: 1200px;
+  max-height: 500px;
+  position: relative;
+
+  .vertical-line {
+    border: 1px solid #e9e9e9;
+    width: 100%;
+  }
+
+  .right > :nth-last-child(1) .vertical-line {
+    display: none;
+  }
+`;
+
 export const BannerWrap = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
+
+  .bookmark {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    z-index: 9;
+  }
   @media ${device.maxSm} {
     min-height: 453px;
   }

@@ -157,7 +157,7 @@ const RecommendProperty = () => {
                   '1024': {
                     slidesPerView: 3,
                     slidesPerGroup: 3,
-                    spaceBetween: 30,
+                    spaceBetween: 50,
                   },
 
                   '1280': {

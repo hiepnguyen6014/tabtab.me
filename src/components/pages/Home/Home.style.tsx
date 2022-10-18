@@ -194,14 +194,11 @@ export const WrapperSpot = styled.div`
     display: none;
   }
   .container {
-    padding-bottom: 35px;
+    padding: 25px 20px 35px;
   }
-  .swiper-pagination-bullet-active {
-    background: black;
-    transition: all 0.3s;
-  }
+
   .swiper-pagination {
-    bottom: 0px !important;
+    display: none;
   }
 
   /* @media ${device.maxMd} {
@@ -212,6 +209,15 @@ export const WrapperSpot = styled.div`
   @media ${device.maxSm} {
     padding: 16px;
     min-height: 550px;
+
+    .swiper-pagination-bullet-active {
+      background: black;
+      transition: all 0.3s;
+    }
+    .swiper-pagination {
+      display: block;
+      bottom: 0px !important;
+    }
   }
 `;
 
@@ -796,7 +802,7 @@ export const GeneralWrap = styled.div`
 export const GeneralText = styled(Typography)`
   font-family: 'Inter';
   font-style: normal;
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 10px 0px;
   .title-general {
     display: flex;
     justify-content: space-between;
