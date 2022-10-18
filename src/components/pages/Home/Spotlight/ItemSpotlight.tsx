@@ -1,7 +1,5 @@
-import {
-  VectorBookmark,
-} from '@root/public/icons';
-import {  Image, Typography } from 'antd';
+import { VectorBookmark } from '@root/public/icons';
+import { Image, Typography } from 'antd';
 import {
   ArticleWrap,
   DivWrap,
@@ -38,9 +36,7 @@ const ItemSpotlight = ({ item }) => {
           </DivWrap>
         </ArticleWrap>
         <SpotlightText className="">
-          <TextColor colorText={item.colorCategory}>
-            {item.category}
-          </TextColor>
+          <TextColor colorText={item.colorCategory}>{item.category}</TextColor>
           <Typography.Title className="contentPostSpot">
             {item.content}
           </Typography.Title>

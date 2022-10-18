@@ -1,4 +1,4 @@
-import { Row, Typography } from 'antd';
+import { Col, Row, Typography } from 'antd';
 import { WrapperSpot, ColA, GeneralText, GeneralWrap } from '../Home.style';
 import {
   CalendarSun,
@@ -92,36 +92,21 @@ const Upcoming: React.FC<{}> = () => {
         //   {/* <ItemBoostHub /> */}
         //   {/* </ColA> */}
         // </Row>
-        <div>
-          <Swiper
-            modules={[Navigation, Autoplay, Pagination]}
-            draggable
-            spaceBetween={40}
-            speed={750}
-            grabCursor
-            pagination={{ dynamicBullets: true }}
-            // navigation={{
-            //   prevEl: prevRef.current,
-            //   nextEl: nextRef.current,
-            // }}
-            breakpoints={{
-              '1024': {
-                slidesPerView: 4,
-                slidesPerGroup: 4,
-                spaceBetween: 24,
-              },
-            }}
-            className="container"
-          >
-            {UPCOMINGLIST.map((item, idx) => {
-              return (
-                <SwiperSlide key={idx}>
-                  <ItemPostUpComing items={item} />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
+        <Row
+          gutter={{
+            xs: 8,
+            sm: 16,
+            lg: 24,
+          }}
+        >
+          {UPCOMINGLIST.map((item, idx) => {
+            return (
+              <Col key={idx} sm={24} lg={6}>
+                <ItemPostUpComing items={item} />;
+              </Col>
+            );
+          })}
+        </Row>
       )}
     </WrapperSpot>
   );
