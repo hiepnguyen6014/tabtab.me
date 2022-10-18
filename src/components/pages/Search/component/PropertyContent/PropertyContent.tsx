@@ -2,21 +2,16 @@ import { ButtonApply, ButtonClear } from '../../Search.style'
 import { Checkbox, Col, Row, Typography } from 'antd'
 import { Convention, CoworkingSpace, Enterprise, PrivateOffice, SharedOffice, VirtualOfflice } from '@root/public/icons'
 
+import { BoxTypography } from './PropertyContentStyled'
 import React from 'react'
 
 const PropertyContent = () => {
   return (
     <div style={{ padding: 12, width: 350 }}>
-    <Typography
-      style={{
-        fontSize: 20,
-        fontFamily: 'Inter',
-        fontWeight: '700',
-        marginBottom: 24,
-      }}
+    <BoxTypography
     >
       Property types
-    </Typography>
+    </BoxTypography>
     <Checkbox
       style={{
         display: 'flex',

@@ -3,35 +3,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import {
-  AirConditioning,
-  BikeStorage,
-  CarParking,
-  CleaningService,
-  Collaborative,
-  Convention,
-  CoworkingSpace,
-  DisabledAccess,
-  Electricity,
-  Enterprise,
-  FactoryWarehouse,
-  Favorite,
-  HelpCenter,
-  HoursSecurity,
-  HouseManager,
-  IconCaffe,
-  IconKitchen,
-  IconShower,
-  Lift,
-  OutdoorPublic,
-  Pet,
-  PrivateOffice,
-  ReceptionistAvailable,
-  SharedOffice,
-  Support247,
-  VirtualOfflice,
-  Water,
-} from '@root/public/icons';
-import {
   BoxFavorite,
   BoxFavoriteOne,
   BoxHiddenMobile,
@@ -73,13 +44,31 @@ import {
 } from './component/SearchData';
 import { getListRealEstate, getPostByRating } from '../../../core/services';
 
+import {
+  Favorite,
+} from '@root/public/icons';
 import InfoHome from './component/InfoHome';
 import { MPostDetail } from '@models/MPostDetail';
+import { Marker } from '../../shared/GoogleMap/Marker';
 import MoreFiler from './component/MoreFiler';
 import PriceContent from './component/PriceContent';
 import PropertyContent from './component/PropertyContent';
 import { SRC_IMAGE } from '@core';
 import SwiperGlobal from '../../shared/SwiperGlobal';
+
+// @ts-ignore  
+// import {
+//   MapContainer,
+//   TileLayer,
+//   Marker,
+//   Popup,
+//   GeoJSON,
+//   CircleMarker,
+// } from "react-leaflet";
+// import "leaflet/dist/leaflet.css";
+// import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+// import "leaflet-defaulticon-compatibility";
+
 
 interface Props {
   posts: MPostDetail[];
@@ -100,6 +89,60 @@ export default function Search(props: Props) {
       // }
     });
   };
+
+
+  const center = [51.505, -0.09]
+
+const polyline = [
+  [51.505, -0.09],
+  [51.51, -0.1],
+  [51.51, -0.12],
+]
+
+const multiPolyline = [
+  [
+    [51.5, -0.1],
+    [51.5, -0.12],
+    [51.52, -0.12],
+  ],
+  [
+    [51.5, -0.05],
+    [51.5, -0.06],
+    [51.52, -0.06],
+  ],
+]
+
+const polygon = [
+  [51.515, -0.09],
+  [51.52, -0.1],
+  [51.52, -0.12],
+]
+
+const multiPolygon = [
+  [
+    [51.51, -0.12],
+    [51.51, -0.13],
+    [51.53, -0.13],
+  ],
+  [
+    [51.51, -0.05],
+    [51.51, -0.07],
+    [51.53, -0.07],
+  ],
+]
+
+const rectangle = [
+  [51.49, -0.08],
+  [51.5, -0.06],
+]
+
+
+const fillBlueOptions = { fillColor: 'blue' }
+const blackOptions = { color: 'black' }
+const limeOptions = { color: 'lime' }
+const purpleOptions = { color: 'purple' }
+const redOptions = { color: 'red' }
+
 
   const handleHideMap = () => {
     setHideMap(!hideMap);
@@ -594,14 +637,21 @@ export default function Search(props: Props) {
         </Col>
         {!hideMap && (
           <Col span={12}>
-            <div>
-              <Image
-                src={SRC_IMAGE.MAPS}
-                alt="Map"
-                width="100%"
-                height="100%"
-              />
-            </div>
+            {/* <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
+    <TileLayer
+      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    />
+    <Circle center={center} pathOptions={fillBlueOptions} radius={200} />
+    <CircleMarker center={[51.51, -0.12]} pathOptions={redOptions} radius={20}>
+      <Popup>Popup in CircleMarker</Popup>
+    </CircleMarker>
+    <Polyline pathOptions={limeOptions} positions={polyline} />
+    <Polyline pathOptions={limeOptions} positions={multiPolyline} />
+    <Polygon pathOptions={purpleOptions} positions={polygon} />
+    <Polygon pathOptions={purpleOptions} positions={multiPolygon} />
+    <Rectangle bounds={rectangle} pathOptions={blackOptions} />
+  </MapContainer>, */}
           </Col>
         )}
         {hideMap && (
