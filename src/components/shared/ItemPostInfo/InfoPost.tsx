@@ -11,8 +11,8 @@ const InfoPost = () => {
         <Typography className='item__text--content'>
           Will COVID lockdowns end the love affair with Australian cities?
         </Typography>
-        <div className="d-flex">
-          <VectorLocation className="mx-2" />
+        <div className="d-flex align-items-center">
+          <VectorLocation className="" />
           <Typography className='item__text--location'>1 Sandal Road, London</Typography>
         </div>
       </div>

@@ -42,9 +42,10 @@ export const DivA = styled.div`
   }
   @media ${device.maxSm} {
     padding-bottom: 20px;
+    max-width: 165px;
+    margin-right: 15px;
   }
 `;
-
 
 export const RowA = styled(Row)`
   width: 100%;

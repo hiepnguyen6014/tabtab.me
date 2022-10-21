@@ -4,10 +4,11 @@ import { ButtonAddCalendar } from './ItemPostInfo.style';
 
 const ButtonAdd = () => {
   return (
-    <div className='item__margin--10'>
+    <div className="item__margin--10">
       <ButtonAddCalendar>
         <VectorCalendar />
-        <Typography className='btn__text--add'>Add to Calendar</Typography>
+
+        <Typography className="btn__text--add">Add to Calendar</Typography>
       </ButtonAddCalendar>
     </div>
   );

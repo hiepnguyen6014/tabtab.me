@@ -105,6 +105,7 @@ const SpotLight: React.FC<{}> = () => {
           <a>
             <Typography.Title className="title-general">
               Spotlight
+              <Typography.Text className="title-hide">HIDE</Typography.Text>
             </Typography.Title>
           </a>
         </Link>
