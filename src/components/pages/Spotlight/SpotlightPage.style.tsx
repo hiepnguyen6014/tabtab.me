@@ -76,3 +76,10 @@ export const SpotlightText = styled(Typography)`
     padding: 36px 0px;
   }
 `;
+
+export const LayoutFake = styled.div`
+  width: 100%;
+  @media ${device.maxSm} {
+    display: none;
+  }
+`;

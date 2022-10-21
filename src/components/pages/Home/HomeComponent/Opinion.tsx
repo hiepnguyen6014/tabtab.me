@@ -18,7 +18,10 @@ const Opinion: React.FC<{}> = () => {
   return (
     <WrapperSpot>
       <GeneralText>
-        <Typography.Title className="title-general">Opinion</Typography.Title>
+        <Typography.Title className="title-general">Opinion
+        <Typography.Text className="title-hide">HIDE</Typography.Text>
+
+        </Typography.Title>
         <GeneralWrap>
           <div className="general-between-wrap">
             <div className="general-wrap">

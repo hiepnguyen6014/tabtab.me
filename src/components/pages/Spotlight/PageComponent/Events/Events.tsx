@@ -3,6 +3,7 @@ import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/P
 import { Col, Divider, Row, Typography } from 'antd';
 import Link from 'next/link';
 import { DivA } from '../../../Home/Spotlight/ItemSpotlight.style';
+import { LayoutFake } from '../../SpotlightPage.style';
 import Project from './Project';
 
 const Event = () => {
@@ -10,8 +11,8 @@ const Event = () => {
     <>
       <Typography className="title-spotlight__text--style">Event</Typography>
       <Row>
-        <Col lg={18} >
-          <div className="d-flex justify-content-between">
+        <Col lg={18}>
+          <div className="d-flex justify-content-between ">
             <DivA>
               <Link href="/detail-spotlight">
                 <a>
@@ -26,13 +27,16 @@ const Event = () => {
                 </a>
               </Link>
             </DivA>
-            <DivA>
-              <Link href="/detail-spotlight">
-                <a>
-                  <ColPost />
-                </a>
-              </Link>
-            </DivA>
+
+            <LayoutFake>
+              <DivA>
+                <Link href="/detail-spotlight">
+                  <a>
+                    <ColPost />
+                  </a>
+                </Link>
+              </DivA>
+            </LayoutFake>
           </div>
           <PaginationWrapCustom defaultCurrent={1} total={50} />
         </Col>

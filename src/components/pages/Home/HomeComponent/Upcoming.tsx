@@ -54,7 +54,10 @@ const Upcoming: React.FC<{}> = () => {
   return (
     <WrapperSpot>
       <GeneralText>
-        <Typography.Title className="title-general">Upcoming</Typography.Title>
+        <Typography.Title className="title-general">
+          Upcoming
+          <Typography.Text className="title-hide">HIDE</Typography.Text>
+        </Typography.Title>
         <GeneralWrap>
           <div className="general-between-wrap">
             <div className="general-wrap">
@@ -92,7 +95,6 @@ const Upcoming: React.FC<{}> = () => {
         //   {/* <ItemBoostHub /> */}
         //   {/* </ColA> */}
         // </Row>
-
 
         // <Row
         //   gutter={{
