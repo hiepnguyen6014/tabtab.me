@@ -10,8 +10,10 @@ import {
   LeftPostSpot,
   RightPostSpot,
   SpotlightText,
+  WrapperSpot,
 } from '../../../Home/Home.style';
 import ItemSide from '../../../Home/Spotlight/ItemSide';
+import { WrapperSpotPage } from './Expert.style';
 
 const SlideExpert = () => {
   const ITEMSPOTLIGHTSIDE = [
@@ -29,13 +31,13 @@ const SlideExpert = () => {
     },
     {
       image: SRC_IMAGE.IMAGEH,
-      title: 'Property',
+      title: 'Roommate',
       colorTitle: '#F9C41F',
       content: 'Global oil prices before a quicker than',
     },
   ];
   return (
-    <>
+    <WrapperSpotPage>
       <Row className="px-2">
         <SpotlightText>
           <Button type="text" danger>
@@ -56,7 +58,7 @@ const SlideExpert = () => {
           </Button>
         </SpotlightText>
       </Row>
-      <div style={{ marginTop: '20px' }} className="px-2">
+      <div style={{ marginTop: '20px' }} className="px-2 right">
         {ITEMSPOTLIGHTSIDE.map((items, key) => {
           return (
             <Link href="/detail-spotlight" key={key}>
@@ -67,7 +69,7 @@ const SlideExpert = () => {
           );
         })}
       </div>
-    </>
+    </WrapperSpotPage>
   );
 };
 

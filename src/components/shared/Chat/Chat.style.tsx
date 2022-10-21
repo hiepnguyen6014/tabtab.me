@@ -9,11 +9,12 @@ export const ChatWrap = styled.div`
   bottom: 0%;
   right: 0%;
   width: 266px;
-  height: 716px;
+  height: 70vh;
   background: #ffffff;
   border: 1px solid #d3d3d3;
   text-align: center;
   border-radius: 14px 14px 0px 0px;
+  z-index: 9;
   @media ${device.maxSm} {
     display: none;
   }
@@ -35,8 +36,6 @@ export const ChatSmallWrap = styled.div`
     display: none;
   }
 `;
-
-
 
 export const Flex = styled.div`
   display: flex;
