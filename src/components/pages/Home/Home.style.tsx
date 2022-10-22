@@ -4,7 +4,7 @@ import { Button, Carousel, Image, Typography, Col, Row } from 'antd';
 
 export const BannerWrapper = styled.div`
   max-height: 900px;
-  min-height: 800px;
+  min-height: 400px;
   overflow: hidden;
   width: 100%;
   max-width: 1440px;
@@ -37,23 +37,24 @@ export const CarouselInBanner = styled(Carousel)`
 export const ImageBanner = styled(Image)`
   height: 100%;
   width: 100%;
-  min-height: 750px;
+  max-height: 440px;
 
   @media ${device.maxSm} {
-    height: 300px;
+    /* height: 500px; */
+    min-height: 440px;
   }
 `;
 
 export const ContentInBanner = styled.div`
   position: absolute;
-  bottom: 5%;
+  bottom: 29%;
   width: 100%;
   @media ${device.maxMd} {
     width: 1200px;
   }
   @media ${device.maxSm} {
     width: 100%;
-    bottom: 12%;
+    bottom: 16%;
   }
 `;
 export const Content = styled.div`
