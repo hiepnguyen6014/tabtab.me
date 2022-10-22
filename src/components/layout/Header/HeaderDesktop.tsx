@@ -81,7 +81,7 @@ const HeaderDesktop = (props: Props) => {
         </ButtonWrap>
       </a>
       <Divider style={{ marginTop: 10, marginBottom: 10 }} />
-      <a>
+      {/* <a>
         <ButtonWrap>
           <CRM />
           <a style={{ marginLeft: 8 }}>CRM</a>
@@ -104,12 +104,12 @@ const HeaderDesktop = (props: Props) => {
           <Roommate />
           <a style={{ marginLeft: 8 }}>Roommate</a>
         </ButtonWrap>
-      </a>
-      <Divider style={{ marginTop: 10, marginBottom: 10 }} />
+      </a> */}
+      {/* <Divider style={{ marginTop: 10, marginBottom: 10 }} /> */}
       <a>
         <ButtonWrap>
           <HelpCenter />
-          <a style={{ marginLeft: 8 }}>Help Center</a>
+          <a style={{ marginLeft: 8 }}>Help Center11</a>
         </ButtonWrap>
       </a>
       <a onClick={() => Navigator.client.jump(Config.AUTO_LOGOUT)}>
@@ -132,33 +132,6 @@ const HeaderDesktop = (props: Props) => {
         <ButtonWrap style={{ paddingLeft: 8 }}>
           <Account />
           <a style={{ marginLeft: 8, color: '#4E4E4E' }}>Account</a>
-        </ButtonWrap>
-      </a>
-      <Divider style={{ marginTop: 10, marginBottom: 10 }} />
-      <a>
-        <ButtonWrap style={{ paddingLeft: 8 }}>
-          <CRM />
-          <a style={{ marginLeft: 8 }}>CRM</a>
-        </ButtonWrap>
-      </a>
-      <a>
-        <ButtonWrap style={{ paddingLeft: 8 }}>
-          <PMA />
-          <a style={{ marginLeft: 8 }}>PMA</a>
-        </ButtonWrap>
-      </a>
-      <a>
-        <ButtonWrap style={{ paddingLeft: 8 }}>
-          <Community />
-          <a style={{ marginLeft: 8 }}>Community</a>
-        </ButtonWrap>
-      </a>
-      <a>
-        <ButtonWrap style={{ paddingLeft: 8 }}>
-          <Roommate />
-          <Link href="/roommate">
-            <a style={{ marginLeft: 8, color: '#4e4e4e' }}>Roommate</a>
-          </Link>
         </ButtonWrap>
       </a>
       <Divider style={{ marginTop: 10, marginBottom: 10 }} />
