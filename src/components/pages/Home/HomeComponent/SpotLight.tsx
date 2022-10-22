@@ -257,7 +257,7 @@ const SpotLight: React.FC<{}> = () => {
 
     
           </Col> */}
-          <PaginationWrapCustom total={10} pageSize={1} />
+          <PaginationWrapCustom total={10} pageSize={1}  />
         </div>
       )}
     </WrapperSpot>
