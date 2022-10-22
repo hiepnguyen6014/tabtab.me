@@ -295,13 +295,13 @@ const HeaderDesktop = (props: Props) => {
           )}
         </div>
 
-        <div>
+        {/* <div>
           {themeLight ? (
             <VectorGlobal style={{ marginLeft: 20, cursor: 'pointer' }} />
           ) : (
             <SocialBlack style={{ marginLeft: 20, cursor: 'pointer' }} />
           )}
-        </div>
+        </div> */}
         <div>
           <Popover
             placement="bottomRight"
