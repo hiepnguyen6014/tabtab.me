@@ -102,12 +102,12 @@ export default function Footer(props: { t: any }) {
                   Property Management{' '}
                 </Typography.Title>
                 <Typography.Title className="textFooter">CRM</Typography.Title>
-                <Typography.Title
+                {/* <Typography.Title
                   className="textFooter"
                   onClick={(e) => findPage(e, '/roommate')}
                 >
                   Roommate
-                </Typography.Title>
+                </Typography.Title> */}
                 {/* <Typography.Title className="textFooter">
                     Academy
                   </Typography.Title> */}
