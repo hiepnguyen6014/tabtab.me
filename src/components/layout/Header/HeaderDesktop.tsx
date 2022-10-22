@@ -251,7 +251,7 @@ const HeaderDesktop = (props: Props) => {
         </TextPost>
         </a>
         </Link> */}
-        <div>
+        {/* <div>
           {themeLight ? (
             <div className="d-flex">
               <Link href="/find-person">
@@ -293,7 +293,7 @@ const HeaderDesktop = (props: Props) => {
               </Link>
             </div>
           )}
-        </div>
+        </div> */}
 
         <div>
           {themeLight ? (
