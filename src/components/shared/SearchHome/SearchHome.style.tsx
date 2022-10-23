@@ -1,10 +1,12 @@
-import { styled } from '@styles/theme';
-import { Button, Input, Select, Form, Col, Row, Radio, Typography } from 'antd';
-import { device } from '@styles/theme/device';
+import { Button, Col, Form, Input, Radio, Row, Select, Typography } from 'antd';
+
 import { colors } from '@styles/theme/colors';
+import { device } from '@styles/theme/device';
+import { styled } from '@styles/theme';
 
 export const SearchWrapper = styled(Row)`
-  width: 588px;
+  max-width: 850px;
+  width: 100%;
   height: 100%;
   background: #ffffff;
   display: flex;
