@@ -227,7 +227,7 @@ const HeaderDesktop = (props: Props) => {
         <div>
           {themeLight ? (
             <div className="d-flex">
-              <Link href="/find-person">
+              {/* <Link href="/find-person">
                 <a>
                   <TextPost
                     style={{
@@ -238,7 +238,7 @@ const HeaderDesktop = (props: Props) => {
                     Find person
                   </TextPost>
                 </a>
-              </Link>
+              </Link> */}
               <Link href="https://user.tabtab.imazin.asia/post-news">
                 <a>
                   <TextPost style={{ color: '#FEFFFF' }}>Add listing</TextPost>
@@ -247,7 +247,7 @@ const HeaderDesktop = (props: Props) => {
             </div>
           ) : (
             <div className="d-flex">
-              <Link href="/find-person">
+              {/* <Link href="/find-person">
                 <a>
                   <TextPost
                     style={{
@@ -258,7 +258,7 @@ const HeaderDesktop = (props: Props) => {
                     Find person
                   </TextPost>
                 </a>
-              </Link>
+              </Link> */}
               <Link href="https://user.tabtab.imazin.asia/post-news">
                 <a>
                   <TextPost style={{ color: '#222222' }}>Add listing</TextPost>
