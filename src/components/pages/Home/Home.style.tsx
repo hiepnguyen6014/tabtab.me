@@ -1,6 +1,7 @@
-import { styled } from '@styles/theme';
+import { Button, Carousel, Col, Image, Row, Typography } from 'antd';
+
 import { device } from '@styles/theme/device';
-import { Button, Carousel, Image, Typography, Col, Row } from 'antd';
+import { styled } from '@styles/theme';
 
 export const BannerWrapper = styled.div`
   max-height: 900px;
@@ -571,8 +572,6 @@ export const ItemUpcoming = styled.div`
   text-align: start;
   .button-calendar {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
     margin-top: 10px;
     margin-bottom: 17px;
   }

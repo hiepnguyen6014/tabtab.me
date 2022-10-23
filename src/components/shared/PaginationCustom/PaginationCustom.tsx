@@ -1,9 +1,16 @@
+import { FC } from 'react';
 import { PaginationWrap } from './PaginationCustom.style';
 
-const PaginationWrapCustom = ({ defaultCurrent, total }) => {
+interface PaginationCustomProps {
+  pageSize?:number;
+  defaultCurrent?: number;
+  total?:number;
+}
+
+const PaginationWrapCustom:FC<PaginationCustomProps> = ({ defaultCurrent, total, pageSize }) => {
   return (
     <>
-    <PaginationWrap defaultCurrent={defaultCurrent} total={total} />
+    <PaginationWrap defaultCurrent={defaultCurrent} total={total} pageSize={pageSize}/>
     </>
   );
 };

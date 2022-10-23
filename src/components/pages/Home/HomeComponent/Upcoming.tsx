@@ -1,17 +1,24 @@
-import { Col, Row, Typography } from 'antd';
-import { WrapperSpot, ColA, GeneralText, GeneralWrap } from '../Home.style';
+import { Autoplay, Navigation, Pagination } from 'swiper';
 import {
   CalendarSun,
   CalendarTue,
   CalendarWed,
   IconQuotes,
 } from 'public/icons';
-import { SRC_IMAGE } from '@constants';
-import ItemPostUpComing from '../UpComing/ItemPostUpComing';
-import ItemBoostHub from '../UpComing/ItemBoostHub';
-import { useState } from 'react';
+import {
+  ColA,
+  GeneralText,
+  GeneralWrap,
+  WrapperSpot,
+} from '../Home.style';
+import { Row, Typography } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation, Pagination } from 'swiper';
+
+import ItemBoostHub from '../UpComing/ItemBoostHub';
+import ItemPostUpComing from '../UpComing/ItemPostUpComing';
+import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
+import { SRC_IMAGE } from '@constants';
+import { useState } from 'react';
 
 const Upcoming: React.FC<{}> = () => {
   const UPCOMINGLIST = [
@@ -55,7 +62,7 @@ const Upcoming: React.FC<{}> = () => {
     <WrapperSpot>
       <GeneralText>
         <Typography.Title className="title-general">
-          Upcoming
+          Tin mới nhất
           <Typography.Text className="title-hide">HIDE</Typography.Text>
         </Typography.Title>
         <GeneralWrap>
@@ -63,7 +70,7 @@ const Upcoming: React.FC<{}> = () => {
             <div className="general-wrap">
               <IconQuotes />
               <Typography.Title className="content-general">
-                anh Hùng đừng bỏ qua sự kiện sắp tới nha
+              anh/chị [Display Name] đừng bỏ qua sự kiện sắp tới nha
               </Typography.Title>
             </div>
             <div
@@ -138,13 +145,17 @@ const Upcoming: React.FC<{}> = () => {
             {UPCOMINGLIST.map((item, idx) => {
               return (
                 <SwiperSlide key={idx}>
-                  <ItemPostUpComing items={item} />;
+                  <ItemPostUpComing items={item} />
                 </SwiperSlide>
               );
             })}
           </Swiper>
+          <div style={{margin:"0 auto"}}>
+        <PaginationWrapCustom defaultCurrent={1} total={10} pageSize={1}/>
+      </div>
         </div>
       )}
+     
     </WrapperSpot>
   );
 };
