@@ -217,7 +217,7 @@ const RoommateList: React.FC<{}> = () => {
           );
         })}
       </Row>
-      <PaginationWrapCustom defaultCurrent={1} total={50} />
+      <PaginationWrapCustom  total={5} pageSize={1} />
     </>
   );
 };

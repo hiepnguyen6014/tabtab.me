@@ -24,7 +24,7 @@ const Discovery = () => {
           </Row>
           <ColBottom />
           <div className="d-flex justify-content-center w-100">
-            <PaginationWrapCustom defaultCurrent={1} total={50} />
+            <PaginationWrapCustom total={5} pageSize={1} />
           </div>
         </DiscoveryText>
       </DiscoveryWrap>
