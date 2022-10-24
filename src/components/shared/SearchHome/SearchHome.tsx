@@ -1,15 +1,13 @@
-import { DownOutlined, SearchOutlined } from '@ant-design/icons';
-import { PUBLIC_ROUTES } from '@constants';
-import { filterKey } from '@contexts';
 import {
-  VectorApartement,
-  VectorBed,
-  VectorLocation,
-  VectorResidential,
-} from '@root/public/icons';
-import { Form, Input, Row, Col, Radio, Typography } from 'antd';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+  Button,
+  Col,
+  Form,
+  Input,
+  Popover,
+  Radio,
+  Row,
+  Typography,
+} from 'antd';
 import {
   ButtonSearch,
   ColItem,
@@ -18,6 +16,20 @@ import {
   SearchWrapper,
   TextSearchWrap,
 } from './SearchHome.style';
+import { DownOutlined, SearchOutlined } from '@ant-design/icons';
+import {
+  IconArrowDown,
+  VectorApartement,
+  VectorBed,
+  VectorLocation,
+  VectorResidential,
+} from '@root/public/icons';
+
+import FilterAdd from './component/FilterAdd';
+import Link from 'next/link';
+import { PUBLIC_ROUTES } from '@constants';
+import { filterKey } from '@contexts';
+import { useRouter } from 'next/router';
 
 export const SearchHome = (props: { t: any }) => {
   const { t } = props;
@@ -30,7 +42,6 @@ export const SearchHome = (props: { t: any }) => {
       pathname: data.page || PUBLIC_ROUTES.SEARCH_PAGE.href,
       query: dataSearch,
     });
-
   };
 
   const placeHolderSearch = () => {
@@ -176,9 +187,9 @@ export const SearchHome = (props: { t: any }) => {
                 </Form.Item>
               </ColItem>
             </Row>
-            <Row className="container-fluid mb-2">
-              <ColItem md={{ span: 8 }} sm={{ span: 8 }} xs={{ span: 8 }}>
-                <div className="d-flex justify-content-between">
+            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 72 }}>
+              <ColItem sm={24} md={12} lg={6}>
+                <div className="d-flex ">
                   <VectorApartement />
                   <TextSearchWrap>
                     <Typography.Text
@@ -191,8 +202,8 @@ export const SearchHome = (props: { t: any }) => {
                   <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
                 </div>
               </ColItem>
-              <ColItem md={{ span: 8 }} sm={{ span: 8 }} xs={{ span: 8 }}>
-                <div className="d-flex justify-content-between">
+              <ColItem sm={24} md={12} lg={6}>
+                <div className="d-flex">
                   <VectorResidential />
                   <TextSearchWrap>
                     <Typography.Text
@@ -205,8 +216,8 @@ export const SearchHome = (props: { t: any }) => {
                   <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
                 </div>
               </ColItem>
-              <ColItem md={{ span: 8 }} sm={{ span: 8 }} xs={{ span: 8 }}>
-                <div className="d-flex justify-content-between">
+              <ColItem sm={24} md={12} lg={6}>
+                <div className="d-flex">
                   <VectorBed />
                   <TextSearchWrap>
                     <Typography.Text
@@ -217,6 +228,28 @@ export const SearchHome = (props: { t: any }) => {
                     </Typography.Text>
                   </TextSearchWrap>
                   <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
+                </div>
+              </ColItem>
+              <ColItem sm={24} md={12} lg={6}>
+                <div className="d-flex">
+                  <VectorBed />
+                  <Popover
+                  placement="bottomRight"
+                  content={FilterAdd}
+                  trigger="click"
+                >
+                  <TextSearchWrap
+                   
+                  >
+                   <Typography.Text
+                      style={{ fontSize: 16, color: '#7A7A7A' }}
+                      className="px-2"
+                    >
+                      Filter Add
+                    </Typography.Text>
+                  </TextSearchWrap>
+                </Popover>
+                <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
                 </div>
               </ColItem>
             </Row>
