@@ -65,7 +65,7 @@ export const Content = styled.div`
   .search-content {
     // display: flex;
     // justify-content: center;
-    left: 25%;
+    left: 16%;
     margin-bottom: 7%;
     position: relative;
     @media ${device.maxMd} {
