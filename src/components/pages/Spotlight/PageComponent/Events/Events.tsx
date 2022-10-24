@@ -38,11 +38,11 @@ const Event = () => {
               </DivA>
             </LayoutFake>
           </div>
-          <PaginationWrapCustom defaultCurrent={1} total={50} />
+          <PaginationWrapCustom defaultCurrent={1} total={5} pageSize={1} />
         </Col>
         <Col lg={6} className="event-right-col">
           <Project />
-          <PaginationWrapCustom defaultCurrent={1} total={50} />
+          <PaginationWrapCustom total={5} pageSize={1} />
         </Col>
       </Row>
     </>

@@ -49,7 +49,7 @@ export default function TeamListing() {
                     </ColWrap>
                 ))}
             </Row>
-            <PaginationWrapCustom defaultCurrent={1} total={50}/>
+            <PaginationWrapCustom  total={10} pageSize={1}/>
         </div>
     )
 }

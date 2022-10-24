@@ -1,9 +1,22 @@
 import { PaginationWrap } from './PaginationCustom.style';
 
-const PaginationWrapCustom = ({ defaultCurrent, total }) => {
+export interface PaginateProps {
+  defaultCurrent?: number;
+  total?: number;
+  defaultPageSize?: number;
+  onChange?: () => void;
+  pageSize?: number | null;
+}
+
+const PaginationWrapCustom = ({
+  defaultCurrent,
+  total,
+  defaultPageSize,
+  pageSize,
+}: PaginateProps) => {
   return (
     <>
-    <PaginationWrap defaultCurrent={defaultCurrent} total={total} />
+      <PaginationWrap total={total} pageSize={pageSize} />
     </>
   );
 };
