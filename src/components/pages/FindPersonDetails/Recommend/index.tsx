@@ -118,7 +118,8 @@ const Recommend = ({ data, t, fontSize }) => {
           <ListItem t={t} data={data} type={1} posts={[]} />
         </RowWrap>
       </WrapperContent>
-      <PaginationWrapCustom defaultCurrent={1} total={50}/>
+
+      <PaginationWrapCustom  total={10} pageSize={1} />
     </WrapperSpot>
   );
 };

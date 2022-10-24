@@ -377,6 +377,7 @@ export const AdWordsWrap = styled.div`
   height: auto;
   align-items: center;
   text-align: center;
+  margin-top: -50px;
 `;
 
 export const ItemPostWrap = styled.div`

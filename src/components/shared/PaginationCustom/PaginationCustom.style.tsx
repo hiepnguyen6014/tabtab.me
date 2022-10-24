@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { Pagination } from "antd";
+import styled from '@emotion/styled';
+import { Pagination } from 'antd';
 
 export const PaginationWrap = styled(Pagination)`
   display: flex;
@@ -26,7 +26,7 @@ export const PaginationWrap = styled(Pagination)`
     height: 30px;
     background: transparent;
     align-items: center;
-    font-family: Inter ;
+    font-family: Inter;
     font-style: normal !important;
     font-weight: 500 !important;
     font-size: 14px !important;
@@ -41,18 +41,23 @@ export const PaginationWrap = styled(Pagination)`
       color: #f9bd06 !important;
     }
   }
-  .ant-pagination-prev{
+  .ant-pagination-prev {
     margin: 0;
     width: 24px;
     height: 24px;
     margin-right: 9px;
     border-radius: 50% !important;
   }
-  .ant-pagination-next{
+  .ant-pagination-next {
     margin: 0;
     width: 24px;
     height: 24px;
     margin-left: 5px;
     border-radius: 50% !important;
+  }
+  .ant-pagination-jump-prev,
+  .ant-pagination-jump-next {
+    display: inline-flex;
+    align-items: center;
   }
 `;

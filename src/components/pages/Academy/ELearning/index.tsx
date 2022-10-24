@@ -184,7 +184,7 @@ export default function ELearning({ data, translate }) {
                             </ColWrap>
                         ))}
                     </Row>
-                    <PaginationWrapCustom defaultCurrent={1} total={50}/>
+                    <PaginationWrapCustom  total={10} pageSize={1}/>
                     <div style={{height:50}}/>
                 </div>
             </FDesktop>
