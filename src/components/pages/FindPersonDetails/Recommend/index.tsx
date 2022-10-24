@@ -1,4 +1,3 @@
-import { Row, Typography, Radio, Button, Pagination } from 'antd';
 import {
   AllItem,
   ButtonNav,
@@ -10,19 +9,20 @@ import {
   WrapperContent,
   WrapperSpot,
 } from '../../Home/Home.style';
+import { Button, Pagination, Radio, Row, Typography } from 'antd';
 import {
   ContentWrapper,
   RowWrap,
   TypographyText,
 } from '../FindPersonDetails.style';
-import { RadioSearch } from '@root/src/components/shared/SearchHome/SearchHome.style';
+import { IconQuotes, NextArrow, PrevArrow } from 'public/icons';
+import { PostItem, RecommendItem } from '../../Home/Recommend';
 import React, { useState } from 'react';
 
 import ListItem from '../../Home/HomeComponent/ListItem';
 import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
+import { RadioSearch } from '@root/src/components/shared/SearchHome/SearchHome.style';
 import RecommendProperty from '../../Home/HomeComponent/Recommend';
-import { IconQuotes, PrevArrow, NextArrow } from 'public/icons';
-import { PostItem, RecommendItem } from '../../Home/Recommend';
 
 const Recommend = ({ data, t, fontSize }) => {
   const [limitItems, setLimitItems] = React.useState(12);
@@ -107,11 +107,16 @@ const Recommend = ({ data, t, fontSize }) => {
             </div>
           </div>
         </Row>
-        <ContentWrapper>
-          {listPost.map((item, i) => (
-            <RecommendItem {...item} key={i} />
-          ))}
-        </ContentWrapper>
+        <RowWrap
+          gutter={{
+            xs: 8,
+            sm: 16,
+            md: 24,
+            lg: 32,
+          }}
+        >
+          <ListItem t={t} data={data} type={1} posts={[]} />
+        </RowWrap>
       </WrapperContent>
 
       <PaginationWrapCustom  total={10} pageSize={1} />

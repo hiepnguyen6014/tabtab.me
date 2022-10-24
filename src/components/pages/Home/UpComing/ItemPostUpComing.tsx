@@ -1,10 +1,3 @@
-import { SRC_IMAGE } from '@core';
-import {
-  CalendarTue,
-  VectorCalendar,
-  VectorLocation,
-} from '@root/public/icons';
-import { Button, Typography } from 'antd';
 import {
   ArticleWrap,
   DivWrap,
@@ -12,6 +5,14 @@ import {
   ItemUpcoming,
   SpotlightText,
 } from '../Home.style';
+import { Button, Typography } from 'antd';
+import {
+  CalendarTue,
+  VectorCalendar,
+  VectorLocation,
+} from '@root/public/icons';
+
+import { SRC_IMAGE } from '@core';
 
 const ItemPostUpComing = ({ items }) => {
   return (
@@ -46,35 +47,7 @@ const ItemPostUpComing = ({ items }) => {
             <Typography.Text>{items.address}</Typography.Text>
           </SpotlightText>
         </div>
-        <button
-          style={{
-            width: '100%',
-            background: 'rgba(249, 196, 31, 0.1)',
-            border: '1px solid #f9c41f',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            padding: '9px 0px',
-          }}
-          // icon={<VectorCalendar />}
-        >
-          {/* <Image src={VectorCalendar} width={20} height={20} /> */}
-          <VectorCalendar />
-          <label
-            style={{
-              fontSize: '14px',
-              fontWeight: '500',
-              fontFamily: 'Inter',
-              lineHeight: '18px',
-              marginLeft: '5px',
-            }}
-          >
-            Add to Calendar
-          </label>
-        </button>
-      </ItemUpcoming>
+        </ItemUpcoming>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { PaginationWrap } from './PaginationCustom.style';
 
 export interface PaginateProps {
