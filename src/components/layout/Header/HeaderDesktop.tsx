@@ -54,6 +54,8 @@ const HeaderDesktop = (props: Props) => {
   const router = useRouter();
   const isLogin = Object.keys(currentUser).length > 0;
   const isHome = router.asPath === '/';
+  console.log(`${process.env.NEXT_PUBLIC_USER_WEB}`);
+  
   const content = (
     <div style={{ width: 282 }}>
       <a>
@@ -217,17 +219,17 @@ const HeaderDesktop = (props: Props) => {
             </TextPost>
           </a>
         </Link>
-        <Link href="https://user.tabtab.imazin.asia/post-news">
+        <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}post-news`}>
           <a>
         <TextPost style={{ color: themeLight ? '#FEFFFF' : '#222222' }}>
           Add listing
         </TextPost>
         </a>
         </Link> */}
-        {/* <div>
+        <div>
           {themeLight ? (
             <div className="d-flex">
-              {/* <Link href="/find-person">
+              <Link href="/find-person">
                 <a>
                   <TextPost
                     style={{
@@ -238,8 +240,8 @@ const HeaderDesktop = (props: Props) => {
                     Find person
                   </TextPost>
                 </a>
-              </Link> */}
-              <Link href="https://user.tabtab.imazin.asia/post-news">
+              </Link>
+              <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}post-news`}>
                 <a>
                   <TextPost style={{ color: '#FEFFFF' }}>Add listing</TextPost>
                 </a>
@@ -247,7 +249,7 @@ const HeaderDesktop = (props: Props) => {
             </div>
           ) : (
             <div className="d-flex">
-              {/* <Link href="/find-person">
+              <Link href="/find-person">
                 <a>
                   <TextPost
                     style={{
@@ -258,23 +260,23 @@ const HeaderDesktop = (props: Props) => {
                     Find person
                   </TextPost>
                 </a>
-              </Link> */}
-              <Link href="https://user.tabtab.imazin.asia/post-news">
+              </Link>
+              <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}post-news`}>
                 <a>
                   <TextPost style={{ color: '#222222' }}>Add listing</TextPost>
                 </a>
               </Link>
             </div>
           )}
-        </div> */}
+        </div>
 
-        {/* <div>
+        <div>
           {themeLight ? (
             <VectorGlobal style={{ marginLeft: 20, cursor: 'pointer' }} />
           ) : (
             <SocialBlack style={{ marginLeft: 20, cursor: 'pointer' }} />
           )}
-        </div> */}
+        </div>
         <div>
           <Popover
             placement="bottomRight"
@@ -315,5 +317,8 @@ const HeaderDesktop = (props: Props) => {
     </MainContentDesktop>
   );
 };
+
+
+
 
 export default HeaderDesktop;
