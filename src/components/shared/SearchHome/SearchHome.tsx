@@ -25,9 +25,11 @@ import {
   VectorResidential,
 } from '@root/public/icons';
 
+import Area from './component/Area';
 import FilterAdd from './component/FilterAdd';
 import Link from 'next/link';
 import { PUBLIC_ROUTES } from '@constants';
+import Price from './component/Price/Price';
 import { filterKey } from '@contexts';
 import { useRouter } from 'next/router';
 
@@ -204,30 +206,46 @@ export const SearchHome = (props: { t: any }) => {
               </ColItem>
               <ColItem sm={24} md={12} lg={6}>
                 <div className="d-flex">
-                  <VectorResidential />
-                  <TextSearchWrap>
-                    <Typography.Text
+                  <VectorBed />
+                  <Popover
+                  placement="bottomRight"
+                  content={Price}
+                  trigger="click"
+                >
+                  <TextSearchWrap
+                   
+                  >
+                   <Typography.Text
                       style={{ fontSize: 16, color: '#7A7A7A' }}
                       className="px-2"
                     >
-                      Any Price
+                      Filter Add
                     </Typography.Text>
                   </TextSearchWrap>
-                  <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
+                </Popover>
+                <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
                 </div>
               </ColItem>
               <ColItem sm={24} md={12} lg={6}>
                 <div className="d-flex">
                   <VectorBed />
-                  <TextSearchWrap>
-                    <Typography.Text
+                  <Popover
+                  placement="bottomRight"
+                  content={Area}
+                  trigger="click"
+                >
+                  <TextSearchWrap
+                   
+                  >
+                   <Typography.Text
                       style={{ fontSize: 16, color: '#7A7A7A' }}
                       className="px-2"
                     >
-                      Any Beds
+                      Filter Add
                     </Typography.Text>
                   </TextSearchWrap>
-                  <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
+                </Popover>
+                <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
                 </div>
               </ColItem>
               <ColItem sm={24} md={12} lg={6}>
