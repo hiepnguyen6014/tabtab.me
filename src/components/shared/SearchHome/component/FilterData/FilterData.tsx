@@ -58,3 +58,35 @@ export const FILTER_DIRECTION_HORIZONTAL = [
     value: 'Đông-Nam',
   },
 ];
+
+
+export const AREA_DATA_SELECT = [
+  {
+    
+    value: 'Dưới 30 m²',
+  },
+  {
+   
+    value: '30 - 50 m²',
+  },
+  {
+    
+    value: '50 - 80 m²',
+  },
+  {
+    
+    value: '80 - 100 m²',
+  },
+  {
+    
+    value: '100 - 150 m²',
+  },
+  {
+    
+    value: '150 - 200 m²',
+  },
+  {
+    
+    value: '200 - 250 m²',
+  },
+]
