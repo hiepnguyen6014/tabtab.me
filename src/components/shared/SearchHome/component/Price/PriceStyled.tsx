@@ -2,9 +2,11 @@ import styled from "@emotion/styled";
 
 export const BoxContainer = styled.div`
   width: 348px;
-  height: 420px;
+  height: 450px;
   padding: 16px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const BoxInput = styled.div`

@@ -89,4 +89,8 @@ export const AREA_DATA_SELECT = [
     
     value: '200 - 250 m²',
   },
+  {
+    
+    value: '200 - 250 m²',
+  },
 ]
