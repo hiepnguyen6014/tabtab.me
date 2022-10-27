@@ -30,6 +30,7 @@ import FilterAdd from './component/FilterAdd';
 import Link from 'next/link';
 import { PUBLIC_ROUTES } from '@constants';
 import Price from './component/Price/Price';
+import Residential from './component/Residential';
 import { filterKey } from '@contexts';
 import { useRouter } from 'next/router';
 
@@ -191,17 +192,25 @@ export const SearchHome = (props: { t: any }) => {
             </Row>
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 72 }}>
               <ColItem sm={24} md={12} lg={6}>
-                <div className="d-flex ">
-                  <VectorApartement />
-                  <TextSearchWrap>
-                    <Typography.Text
+              <div className="d-flex">
+                  <VectorBed />
+                  <Popover
+                  placement="bottomRight"
+                  content={Residential}
+                  trigger="click"
+                >
+                  <TextSearchWrap
+                   
+                  >
+                   <Typography.Text
                       style={{ fontSize: 16, color: '#7A7A7A' }}
                       className="px-2"
                     >
                       Residential
                     </Typography.Text>
                   </TextSearchWrap>
-                  <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
+                </Popover>
+                <DownOutlined style={{ fontSize: 13, color: '#7A7A7A' }} />
                 </div>
               </ColItem>
               <ColItem sm={24} md={12} lg={6}>
@@ -219,7 +228,7 @@ export const SearchHome = (props: { t: any }) => {
                       style={{ fontSize: 16, color: '#7A7A7A' }}
                       className="px-2"
                     >
-                      Filter Add
+                      Price
                     </Typography.Text>
                   </TextSearchWrap>
                 </Popover>
@@ -235,13 +244,12 @@ export const SearchHome = (props: { t: any }) => {
                   trigger="click"
                 >
                   <TextSearchWrap
-                   
                   >
                    <Typography.Text
                       style={{ fontSize: 16, color: '#7A7A7A' }}
                       className="px-2"
                     >
-                      Filter Add
+                      Area
                     </Typography.Text>
                   </TextSearchWrap>
                 </Popover>
@@ -263,7 +271,7 @@ export const SearchHome = (props: { t: any }) => {
                       style={{ fontSize: 16, color: '#7A7A7A' }}
                       className="px-2"
                     >
-                      Filter Add
+                      Filter
                     </Typography.Text>
                   </TextSearchWrap>
                 </Popover>

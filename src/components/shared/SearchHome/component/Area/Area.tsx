@@ -25,24 +25,26 @@ const Area = () => {
 
   return (
     <BoxContainer>
+      <div>
       <BoxInput>
         <InputNumber min={0}  value={valueInput} />
         <InputNumber  max={500} value={valueAfter} />
       </BoxInput>
       <Slider range step={10} onChange={onChange} min={0} max={500} />
-      <Select  style={{ width: '100%' }}  onChange={handleChange} defaultOpen>
+      <Select placeholder="Diện tích" style={{ width: '100%' }}  onChange={handleChange} defaultOpen>
         <Option>Tất cả diện tích</Option>
         {AREA_DATA_SELECT.map((select) =>(
           <Option key={select.value}>{select.value}</Option>
         ))}
   </Select>
-    <div>
-    <Divider/>
+      </div>
+   <div>
+   <Divider style={{margin:"12px 0"}}/>
     <BoxAction>
       <Button style={{background:"#fff"}} type="text" onClick={handleValue}>Đặt lại</Button>
      <Button>Áp dụng</Button>
       </BoxAction>
-    </div>
+   </div>
     </BoxContainer>
   );
 };
