@@ -1,15 +1,15 @@
 import { Autoplay, Navigation, Pagination } from 'swiper';
-import { GeneralText, GeneralWrap, WrapperSpot } from '../Home.style';
-import { Row, Typography } from 'antd';
+import { GeneralText, GeneralWrap, WrapperSpot } from '../../Home.style';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { DATA_HOME_PAGE } from './HomeData';
-import { IconQuotes } from 'public/icons';
-import ItemPostUpComing from '../UpComing/ItemPostUpComing';
+import { DATA_HOME_PAGE } from '../HomeData';
+import { IconQuotes } from '@root/public/icons';
+import ItemPostUpComing from '../../UpComing/ItemPostUpComing';
 import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
-import { useState } from 'react';
+import { Typography } from 'antd';
 
-const Upcoming: React.FC<{}> = () => {
+const RealEstate = () => {
   const [showContent, setShowContent] = useState(true);
   const handlePageChangeNumber = (page: any) => {
     console.log(page);
@@ -18,7 +18,7 @@ const Upcoming: React.FC<{}> = () => {
     <WrapperSpot>
       <GeneralText>
         <Typography.Title className="title-general">
-          Tin mới nhất
+          Bất động sản chính chủ
           <Typography.Text className="title-hide">HIDE</Typography.Text>
         </Typography.Title>
         <GeneralWrap>
@@ -39,42 +39,6 @@ const Upcoming: React.FC<{}> = () => {
         </GeneralWrap>
       </GeneralText>
       {showContent && (
-        // <Row
-        //   gutter={{
-        //     xs: 8,
-        //     sm: 16,
-        //     md: 24,
-        //     lg: 32,
-        //   }}
-        // >
-        //   {UPCOMINGLIST.map((item, key) => {
-        //     return (
-        //       <ColA className="gutter-row" sm={24} lg={6} key={key}>
-        //         <ItemPostUpComing items={item} />
-        //       </ColA>
-        //     );
-        //   })}
-        //   {/* <ColA className="gutter-row" sm={24} lg={6}> */}
-        //   {/* <ItemBoostHub /> */}
-        //   {/* </ColA> */}
-        // </Row>
-
-        // <Row
-        //   gutter={{
-        //     xs: 8,
-        //     sm: 16,
-        //     lg: 24,
-        //   }}
-        // >
-        //   {UPCOMINGLIST.map((item, idx) => {
-        //     return (
-        //       <Col key={idx} sm={24} lg={6}>
-        //         <ItemPostUpComing items={item} />;
-        //       </Col>
-        //     );
-        //   })}
-        // </Row>
-
         <div>
           <Swiper
             modules={[Navigation, Autoplay, Pagination]}
@@ -120,4 +84,4 @@ const Upcoming: React.FC<{}> = () => {
   );
 };
 
-export default Upcoming;
+export default RealEstate;
