@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import { PaginationWrap } from './PaginationCustom.style';
 
-interface PaginationCustomProps {
-  pageSize?:number;
+export interface PaginateProps {
   defaultCurrent?: number;
   total?:number;
   handlePageChange?: any

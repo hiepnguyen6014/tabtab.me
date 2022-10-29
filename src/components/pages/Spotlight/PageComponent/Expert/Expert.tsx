@@ -11,7 +11,7 @@ const Expert = () => {
         <FirstContent />
         <SecondContent />
         <div className="d-flex justify-content-center w-100">
-          <PaginationWrapCustom defaultCurrent={1} total={50} />
+          <PaginationWrapCustom defaultCurrent={1} total={5} pageSize={1}/>
         </div>
       </Row>
     </>

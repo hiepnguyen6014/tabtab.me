@@ -41,7 +41,7 @@ const HeaderMobile = (props: Props) => {
         <MenuBugger onRedirect={onRedirect}  t={translate} tabCurrent={tabCurrent}/> */}
         <RowContentMobile>
           <ColContentMobile span={3}>
-            <Link href="https://user.tabtab.imazin.asia">
+            <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}`}>
               <a>
                 <Image
                   alt="icon"

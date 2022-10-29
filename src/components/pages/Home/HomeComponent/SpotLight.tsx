@@ -20,6 +20,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Flex } from '../../HelpCenter/HelpCenter.style';
 import { VectorBookmark } from '@root/public/icons';
+import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
 
 const SpotLight: React.FC<{}> = () => {
   const router = useRouter();
@@ -104,7 +105,7 @@ const SpotLight: React.FC<{}> = () => {
         <Link href="/spotlight-page">
           <a>
             <Typography.Title className="title-general">
-              Spotlight
+              Tin nổi bật
               <Typography.Text className="title-hide">HIDE</Typography.Text>
             </Typography.Title>
           </a>
@@ -114,7 +115,7 @@ const SpotLight: React.FC<{}> = () => {
             <div className="general-wrap">
               <IconQuotes />
               <Typography.Title className="content-general">
-                Những tin tức mới nhất phù hợp với Hùng
+                Những tin tức mới nhất phù hợp với anh/chị [DisplayName]
               </Typography.Title>
             </div>
             <div
@@ -243,7 +244,7 @@ const SpotLight: React.FC<{}> = () => {
               );
             })}
           </Row>
-          <Col
+          {/* <Col
             span={12}
             offset={6}
             style={{
@@ -253,15 +254,10 @@ const SpotLight: React.FC<{}> = () => {
             }}
           >
             <ButtonViewAll>VIEW ALL</ButtonViewAll>
-            {/* <Button
-              shape="round"
-              size={'large'}
-              style={{ background: 'white', color: 'black' }}
-            >
-              {' '}
-              VIEW ALL
-            </Button> */}
-          </Col>
+
+    
+          </Col> */}
+          <PaginationWrapCustom total={10} pageSize={1}  />
         </div>
       )}
     </WrapperSpot>
