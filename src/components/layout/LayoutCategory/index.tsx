@@ -1,15 +1,11 @@
-import {
-  FilterBackground,
-  RowHeader,
-  FDesktop
-} from './Container.style'
+import { FilterBackground, RowHeader, FDesktop } from './Container.style';
 import { checkIsHomePage } from '@utils';
 import { FilterProvider } from '@root/src/core/contexts/filterContext';
 import dynamic from 'next/dynamic';
 import HeaderComponent from '../Header/index';
 import RealEstateFilter from '../RealEstateFilter';
-import { FMenuDropdown } from '../RealEstateFilter/RealEstateFilterDesktop.style'
-import { FMenuItemPopup } from '../RealEstateFilter/RealEstateFilterPopup/RealEstateFilterPopup.style'
+import { FMenuDropdown } from '../RealEstateFilter/RealEstateFilterDesktop.style';
+import { FMenuItemPopup } from '../RealEstateFilter/RealEstateFilterPopup/RealEstateFilterPopup.style';
 import { IconArrowDown } from '@root/public/icons';
 import { Col, Row } from 'antd';
 interface Props {
@@ -19,19 +15,16 @@ interface Props {
   t: any;
 }
 const CategoryLayout = (props: Props) => {
-  const { t: translate, toggleType } = props
-  const DynamicFooter = dynamic(() => import('../Footer/Footer'))
+  const { t: translate, toggleType } = props;
+  const DynamicFooter = dynamic(() => import('../Footer/Footer'));
   return (
     <>
-      <HeaderComponent
-        themeLight={checkIsHomePage()}
-        t={props.t}
-      />
+      <HeaderComponent t={props.t} />
 
       <RowHeader />
       <FilterProvider>
         <FilterBackground>
-            <RealEstateFilter toggleType={toggleType} t={translate}/>
+          <RealEstateFilter toggleType={toggleType} t={translate} />
         </FilterBackground>
       </FilterProvider>
 
@@ -87,4 +80,4 @@ const CategoryLayout = (props: Props) => {
   );
 };
 
-export default CategoryLayout
+export default CategoryLayout;

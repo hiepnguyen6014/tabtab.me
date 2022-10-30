@@ -1,22 +1,37 @@
 import { PUBLIC_ROUTES } from '@constants';
-import { useRouter } from 'next/router';
-import React, { useEffect, useMemo } from 'react';
-import { HeaderWrapper } from './Header.style';
+import React, { useEffect, useMemo, useState } from 'react';
+import { HeaderContainer, HeaderWrapper } from './Header.style';
 import dynamic from 'next/dynamic';
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
+import { useRoute } from '@utils';
 interface Props {
-  themeLight?: boolean;
   showHeaderMobile?: boolean;
   t: any;
 }
 
 export default function HeaderComponent(props?: Props) {
-  const { themeLight = false, t, showHeaderMobile = true } = props;
-  const router = useRouter();
+  const { t, showHeaderMobile = true } = props;
+  const { router, isHome } = useRoute();
+  const [isTransparentBg, setIsTransparentBg] = useState(isHome);
 
-  // Tab current
-  let tabCurrent = useMemo(() => {
+  useEffect(() => {
+    const updateHeaderBg = () => {
+      if (!isHome) return;
+
+      const scrollY = window.pageYOffset;
+      if (scrollY > 0) {
+        setIsTransparentBg(false);
+      } else {
+        setIsTransparentBg(true);
+      }
+    };
+
+    window.addEventListener('scroll', updateHeaderBg);
+    return () => window.removeEventListener('scroll', updateHeaderBg);
+  }, []);
+
+  const tabCurrent = useMemo(() => {
     const pathCurrent = router.pathname;
     const key = Object.keys(PUBLIC_ROUTES).filter(
       (item) => pathCurrent.indexOf(PUBLIC_ROUTES[item].href) > -1
@@ -32,23 +47,23 @@ export default function HeaderComponent(props?: Props) {
   };
 
   return (
-    <>
-      <HeaderWrapper>
+    <HeaderWrapper isTransparent={isTransparentBg}>
+      <HeaderContainer>
         <HeaderDesktop
           t={t}
-          themeLight={themeLight}
+          isTransparentBg={isTransparentBg}
+          isShowSearchBar={!isHome}
           tabCurrent={tabCurrent?.href}
           onRedirect={onRedirect}
         />
-      </HeaderWrapper>
-      {showHeaderMobile && (
-        <HeaderMobile
-          t={t}
-          themeLight={themeLight}
-          onRedirect={onRedirect}
-          tabCurrent={tabCurrent?.href}
-        />
-      )}
-    </>
+        {showHeaderMobile && (
+          <HeaderMobile
+            t={t}
+            onRedirect={onRedirect}
+            tabCurrent={tabCurrent?.href}
+          />
+        )}
+      </HeaderContainer>
+    </HeaderWrapper>
   );
 }

@@ -8,7 +8,7 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
-import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaltLayout';
+import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaultLayout';
 import ContentHelp from '@root/src/components/pages/HelpCenter/Component/ContentHelp';
 import HeaderHelpCenter from '@root/src/components/pages/HelpCenter/Component/HeaderHelpCenter';
 import HelpSearch from '@root/src/components/pages/HelpCenter/Component/HelpSearch';
@@ -25,26 +25,26 @@ const HelpCenter: React.FC<{}> = () => {
 
   return (
     <DefaultLayout t={translate}>
-    <div className="container-fluid d-flex justify-content-center">
-      <HelpCenterWrap>
-        <HelpCenterText>
-          <div>
-            <HeaderHelpCenter />
-          </div>
-          <div className='d-flex justify-content-center'>
-          <HelpSearch />
-          </div>
-          <Row>
-            <Col xs={24} sm={24} lg={7}>
-              <HelpSide />
-            </Col>
-            <Col xs={24} sm={24} lg={17}>
-              <ContentHelp />
-            </Col>
-          </Row>
-        </HelpCenterText>
-      </HelpCenterWrap>
-    </div>
+      <div className="container-fluid d-flex justify-content-center">
+        <HelpCenterWrap>
+          <HelpCenterText>
+            <div>
+              <HeaderHelpCenter />
+            </div>
+            <div className="d-flex justify-content-center">
+              <HelpSearch />
+            </div>
+            <Row>
+              <Col xs={24} sm={24} lg={7}>
+                <HelpSide />
+              </Col>
+              <Col xs={24} sm={24} lg={17}>
+                <ContentHelp />
+              </Col>
+            </Row>
+          </HelpCenterText>
+        </HelpCenterWrap>
+      </div>
     </DefaultLayout>
   );
 };

@@ -17,30 +17,29 @@ import ContentAboutUs from '@root/src/components/pages/AboutUs/Component/Content
 import Recruitment from '@root/src/components/pages/AboutUs/Component/Recruitment';
 import WhyUs from '@root/src/components/pages/AboutUs/Component/WhyUs';
 import BoardManagement from '@root/src/components/pages/AboutUs/Component/BoardManagement';
-import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaltLayout';
+import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaultLayout';
 import { useTranslation } from 'react-i18next';
 
 const AboutUs: React.FC<{}> = () => {
   const { t: translate } = useTranslation('common');
   return (
     <DefaultLayout t={translate}>
-    <div className="container-fluid d-flex justify-content-center">
-      <div>
-        <AboutUsWrap>
-          <AboutUsText>
-            <div>
-              <HeaderAboutUs />
-            </div>
-            <ContentAboutUs />
-          </AboutUsText>
-          <WhyUs />
-          <BoardManagement />
-          <Recruitment />
-        </AboutUsWrap>
+      <div className="container-fluid d-flex justify-content-center">
+        <div>
+          <AboutUsWrap>
+            <AboutUsText>
+              <div>
+                <HeaderAboutUs />
+              </div>
+              <ContentAboutUs />
+            </AboutUsText>
+            <WhyUs />
+            <BoardManagement />
+            <Recruitment />
+          </AboutUsWrap>
+        </div>
       </div>
-    </div>
     </DefaultLayout>
-
   );
 };
 

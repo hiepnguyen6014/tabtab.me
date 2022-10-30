@@ -7,10 +7,11 @@ import { PlaceHolderLoading } from '../../shared';
 import ProjectRealEstate from './HomeComponent/ProjectRealEstate';
 import RealEstate from './HomeComponent/RealEstate';
 import RecommendProperty from './HomeComponent/Recommend';
-import SocialNetwork from './HomeComponent/SocialNetwork';
 import SpotLight from './HomeComponent/SpotLight';
 import Upcoming from './HomeComponent/Upcoming';
 import { UserContext } from '@contexts';
+import SocialNetwork from './HomeComponent/SocialNetwork';
+import { HomeLayout } from './Home.style';
 import dynamic from 'next/dynamic';
 import { useContext } from 'react';
 interface Props {
@@ -34,7 +35,7 @@ const HomePage = (props: Props) => {
   });
 
   return (
-    <div>
+    <HomeLayout>
       <DynamicBanner t={t} />
       <Upcoming />
       <SpotLight />
@@ -45,7 +46,7 @@ const HomePage = (props: Props) => {
       {/* <SocialNetwork /> */}
       <RealEstate/>
       <ProjectRealEstate/>
-    </div>
+    </HomeLayout>
   );
 };
 export default HomePage;

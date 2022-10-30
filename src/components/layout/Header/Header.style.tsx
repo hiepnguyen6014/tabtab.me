@@ -37,30 +37,51 @@ export const LogoWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.header`
+  transition: background-color 0.5s, box-shadow 0.2s;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  ${(props: { isTransparent: boolean }) =>
+    props.isTransparent
+      ? `
+        background-color: transparent;
+      `
+      : `
+        background-color: ${COLOR_LIGHT};
+        box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+      `}
+`;
+
+export const HeaderBackground = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 99;
-  color: ${COLOR_LIGHT};
-  font-size: 18px;
+  z-index: -1;
+  ${(props: { isTransparent: boolean }) =>
+    props.isTransparent
+      ? `
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        opacity: 0.4;
+        height: 101px;
+      `
+      : `
+        box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+        height: 100%;
+      `}
+`;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-  opacity: 0.4; */
-  @media ${device.maxMd} {
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1) !important;
-    background-color: transparent;
-    border: none;
-    top: 3%;
-  }
+export const HeaderContainer = styled.div`
+  margin: 0 auto;
+  max-width: 1300px;
+  width: 100%;
 `;
 
 export const MainContentDesktop = styled.div`
   width: 100%;
   max-width: 1440px;
-  height: 101px;
+  height: 80px;
   margin: 0;
 
   /* display: grid;

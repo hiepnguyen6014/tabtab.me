@@ -8,7 +8,7 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
-import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaltLayout';
+import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaultLayout';
 import FirstContent from '@root/src/components/pages/Policy/Component/FirstContent';
 import HeaderPolicy from '@root/src/components/pages/Policy/Component/HeaderPolicy';
 import SecondContent from '@root/src/components/pages/Policy/Component/SecondContent';
@@ -28,8 +28,11 @@ const Policy: React.FC<{}> = () => {
 
   return (
     <DefaultLayout t={translate}>
-      <div className="container-fluid d-flex justify-content-center" style={{background: '#f0f2f5'}}>
-      <PolicyWrap>
+      <div
+        className="container-fluid d-flex justify-content-center"
+        style={{ background: '#f0f2f5' }}
+      >
+        <PolicyWrap>
           <PolicyText>
             <HeaderPolicy />
             <Flex className="justify-content-center">
@@ -46,7 +49,7 @@ const Policy: React.FC<{}> = () => {
               </Col>
             </Row>
           </PolicyText>
-      </PolicyWrap>
+        </PolicyWrap>
       </div>
     </DefaultLayout>
   );
