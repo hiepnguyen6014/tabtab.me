@@ -3,6 +3,7 @@ import { Button, Divider, InputNumber, Select, Slider } from 'antd';
 import React, { useState } from 'react';
 
 import { AREA_DATA_SELECT } from '../FilterData/FilterData';
+import { RightOutlined } from '@ant-design/icons';
 
 const Area = () => {
   const { Option } = Select;
@@ -28,7 +29,8 @@ const Area = () => {
       <div>
       <BoxInput>
         <InputNumber min={0}  value={valueInput} />
-        <InputNumber  max={500} value={valueAfter} />
+        <RightOutlined/>
+        <InputNumber  max={500} value={valueAfter}/>
       </BoxInput>
       <Slider range step={10} onChange={onChange} min={0} max={500} />
       <Select placeholder="Diện tích" style={{ width: '100%' }}  onChange={handleChange} defaultOpen>

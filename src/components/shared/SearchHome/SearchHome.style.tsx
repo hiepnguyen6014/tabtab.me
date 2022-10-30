@@ -17,6 +17,7 @@ export const SearchWrapper = styled(Row)`
   padding-left: 30px;
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
   margin-top: 0px;
+  padding-bottom: 8px;
   div,
   span,
   input {
@@ -33,6 +34,7 @@ export const SearchWrapper = styled(Row)`
   }
 `;
 export const ColItem = styled(Col)`
+cursor:pointer;
   padding: 5px 10px;
   @media ${device.maxMd} {
     padding: 10px 0px;

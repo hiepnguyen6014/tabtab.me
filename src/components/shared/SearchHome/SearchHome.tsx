@@ -151,7 +151,7 @@ export const SearchHome = (props: { t: any }) => {
           </RadioSearch>
 
           <SearchWrapper style={{ borderRadius: '0px 12px 12px 12px' }}>
-            <Row
+            <Row 
               className="w-100 my-3"
               style={{
                 background: '#F2F2F2',
@@ -190,7 +190,7 @@ export const SearchHome = (props: { t: any }) => {
                 </Form.Item>
               </ColItem>
             </Row>
-            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 72 }}>
+            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 72 }} style={{marginLeft:"30px"}}>
               <ColItem sm={24} md={12} lg={6}>
               <div className="d-flex">
                   <VectorBed />

@@ -12,6 +12,7 @@ export const BoxContainer = styled.div`
 export const BoxInput = styled.div`
   display:flex;
   justify-content:space-between;
+  align-items: center;
 `
 
 

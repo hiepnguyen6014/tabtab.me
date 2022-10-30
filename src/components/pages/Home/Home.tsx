@@ -1,16 +1,18 @@
+import Academy from './HomeComponent/Academy';
+import AdWords from './HomeComponent/AdWords';
 /* eslint-disable react-hooks/exhaustive-deps */
 import { MPostDetail } from '@models/MPostDetail';
-import dynamic from 'next/dynamic';
-import { PlaceHolderLoading } from '../../shared';
-import SpotLight from './HomeComponent/SpotLight';
 import Opinion from './HomeComponent/Opinion';
-import AdWords from './HomeComponent/AdWords';
+import { PlaceHolderLoading } from '../../shared';
+import ProjectRealEstate from './HomeComponent/ProjectRealEstate';
+import RealEstate from './HomeComponent/RealEstate';
 import RecommendProperty from './HomeComponent/Recommend';
-import Upcoming from './HomeComponent/Upcoming';
-import { useContext } from 'react';
-import { UserContext } from '@contexts';
-import Academy from './HomeComponent/Academy';
 import SocialNetwork from './HomeComponent/SocialNetwork';
+import SpotLight from './HomeComponent/SpotLight';
+import Upcoming from './HomeComponent/Upcoming';
+import { UserContext } from '@contexts';
+import dynamic from 'next/dynamic';
+import { useContext } from 'react';
 interface Props {
   postsByRating?: MPostDetail[];
   postsByPrice?: MPostDetail[];
@@ -41,6 +43,8 @@ const HomePage = (props: Props) => {
       {/* <Academy /> */}
       <RecommendProperty />
       {/* <SocialNetwork /> */}
+      <RealEstate/>
+      <ProjectRealEstate/>
     </div>
   );
 };
