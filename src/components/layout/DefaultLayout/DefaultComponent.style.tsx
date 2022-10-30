@@ -3,6 +3,10 @@ import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
 import { Button, Radio } from 'antd';
 
+export const Container = styled.div`
+  padding-top: ${({hasTopPadding}: {hasTopPadding: boolean}) => hasTopPadding ? '80px' : '0'};
+`
+
 export const DefaultRowHeader = styled.div`
   height: 96px;
   display: block;
@@ -151,7 +155,6 @@ export const ButtonWrap = styled((props) => <Button {...props} />)`
     padding-right: 24px;
     padding-bottom: 24px;
     border-radius: 8px;
-  }
 `;
 
 export const ButtonWrapProperties = styled((props) => <Button {...props} />)`
@@ -171,7 +174,6 @@ export const ButtonWrapProperties = styled((props) => <Button {...props} />)`
     padding-right: 24px;
     padding-bottom: 24px;
     border-radius: 8px;
-  }
 `;
 
 export const RadioWrap = styled(Radio.Group)`

@@ -1,9 +1,9 @@
-import DefaultLayout from '../../../layout/DefaultLayout/DefaltLayout';
+import DefaultLayout from '../../../layout/DefaultLayout/DefaultLayout';
 import {
   DefaultWrapperWithBg,
   DefaultContentNoGrid,
 } from '../../../layout/DefaultLayout/DefaultComponent.style';
-import { BreadcrumbCustom } from '../../../shared/Breadcrum'
+import { BreadcrumbCustom } from '../../../shared/Breadcrum';
 import { Typography } from 'antd';
 import { ROUTES } from '@constants';
 import {
@@ -56,10 +56,7 @@ export const NotifyDetail = (props: Props) => {
               sm={{ span: 10 }}
               md={{ span: 8 }}
             >
-              <DetailImage
-                src={data.customerMessageImage}
-                alt=""
-              />
+              <DetailImage src={data.customerMessageImage} alt="" />
             </DetailContentCol>
 
             <DetailContentCol

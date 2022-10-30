@@ -18,7 +18,7 @@ const Upcoming: React.FC<{}> = () => {
     <WrapperSpot>
       <GeneralText>
         <Typography.Title className="title-general">
-          Tin mới nhất
+          Sự kiện sắp diễn ra
           <Typography.Text className="title-hide">HIDE</Typography.Text>
         </Typography.Title>
         <GeneralWrap>

@@ -3,21 +3,38 @@ import { Button, Carousel, Col, Image, Row, Typography } from 'antd';
 import { device } from '@styles/theme/device';
 import { styled } from '@styles/theme';
 
-export const BannerWrapper = styled.div`
-  max-height: 900px;
-  min-height: 400px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 1440px;
-  margin: auto;
-  object-position: center;
-  position: relative;
-  @media ${device.maxMd} {
-    min-height: 250px;
-  }
-  @media ${device.maxSm} {
-    height: 350px;
+export const HomeLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  margin-bottom: 60px;
+`
 
+export const BannerWrapper = styled.div`
+  height: 600px;
+  margin-bottom: 81px;
+  position: relative;
+  width: 100%;
+  
+  .ant-carousel {
+    height: 100%;
+    .slick-slider, .slick-list, .slick-track {
+      height: 100%;
+      .slick-slide, .slick-slide > div {
+        height: 100%;
+      }
+    }
+    .ant-image {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  @media ${device.maxSm} {
+    height: 447px;
+  }
+
+  @media ${device.maxSm} {
     .ant-carousel .slick-slider {
       position: static;
     }
@@ -28,72 +45,59 @@ export const BannerWrapper = styled.div`
     }
   }
 `;
-export const CarouselInBanner = styled(Carousel)`
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  object-fit: contain;
-  object-position: center;
-`;
-export const ImageBanner = styled(Image)`
-  height: 100%;
-  width: 100%;
-  max-height: 440px;
 
-  @media ${device.maxSm} {
-    /* height: 500px; */
-    min-height: 440px;
-  }
+export const BackgroundGradient = styled.div`
+  background: linear-gradient(180deg, #000 0%, transparent 100%);
+  height: 101px;
+  left: 0;
+  opacity: 0.4;
+  top: 0;
+  position: absolute;
+  width: 100%;
+`
+
+export const BannerImage = styled(Image)`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 `;
 
 export const ContentInBanner = styled.div`
+  left: 50%;
+  max-width: 1300px;
+  padding: 0 152px;
   position: absolute;
-  bottom: 29%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  @media ${device.maxMd} {
-    width: 1200px;
+  
+  .ant-typography {
+    color: #fff;
+    font-weight: 700;
+    width: 498px;
   }
+  h1 {
+    font-size: 64px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  span {
+    display: block;
+    font-size: 16px;
+  }
+
   @media ${device.maxSm} {
-    width: 100%;
-    bottom: 16%;
+    display: flex;
+    justify-content: center;
   }
 `;
-export const Content = styled.div`
-  width: 85%;
-  margin: auto;
-  text-align: left;
-  .search-content {
-    // display: flex;
-    // justify-content: center;
-    left: 16%;
-    margin-bottom: 7%;
-    position: relative;
-    @media ${device.maxMd} {
-      margin-bottom: 0%;
-    }
-  }
-  .search-text {
-    @media ${device.maxSm} {
-      display: flex;
-      justify-content: center;
-    }
-  }
-  @media ${device.maxLg} {
-    width: 95%;
-    .search-content {
-      left: 10%;
-    }
-  }
-  @media ${device.maxSm} {
-    width: 75%;
-    span {
-      display: none;
-    }
-    .search-content {
-      left: 0%;
-    }
-  }
-`;
+
+export const SearchWrapper = styled.div`
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 50%);
+`
 
 export const ButtonShowAll = styled(Button)`
   height: 40px;
@@ -167,9 +171,7 @@ export const WrapperSpot = styled.div`
   width: 100%;
   margin: auto;
   min-height: auto;
-  margin-top: 30px;
   text-align: center;
-  margin-bottom: 50px;
   max-width: 1200px;
   position: relative;
   .shadowA {
@@ -377,7 +379,6 @@ export const AdWordsWrap = styled.div`
   height: auto;
   align-items: center;
   text-align: center;
-  margin-top: -50px;
 `;
 
 export const ItemPostWrap = styled.div`

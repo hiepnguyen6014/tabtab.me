@@ -8,7 +8,7 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
-import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaltLayout';
+import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaultLayout';
 import Discovery from '@root/src/components/pages/Spotlight/PageComponent/Discovery/Discovery';
 import Event from '@root/src/components/pages/Spotlight/PageComponent/Events/Events';
 import Expert from '@root/src/components/pages/Spotlight/PageComponent/Expert/Expert';

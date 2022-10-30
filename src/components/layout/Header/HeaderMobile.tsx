@@ -1,9 +1,8 @@
-import { ROUTES, SRC_IMAGE, SRC_LOGO } from '@constants';
+import { SRC_IMAGE } from '@constants';
 import React from 'react';
 import {
   ButtonOnSearch,
   ColContentMobile,
-  LogoWrapper,
   MainContentMobile,
   MainMobile,
   RowContentMobile,
@@ -11,34 +10,24 @@ import {
   TextWrap,
 } from './Header.style';
 import { Col, Image, Typography } from 'antd';
-import { MenuBugger } from './MenuBugger';
 import { VectorTextMessage, VectorTextMessageBlack } from '@root/public/icons';
 import { DownOutlined, SearchOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { useRoute } from '@utils';
 
 interface Props {
   tabCurrent?: any;
   onRedirect: (href: string) => void;
-  themeLight?: boolean;
   t: any;
 }
 
 const HeaderMobile = (props: Props) => {
-  const { tabCurrent, onRedirect, themeLight, t: translate } = props;
+  const { tabCurrent, onRedirect, t: translate } = props;
+  const { isHome } = useRoute();
 
   return (
-    <MainMobile style={{ position: themeLight ? 'absolute' : 'relative' }}>
+    <MainMobile style={{ position: isHome ? 'absolute' : 'relative' }}>
       <MainContentMobile>
-        {/* <LogoWrapper>
-          <Image
-            preview={false}
-            height={24}
-            width={110}
-            src={themeLight ? SRC_LOGO.DARK : SRC_LOGO.LIGHT} 
-            onClick={() => onRedirect(ROUTES.HOME)}
-          />
-        </LogoWrapper>
-        <MenuBugger onRedirect={onRedirect}  t={translate} tabCurrent={tabCurrent}/> */}
         <RowContentMobile>
           <ColContentMobile span={3}>
             <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}`}>
@@ -68,11 +57,6 @@ const HeaderMobile = (props: Props) => {
                 <div className="vertical-line-search" />
               </Col>
               <Col span={14}>
-                {/* <TextWrap>
-                    <Typography className="text-search">
-                      Bắt đầu tìm kiếm
-                    </Typography>
-                  </TextWrap> */}
                 <input className="inputSearch" placeholder="Bắt đầu tìm kiếm" />
               </Col>
               <Col span={4} className="d-flex justify-content-end">
@@ -83,7 +67,7 @@ const HeaderMobile = (props: Props) => {
             </SearchMobile>
           </ColContentMobile>
           <ColContentMobile span={3}>
-            {themeLight ? <VectorTextMessage /> : <VectorTextMessageBlack />}
+            {isHome ? <VectorTextMessage /> : <VectorTextMessageBlack />}
           </ColContentMobile>
         </RowContentMobile>
       </MainContentMobile>

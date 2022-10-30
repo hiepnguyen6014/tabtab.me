@@ -8,7 +8,7 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
-import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaltLayout';
+import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaultLayout';
 import FilterRoommate from '@root/src/components/pages/Roommate/Component/FilterRoommate';
 import HeaderRoommate from '@root/src/components/pages/Roommate/Component/HeaderRoommate';
 import RoommateList from '@root/src/components/pages/Roommate/Component/RoommateList';
@@ -30,8 +30,7 @@ const Roommate: React.FC<{}> = () => {
             <FilterRoommate />
             <RoommateList />
           </RoommateText>
-          <Typography>
-          </Typography>
+          <Typography></Typography>
         </RoommateWrap>
       </div>
     </DefaultLayout>
