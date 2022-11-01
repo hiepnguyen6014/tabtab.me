@@ -1,5 +1,6 @@
-import Config from "@root/config";
 import { IconAccount, IconBell, IconLogout, IconManagerPost, IconPost, IconTable } from "@root/public/icons";
+
+import Config from "@root/config";
 
 export const GG_MAP_URL = "https://www.google.com/maps/search/"
 
@@ -14,7 +15,7 @@ export const ROUTES = {
   },
   SEARCH_PAGE: {
     name: "header.main_floor",
-    href: "/tim-kiem",
+    href: "/search",
     title: "titleList.main_floor"
   },
   BROKERAGE_FLOOR_PAGE: {

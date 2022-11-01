@@ -182,7 +182,7 @@ export const SearchHome = (props: { t: any }) => {
                 }}
               >
                 <Form.Item style={{ margin: 0 }}>
-                  <ButtonSearch onClick={(e) => findPage(e, '/tim-kiem')}>
+                  <ButtonSearch onClick={(e) => findPage(e, '/search')}>
                     <SearchOutlined
                       style={{ fontSize: '5px', border: 'none' }}
                     />
