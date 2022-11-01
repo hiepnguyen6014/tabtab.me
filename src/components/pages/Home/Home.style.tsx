@@ -8,19 +8,22 @@ export const HomeLayout = styled.div`
   flex-direction: column;
   gap: 72px;
   margin-bottom: 60px;
-`
+`;
 
 export const BannerWrapper = styled.div`
   height: 600px;
   margin-bottom: 81px;
   position: relative;
   width: 100%;
-  
+
   .ant-carousel {
     height: 100%;
-    .slick-slider, .slick-list, .slick-track {
+    .slick-slider,
+    .slick-list,
+    .slick-track {
       height: 100%;
-      .slick-slide, .slick-slide > div {
+      .slick-slide,
+      .slick-slide > div {
         height: 100%;
       }
     }
@@ -54,7 +57,7 @@ export const BackgroundGradient = styled.div`
   top: 0;
   position: absolute;
   width: 100%;
-`
+`;
 
 export const BannerImage = styled(Image)`
   height: 100%;
@@ -70,7 +73,7 @@ export const ContentInBanner = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  
+
   .ant-typography {
     color: #fff;
     font-weight: 700;
@@ -97,7 +100,11 @@ export const SearchWrapper = styled.div`
   left: 50%;
   position: absolute;
   transform: translate(-50%, 50%);
-`
+
+  @media ${device.maxMd} {
+    display: none;
+  }
+`;
 
 export const ButtonShowAll = styled(Button)`
   height: 40px;
