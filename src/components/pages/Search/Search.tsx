@@ -25,12 +25,8 @@ import {
 } from './Search.style';
 import {
   Button,
-  Checkbox,
   Col,
-  Divider,
-  Dropdown,
   Image,
-  Menu,
   Popover,
   Row,
   Typography,
@@ -42,22 +38,21 @@ import {
   SEARCH_DATA_MINI,
   SEARCH_DATA_ROW,
 } from './component/SearchData';
-import { getListRealEstate, getPostByRating } from '../../../core/services';
 
 import {
   Favorite,
 } from '@root/public/icons';
 import InfoHome from './component/InfoHome';
-import { MPostDetail } from '@models/MPostDetail';
-import { Marker } from '../../shared/GoogleMap/Marker';
 import MoreFiler from './component/MoreFiler';
 import PriceContent from './component/PriceContent';
 import PropertyContent from './component/PropertyContent';
 import { SRC_IMAGE } from '@core';
+import { SearchDataProps } from '@root/src/core/types/filter';
 import SwiperGlobal from '../../shared/SwiperGlobal';
+import { getListRealEstate } from '../../../core/services';
 
 interface Props {
-  posts: MPostDetail[];
+  posts: SearchDataProps;
   t: any;
 }
 
@@ -75,6 +70,8 @@ export default function Search(props: Props) {
       // }
     });
   };
+
+
 
 
  
