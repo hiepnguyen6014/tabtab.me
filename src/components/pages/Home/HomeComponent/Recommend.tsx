@@ -1,4 +1,6 @@
 import { Row, Typography } from 'antd';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { IconQuotes, PrevArrow, NextArrow } from 'public/icons';
 import React, { useState } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
@@ -11,17 +13,20 @@ import {
   GeneralWrap,
   WrapperContent,
   WrapperSpot,
+  ShowOnMobile,
+  HideOnMobile,
+  ItemDesktopWrapper,
 } from '../Home.style';
 import { PostItem, RecommendItem } from '../Recommend';
 import { TypographyText } from './PostItem/PostItem.style';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import { ROUTES } from '@constants';
 const RecommendProperty = () => {
   const [limitItems, setLimitItems] = React.useState(12);
   // layout for desktop only 8 products if screen is mobile, product will be 20 posts
-
+  const router = useRouter();
   const handleResize = (e: any) => {
     if (e.target.outerWidth <= 1025 && e.target.outerWidth >= 768) {
       setLimitItems(6); // Tablet will be 6 items on row
@@ -43,26 +48,19 @@ const RecommendProperty = () => {
   const prevRef = React.useRef(null);
   const nextRef = React.useRef(null);
 
-  const listTag = [
-    { id: 1, value: 'Sell' },
-    { id: 2, value: 'Auction ' },
-    { id: 3, value: 'Rent' },
-    { id: 4, value: 'Transfer' },
-  ];
-
   const postItem: PostItem = {
     price: '3.000.000$',
     wasPrice: '4.500.000$ ',
     title: 'Sir Francis Drake Blvd. Retail /Office 312 Sir Francis Drake',
   };
 
-  const listPost: PostItem[] = Array(16).fill(postItem);
+  const listPost: PostItem[] = Array(8).fill(postItem);
 
   const handleBtnClick = (id: number) => {
     setActive(id);
   };
   const hanldeShowAll = () => {
-    setShowAll(true);
+    setShowAll(showAll ? false : true);
   };
 
   return (
@@ -80,7 +78,7 @@ const RecommendProperty = () => {
             <div className="general-wrap">
               <IconQuotes />
               <Typography.Title className="content-general">
-                anh Hùng đừng bỏ qua sự kiện sắp tới nha
+                Bất động sản đề xuất cho anh/chị [display name]
               </Typography.Title>
             </div>
             <div
@@ -94,53 +92,18 @@ const RecommendProperty = () => {
       </GeneralText>
       {showContent && (
         <WrapperContent>
-          <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div>
-              <div>
-                {listTag.map((item) => (
-                  <ButtonTag
-                    key={item.id}
-                    active={active === item.id ? 'active' : ''}
-                    onClick={() => handleBtnClick(item.id)}
-                  >
-                    {item.value}{' '}
-                  </ButtonTag>
-                ))}
-              </div>
+          <HideOnMobile>
+            <div className="d-flex justify-content-between align-items-center flex-wrap">
+              {listPost.map((item, idx) => {
+                return (
+                  <div key={idx} >
+                    <RecommendItem {...item} />
+                  </div>
+                );
+              })}
             </div>
-
-            <div
-              style={{ display: 'flex', alignItems: 'center' }}
-              className="my-1"
-            >
-              <div>
-                <Typography.Link
-                  style={{
-                    textDecoration: 'underline',
-                    color: showAll ? '#7A7A7A' : '',
-                  }}
-                  className="linkShowPost"
-                  onClick={hanldeShowAll}
-                >
-                  Show all(+{listPost.length})
-                </Typography.Link>
-              </div>
-              <ButtonNav style={{ margin: '0px 12px 0px 16px' }} ref={prevRef}>
-                <PrevArrow />
-              </ButtonNav>
-              <ButtonNav ref={nextRef}>
-                <NextArrow />
-              </ButtonNav>
-            </div>
-          </Row>
-
-          {showAll ? (
-            <AllItem>
-              {listPost.map((item, idx) => (
-                <RecommendItem {...item} key={idx} />
-              ))}
-            </AllItem>
-          ) : (
+          </HideOnMobile>
+          <ShowOnMobile>
             <div>
               <Swiper
                 modules={[Navigation, Autoplay, Pagination]}
@@ -164,9 +127,9 @@ const RecommendProperty = () => {
                     slidesPerView: 4,
                     slidesPerGroup: 4,
                     spaceBetween: 24,
-                  }
+                  },
                 }}
-                className="container"
+                style={{paddingBottom:'15px'}}
               >
                 {listPost.map((item, idx) => {
                   return (
@@ -177,7 +140,23 @@ const RecommendProperty = () => {
                 })}
               </Swiper>
             </div>
-          )}
+          </ShowOnMobile>
+
+          <div
+            style={{ display: 'flex', alignItems: 'center', float: 'right' }}
+            className="my-1"
+          >
+            <div>
+              <Link href={ROUTES.SEARCH_PAGE.href}>
+                <a
+                  className="linkShowPost"
+                  style={{ textDecoration: 'underline' }}
+                >
+                  Show all
+                </a>
+              </Link>
+            </div>
+          </div>
         </WrapperContent>
       )}
     </WrapperSpot>

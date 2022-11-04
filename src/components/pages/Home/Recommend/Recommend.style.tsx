@@ -13,13 +13,14 @@ export const Wrapper = styled((props) => <div {...props} />)`
   height: auto;
   /* min-width: 280px; */
   width: 282px;
+  height: 484px;
   max-width: 100%;
   margin-top: 20px;
   border-radius: 6px;
   background-color: #fff;
   border: 2px solid #f0f0f0;
   overflow: hidden;
-  box-shadow: 0px 4px 16px rgba(34, 34, 34, 0.08);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
   /* transition: all.2s ease; */
   cursor: pointer;
 
@@ -132,9 +133,16 @@ export const CardThumbnail = styled.div`
 `;
 
 export const ImageWapper = styled.div`
-  /* & > img {
-    width: 342px;
-  } */
+  img {
+    width: 282px !important;
+    height: 188px !important;
+  }
+  @media ${device.maxSm} {
+    img {
+      width: 342px !important;
+      height: 228px !important;
+    }
+  }
 `;
 
 export const PostContent = styled.div`
@@ -208,6 +216,7 @@ export const DetailItem = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding: 5px 0;
   }
   .item:nth-child(2) {
     margin-left: -11px;

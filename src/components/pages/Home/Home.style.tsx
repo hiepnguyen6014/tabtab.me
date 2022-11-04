@@ -35,6 +35,7 @@ export const BannerWrapper = styled.div`
 
   @media ${device.maxSm} {
     height: 447px;
+    margin-bottom: unset;
   }
 
   @media ${device.maxSm} {
@@ -90,8 +91,15 @@ export const ContentInBanner = styled.div`
   }
 
   @media ${device.maxSm} {
-    display: flex;
-    justify-content: center;
+    padding: 0 1.875em;
+    display: block;
+    top: 65%;
+    h1 {
+      font-size: 40px;
+    }
+    .ant-typography {
+      width: unset;
+    }
   }
 `;
 
@@ -185,7 +193,7 @@ export const WrapperSpot = styled.div`
     background: #ffffff;
     box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.16);
     border-radius: 8px;
-    padding: 12px 12px 15px 12px;
+    padding: 10px 10px 15px 10px;
 
     &:hover {
       transform: scale(1.05);
@@ -977,4 +985,18 @@ export const ButtonNav = styled.button`
 export const AllItem = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+`;
+export const ItemDesktopWrapper = styled.div`
+  margin: 0 14px;
+`;
+export const ShowOnMobile = styled.div`
+  display: none;
+  @media ${device.maxSm} {
+    display: block;
+  }
+`;
+export const HideOnMobile = styled.div`
+  @media ${device.maxSm} {
+    display: none;
+  }
 `;

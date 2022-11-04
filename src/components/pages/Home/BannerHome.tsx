@@ -14,16 +14,13 @@ export const BannerHome = (props: { t: any }) => {
     SRC_LOGO.BANNER_TAB,
     SRC_LOGO.BANNER_TAB,
     SRC_LOGO.BANNER_TAB,
+    SRC_LOGO.BANNER_TAB,
+    SRC_LOGO.BANNER_TAB,
   ];
 
   return (
     <BannerWrapper>
-      <Carousel
-        dotPosition="bottom"
-        autoplay
-        autoplaySpeed={3000}
-        infinite
-      >
+      <Carousel dotPosition="bottom" autoplay autoplaySpeed={3000} infinite>
         {arrayImg.map((value, key) => (
           <BannerImage
             key={`header-image-${key}`}

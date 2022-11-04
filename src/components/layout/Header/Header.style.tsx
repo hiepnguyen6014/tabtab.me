@@ -298,6 +298,9 @@ export const MainContentMobile = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  @media ${device.maxMd}{
+    padding-right:10px
+  }
 `;
 
 export const RowContentMobile = styled(Row)`
