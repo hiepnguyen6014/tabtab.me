@@ -11,7 +11,7 @@ import {
   ImageWapper,
   PostContent,
   Prices,
-  Wrapper
+  Wrapper,
 } from './Recommend.style';
 import { Navigation, Pagination } from 'swiper';
 import {
@@ -25,7 +25,7 @@ import {
   VectorSquare,
   VectorTalk,
   VectorTree,
-  VectorUser
+  VectorUser,
 } from 'public/icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -93,14 +93,12 @@ export function RecommendItem(props: PostItem) {
               return (
                 <SwiperSlide key={item.id}>
                   <ImageWapper>
-                    <Image src={item.src} alt="" width={400} />
+                    <Image src={item.src} alt="recomend-image" />
                   </ImageWapper>
                 </SwiperSlide>
               );
             })}
           </Swiper>
-
-          {/* <Image src={imageSrc[1].src} alt="" width={282} height={188} /> */}
         </CardThumbnail>
 
         <PostContent>
@@ -108,9 +106,6 @@ export function RecommendItem(props: PostItem) {
             <div>
               <div className="now-price">{props.price}</div>
               <div className="was-price">was {props.wasPrice} </div>
-            </div>
-            <div>
-              <Image src={TenXLogo} width={76} height={24} />
             </div>
           </Prices>
           <CardTitle>
@@ -134,10 +129,6 @@ export function RecommendItem(props: PostItem) {
               <VectorCalendar />
               <div>15 giờ trước</div>
             </div>
-            <CardButton>
-              <VectorTalk />
-              <div className="chat">Chat now</div>
-            </CardButton>
           </CardBottom>
         </PostContent>
       </Wrapper>

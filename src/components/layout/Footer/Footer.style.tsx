@@ -9,18 +9,19 @@ export const IconCompany = styled(IconApartment)`
     fill: #fff;
   }
 `;
-
+export const FooterContainer = styled.div`
+  background: #f6f6f6;
+`;
 export const FooterWrapper = styled.footer`
-  /* position: relative; */
   clear: both;
   width: 100%;
   padding: 0 1rem;
-  /* display: flex;
-  justify-content: center; */
+  max-width: 1200px;
+  margin: 0 auto;
   font-size: 16px;
   line-height: 22px;
   color: #222222 !important;
-  background: #f6f6f6;
+
   h1 {
     font-size: 18px;
     color: #222222 !important;
@@ -56,7 +57,7 @@ export const FooterWrapper = styled.footer`
 
 export const FooterBackgroundTop = styled.div`
   width: 100%;
-  padding: 48px 0px;
+  padding: 18px 0px;
 `;
 export const FooterBackgroundBottom = styled.div`
   background: #f6f6f6;
@@ -95,11 +96,6 @@ export const FooterMainTop = styled(Row)`
       font-size: 16px;
       line-height: 20px;
       padding: 0px;
-    }
-  }
-  @media screen and (min-width: 375px) {
-    .company {
-      margin-left: 55px;
     }
   }
 `;
@@ -273,4 +269,5 @@ export const Flex = styled.div`
   display: flex;
   align-items: center;
   gap: 40px;
+  align-item: flex-end;
 `;

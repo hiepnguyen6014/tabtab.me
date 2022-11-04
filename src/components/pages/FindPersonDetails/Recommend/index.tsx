@@ -84,7 +84,7 @@ const Recommend = ({ data, t, fontSize }) => {
             <div className="general-wrap">
               <IconQuotes />
               <Typography.Title className="content-general">
-                anh Hùng đừng bỏ qua sự kiện sắp tới nha
+                Bất động sản đề xuất cho anh/chị [display name]
               </Typography.Title>
             </div>
           </div>
@@ -93,19 +93,7 @@ const Recommend = ({ data, t, fontSize }) => {
 
       <WrapperContent>
         <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            <div>
-              {listTag.map((item) => (
-                <ButtonTag
-                  key={item.id}
-                  active={active === item.id ? 'active' : ''}
-                  onClick={() => handleBtnClick(item.id)}
-                >
-                  {item.value}{' '}
-                </ButtonTag>
-              ))}
-            </div>
-          </div>
+          <div></div>
         </Row>
         <RowWrap
           gutter={{
@@ -119,7 +107,7 @@ const Recommend = ({ data, t, fontSize }) => {
         </RowWrap>
       </WrapperContent>
 
-      <PaginationWrapCustom  total={10} pageSize={1} />
+      <PaginationWrapCustom total={10} pageSize={1} />
     </WrapperSpot>
   );
 };

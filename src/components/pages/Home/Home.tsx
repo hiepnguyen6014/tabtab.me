@@ -38,14 +38,9 @@ const HomePage = (props: Props) => {
     <HomeLayout>
       <DynamicBanner t={t} />
       <Upcoming />
-      <SpotLight />
-      <Opinion />
-      <AdWords />
-      {/* <Academy /> */}
+     
       <RecommendProperty />
-      {/* <SocialNetwork /> */}
-      <RealEstate/>
-      <ProjectRealEstate/>
+     
     </HomeLayout>
   );
 };

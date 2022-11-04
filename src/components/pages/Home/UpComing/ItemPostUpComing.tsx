@@ -10,8 +10,9 @@ import {
   CalendarTue,
   VectorCalendar,
   VectorLocation,
+  Advantage,
 } from '@root/public/icons';
-
+import { UpComingFooterButton } from './UpComing.style';
 import { SRC_IMAGE } from '@core';
 
 const ItemPostUpComing = ({ items }) => {
@@ -47,7 +48,10 @@ const ItemPostUpComing = ({ items }) => {
             <Typography.Text>{items.address}</Typography.Text>
           </SpotlightText>
         </div>
-        </ItemUpcoming>
+      </ItemUpcoming>
+      <UpComingFooterButton>
+        <Advantage /> <span> Add to Calendar</span>
+      </UpComingFooterButton>
     </div>
   );
 };
