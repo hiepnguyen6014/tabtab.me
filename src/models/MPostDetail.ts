@@ -1,9 +1,10 @@
-import { MPaymentRecord } from './MPaymentRecord';
-import { GG_MAP_URL } from '../core/constants/routes';
-import { arrayToString } from '@root/src/core/utils/handleArray';
 import { convertDateToString, numberDays } from '../core/utils/HandleDate';
-import { ImageNull } from '../core/constants/enum';
+
 import { AGENCY_NAME } from '../core/constants/common';
+import { GG_MAP_URL } from '../core/constants/routes';
+import { ImageNull } from '../core/constants/enum';
+import { MPaymentRecord } from './MPaymentRecord';
+import { arrayToString } from '@root/src/core/utils/handleArray';
 
 export class MUtilData{
   realEstateUtilitiesId?:number;
