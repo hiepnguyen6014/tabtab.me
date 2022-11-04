@@ -1,5 +1,11 @@
+import { SearchOutlined } from '@ant-design/icons';
 import { SRC_IMAGE } from '@constants';
+import { VectorTextMessage, VectorTextMessageBlack } from '@root/public/icons';
+import { useRoute } from '@utils';
+import { Col, Image } from 'antd';
+import Link from 'next/link';
 import React from 'react';
+import { DropdownSearchBar } from './DropdownSearchBar';
 import {
   ButtonOnSearch,
   ColContentMobile,
@@ -7,13 +13,7 @@ import {
   MainMobile,
   RowContentMobile,
   SearchMobile,
-  TextWrap,
 } from './Header.style';
-import { Col, Image, Typography } from 'antd';
-import { VectorTextMessage, VectorTextMessageBlack } from '@root/public/icons';
-import { DownOutlined, SearchOutlined } from '@ant-design/icons';
-import Link from 'next/link';
-import { useRoute } from '@utils';
 
 interface Props {
   tabCurrent?: any;
@@ -44,19 +44,16 @@ const HeaderMobile = (props: Props) => {
 
           <ColContentMobile span={18}>
             <SearchMobile>
-              <Col span={5} className="d-flex">
-                <DownOutlined
-                  style={{ fontSize: 8, color: '#7A7A7A' }}
-                  className="d-flex align-self-center mx-2"
-                />
-                <TextWrap>
-                  <Typography className="text-select">Sell</Typography>
-                </TextWrap>
+              <Col
+                span={5}
+                className="d-flex justify-content-center align-items-center"
+              >
+                <DropdownSearchBar t={translate} />
               </Col>
               <Col span={1}>
                 <div className="vertical-line-search" />
               </Col>
-              <Col span={14}>
+              <Col span={12}>
                 <input className="inputSearch" placeholder="Bắt đầu tìm kiếm" />
               </Col>
               <Col span={4} className="d-flex justify-content-end">
@@ -66,7 +63,7 @@ const HeaderMobile = (props: Props) => {
               </Col>
             </SearchMobile>
           </ColContentMobile>
-          <ColContentMobile span={3}>
+          <ColContentMobile span={2}>
             {isHome ? <VectorTextMessage /> : <VectorTextMessageBlack />}
           </ColContentMobile>
         </RowContentMobile>
