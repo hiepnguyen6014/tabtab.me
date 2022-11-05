@@ -1,34 +1,22 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { SRC_IMAGE } from '@constants';
 import { UserContext } from '@contexts';
-import {
-  IconGlobalLang,
-  VectorEarth,
-  VectorMoney,
-  VectorRuler,
-} from '@root/public/icons';
+import { IconGlobalLang } from '@root/public/icons';
 import { Col, Image, Typography } from 'antd';
 import Link from 'next/dist/client/link';
 import { useRouter } from 'next/router';
-import {
-  IconTabFacebook,
-  IconTabInstagram,
-  IconTabLinkedin,
-  IconTabRSS,
-  IconTabSpotify,
-  IconTabTwitter,
-  IconTabYoutube,
-} from 'public/icons';
 import { useContext } from 'react';
+
 import { Flex, FooterDefault } from '../Footer/Footer.style';
 import {
   FlexFooter,
   FooterBackgroundTop,
+  FooterContainer,
   FooterMainTop,
   FooterText,
   FooterWrapper,
-  FooterContainer,
 } from './Footer.style';
+
 export default function Footer(props: { t: any }) {
   const { t } = props;
   const { systemConfig } = useContext(UserContext);
@@ -39,7 +27,7 @@ export default function Footer(props: { t: any }) {
     Col2: { lg: 7, sm: 9 },
   };
 
-  const findPage = (e, path) => {
+  const findPage = (e, path: string) => {
     router.push(path);
   };
 
@@ -85,7 +73,7 @@ export default function Footer(props: { t: any }) {
                   </Typography.Title>
                   <Typography.Title
                     className="textFooter"
-                    onClick={(e) => findPage(e, '/about-us')}
+                    onClick={e => findPage(e, '/about-us')}
                   >
                     About US{' '}
                   </Typography.Title>
@@ -97,7 +85,7 @@ export default function Footer(props: { t: any }) {
                   </Typography.Title>
                   <Typography.Title
                     className="textFooter"
-                    onClick={(e) => findPage(e, '/help-center')}
+                    onClick={e => findPage(e, '/help-center')}
                   >
                     Help Center
                   </Typography.Title>
@@ -126,11 +114,9 @@ export default function Footer(props: { t: any }) {
               </Typography.Text>
               <div className="footerBottom">
                 <Link href="/policy">
-                  <a>
-                    <Typography.Text className="text-Footer">
-                      Privacy Policy
-                    </Typography.Text>
-                  </a>
+                  <Typography.Text className="text-Footer">
+                    Privacy Policy
+                  </Typography.Text>
                 </Link>
               </div>
               <Typography.Text

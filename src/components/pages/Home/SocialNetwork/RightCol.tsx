@@ -6,9 +6,7 @@ const RightCol: React.FC<{}> = () => {
   return (
     <div className="m-2">
       <Link href="/social-network">
-        <a>
-          <Image alt="qc" src={SRC_IMAGE.AD1} preview={false} />
-        </a>
+        <Image alt="qc" src={SRC_IMAGE.AD1} preview={false} />
       </Link>
     </div>
   );

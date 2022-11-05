@@ -16,6 +16,7 @@ import {
 } from '@root/public/icons';
 import { Col, Divider, Image, Popover, Row, Typography } from 'antd';
 import Link from 'next/link';
+
 import {
   BoxWrap,
   ButtonConnect,
@@ -28,28 +29,22 @@ const BoxTextImage = () => {
   const content1 = (
     <div style={{ width: 280 }}>
       <Link href="/roommate">
-        <a>
-          <ButtonMenu>
-            <IconSave />
-            <Typography>Save</Typography>
-          </ButtonMenu>
-        </a>
+        <ButtonMenu>
+          <IconSave />
+          <Typography>Save</Typography>
+        </ButtonMenu>
       </Link>
       <Link href="/detai-spotlight">
-        <a>
-          <ButtonMenu>
-            <IconCopy />
-            <Typography>Copy link</Typography>
-          </ButtonMenu>
-        </a>
+        <ButtonMenu>
+          <IconCopy />
+          <Typography>Copy link</Typography>
+        </ButtonMenu>
       </Link>
       <Link href="/spotlight-page">
-        <a>
-          <ButtonMenu>
-            <IconReport />
-            <Typography>Report</Typography>
-          </ButtonMenu>
-        </a>
+        <ButtonMenu>
+          <IconReport />
+          <Typography>Report</Typography>
+        </ButtonMenu>
       </Link>
     </div>
   );
@@ -57,20 +52,16 @@ const BoxTextImage = () => {
   const content2 = (
     <div style={{ width: 280 }}>
       <Link href="/policy">
-        <a>
-          <ButtonMenu>
-            <IconMessages />
-            <Typography>Message</Typography>
-          </ButtonMenu>
-        </a>
+        <ButtonMenu>
+          <IconMessages />
+          <Typography>Message</Typography>
+        </ButtonMenu>
       </Link>
       <Link href="/help-center">
-        <a>
-          <ButtonMenu>
-            <IconSend />
-            <Typography>Send to Community</Typography>
-          </ButtonMenu>
-        </a>
+        <ButtonMenu>
+          <IconSend />
+          <Typography>Send to Community</Typography>
+        </ButtonMenu>
       </Link>
     </div>
   );

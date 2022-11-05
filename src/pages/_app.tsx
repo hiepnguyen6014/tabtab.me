@@ -1,30 +1,30 @@
-import '../styles/globals.scss';
-import type { AppProps } from 'next/app';
-import nextCookies from 'next-cookies';
+import { UserContextProvider } from '@contexts';
 import { reactLocalStorage } from '@core';
+import { SRC_LOGO, WEB_NAME } from '@core';
+import { ThemeProvider } from '@emotion/react';
 import Config from '@root/config';
-import App from 'next/app';
 import { globalStyles } from '@styles/global';
 import { theme } from '@styles/theme';
-import React from 'react';
-import { CookiesProvider } from 'react-cookie';
-import { ThemeProvider } from '@emotion/react';
-import NextNprogress from 'nextjs-progressbar';
-import { UserContextProvider } from '@contexts';
+import nextCookies from 'next-cookies';
 import { appWithTranslation, i18n } from 'next-i18next';
+import type { AppProps } from 'next/app';
+import App from 'next/app';
 import Head from 'next/head';
-import { WEB_NAME, SRC_LOGO } from '@core';
-import { I18nextProvider } from 'react-i18next';
-import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import NextNprogress from 'nextjs-progressbar';
+import React from 'react';
+import { useEffect } from 'react';
+import { CookiesProvider } from 'react-cookie';
+import { I18nextProvider } from 'react-i18next';
 
 import * as ga from '../../lib/ga';
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = url => {
       ga.pageView(window, url);
     };
     //When the component is mounted, subscribe to router changes

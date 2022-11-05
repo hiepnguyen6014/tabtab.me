@@ -1,28 +1,30 @@
+import { ROUTES } from '@constants';
 import { Row, Typography } from 'antd';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { IconQuotes, PrevArrow, NextArrow } from 'public/icons';
+import { useRouter } from 'next/router';
+import { IconQuotes, NextArrow, PrevArrow } from 'public/icons';
 import React, { useState } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import {
   AllItem,
   ButtonNav,
   ButtonTag,
   GeneralText,
   GeneralWrap,
-  WrapperContent,
-  WrapperSpot,
-  ShowOnMobile,
   HideOnMobile,
   ItemDesktopWrapper,
+  ShowOnMobile,
+  WrapperContent,
+  WrapperSpot,
 } from '../Home.style';
 import { PostItem, RecommendItem } from '../Recommend';
 import { TypographyText } from './PostItem/PostItem.style';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { ROUTES } from '@constants';
+
 const RecommendProperty = () => {
   const [limitItems, setLimitItems] = React.useState(12);
   // layout for desktop only 8 products if screen is mobile, product will be 20 posts
@@ -82,7 +84,7 @@ const RecommendProperty = () => {
               </Typography.Title>
             </div>
             <div
-              onClick={(e) => setShowContent(showContent ? false : true)}
+              onClick={e => setShowContent(showContent ? false : true)}
               style={{ cursor: 'pointer' }}
             >
               <Typography.Text className="content-hide">HIDE</Typography.Text>
@@ -95,13 +97,12 @@ const RecommendProperty = () => {
           <div className="d-flex  justify-content-end">
             <div>
               <div>
-                <Link href={ROUTES.SEARCH_PAGE.href}>
-                  <a
-                    className="linkShowPost"
-                    style={{ textDecoration: 'underline' }}
-                  >
-                    Show all (+{listPost.length * 2})
-                  </a>
+                <Link
+                  href={ROUTES.SEARCH_PAGE.href}
+                  className="linkShowPost"
+                  style={{ textDecoration: 'underline' }}
+                >
+                  Show all (+{listPost.length * 2})
                 </Link>
               </div>
             </div>

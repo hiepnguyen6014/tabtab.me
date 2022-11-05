@@ -1,23 +1,16 @@
 import {
-  IconGlobal,
   IconGlobalLang,
   VectorEarth,
   VectorMoney,
   VectorRuler,
 } from '@root/public/icons';
-import {
-  ColBottomRight,
-  FlexFooter,
-  FooterText,
-  HrefLink,
-} from './Footer.style';
-import { ButtonBackTop } from '../../shared/ButtonBackTop/index';
-import { ToggleLanguage } from '../../shared/ToggleLanguage';
-import { INFOMATION_ROUTES } from '@core';
 import { Typography } from 'antd';
 import Link from 'next/link';
 
-export const FooterBottom = (props: { t: any }) => {
+import { ButtonBackTop } from '../../shared/ButtonBackTop/index';
+import { ColBottomRight, FlexFooter, FooterText } from './Footer.style';
+
+export const FooterBottom = () => {
   return (
     <>
       <FlexFooter>
@@ -33,11 +26,9 @@ export const FooterBottom = (props: { t: any }) => {
             </div>
             <div className="footerBottom">
               <Link href="/policy">
-                <a>
-                  <Typography.Text className="text-Footer">
-                    Privacy Policy
-                  </Typography.Text>
-                </a>
+                <Typography.Text className="text-Footer">
+                  Privacy Policy
+                </Typography.Text>
               </Link>
             </div>
             <div className="footerBottom">

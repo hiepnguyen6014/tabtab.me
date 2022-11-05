@@ -1,6 +1,7 @@
 import { SRC_IMAGE } from '@core';
 import { Button, Col, Divider, Image, Row, Typography } from 'antd';
 import Link from 'next/link';
+
 import {
   BannerSpotWrapper,
   BannerWrap,
@@ -62,9 +63,7 @@ const SlideExpert = () => {
         {ITEMSPOTLIGHTSIDE.map((items, key) => {
           return (
             <Link href="/detail-spotlight" key={key}>
-              <a>
-                <ItemSide item={items} />
-              </a>
+              <ItemSide item={items} />
             </Link>
           );
         })}

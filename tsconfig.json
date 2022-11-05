@@ -7,16 +7,20 @@
       "esnext"
     ],
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
       "@components": [
@@ -25,7 +29,7 @@
       "@styles/*": [
         "src/styles/*"
       ],
-      "@models/*":[
+      "@models/*": [
         "src/models/*"
       ],
       "@pages": [

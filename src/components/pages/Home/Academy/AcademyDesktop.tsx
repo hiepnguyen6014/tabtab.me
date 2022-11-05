@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd';
 import Link from 'next/link';
+
 import { AcademyText, AcademyWrap } from './Academy.style';
 import CenterNews from './CenterNews';
 import InOtherNews from './InOtherNews';
@@ -18,9 +19,7 @@ const AcademyDesktop: React.FC<{}> = () => {
               </Col>
               <Col span={17}>
                 <Link href="/academy">
-                  <a>
-                    <CenterNews />
-                  </a>
+                  <CenterNews />
                 </Link>
               </Col>
               <Col span={24} style={{ marginTop: '10px' }}>

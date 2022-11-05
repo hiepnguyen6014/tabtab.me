@@ -1,21 +1,21 @@
+import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
+import { Col, Row, Typography } from 'antd';
+import { IconQuotes } from 'public/icons';
+import { useState } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import {
   GeneralText,
   GeneralWrap,
-  WrapperSpot,
-  ItemDesktopWrapper,
   HideOnMobile,
+  ItemDesktopWrapper,
   ShowOnMobile,
+  WrapperSpot,
 } from '../Home.style';
-import { Row, Typography, Col } from 'antd';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { ColA } from '../Home.style';
-import { DATA_HOME_PAGE } from './HomeData';
-import { IconQuotes } from 'public/icons';
 import ItemPostUpComing from '../UpComing/ItemPostUpComing';
-
-import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
-import { useState } from 'react';
+import { DATA_HOME_PAGE } from './HomeData';
 
 const Upcoming: React.FC<{}> = () => {
   const [showContent, setShowContent] = useState(true);
@@ -42,7 +42,7 @@ const Upcoming: React.FC<{}> = () => {
               </Typography.Title>
             </div>
             <div
-              onClick={(e) => setShowContent(showContent ? false : true)}
+              onClick={e => setShowContent(showContent ? false : true)}
               style={{ cursor: 'pointer' }}
             >
               <Typography.Text className="content-hide">HIDE</Typography.Text>
