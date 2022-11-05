@@ -92,11 +92,25 @@ const RecommendProperty = () => {
       </GeneralText>
       {showContent && (
         <WrapperContent>
+          <div className="d-flex  justify-content-end">
+            <div>
+              <div>
+                <Link href={ROUTES.SEARCH_PAGE.href}>
+                  <a
+                    className="linkShowPost"
+                    style={{ textDecoration: 'underline' }}
+                  >
+                    Show all (+{listPost.length * 2})
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
           <HideOnMobile>
             <div className="d-flex justify-content-between align-items-center flex-wrap">
               {listPost.map((item, idx) => {
                 return (
-                  <div key={idx} >
+                  <div key={idx}>
                     <RecommendItem {...item} />
                   </div>
                 );
@@ -129,7 +143,7 @@ const RecommendProperty = () => {
                     spaceBetween: 24,
                   },
                 }}
-                style={{paddingBottom:'15px'}}
+                style={{ paddingBottom: '15px' }}
               >
                 {listPost.map((item, idx) => {
                   return (
@@ -141,22 +155,6 @@ const RecommendProperty = () => {
               </Swiper>
             </div>
           </ShowOnMobile>
-
-          <div
-            style={{ display: 'flex', alignItems: 'center', float: 'right' }}
-            className="my-1"
-          >
-            <div>
-              <Link href={ROUTES.SEARCH_PAGE.href}>
-                <a
-                  className="linkShowPost"
-                  style={{ textDecoration: 'underline' }}
-                >
-                  Show all
-                </a>
-              </Link>
-            </div>
-          </div>
         </WrapperContent>
       )}
     </WrapperSpot>
