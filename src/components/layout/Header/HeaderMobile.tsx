@@ -5,6 +5,7 @@ import { useRoute } from '@utils';
 import { Col, Image } from 'antd';
 import Link from 'next/link';
 import React from 'react';
+
 import { DropdownSearchBar } from './DropdownSearchBar';
 import {
   ButtonOnSearch,
@@ -31,14 +32,12 @@ const HeaderMobile = (props: Props) => {
         <RowContentMobile>
           <ColContentMobile span={3}>
             <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}`}>
-              <a>
-                <Image
-                  alt="icon"
-                  src={SRC_IMAGE.ICONUSER}
-                  preview={false}
-                  style={{ cursor: 'pointer' }}
-                />
-              </a>
+              <Image
+                alt="icon"
+                src={SRC_IMAGE.ICONUSER}
+                preview={false}
+                style={{ cursor: 'pointer' }}
+              />
             </Link>
           </ColContentMobile>
 

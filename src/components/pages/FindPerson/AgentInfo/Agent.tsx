@@ -1,26 +1,27 @@
-import { TextEmail } from '@root/src/components/shared';
 import { MPostDetail } from '@models/MPostDetail';
-import { Avatar, Typography, Image, Divider, Button } from 'antd';
+import { TextEmail } from '@root/src/components/shared';
+import { Avatar, Button, Divider, Image, Typography } from 'antd';
+import Link from 'next/link';
 import {
   IconChartTabTab,
   IconCoinTabTab,
-  Location,
   IconEmailTabTab,
-  VectorHeart,
   IconMessTabTab,
   IconMortage,
   IconReview,
   IconStartRating,
+  Location,
+  VectorHeart,
 } from 'public/icons';
 import { useState } from 'react';
+
 import {
+  ButtonChat,
   WidgetAction,
   WidgetHeader,
-  WidgetWrap,
-  ButtonChat,
   WidgetHeaderAgent,
+  WidgetWrap,
 } from '../FindPerson.style';
-import Link from 'next/link';
 
 export default function Person(props: { post: MPostDetail; t: any }) {
   const { t } = props;
@@ -31,7 +32,6 @@ export default function Person(props: { post: MPostDetail; t: any }) {
     phone: realEstatePhone,
     email: realEstateEmail,
   });
-
 
   const backgroundColorTicket = ['#FA7E55', '#3FAEFF'];
   return (
@@ -270,29 +270,27 @@ export default function Person(props: { post: MPostDetail; t: any }) {
           <WidgetAction>
             <TextEmail t={t} email={contactRecord.email}>
               <Link href="/">
-                <a>
-                  <ButtonChat
+                <ButtonChat
+                  style={{
+                    borderRadius: 8,
+                    height: 'auto',
+                    padding: 13,
+                    marginTop: 18,
+                    width: '100%',
+                    whiteSpace: 'break-spaces',
+                  }}
+                >
+                  <IconMessTabTab />
+                  <label
                     style={{
-                      borderRadius: 8,
-                      height: 'auto',
-                      padding: 13,
-                      marginTop: 18,
-                      width: '100%',
-                      whiteSpace: 'break-spaces',
+                      fontSize: 16,
+                      fontWeight: '700',
+                      fontFamily: 'Inter',
                     }}
                   >
-                    <IconMessTabTab />
-                    <label
-                      style={{
-                        fontSize: 16,
-                        fontWeight: '700',
-                        fontFamily: 'Inter',
-                      }}
-                    >
-                      Chat trực tiếp với anh An
-                    </label>
-                  </ButtonChat>
-                </a>
+                    Chat trực tiếp với anh An
+                  </label>
+                </ButtonChat>
               </Link>
             </TextEmail>
           </WidgetAction>

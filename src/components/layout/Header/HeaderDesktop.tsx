@@ -1,37 +1,37 @@
-import React from 'react';
 import { ROUTES } from '@constants';
 import { UserContext } from '@contexts';
-import { useRouter } from 'next/router';
-import { FilterProvider } from '@root/src/core/contexts/filterContext';
-
+import Config from '@root/config';
 import {
+  Account,
+  HelpCenter,
+  LogoDark,
   Logo as LogoLight,
+  Logout,
+  Message,
+  Properties,
+  SocialBlack,
+  Transaction,
   VectorGlobal,
   VectorMenuOutline,
   VectorPeople,
-  Message,
-  Account,
-  Properties,
-  Transaction,
-  HelpCenter,
-  Logout,
-  SocialBlack,
-  LogoDark,
 } from '@root/public/icons';
+import { FilterProvider } from '@root/src/core/contexts/filterContext';
+import { Navigator } from '@utils';
 import { Divider, Popover } from 'antd';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
 import { useContext } from 'react';
+
+import { REFormSearchInput } from '../RealEstateFilter/FilterSearch';
 import {
   ButtonWrap,
+  ButtonWrapLogin,
   LogoWrapper,
   MainContentDesktop,
   TabTabWrap,
   TextPost,
-  ButtonWrapLogin,
 } from './Header.style';
-import { Navigator } from '@utils';
-import Config from '@root/config';
-import { REFormSearchInput } from '../RealEstateFilter/FilterSearch';
 
 interface Props {
   t: any;
@@ -118,8 +118,8 @@ const HeaderDesktop = ({
       <a>
         <ButtonWrap style={{ paddingLeft: 8 }}>
           <HelpCenter />
-          <Link href="/help-center">
-            <a style={{ marginLeft: 8, color: '#4e4e4e' }}>Help Center</a>
+          <Link href="/help-center" style={{ marginLeft: 8, color: '#4e4e4e' }}>
+            Help Center
           </Link>
         </ButtonWrap>
       </a>
@@ -137,27 +137,23 @@ const HeaderDesktop = ({
         )}
         <div className="d-flex">
           <Link href="/find-person">
-            <a>
-              <TextPost
-                style={{
-                  color: isTransparentBg ? '#FEFFFF' : '#222222',
-                  marginRight: 40,
-                }}
-              >
-                Find person
-              </TextPost>
-            </a>
+            <TextPost
+              style={{
+                color: isTransparentBg ? '#FEFFFF' : '#222222',
+                marginRight: 40,
+              }}
+            >
+              Find person
+            </TextPost>
           </Link>
           <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}post-news`}>
-            <a>
-              <TextPost
-                style={{
-                  color: isTransparentBg ? '#FEFFFF' : '#222222',
-                }}
-              >
-                Add listing
-              </TextPost>
-            </a>
+            <TextPost
+              style={{
+                color: isTransparentBg ? '#FEFFFF' : '#222222',
+              }}
+            >
+              Add listing
+            </TextPost>
           </Link>
         </div>
 

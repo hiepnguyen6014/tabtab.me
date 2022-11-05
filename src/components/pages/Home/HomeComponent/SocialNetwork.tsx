@@ -1,5 +1,8 @@
 import { IconQuotes } from '@root/public/icons';
 import { Col, Row, Typography } from 'antd';
+import Link from 'next/link';
+
+import { GeneralText, GeneralWrap } from '../Home.style';
 import CenterCol from '../SocialNetwork/CenterCol';
 import LeftCol from '../SocialNetwork/LeftCol';
 import RightCol from '../SocialNetwork/RightCol';
@@ -8,8 +11,6 @@ import {
   SocialText,
   SocialWrap,
 } from '../SocialNetwork/SocialNetwork.style';
-import { GeneralText, GeneralWrap } from '../Home.style';
-import Link from 'next/link';
 
 const SocialNetwork = () => {
   return (
@@ -18,11 +19,9 @@ const SocialNetwork = () => {
         <SocialWrap>
           <GeneralText>
             <Link href="/social-network">
-              <a>
-                <Typography.Title className="title-general">
-                  Social network
-                </Typography.Title>
-              </a>
+              <Typography.Title className="title-general">
+                Social network
+              </Typography.Title>
             </Link>
             <GeneralWrap>
               <div className="general-between-wrap">

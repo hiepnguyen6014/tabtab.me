@@ -30,6 +30,7 @@ import {
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+
 import {
   BoxWrap,
   ButtonMenu,
@@ -43,34 +44,28 @@ const BoxImages = ({ arrayImage, showButton = false }) => {
     () => import('../../../shared/BannerWithPicture/BannerWithPicture'),
     {
       loading: () => <PlaceHolderLoading height="500px" heightMb="250px" />,
-    }
+    },
   );
 
   const content = (
     <div style={{ width: 280 }}>
       <Link href="/roommate">
-        <a>
-          <ButtonMenu>
-            <IconSave />
-            <Typography>Save</Typography>
-          </ButtonMenu>
-        </a>
+        <ButtonMenu>
+          <IconSave />
+          <Typography>Save</Typography>
+        </ButtonMenu>
       </Link>
       <Link href="/roommate">
-        <a>
-          <ButtonMenu>
-            <IconCopy />
-            <Typography>Copy link</Typography>
-          </ButtonMenu>
-        </a>
+        <ButtonMenu>
+          <IconCopy />
+          <Typography>Copy link</Typography>
+        </ButtonMenu>
       </Link>
       <Link href="/roommate">
-        <a>
-          <ButtonMenu>
-            <IconReport />
-            <Typography>Report</Typography>
-          </ButtonMenu>
-        </a>
+        <ButtonMenu>
+          <IconReport />
+          <Typography>Report</Typography>
+        </ButtonMenu>
       </Link>
     </div>
   );
@@ -107,7 +102,7 @@ const BoxImages = ({ arrayImage, showButton = false }) => {
             <Typography className="date-box_text">3 phút trước</Typography>
           </div>
         </Flex>
-        <Flex style={{ cursor:"pointer"}}>
+        <Flex style={{ cursor: 'pointer' }}>
           <Popover placement="bottomRight" content={content} trigger="click">
             <VectorThreeDot />
           </Popover>

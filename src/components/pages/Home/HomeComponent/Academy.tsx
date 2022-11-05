@@ -1,27 +1,18 @@
 import { Typography } from 'antd';
-import {
-  GeneralText,
-  GeneralWrap,
-} from '../Home.style';
+import Link from 'next/link';
 import { IconQuotes } from 'public/icons';
-import {
-  AcademyBigWrap,
-  AcademyWrap,
-} from '../Academy/Academy.style';
+
+import { AcademyBigWrap, AcademyWrap } from '../Academy/Academy.style';
 import AcademyDesktop from '../Academy/AcademyDesktop';
 import AcademyMobile from '../Academy/AcademyMobile';
-import Link from 'next/link';
+import { GeneralText, GeneralWrap } from '../Home.style';
 
 const Academy: React.FC<{}> = () => {
   return (
     <AcademyBigWrap>
       <GeneralText>
         <Link href="/academy">
-          <a>
-            <Typography.Title className="title-general">
-              Academy
-            </Typography.Title>
-          </a>
+          <Typography.Title className="title-general">Academy</Typography.Title>
         </Link>
         <GeneralWrap>
           <div className="general-between-wrap">

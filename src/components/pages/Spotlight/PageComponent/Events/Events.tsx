@@ -2,6 +2,7 @@ import ColPost from '@root/src/components/shared/ItemPostInfo/ColPost';
 import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
 import { Col, Divider, Row, Typography } from 'antd';
 import Link from 'next/link';
+
 import { DivA } from '../../../Home/Spotlight/ItemSpotlight.style';
 import { LayoutFake } from '../../SpotlightPage.style';
 import Project from './Project';
@@ -15,25 +16,19 @@ const Event = () => {
           <div className="d-flex justify-content-between ">
             <DivA>
               <Link href="/detail-spotlight">
-                <a>
-                  <ColPost />
-                </a>
+                <ColPost />
               </Link>
             </DivA>
             <DivA>
               <Link href="/detail-spotlight">
-                <a>
-                  <ColPost />
-                </a>
+                <ColPost />
               </Link>
             </DivA>
 
             <LayoutFake>
               <DivA>
                 <Link href="/detail-spotlight">
-                  <a>
-                    <ColPost />
-                  </a>
+                  <ColPost />
                 </Link>
               </DivA>
             </LayoutFake>

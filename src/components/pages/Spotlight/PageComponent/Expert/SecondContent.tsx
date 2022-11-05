@@ -2,7 +2,15 @@ import { SRC_IMAGE } from '@core';
 import { VectorBookmark, VectorPlay, VectorPodcast } from '@root/public/icons';
 import { Col, Image, Row, Typography } from 'antd';
 import Link from 'next/link';
-import { ArticleWrap, ColA, DivWrap, ImageWrap, ItemPostSpot, TypographyWrap } from '../../../Home/Home.style';
+
+import {
+  ArticleWrap,
+  ColA,
+  DivWrap,
+  ImageWrap,
+  ItemPostSpot,
+  TypographyWrap,
+} from '../../../Home/Home.style';
 import ItemSpotlight from '../../../Home/Spotlight/ItemSpotlight';
 import { SpotlightText } from '../../Spotlight.style';
 import BannerExpert from './BannerExpert';
@@ -73,9 +81,7 @@ const SecondContent = () => {
           return (
             <ColA className="gutter-row" sm={24} lg={6} key={key}>
               <Link href="/detail-spotlight">
-                <a>
-                  <ItemSpotlight item={item} />
-                </a>
+                <ItemSpotlight item={item} />
               </Link>
             </ColA>
           );

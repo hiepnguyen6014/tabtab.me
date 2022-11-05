@@ -29,8 +29,8 @@ export const RingWrap = styled.div`
     width: 105%;
     height: 105%;
     border: 3px solid transparent;
-    border-top: 3px solid #3FAEFF;
-    border-right: 3px solid #3FAEFF;
+    border-top: 3px solid #3faeff;
+    border-right: 3px solid #3faeff;
     border-radius: 50%;
     animation: animateC 2s linear infinite;
   }
@@ -51,10 +51,10 @@ export const RingWrap = styled.div`
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: #3FAEFF;
+    background: #3faeff;
     top: -6px;
     right: -8px;
-    box-shadow: 0 0 20px #3FAEFF;
+    box-shadow: 0 0 20px #3faeff;
   }
   @keyframes animateC {
     0% {
@@ -147,20 +147,35 @@ export const LoadingWrap = styled.div`
   }
 `;
 
-
-
-export const PlaceHolderContain = styled(props => <div {...props}/>)`
+export const PlaceHolderContain = styled(props => <div {...props} />)`
   width: 100%;
-  height: ${props=> props.height || "50px"};
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  &>div{
-    display:block !important;
-    height:100%;
-    width:100%;
+  height: ${props => props.height || '50px'};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > div {
+    display: block !important;
+    height: 100%;
+    width: 100%;
   }
-  @media ${device.maxMd}{
-      height:${props => props.heightMb || ""};
+  @media ${device.maxMd} {
+    height: ${props => props.heightMb || ''};
   }
-`
+`;
+export const FullPageWrapper = styled.div`
+  align-items: center;
+  background-color: ${colors.white};
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+`;
+
+export const LoadingText = styled.div`
+  color: ${colors.common};
+  font-weight: 700;
+  font-size: 50px;
+  margin-right: 16px;
+  text-transform: uppercase;
+`;

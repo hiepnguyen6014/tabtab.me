@@ -1,26 +1,27 @@
-import { Button, Col, Image, Row, Typography } from 'antd';
-import {
-  BannerSpotWrapper,
-  WrapperSpot,
-  SpotlightText,
-  DivWrap,
-  BannerWrap,
-  ImageBannerWrap,
-  GeneralText,
-  GeneralWrap,
-  ButtonViewAll,
-} from '../Home.style';
-import { IconQuotes, VectorPlay, VectorPodcast } from 'public/icons';
 import { SRC_IMAGE } from '@constants';
-import Link from 'next/link';
-import ItemSpotlight from '../Spotlight/ItemSpotlight';
-import ItemSide from '../Spotlight/ItemSide';
-import { ColA } from '../Spotlight/ItemSpotlight.style';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { Flex } from '../../HelpCenter/HelpCenter.style';
 import { VectorBookmark } from '@root/public/icons';
 import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
+import { Button, Col, Image, Row, Typography } from 'antd';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { IconQuotes, VectorPlay, VectorPodcast } from 'public/icons';
+import { useState } from 'react';
+
+import { Flex } from '../../HelpCenter/HelpCenter.style';
+import {
+  BannerSpotWrapper,
+  BannerWrap,
+  ButtonViewAll,
+  DivWrap,
+  GeneralText,
+  GeneralWrap,
+  ImageBannerWrap,
+  SpotlightText,
+  WrapperSpot,
+} from '../Home.style';
+import ItemSide from '../Spotlight/ItemSide';
+import ItemSpotlight from '../Spotlight/ItemSpotlight';
+import { ColA } from '../Spotlight/ItemSpotlight.style';
 
 const SpotLight: React.FC<{}> = () => {
   const router = useRouter();
@@ -103,12 +104,10 @@ const SpotLight: React.FC<{}> = () => {
     <WrapperSpot>
       <GeneralText>
         <Link href="/spotlight-page">
-          <a>
-            <Typography.Title className="title-general">
-              Tin nổi bật
-              <Typography.Text className="title-hide">HIDE</Typography.Text>
-            </Typography.Title>
-          </a>
+          <Typography.Title className="title-general">
+            Tin nổi bật
+            <Typography.Text className="title-hide">HIDE</Typography.Text>
+          </Typography.Title>
         </Link>
         <GeneralWrap>
           <div className="general-between-wrap">
@@ -119,7 +118,7 @@ const SpotLight: React.FC<{}> = () => {
               </Typography.Title>
             </div>
             <div
-              onClick={(e) => setShowContent(showContent ? false : true)}
+              onClick={e => setShowContent(showContent ? false : true)}
               style={{ cursor: 'pointer' }}
             >
               <Typography.Text className="content-hide">HIDE</Typography.Text>
@@ -132,61 +131,59 @@ const SpotLight: React.FC<{}> = () => {
           <Row>
             <Col sm={24} lg={16} className="my-2">
               <Link href="/spotlight-page">
-                <a>
-                  <BannerSpotWrapper>
-                    <BannerWrap>
-                      <div className="bookmark">
-                        <VectorBookmark height="28px" width="28px" />
-                      </div>
-                      <ImageBannerWrap
-                        alt="imagePost"
-                        src={SRC_IMAGE.IMAGEA}
-                        preview={false}
-                      />
-                      <DivWrap>
-                        <div className="title-post">
+                <BannerSpotWrapper>
+                  <BannerWrap>
+                    <div className="bookmark">
+                      <VectorBookmark height="28px" width="28px" />
+                    </div>
+                    <ImageBannerWrap
+                      alt="imagePost"
+                      src={SRC_IMAGE.IMAGEA}
+                      preview={false}
+                    />
+                    <DivWrap>
+                      <div className="title-post">
+                        <SpotlightText>
+                          <Typography className="titleBannerTop">
+                            Genres
+                          </Typography>
+                          <Typography className="titleBannerMiddle">
+                            Keep up with the rest of the world
+                          </Typography>
+                          <Typography className="titleBannerBottom">
+                            Here, four sixtysomethings offer advice to those in
+                            their.
+                          </Typography>
+                        </SpotlightText>
+                        <div className="d-flex info-group pb-1">
+                          <div
+                            style={{ width: 36, height: 36 }}
+                            className="mx-2"
+                          >
+                            <Image
+                              alt="user"
+                              src={SRC_IMAGE.STAFF3}
+                              width={36}
+                              height={36}
+                              className="rounded-circle"
+                            />
+                          </div>
                           <SpotlightText>
-                            <Typography className="titleBannerTop">
-                              Genres
+                            <Typography className="dateBanner">
+                              26/05/2021
                             </Typography>
-                            <Typography className="titleBannerMiddle">
-                              Keep up with the rest of the world
-                            </Typography>
-                            <Typography className="titleBannerBottom">
-                              Here, four sixtysomethings offer advice to those
-                              in their.
+                            <Typography className="dateBanner">
+                              by{' '}
+                              <Typography.Text className="nameBanner">
+                                Jenny Wilson
+                              </Typography.Text>
                             </Typography>
                           </SpotlightText>
-                          <div className="d-flex info-group pb-1">
-                            <div
-                              style={{ width: 36, height: 36 }}
-                              className="mx-2"
-                            >
-                              <Image
-                                alt="user"
-                                src={SRC_IMAGE.STAFF3}
-                                width={36}
-                                height={36}
-                                className="rounded-circle"
-                              />
-                            </div>
-                            <SpotlightText>
-                              <Typography className="dateBanner">
-                                26/05/2021
-                              </Typography>
-                              <Typography className="dateBanner">
-                                by{' '}
-                                <Typography.Text className="nameBanner">
-                                  Jenny Wilson
-                                </Typography.Text>
-                              </Typography>
-                            </SpotlightText>
-                          </div>
                         </div>
-                      </DivWrap>
-                    </BannerWrap>
-                  </BannerSpotWrapper>
-                </a>
+                      </div>
+                    </DivWrap>
+                  </BannerWrap>
+                </BannerSpotWrapper>
               </Link>
             </Col>
             <Col xs={0} sm={0} lg={8}>
@@ -214,9 +211,7 @@ const SpotLight: React.FC<{}> = () => {
                 {ITEMSPOTLIGHTSIDE.map((items, key) => {
                   return (
                     <Link href="/detail-spotlight" key={key}>
-                      <a>
-                        <ItemSide item={items} />
-                      </a>
+                      <ItemSide item={items} />
                     </Link>
                   );
                 })}
@@ -236,9 +231,7 @@ const SpotLight: React.FC<{}> = () => {
               return (
                 <ColA className="gutter-row" sm={24} lg={6} key={key}>
                   <Link href="/detail-spotlight">
-                    <a>
-                      <ItemSpotlight item={item} />
-                    </a>
+                    <ItemSpotlight item={item} />
                   </Link>
                 </ColA>
               );
@@ -257,7 +250,7 @@ const SpotLight: React.FC<{}> = () => {
 
     
           </Col> */}
-          <PaginationWrapCustom total={10} pageSize={1}  />
+          <PaginationWrapCustom total={10} pageSize={1} />
         </div>
       )}
     </WrapperSpot>
