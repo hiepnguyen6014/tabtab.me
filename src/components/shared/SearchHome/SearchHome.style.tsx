@@ -1,8 +1,7 @@
-import { Button, Col, Form, Input, Radio, Row, Select, Typography } from 'antd';
-
+import { styled } from '@styles/theme';
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
-import { styled } from '@styles/theme';
+import { Button, Col, Input, Radio, Row, Typography } from 'antd';
 
 export const SearchWrapper = styled(Row)`
   max-width: 850px;
@@ -10,14 +9,13 @@ export const SearchWrapper = styled(Row)`
   height: 100%;
   background: #ffffff;
   display: flex;
+  padding-right: 20px;
+  padding-left: 20px;
   justify-content: space-between;
   align-items: center;
-  border-radius: 2px;
-  padding-right: 30px;
-  padding-left: 30px;
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
   margin-top: 0px;
-  padding-bottom: 8px;
+  /* padding-bottom: 4px; */
   div,
   span,
   input {
@@ -34,7 +32,7 @@ export const SearchWrapper = styled(Row)`
   }
 `;
 export const ColItem = styled(Col)`
-cursor:pointer;
+  cursor: pointer;
   padding: 5px 10px;
   @media ${device.maxMd} {
     padding: 10px 0px;
@@ -71,17 +69,18 @@ export const ButtonSearch = styled(Button)`
     height: 45px;
   }
 `;
+
 export const InputSearch = styled(Input)`
-  width: 100%;
   margin: auto;
-  background: transparent;
-  padding: 0;
+  width: 100%;
   border: none;
   box-shadow: none;
+  background: transparent;
   .ant-input {
     width: 100%;
     background: #f2f2f2;
   }
+
   @media ${device.maxSm} {
     padding-left: 5px;
   }
@@ -96,7 +95,21 @@ export const TextSearchWrap = styled(Typography)`
   color: #7a7a7a;
 `;
 
+export const FilterItem = styled(Typography)`
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+`;
+
 export const RadioSearch = styled(Radio.Group)`
+  .radio-default {
+    min-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9e9e9;
+  }
+
   .radio-active {
     border-right: none;
     &:active {

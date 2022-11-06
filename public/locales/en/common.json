@@ -79,7 +79,11 @@
     "subImage": "images",
     "commission": "Commission",
     " ": "District",
-    "month": "month"
+    "month": "month",
+    "sell": "Sell",
+    "rent": "Rent",
+    "auction": "Đấu giá",
+    "transfer": "Chuyển nhượng"
   },
   "user": {
     "mustLogin": "You need to login to perform this function",

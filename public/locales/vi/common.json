@@ -148,7 +148,16 @@
       "rechargeTitle": "Phương thức thanh toán nhanh chóng, an toàn.",
       "news": "Danh sách tin tức",
       "newsTitle": "Luôn cập nhật thông tin mới nhất và theo dõi thị trường BĐS"
-    }
+    },
+    "sell": "Nhà đát bán",
+    "rent": "Nhà đất cho thuê",
+    "auction": "Đấu giá",
+    "transfer": "Chuyển nhượng",
+    "residential": "Khu vực & Dự án",
+    "place": "Vị trí",
+    "price": "Mức giá",
+    "area": "Diện tích",
+    "filter": "Lọc thêm"
   },
   "news": {
     "otherNews": "Tin tức khác"
