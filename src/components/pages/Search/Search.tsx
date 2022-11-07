@@ -6,15 +6,20 @@ import {
   BoxFavorite,
   BoxFavoriteOne,
   BoxHiddenMobile,
+  BoxImageSlide,
   BoxIntroduce,
+  BoxLabelEndow,
   BoxLogoX,
   BoxLogoXOne,
   BoxPaddingRow,
   BoxSalePrice,
   BoxStopLoss,
   BoxWrapper,
+  BoxWrapperData,
   BoxWrapperFooter,
+  BoxWrapperLable,
   BoxWrapperMini,
+  BoxWrapperRowContent,
   ButtonApply,
   ButtonClasses,
   ButtonClear,
@@ -23,14 +28,7 @@ import {
   SpanPrice,
   WrapperHideMap,
 } from './Search.style';
-import {
-  Button,
-  Col,
-  Image,
-  Popover,
-  Row,
-  Typography,
-} from 'antd';
+import { Button, Col, Image, Popover, Row, Typography } from 'antd';
 import { IconArrowDown, IconBell } from '@root/public/icons';
 import React, { useEffect, useState } from 'react';
 import {
@@ -39,9 +37,7 @@ import {
   SEARCH_DATA_ROW,
 } from './component/SearchData';
 
-import {
-  Favorite,
-} from '@root/public/icons';
+import { Favorite } from '@root/public/icons';
 import InfoHome from './component/InfoHome';
 import MoreFiler from './component/MoreFiler';
 import PriceContent from './component/PriceContent';
@@ -59,6 +55,7 @@ interface Props {
 export default function Search(props: Props) {
   const { t: translate, posts } = props;
   const [hideMap, setHideMap] = useState(true);
+  console.log('post', posts);
   const [page, setPage] = useState(1);
   useEffect(() => {
     // getData()
@@ -70,15 +67,6 @@ export default function Search(props: Props) {
       // }
     });
   };
-
-
-
-
- 
-
-
-
-
 
   const handleHideMap = () => {
     setHideMap(!hideMap);
@@ -426,20 +414,13 @@ export default function Search(props: Props) {
               </Col>
             </Row>
           </BoxHiddenMobile>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          <BoxWrapperLable >
             <IconBell />
-            <label
-              style={{
-                fontSize: 14,
-                fontWeight: '400',
-                fontFamily: 'Inter',
-                color: '#4E4E4E',
-                marginLeft: 10,
-              }}
+            <BoxLabelEndow
             >
               Ưu đãi khách hàng tháng 8/2021.
-            </label>
-          </div>
+            </BoxLabelEndow>
+          </BoxWrapperLable>
           {!hideMap && (
             <WrapperHideMap
               gutter={[
@@ -465,9 +446,9 @@ export default function Search(props: Props) {
                     <BoxFavorite>
                       <Favorite />
                     </BoxFavorite>
-                    <div style={{ padding: '14px 16px 16px 18px' }}>
+                    <BoxWrapperData>
                       <InfoHome dataHome={search} titleDownPx />
-                    </div>
+                    </BoxWrapperData>
                   </BoxWrapper>
                 </Col>
               ))}
@@ -571,11 +552,7 @@ export default function Search(props: Props) {
             </WrapperHideMap>
           )}
         </Col>
-        {!hideMap && (
-          <Col span={12}>
-         
-          </Col>
-        )}
+        {!hideMap && <Col span={12}></Col>}
         {hideMap && (
           <WrapperHideMap
             gutter={[
@@ -607,20 +584,11 @@ export default function Search(props: Props) {
               </Col>
             ))}
             {SEARCH_DATA_ROW.map((search, index) => (
-              <Col sm={24} lg={12}>
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    background: '#FFFFFF',
-                    boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.16)',
-                    borderRadius: '8px',
-                    maxHeight: '304px',
-                  }}
-                  key={index}
-                >
-                  <div style={{ maxWidth: '282px' }}>
+              <Col sm={24} md={24} lg={24} xl={12} style={{ maxWidth:'700px'}}>
+                <BoxWrapperRowContent key={index}>
+                  <BoxImageSlide>
                     <SwiperGlobal
+                      imageRow
                       width="100%"
                       height="304px"
                       arrayImage={search.imageHome}
@@ -634,11 +602,11 @@ export default function Search(props: Props) {
                     <BoxFavoriteOne>
                       <Favorite />
                     </BoxFavoriteOne>
-                  </div>
+                  </BoxImageSlide>
                   <BoxPaddingRow>
-                    <InfoHome dataHome={search} row />
+                    <InfoHome dataHome={search} row changeImage />
                   </BoxPaddingRow>
-                </div>
+                </BoxWrapperRowContent>
               </Col>
             ))}
             <Row>
@@ -676,7 +644,7 @@ export default function Search(props: Props) {
                       <Favorite />
                     </BoxFavorite>
                     <div style={{ padding: '14px 7px 16px 8px' }}>
-                      <InfoHome dataHome={search} row hiddenPrice changeImage />
+                      <InfoHome dataHome={search} row hiddenPrice imageMedium />
                     </div>
                   </BoxWrapperMini>
                 </Col>
@@ -718,7 +686,7 @@ export default function Search(props: Props) {
                         dataHome={search}
                         row
                         hiddenPrice
-                        changeImage
+                        imageMedium
                         hiddenInfoHome
                       />
                     </div>

@@ -118,23 +118,23 @@ export const SEARCH_DATA_ROW = [
     imageHome: [
       {
         id: '1',
-        image: SRC_IMAGE.HOMEONE,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '2',
-        image: SRC_IMAGE.HOMETWO,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '3',
-        image: SRC_IMAGE.HOMETHREE,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '4',
-        image: SRC_IMAGE.HOMEFOUR,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '4',
-        image: SRC_IMAGE.HOMEFIVE,
+        image: SRC_IMAGE.HOME_ROW,
       },
     ],
   },
@@ -155,23 +155,23 @@ export const SEARCH_DATA_ROW = [
     imageHome: [
       {
         id: '1',
-        image: SRC_IMAGE.HOMEONE,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '2',
-        image: SRC_IMAGE.HOMETWO,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '3',
-        image: SRC_IMAGE.HOMETHREE,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '4',
-        image: SRC_IMAGE.HOMEFOUR,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '4',
-        image: SRC_IMAGE.HOMEFIVE,
+        image: SRC_IMAGE.HOME_ROW,
       },
     ],
   },
@@ -196,7 +196,7 @@ export const SEARCH_DATA_MINI = [
     imageHome: [
       {
         id: '1',
-        image: SRC_IMAGE.HOMEONE,
+        image: SRC_IMAGE.HOME_ROW,
       },
       {
         id: '2',

@@ -129,4 +129,5 @@ export const SRC_IMAGE={
   LOGOXIMAGE:"static/Ten-X-Logo.png",
   HOMEMINI: "static/HomeMini.png",
   TENXLOGO: "static/Ten-X-Logo.png",
+  HOME_ROW: "static/row.png"
 }
