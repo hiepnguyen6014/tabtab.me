@@ -17,11 +17,12 @@ import { MFilter } from '@models/MFilter';
 import { MPostDetail } from '@models/MPostDetail';
 import RealEstateFilter from '@root/src/components/layout/RealEstateFilter';
 import Search from '../../components/pages/Search/Search';
+import { SearchDataProps } from '@root/src/core/types/filter';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 const SearchPage: React.FC<{
-  postList: MPostDetail[];
+  postList: SearchDataProps;
   total: number;
   title?: string;
   query?: any;

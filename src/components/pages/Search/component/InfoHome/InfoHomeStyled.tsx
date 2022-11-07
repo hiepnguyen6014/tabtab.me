@@ -1,6 +1,8 @@
-import { Button } from 'antd';
+import { Button, Divider, Image } from 'antd';
+
 import { device } from '@styles/theme/device';
 import styled from '@emotion/styled';
+
 export const BoxWrapper = styled.div``;
 
 export const BoxTitle = styled.div`
@@ -32,7 +34,7 @@ export const BoxPriceInfoMation = styled.div`
   justify-content: space-between;
   align-items: center;
   @media ${device.maxSm} {
-    max-width: 110px;
+    max-width: 140px;
   }
 `;
 
@@ -71,12 +73,13 @@ export const BoxTitleHome = styled.div`
   font-size: 20px;
   line-height: 28px;
   margin-top: 8px;
-
+  margin-bottom: 8px;
   color: #222222;
   @media ${device.maxSm} {
     margin-top: 0px;
     font-size: 9.33333px;
     line-height: 12px;
+    margin-bottom: 0px;
   }
 `;
 
@@ -91,8 +94,9 @@ export const BoxTitleHomeMini = styled.div`
   color: #222222;
   @media ${device.maxSm} {
     margin-top: 0px;
-    font-size: 11.6667px;
-    line-height: 16px;
+    font-size: 9.33333px;
+    line-height: 12px;
+    max-width:160px;
   }
 `;
 
@@ -118,6 +122,9 @@ export const BoxDetailHome = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media ${device.maxSm} {
+    margin-top: 12px;
+  }
 `;
 
 export const BoxDetailDescription = styled.div`
@@ -136,6 +143,7 @@ export const BoxInfo = styled.div`
   @media ${device.maxSm} {
     font-size: 8.16667px;
     line-height: 12px;
+    margin-left: 5px;
   }
 `;
 
@@ -186,3 +194,30 @@ export const BoxDetailHomeColumn = styled.div`
   flex-direction: column;
   justify-content: flex-start;
 `;
+
+export const BoxDivider = styled(Divider)`
+  border: 1px solid #e9e9e9;
+  margin: 14px 0;
+  @media ${device.maxSm} {
+    margin: 12px 0;
+  }
+`;
+
+export const BoxImage = styled(Image)`
+  width:36px;
+  height:36px;
+  @media ${device.maxSm} {
+    margin-top: 8px;
+    margin-right:11px;
+  }
+`
+
+
+
+export const BoxImageMobile = styled(Image)`
+  width:36px;
+  height:36px;
+  @media ${device.maxSm} {
+   display:none;
+  }
+`

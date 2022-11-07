@@ -15,7 +15,10 @@ import {
   BoxDetailDescription,
   BoxDetailHome,
   BoxDetailHomeColumn,
+  BoxDivider,
   BoxFlex,
+  BoxImage,
+  BoxImageMobile,
   BoxInfo,
   BoxInfoPrice,
   BoxPriceInfoMation,
@@ -37,6 +40,7 @@ interface InfoHomeTypeProps {
   changeImage?: boolean;
   hiddenInfoHome?: boolean;
   titleDownPx?: boolean;
+  imageMedium?: boolean;
 }
 
 const InfoHome: FC<InfoHomeTypeProps> = ({
@@ -46,6 +50,7 @@ const InfoHome: FC<InfoHomeTypeProps> = ({
   changeImage,
   hiddenInfoHome,
   titleDownPx,
+  imageMedium,
 }) => {
   return (
     <BoxWrapper>
@@ -64,20 +69,24 @@ const InfoHome: FC<InfoHomeTypeProps> = ({
             )}
           </BoxPriceInfoMation>
         </BoxInfoPrice>
-        {!changeImage ? (
-          <Image
-            width={36}
-            height={36}
-            preview={false}
-            src={SRC_IMAGE.PERSON6}
-          />
-        ) : (
+
+        {imageMedium ? (
           <Image
             width={46}
             height={46}
             preview={false}
             src={SRC_IMAGE.PERSON6}
           />
+        ) : (
+          <> {!changeImage ? (
+            <BoxImage
+              preview={false}
+              src={SRC_IMAGE.PERSON6}
+            />
+          ) : (
+            <BoxImageMobile  preview={false}
+            src={SRC_IMAGE.PERSON6}/>
+          )}</>
         )}
       </BoxFlex>
       {!titleDownPx ? (
@@ -147,7 +156,7 @@ const InfoHome: FC<InfoHomeTypeProps> = ({
           </>
         )}
       </>
-      <Divider style={{ border: '1px solid #E9E9E9', margin: '14px 0' }} />
+      <BoxDivider />
       <BoxContact>
         <BoxDetailDescription>
           <Advantage />

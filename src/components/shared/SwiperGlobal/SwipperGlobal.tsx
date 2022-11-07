@@ -1,9 +1,22 @@
 import { Image } from 'antd';
+import { Swiper } from 'swiper/react';
 import { device } from '@styles/theme/device';
 import styled from '@emotion/styled';
 export const BoxWrapper = styled.div`
   position: relative;
-
+  .mySwiper {
+    @media ${device.maxSm} {
+      height:175px;
+    }
+  }
+  .mySwiperRow {
+    @media ${device.maxSm} {
+      max-width:190px;
+      width: 100%;
+      height:220px;
+    }
+    
+  }
   .btn-prev {
     position: absolute;
     width: 24px;
@@ -78,5 +91,7 @@ export const ImageHome = styled(Image)`
 export const ImageHomeRow = styled(Image)`
   border-radius: 6px 0px 0px 6px;
   position: relative;
-  object-fit: cover;
+  object-fit: center;
 `;
+
+
