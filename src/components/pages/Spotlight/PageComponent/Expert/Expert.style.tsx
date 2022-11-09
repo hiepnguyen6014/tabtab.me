@@ -39,7 +39,7 @@ export const WrapperSpotPage = styled.div`
     width: 100%;
   }
 
-  .right > :nth-last-child(1) .vertical-line {
+  .right > :nth-last-of-type(1) .vertical-line {
     display: none;
   }
 `;

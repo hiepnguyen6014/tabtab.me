@@ -1,7 +1,6 @@
-import { Button, Carousel, Col, Image, Row, Typography } from 'antd';
-
-import { device } from '@styles/theme/device';
 import { styled } from '@styles/theme';
+import { device } from '@styles/theme/device';
+import { Button, Carousel, Col, Image, Row, Typography } from 'antd';
 
 export const HomeLayout = styled.div`
   display: flex;
@@ -209,7 +208,7 @@ export const WrapperSpot = styled.div`
     width: 100%;
   }
 
-  .right > :nth-last-child(1) .vertical-line {
+  .right > :nth-last-of-type(1) .vertical-line {
     display: none;
   }
   .container {
@@ -943,8 +942,8 @@ export const WrapperContent = styled.div`
 export const ButtonTag = styled.button<any>`
   border-radius: 100px;
   border: none;
-  background-color: ${(props) => (props.active ? '#222222' : 'white')};
-  color: ${(props) => (props.active ? 'white' : '#4E4E4E')};
+  background-color: ${props => (props.active ? '#222222' : 'white')};
+  color: ${props => (props.active ? 'white' : '#4E4E4E')};
   padding: 8px 20px;
 
   font-family: 'Inter';

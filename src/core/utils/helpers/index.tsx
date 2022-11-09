@@ -1,14 +1,12 @@
-import { useEffect } from 'react';
-import { forIn, startsWith, trim, isEmpty } from 'lodash';
-import { MEDIA_TYPE, ACCEPT_TYPE } from '@constants';
+import { ACCEPT_TYPE, MEDIA_TYPE } from '@constants';
 import Config from '@root/config';
-
+import { forIn, isEmpty, startsWith, trim } from 'lodash';
+import { useEffect } from 'react';
 
 export const checkEmail = (email: string) => {
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  return mailformat.test(email)
-}
-
+  return mailformat.test(email);
+};
 
 export const reactLocalStorage = {
   set: function (key: any, value: any) {
@@ -16,17 +14,26 @@ export const reactLocalStorage = {
     return window.localStorage[key];
   },
   get: function (key: any, defaultValue: any) {
-    return window.localStorage[key] || defaultValue;
+    if (typeof window !== 'undefined') {
+      return window.localStorage[key] || defaultValue;
+    }
+    return;
   },
   setObject: function (key: any, value: any) {
-    window.localStorage[key] = JSON.stringify(value);
-    return window.localStorage[key];
+    if (typeof window !== 'undefined') {
+      window.localStorage[key] = JSON.stringify(value);
+      return window.localStorage[key];
+    }
+    return;
   },
   getObject: function (key: any, value: any) {
-    return JSON.parse(window.localStorage[key] || '{}');
+    if (typeof window !== 'undefined') {
+      return JSON.parse(window.localStorage[key] || '{}');
+    }
+    return;
   },
   clear: function () {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       forIn(window.localStorage, (value: string, objKey: string) => {
         if (objKey.startsWith('eko-') || objKey.startsWith('audio-')) {
           window.localStorage.removeItem(objKey);
@@ -40,7 +47,7 @@ export const reactLocalStorage = {
   },
 };
 
-export const hostname = (url) => {
+export const hostname = url => {
   const match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
   if (
     match != null &&
@@ -95,13 +102,13 @@ export const getImageUrl = (media, size) => {
   }
 };
 
-export const getMediaUrl = (media) => {
+export const getMediaUrl = media => {
   return (
     media?.cdnOrigin ?? media?.cdnMedium ?? media?.cdnLarge ?? media?.url ?? ''
   );
 };
 
-export const getFileType = (contentType) => {
+export const getFileType = contentType => {
   if (contentType) {
     let listContentType = contentType.split('/');
     return listContentType[0];
@@ -109,7 +116,7 @@ export const getFileType = (contentType) => {
   return 'image';
 };
 
-export const getFileTail = (contentType) => {
+export const getFileTail = contentType => {
   if (contentType) {
     let listContentType = contentType.split('/');
     return listContentType[1];
@@ -131,22 +138,74 @@ export const getExtensionsUpload = (accept = '', isGif: boolean = true) => {
   if (accept?.length) {
     let listAcceptType = accept
       .split(',')
-      .map((val) => val.split('/'))
+      .map(val => val.split('/'))
       .flat(1)
-      .filter((val) => val !== '*');
+      .filter(val => val !== '*');
 
     let result = listAcceptType.reduce((extensions, currentValue) => {
       return trim(currentValue) === 'image'
         ? concatAccumulator(extensions, imageExtensions)
         : trim(currentValue) === 'video'
-          ? concatAccumulator(extensions, videoExtensions)
-          : concatAccumulator(extensions, audioExtensions);
+        ? concatAccumulator(extensions, videoExtensions)
+        : concatAccumulator(extensions, audioExtensions);
     }, '');
     return result;
   }
   return '';
 };
-
+//Convert phone number
+export const convertPhoneNumber = (phoneNumber: string) => {
+  const areaCode = '84';
+  let checkareaCode = phoneNumber.substring(0, 2);
+  let checkZero = phoneNumber.substring(0, 1);
+  if (checkareaCode === areaCode) {
+    return phoneNumber;
+  } else if (checkZero === '0') {
+    return areaCode + phoneNumber.substring(1, phoneNumber.length);
+  } else {
+    return areaCode + phoneNumber;
+  }
+};
+// export const updateUserFirebaseTokenAfterLogin = async (
+//   res: any,
+//   redirectUrl: string,
+//   pathname: string,
+//   search: string,
+// ) => {
+//   const { appUserId, token } = res.data.data;
+//   if (!appUserId || !token) {
+//     return;
+//   }
+//   if (this.isIOS()) {
+//     Utils.handleLogin(res, redirectUrl, pathname, search);
+//   } else if (Notification.permission !== 'granted') {
+//     Utils.handleLogin(res, redirectUrl, pathname, search);
+//   } else {
+//     const message = firebase.messaging();
+//     await message
+//       .getToken({
+//         vapidKey: process.env.REACT_APP_VAPID_KEY,
+//       })
+//       .then(async (firebaseToken: any) => {
+//         await updateInforUser(
+//           {
+//             id: appUserId,
+//             data: { firebaseToken: firebaseToken },
+//           },
+//           token,
+//         )
+//           .then((res: any) => {
+//             Utils.handleLogin(res, redirectUrl, pathname, search);
+//           })
+//           .catch((e: any) => {
+//             Utils.handleLogin(res, redirectUrl, pathname, search);
+//           });
+//       })
+//       .catch((err: any) => {
+//         console.log('err', err);
+//       });
+//   }
+// };
 export const getAvatarUrl = (avatar, size) => {
   switch (size) {
     case 'small':
@@ -160,7 +219,7 @@ export const getAvatarUrl = (avatar, size) => {
   }
 };
 
-export const validateFileType = (file) => {
+export const validateFileType = file => {
   let fileTail = getFileTail(file.contentType);
   let fileType = getFileType(file.contentType);
 
@@ -181,23 +240,23 @@ export const limitHtml = (text, limit) => {
     : changedString;
 };
 
-export const slugUrl = (str) => {
+export const slugUrl = str => {
   return str
     .toLowerCase()
     .replace(/ /g, '-')
     .replace(/[^\w-]+/g, '');
 };
 
-export const removeHtmlTag = (str) => {
+export const removeHtmlTag = str => {
   return str?.length > 0 ? str.replace(/<[^>]*>?/gm, '') : '';
   // return str;
 };
 
-export const firstSentence = (text) => {
+export const firstSentence = text => {
   return text.substr(0, text.indexOf('.')) + '.';
 };
 
-export const suffix = (i) => {
+export const suffix = i => {
   if (!i || isNaN(parseInt(i))) {
     return i;
   }
@@ -215,7 +274,7 @@ export const suffix = (i) => {
   return i + 'th';
 };
 
-export const convertTime = (timestamp) => {
+export const convertTime = timestamp => {
   const current = new Date().getTime();
 
   var msPerMinute = 60 * 1000;
@@ -274,7 +333,7 @@ export function buildUrlWithParams(url, params, removeEncode?: boolean) {
   return url + ret;
 }
 
-export const getMediaType = (file) => {
+export const getMediaType = file => {
   if (startsWith(file.type, 'video')) return MEDIA_TYPE['VIDEO'];
   if (startsWith(file.type, 'audio')) return MEDIA_TYPE['AUDIO'];
   if (startsWith(file.type, 'image') || file.name.includes('.heic'))
@@ -282,7 +341,7 @@ export const getMediaType = (file) => {
   return MEDIA_TYPE['DOCUMENT'];
 };
 
-export const getMediaUploadDir = (file) => {
+export const getMediaUploadDir = file => {
   if (startsWith(file.type, 'video')) return 'video';
   if (startsWith(file.type, 'audio')) return 'audio';
   if (startsWith(file.type, 'image') || file.name.includes('.heic'))
@@ -319,7 +378,7 @@ const resizedataURL = (datas, wantedWidth, wantedHeight) => {
   });
 };
 
-export const toBase64 = async (file) => {
+export const toBase64 = async file => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -329,17 +388,17 @@ export const toBase64 = async (file) => {
         var max = 400;
         var width = max;
         var height = (img.height / img.width) * max;
-        resizedataURL(reader.result, width, height).then((resp) => {
+        resizedataURL(reader.result, width, height).then(resp => {
           resolve(resp);
         });
       };
       img.src = reader.result as string;
     };
-    reader.onerror = (error) => reject(error);
+    reader.onerror = error => reject(error);
   });
 };
 
-export const getOrientation = async (file) => {
+export const getOrientation = async file => {
   return new Promise((resolve, reject) => {
     var reader = new FileReader();
 
@@ -373,7 +432,7 @@ export const getOrientation = async (file) => {
       resolve(-1);
     };
 
-    reader.onerror = (error) => reject(error);
+    reader.onerror = error => reject(error);
 
     reader.readAsArrayBuffer(file.slice(0, 64 * 1024));
   });
@@ -435,22 +494,22 @@ export const resetOrientation = async (srcBase64, srcOrientation) => {
       resolve(data);
     };
 
-    img.onerror = (error) => reject(error);
+    img.onerror = error => reject(error);
 
     img.src = srcBase64;
   });
 };
 
-export const getImagePreview = async (file) => {
+export const getImagePreview = async file => {
   try {
     const srcOrientation = await getOrientation(file);
     const srcBase64 = await toBase64(file);
     const base64Data = await resetOrientation(srcBase64, srcOrientation);
     return base64Data;
-  } catch { }
+  } catch {}
 };
 
-export const formatNumberToString = (n) => {
+export const formatNumberToString = n => {
   if (isNaN(n)) return n;
   let ranges = [
     { divider: 1e18, suffix: 'E' },
@@ -488,7 +547,7 @@ export const formatNumber = (n, d = 1) => {
   return n;
 };
 
-export const getCurrency = (money) => {
+export const getCurrency = money => {
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -540,7 +599,7 @@ export const onConvertContent = async (content, allowImageValue?) => {
   var output = output.replace(commentSripper, '');
   var tagStripper = new RegExp(
     '<(/)*(meta|link|span|\\?xml:|st1:|o:|font)(.*?)>',
-    'gi'
+    'gi',
   );
   // 3. remove tags leave content if any
   output = output.replace(tagStripper, '');
@@ -554,7 +613,7 @@ export const onConvertContent = async (content, allowImageValue?) => {
   for (var i = 0; i < badTags?.length; i++) {
     tagStripper = new RegExp(
       '<' + badTags[i] + '.*?' + badTags[i] + '(.*?)>',
-      'gi'
+      'gi',
     );
     output = output.replace(tagStripper, '');
   }
@@ -563,7 +622,7 @@ export const onConvertContent = async (content, allowImageValue?) => {
   for (var i = 0; i < badAttributes?.length; i++) {
     var attributeStripper = new RegExp(
       ' ' + badAttributes[i] + '="(.*?)"',
-      'gi'
+      'gi',
     );
     output = output.replace(attributeStripper, '');
   }
@@ -644,13 +703,13 @@ const getMobileDetect = (userAgent: NavigatorID['userAgent']) => {
   };
 };
 export const useMobileDetect = () => {
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
   const userAgent =
     typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
   return getMobileDetect(userAgent);
 };
 
-export const setHttp = (link) => {
+export const setHttp = link => {
   if (link && link.search(/^http[s]?\:\/\//) == -1) {
     link = 'http://' + link;
   }
@@ -658,10 +717,10 @@ export const setHttp = (link) => {
 };
 
 const censorWord = (str: string) => {
-  return "*".repeat(str.length);
-}
+  return '*'.repeat(str.length);
+};
 
 export const censorEmail = (email: string) => {
   const splitEmail = email.split('@');
   return splitEmail[0] + censorWord(splitEmail[1]);
-}
+};

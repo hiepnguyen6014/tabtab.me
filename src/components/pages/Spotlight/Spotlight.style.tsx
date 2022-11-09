@@ -1,8 +1,7 @@
-import { Button, Image, Typography } from 'antd';
-
+import { styled } from '@styles/theme';
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
-import { styled } from '@styles/theme';
+import { Button, Image, Typography } from 'antd';
 
 export const SpotlightWrap = styled.div`
   width: 100%;
@@ -29,7 +28,7 @@ export const SpotlightWrap = styled.div`
     algin-items:center;
     display: flex;
   }
-  .breadcrumb-detail:nth-child(1) {
+  .breadcrumb-detail:nth-of-type(1) {
     @media ${device.maxSm} {
       margin-top:14px !important;
     }
@@ -153,12 +152,12 @@ export const SpotlightText = styled(Typography)`
     margin-left: 8px;
   }
 
-  .header-content:nth-child(3) {
+  .header-content:nth-of-type(3) {
     @media ${device.maxSm} {
       color: #f9c41f !important;
     }
   }
-  .header-content:nth-child(2) {
+  .header-content:nth-of-type(2) {
     margin-top: -3px !important;
   }
 
@@ -337,10 +336,8 @@ export const ButtonClick = styled(Button)`
   bottom: 5px;
   width: 58px;
   height: 58px;
-  padding:10px;
+  padding: 10px;
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
-  background-color:"#ffff";
+  background-color: '#ffff';
   border-radius: 50%;
 `;
-
-

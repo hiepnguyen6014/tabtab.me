@@ -1,10 +1,4 @@
-import { BreadcrumbCustom } from '../../../shared/Breadcrum/index';
-import { ButtonSave } from '../../../shared/ButtonSave/index';
-import { ButtonShare } from '../../../shared/ButtonShare';
-import { TextParagraph } from '../../../shared/TextParagraph';
-import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
-import { Block } from './Component.style';
-import type { ColumnsType } from 'antd/es/table';
+import { DownOutlined } from '@ant-design/icons';
 import { PUBLIC_ROUTES, ROUTES, SRC_IMAGE } from '@constants';
 import { filterKey } from '@contexts';
 import { MPostDetail } from '@models/MPostDetail';
@@ -18,43 +12,50 @@ import {
   IconTimer,
   Logo1,
 } from '@root/public/icons';
+import { RadBtn } from '@root/src/components/shared/RadioButton/RadioButton.style';
 import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import { colors } from '@styles/theme/colors';
 import {
   Col,
   Divider,
-  Row,
-  Table,
-  Typography,
   Dropdown,
   Menu,
+  Row,
   Space,
+  Table,
+  Typography,
 } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import type { ColumnsType } from 'antd/es/table';
+import dynamic from 'next/dynamic';
+
 import {
   DefaultContentInWrapper,
   DefaultLinkText,
   DefaultRowTitle,
   DefaultWrapperWithBg,
 } from '..';
+import { BreadcrumbCustom } from '../../../shared/Breadcrum/index';
+import { ButtonSave } from '../../../shared/ButtonSave/index';
+import { ButtonShare } from '../../../shared/ButtonShare';
+import { TextParagraph } from '../../../shared/TextParagraph';
+import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
+import { RadioWrap } from '../DefaultComponent.style';
+import { Block } from './Component.style';
 import { DefaultContentInWrapperMajor } from './Component.style';
 import {
-  TagProperty,
-  RowPrice,
+  AdGoogle2,
+  ImageContainer,
   RowActions,
+  RowPrice,
   RowPriceLeft,
   RowPriceRight,
-  ImageContainer,
-  AdGoogle2,
+  TagProperty,
 } from './Component.style';
-import dynamic from 'next/dynamic';
-import { RadBtn } from '@root/src/components/shared/RadioButton/RadioButton.style';
-import { RadioWrap } from '../DefaultComponent.style';
 
 const DynamicNotifyOutdate = dynamic(() =>
   import('../../../shared/WidgetUserInfo/NotifyOutdate').then(
-    (mod: any) => mod.NotifyOutdate
-  )
+    (mod: any) => mod.NotifyOutdate,
+  ),
 );
 
 const allProperties = [
@@ -306,7 +307,7 @@ export const LayoutAllProperties = (props: {
                     {/* <TagList tagsData={allProperties} /> */}
 
                     <RadioWrap defaultValue="sale">
-                      {allProperties.map((item) => (
+                      {allProperties.map(item => (
                         <RadBtn
                           background="#E9E9E9"
                           height="52"
@@ -331,7 +332,7 @@ export const LayoutAllProperties = (props: {
                     xs={24}
                   >
                     <RadioWrap defaultValue="all">
-                      {allOptions.map((item) => (
+                      {allOptions.map(item => (
                         <RadBtn height="48" value={item.value}>
                           {item.label}
                         </RadBtn>
