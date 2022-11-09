@@ -1,11 +1,12 @@
-import API from '../axiosInstance';
-import {
-  ILoginRequest,
-  IForgotPasswordRequest,
-  IResetPasswordRequest,
-  IPasswordRequest,
-} from '@types';
 import { ENDPOINTS } from '@constants';
+import {
+  IForgotPasswordRequest,
+  ILoginRequest,
+  IPasswordRequest,
+  IResetPasswordRequest,
+} from '@types';
+
+import API from '../axiosInstance';
 
 const { get, post, put } = API;
 

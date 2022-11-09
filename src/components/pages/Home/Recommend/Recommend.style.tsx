@@ -4,7 +4,7 @@ import { device } from '@styles/theme/device';
 import { Button, Col, Image, Radio, Row, Typography } from 'antd';
 
 // PROJECT, AGENCY
-export const Wrapper = styled((props) => <div {...props} />)`
+export const Wrapper = styled(props => <div {...props} />)`
   display: flex;
   /* justify-content: center; */
   /* align-items: center; */
@@ -218,16 +218,16 @@ export const DetailItem = styled.div`
     align-items: center;
     padding: 5px 0;
   }
-  .item:nth-child(2) {
+  .item:nth-of-type(2) {
     margin-left: -11px;
   }
-  .item:nth-child(5) {
+  .item:nth-of-type(5) {
     margin-left: -11px;
   }
-  .item:nth-child(3) {
+  .item:nth-of-type(3) {
     margin-left: -25px;
   }
-  .item:nth-child(6) {
+  .item:nth-of-type(6) {
     margin-left: -25px;
   }
   .item-content {

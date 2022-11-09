@@ -1,1 +1,1 @@
-export { Popup as PopupReport } from './PopupReport'
+export { Popup as PopupReport } from './PopupReport';

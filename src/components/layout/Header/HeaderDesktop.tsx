@@ -17,12 +17,13 @@ import {
 } from '@root/public/icons';
 import { FilterProvider } from '@root/src/core/contexts/filterContext';
 import { Navigator } from '@utils';
-import { Divider, Popover } from 'antd';
+import { Divider, Modal, Popover } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 
+import Login from '../../shared/AuthForm/LoginForm';
 import { REFormSearchInput } from '../RealEstateFilter/FilterSearch';
 import {
   ButtonWrap,
@@ -48,6 +49,17 @@ const HeaderDesktop = ({
 }: Props) => {
   const { currentUser } = useContext(UserContext);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   const renderLogo = () => {
     const props = {
       height: 44,
@@ -103,7 +115,7 @@ const HeaderDesktop = ({
 
   const content1 = (
     <div style={{ width: 280 }}>
-      <a href={Config.USER_LOGIN}>
+      <a onClick={showModal}>
         <ButtonWrapLogin>
           <label>Signup / Login</label>
         </ButtonWrapLogin>
@@ -129,6 +141,12 @@ const HeaderDesktop = ({
   return (
     <MainContentDesktop className="not-login">
       <LogoWrapper>{renderLogo()}</LogoWrapper>
+      <Login
+        title="Login Form"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      />
       <TabTabWrap>
         {isShowSearchBar && (
           <FilterProvider>
@@ -168,7 +186,7 @@ const HeaderDesktop = ({
           <Popover
             placement="bottomRight"
             content={Object.keys(currentUser).length ? content : content1}
-            trigger="click"
+            trigger={isModalOpen ? 'hover' : 'click'}
           >
             <div
               className="d-flex rounded-pill justify-content-between"
@@ -186,10 +204,14 @@ const HeaderDesktop = ({
               >
                 <VectorMenuOutline className="d-flex align-self-center" />
               </div>
-              <VectorPeople
-                className="d-flex align-self-center"
-                style={{ marginRight: 4 }}
-              />
+              {Object.keys(currentUser).length ? (
+                <img src={currentUser.userAvatar} alt="avatar" />
+              ) : (
+                <VectorPeople
+                  className="d-flex align-self-center"
+                  style={{ marginRight: 4 }}
+                />
+              )}
             </div>
           </Popover>
         </div>

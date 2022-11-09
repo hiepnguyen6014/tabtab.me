@@ -2,16 +2,11 @@ $color-common: rgba(105, 105, 105, 0.78);
 $color-button: #ffc22b;
 $color-light: #fff;
 
-
-
-
 a {
   &:not([typeof='current']):hover {
     color: $color-common;
     font-weight: 500;
   }
-
-  ;
 }
 
 [typeof='current'] {
@@ -109,8 +104,6 @@ a {
       fill: $color-common !important;
     }
   }
-
-  
 }
 
 .ant-popover-inner {
@@ -211,5 +204,57 @@ a {
 // button
 .ant-btn:not(.disable-custom-btn):not(.disable-hover):hover {
   background-color: none !important;
-  color: none
+  color: none;
+}
+//Modal
+
+.auth__btn {
+  background: #f9c41f;
+  display: block;
+  width: 100%;
+  // color: white;
+  border: none;
+  font-weight: 700;
+  border-radius: 8px;
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.ant-btn:hover,
+.ant-btn:focus {
+  background: #aca5a5;
+  color: white;
+}
+
+.fieldset {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d3d3d3;
+  color: #080808;
+  border-radius: 12px;
+  margin: 2em 0em;
+  padding: 0 10px 6px;
+  margin-top: 0px;
+}
+.fieldsetinput {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d3d3d3;
+  color: #080808;
+  border-radius: 12px;
+  margin: 2em 0em;
+  // padding:0 10px 0px;
+  margin-top: 0px;
+}
+.legend {
+  transform: translatey(-50%);
+  width: max-content;
+  background: white;
+  padding: 0 5px;
+}
+.inputpassword .ant-input {
+  font-size: 16px !important;
+  font-weight: 700;
+  font-family: 'Inter';
 }
