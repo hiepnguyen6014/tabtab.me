@@ -47,7 +47,9 @@ const AddListingComponent = () => {
     },
     {
       id: 6,
-      content: <PostType />,
+      content: (
+        <PostType />
+      ),
     },
   ];
   const next = () => {
