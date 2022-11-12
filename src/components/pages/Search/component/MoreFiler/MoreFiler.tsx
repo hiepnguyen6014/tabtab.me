@@ -1,4 +1,9 @@
-import { BoxTypography, Text } from './MofilterStyled';
+import {
+  BoxCheckBox,
+  BoxContainer,
+  BoxTypography,
+  Text,
+} from './MofilterStyled';
 import { ButtonApply, ButtonClear } from '../../Search.style';
 import { Checkbox, Col, Row, Typography } from 'antd';
 
@@ -7,12 +12,12 @@ import React from 'react';
 
 const MoreFiler = () => {
   return (
-    <div style={{ padding: 12, width: 650 }}>
+    <BoxContainer>
       <BoxTypography>Property types</BoxTypography>
       <Row gutter={24}>
         {MORE_FILER_DATA.map((item, key) => (
           <Col span={12} key={key}>
-            <Checkbox style={{ marginBottom: 24 }}>
+            <BoxCheckBox style={{ marginBottom: 24 }}>
               <text
                 style={{
                   fontSize: 16,
@@ -24,7 +29,7 @@ const MoreFiler = () => {
                 {item.icon}
                 <text style={{ marginLeft: 8 }}>{item.title}</text>
               </text>
-            </Checkbox>
+            </BoxCheckBox>
           </Col>
         ))}
       </Row>
@@ -65,7 +70,7 @@ const MoreFiler = () => {
           </ButtonApply>
         </Col>
       </Row>
-    </div>
+    </BoxContainer>
   );
 };
 
