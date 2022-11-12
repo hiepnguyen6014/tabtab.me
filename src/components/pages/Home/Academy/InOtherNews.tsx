@@ -12,7 +12,7 @@ const InOtherNews: React.FC<{}> = () => {
         <Typography className="title-header">In other news</Typography>
       </div>
       <DivA>
-        <Link href="/academy">
+        <Link href="/academy" legacyBehavior>
           <Image
             alt="news"
             src={SRC_IMAGE.ACADEMY1}

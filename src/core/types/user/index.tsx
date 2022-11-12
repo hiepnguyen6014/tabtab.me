@@ -1,4 +1,3 @@
-
 export interface IUserSettingRequest {
   contentType?: Array<string>;
 }
@@ -18,7 +17,7 @@ export interface IUser {
   areaDistrictId?: 0;
   areaWardId?: 0;
   street?: string;
-  lastActiveAt?:string;
+  lastActiveAt?: string;
   twoFACode?: string;
   twoFAQR?: string;
   userAvatar?: null;
@@ -39,12 +38,12 @@ export interface IUser {
   facebookId?: null;
   appleId?: null;
   userType?: 1;
-  updatedAt?:string;
+  updatedAt?: string;
   createdAt?: string;
   isHidden?: 0;
   isDeleted?: 0;
-  token?:string,
-  unreadMessage?:number;
+  token?: string;
+  unreadMessage?: number;
 }
 
 export interface ISystemSetting {

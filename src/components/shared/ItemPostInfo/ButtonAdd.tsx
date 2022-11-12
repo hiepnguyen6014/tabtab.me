@@ -1,5 +1,6 @@
 import { CalendarSun, VectorCalendar } from '@root/public/icons';
 import { Image, Typography } from 'antd';
+
 import { ButtonAddCalendar } from './ItemPostInfo.style';
 
 const ButtonAdd = () => {

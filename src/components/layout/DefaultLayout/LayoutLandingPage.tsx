@@ -1,11 +1,12 @@
+import { useEffect } from 'react';
+
+import { TitlePage } from '..';
 import {
   DefaultContentNoGrid,
   DefaultWrapperWithBg,
   LandingWrapContent,
 } from './DefaultComponent.style';
-import { TitlePage } from '..';
 import DefaultLayout from './DefaultLayout';
-import { useEffect } from 'react';
 
 interface Props {
   href: any[];

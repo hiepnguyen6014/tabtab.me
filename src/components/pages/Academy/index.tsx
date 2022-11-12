@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { FDesktop, SwapAdd } from './Academy.style';
-import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout';
-import { Col, Divider, Input, Row, Typography } from 'antd';
 import { Plus, SearchYellow } from '@root/public/icons';
-import UpcommingClass from './UpcommingClass';
-import { getPostByRating, getListRealEstate } from '../../../core/services';
+import { Col, Divider, Input, Row, Typography } from 'antd';
+import React, { useEffect, useState } from 'react';
+
+import { getListRealEstate, getPostByRating } from '../../../core/services';
+import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout';
+import { FDesktop, SwapAdd } from './Academy.style';
 import ELearning from './ELearning';
+import UpcommingClass from './UpcommingClass';
 
 export default function Academy({ translate }) {
   const [data, setData] = useState([]);

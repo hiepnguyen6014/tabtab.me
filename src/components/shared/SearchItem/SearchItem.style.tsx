@@ -1,7 +1,7 @@
 import { styled } from '@styles/theme';
 import { Input } from 'antd';
 
-export const SearchInput = styled((props) => <Input allowClear {...props} />)`
+export const SearchInput = styled(props => <Input allowClear {...props} />)`
   border-width: 0;
   border-radius: 56px;
   padding: 5px 5px 5px 10px;

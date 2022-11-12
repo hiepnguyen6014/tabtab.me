@@ -2,6 +2,7 @@ import { SRC_IMAGE } from '@core';
 import { SearchYellow } from '@root/public/icons';
 import { SearchInput } from '@root/src/components/layout/RealEstateFilter/FilterSearch/FilterSearch.style';
 import { Col, Divider, Image, Row } from 'antd';
+
 import { AboutUsParagraph, RadioButton, RadioWrap } from '../AboutUs.style';
 
 const Recruitment: React.FC<{}> = () => {
@@ -37,14 +38,20 @@ const Recruitment: React.FC<{}> = () => {
         </div>
         <div className="d-flex justify-content-center mb-5 mt-4">
           <RadioWrap defaultValue="1">
-            <RadioButton value="1" >
+            <RadioButton value="1">
               <p className="province">Ha noi</p>
             </RadioButton>
-            <Divider type="vertical" style={{ height: 36, color: '#D3D3D3', margin: 0 }} />
+            <Divider
+              type="vertical"
+              style={{ height: 36, color: '#D3D3D3', margin: 0 }}
+            />
             <RadioButton value="2">
               <p className="province">Ho Chi Minh</p>
             </RadioButton>
-            <Divider type="vertical" style={{ height: 36, color: '#D3D3D3', margin: 0 }} />
+            <Divider
+              type="vertical"
+              style={{ height: 36, color: '#D3D3D3', margin: 0 }}
+            />
             <RadioButton value="3">
               <p className="province">Binh Duong</p>
             </RadioButton>
@@ -60,47 +67,92 @@ const Recruitment: React.FC<{}> = () => {
           }}
         >
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>
           <Col xs={12} sm={12} lg={8} className="gutter-row">
-            <Image alt="dsffs" preview={false} src={SRC_IMAGE.ACADEMY3} width="100%" />
+            <Image
+              alt="dsffs"
+              preview={false}
+              src={SRC_IMAGE.ACADEMY3}
+              width="100%"
+            />
             <h3>Seller</h3>
             <p className="recruitment">5 vacancies</p>
           </Col>

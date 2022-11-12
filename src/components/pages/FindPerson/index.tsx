@@ -1,9 +1,10 @@
-import { FDesktop, SwapAdd } from './FindPerson.style';
-import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout';
-import { Typography } from 'antd';
 import { Plus } from '@root/public/icons';
-import Filter from './Filter';
+import { Typography } from 'antd';
+
+import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout';
 import AgentInfo from './AgentInfo';
+import Filter from './Filter';
+import { FDesktop, SwapAdd } from './FindPerson.style';
 
 export default function FindpersonComponent({ translate }) {
   return (

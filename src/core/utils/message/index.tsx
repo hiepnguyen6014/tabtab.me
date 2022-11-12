@@ -1,6 +1,6 @@
-import React from 'react';
-import { InfoCircleOutlined, CheckCircleOutlined } from '@ant-design/icons';
+import { CheckCircleOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import { message } from 'antd';
+import React from 'react';
 
 export const Message = {
   success: (content: React.ReactNode, duration?: number) => {

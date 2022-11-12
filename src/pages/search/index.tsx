@@ -1,25 +1,25 @@
+import { PARAMS, POST_TYPE_PARAMS, PUBLIC_ROUTES, ROUTES } from '@constants';
+import { UserContext, filterKey } from '@contexts';
+import { MFilter } from '@models/MFilter';
+import { MPostDetail } from '@models/MPostDetail';
+import { IconArrowDown, IconBell } from '@root/public/icons';
+import HeaderComponent from '@root/src/components/layout/Header';
+import { FilterBackground } from '@root/src/components/layout/LayoutCategory/Container.style';
+import RealEstateFilter from '@root/src/components/layout/RealEstateFilter';
+import { FilterProvider } from '@root/src/core/contexts/filterContext';
+import { getListRealEstate, getPostByRating } from '@root/src/core/services';
+import { SearchDataProps } from '@root/src/core/types/filter';
+import { checkIsHomePage, removeEmptyType } from '@utils';
+import { Col, Divider, Dropdown, Menu, Popover, Row, Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import Search from '../../components/pages/Search/Search';
 import {
   ButtonClasses,
   FDesktop,
   RowWrap,
 } from '../../components/pages/Search/Search.style';
-import { Col, Divider, Dropdown, Menu, Popover, Row, Typography } from 'antd';
-import { IconArrowDown, IconBell } from '@root/public/icons';
-import { PARAMS, POST_TYPE_PARAMS, PUBLIC_ROUTES, ROUTES } from '@constants';
-import { UserContext, filterKey } from '@contexts';
-import { checkIsHomePage, removeEmptyType } from '@utils';
-import { getListRealEstate, getPostByRating } from '@root/src/core/services';
-
-import { FilterBackground } from '@root/src/components/layout/LayoutCategory/Container.style';
-import { FilterProvider } from '@root/src/core/contexts/filterContext';
-import HeaderComponent from '@root/src/components/layout/Header';
-import { MFilter } from '@models/MFilter';
-import { MPostDetail } from '@models/MPostDetail';
-import RealEstateFilter from '@root/src/components/layout/RealEstateFilter';
-import Search from '../../components/pages/Search/Search';
-import { SearchDataProps } from '@root/src/core/types/filter';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 
 const SearchPage: React.FC<{
   postList: SearchDataProps;

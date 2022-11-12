@@ -1,6 +1,5 @@
-import { Button, Image, Row, Typography } from 'antd';
-
 import { styled } from '@styles/theme';
+import { Button, Image, Row, Typography } from 'antd';
 
 export const BoxTypography = styled(Typography)`
   font-size: 20px;

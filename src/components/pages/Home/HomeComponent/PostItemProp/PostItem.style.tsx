@@ -120,7 +120,7 @@ export const PostTitle = styled.div`
       margin-right: 5px;
     }
   }
-  .wrap-post{
+  .wrap-post {
     min-height: 90px;
     @media ${device.maxSm} {
       min-height: auto;

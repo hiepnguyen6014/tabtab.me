@@ -51,6 +51,7 @@
     "react-google-recaptcha-v3": "^1.9.7",
     "react-hook-form": "^7.20.2",
     "react-i18next": "^11.14.2",
+    "react-quill": "^2.0.0",
     "react-share": "^4.4.0",
     "sass": "^1.54.3",
     "swiper": "^8.4.4"

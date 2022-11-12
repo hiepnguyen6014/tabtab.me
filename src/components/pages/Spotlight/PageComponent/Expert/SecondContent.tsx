@@ -80,7 +80,7 @@ const SecondContent = () => {
         {ITEMSPOTLIGHTLIST.map((item, key) => {
           return (
             <ColA className="gutter-row" sm={24} lg={6} key={key}>
-              <Link href="/detail-spotlight">
+              <Link href="/detail-spotlight" legacyBehavior>
                 <ItemSpotlight item={item} />
               </Link>
             </ColA>

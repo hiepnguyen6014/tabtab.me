@@ -1,6 +1,7 @@
 import { styled } from '@styles/theme';
 import { device } from '@styles/theme/device';
 import { Carousel, Image } from 'antd';
+
 export const BannerDesktop = styled.div`
   width: 100%;
   height: 400px;
@@ -14,13 +15,13 @@ export const BannerDesktop = styled.div`
 `;
 
 export const BannerMobile = styled.div`
-  position:relative;
+  position: relative;
   display: none !important;
   min-height: 250px;
   @media ${device.maxMd} {
     display: block !important;
   }
-`
+`;
 export const BannerMobileCarousel = styled(Carousel)`
   width: 100%;
 `;
@@ -28,8 +29,8 @@ export const BannerMobileCarousel = styled(Carousel)`
 export const ImageWrapper = styled(Image)`
   object-fit: cover;
   object-position: center;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
 `;
 
 export const BannerLeft = styled.div`
@@ -42,13 +43,13 @@ export const BannerRight3Pic = styled.div`
   grid-template-columns: 50% 50%;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-`
+`;
 export const BannerRight4Pic = styled.div`
-  display:grid;
-  height:100%;
-  width:100%;
+  display: grid;
+  height: 100%;
+  width: 100%;
   grid-template-columns: 50% 50%;
-  grid-template-rows:50% 50%;
+  grid-template-rows: 50% 50%;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 `;
@@ -66,8 +67,8 @@ export const ButtonShowAllImage = styled.div`
   justify-content: space-between;
   padding: 10px 15px;
   gap: 5px;
-  cursor:pointer;
-  user-select:none;
+  cursor: pointer;
+  user-select: none;
   p {
     margin: 0;
     padding: 0;
@@ -75,6 +76,6 @@ export const ButtonShowAllImage = styled.div`
 `;
 
 export const ButtonShowAllImageMobile = styled(ButtonShowAllImage)`
-position:absolute;
-z-index:9;
-`
+  position: absolute;
+  z-index: 9;
+`;

@@ -1,10 +1,12 @@
-import React from 'react';
-import { Container } from './DefaultComponent.style';
 import { checkIsHomePage, useRoute } from '@utils';
-import HeaderComponent from '../Header/index';
 import { useRouter } from 'next/router';
-import Footer from '../Footer/Footer';
+import React from 'react';
+
 import ChatCustom from '../../shared/Chat/ChatCustom';
+import Footer from '../Footer/Footer';
+import HeaderComponent from '../Header/index';
+import { Container } from './DefaultComponent.style';
+
 interface Props {
   t: any;
   children?: any;

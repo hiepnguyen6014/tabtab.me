@@ -1,9 +1,9 @@
-import { BoxAction, BoxContainer, BoxInput } from './PriceStyled';
+import { RightOutlined } from '@ant-design/icons';
 import { Button, Divider, InputNumber, Select, Slider } from 'antd';
 import React, { useState } from 'react';
 
 import { AREA_DATA_SELECT } from '../FilterData/FilterData';
-import { RightOutlined } from '@ant-design/icons';
+import { BoxAction, BoxContainer, BoxInput } from './PriceStyled';
 
 const Price = () => {
   const { Option } = Select;
@@ -32,15 +32,20 @@ const Price = () => {
           <InputNumber max={500} value={valueAfter} />
         </BoxInput>
         <Slider range step={10} onChange={onChange} min={0} max={500} />
-        <Select placeholder="Mức giá" style={{ width: '100%' }} onChange={handleChange} defaultOpen>
+        <Select
+          placeholder="Mức giá"
+          style={{ width: '100%' }}
+          onChange={handleChange}
+          defaultOpen
+        >
           <Option>Tất cả Mức giá</Option>
-          {AREA_DATA_SELECT.map((select) => (
+          {AREA_DATA_SELECT.map(select => (
             <Option key={select.value}>{select.value}</Option>
           ))}
         </Select>
       </div>
       <div>
-        <Divider style={{margin:"12px 0"}} />
+        <Divider style={{ margin: '12px 0' }} />
         <BoxAction>
           <Button
             style={{ background: '#fff' }}

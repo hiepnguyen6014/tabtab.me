@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { UserListNotify } from '@utils';
 import { Typography } from 'antd';
+
 import { DefaultContentNoGrid, DefaultWrapperWithBg } from '../../layout';
 import { NotifyItem } from '../../shared/NotifyItem';
-import { UserListNotify } from '@utils';
 import { PaginationCustom } from '../../shared/Pagination';
 
 interface Props {

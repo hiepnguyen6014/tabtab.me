@@ -1,6 +1,7 @@
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { SRC_IMAGE } from '@core';
 import { Image, Typography } from 'antd';
+
 import { DivA } from '../Spotlight/ItemSpotlight.style';
 
 const OutStanding: React.FC<{}> = () => {
@@ -65,24 +66,28 @@ const OutStanding: React.FC<{}> = () => {
             <div className="d-flex m-user-box align-items-center">
               <Image alt="picture" src={item.image} preview={false} />
               <div className="px-3 text-center">
-                <Typography className="title-list-news">{item.lesson}</Typography>
+                <Typography className="title-list-news">
+                  {item.lesson}
+                </Typography>
                 <Typography className="content-outstanding">Lesson</Typography>
               </div>
               <div className="px-3 text-center">
-                <Typography className="title-list-news">{item.student}</Typography>
+                <Typography className="title-list-news">
+                  {item.student}
+                </Typography>
                 <Typography className="content-outstanding">Student</Typography>
               </div>
               <div className="px-3 text-center">
-                <Typography className="title-list-news">{item.experience}</Typography>
+                <Typography className="title-list-news">
+                  {item.experience}
+                </Typography>
                 <Typography className="content-outstanding">
                   Experience
                 </Typography>
               </div>
             </div>
             <div className="m-user-box mb-4">
-              <Typography className="title-outstanding">
-              {item.name}
-              </Typography>
+              <Typography className="title-outstanding">{item.name}</Typography>
               <div className="d-flex my-1">
                 <Typography className="content-text">{item.role}</Typography>
                 <Typography className="content-text mx-2">|</Typography>
@@ -92,7 +97,6 @@ const OutStanding: React.FC<{}> = () => {
           </DivA>
         );
       })}
-      
     </div>
   );
 };

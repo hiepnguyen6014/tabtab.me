@@ -1,18 +1,19 @@
 import { IconImage } from '@root/public/icons';
 import { Carousel, Image } from 'antd';
 import { useState } from 'react';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { ImageAttach, ImageNumber, SwiperWrap } from './carousel.style';
-import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
+
 import { SeeAllImages } from '../SeeAllImages';
+import { ImageAttach, ImageNumber, SwiperWrap } from './carousel.style';
 
 const ImageCarouselWithCount = (props: { images: string[] }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   if (!props.images) return <></>;
-  const onSnapChange = (e:any)=>{
-    setImageIndex(e.activeIndex + 1)
-  }
+  const onSnapChange = (e: any) => {
+    setImageIndex(e.activeIndex + 1);
+  };
   // install Swiper modules
   SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -40,9 +41,9 @@ const ImageCarouselWithCount = (props: { images: string[] }) => {
           ))}
         </SwiperWrap>
         <SeeAllImages
-           arrayImages={props.images}
-           isVisible={isVisible}
-           setIsVisible={setIsVisible}
+          arrayImages={props.images}
+          isVisible={isVisible}
+          setIsVisible={setIsVisible}
         />
         <ImageNumber onClick={() => setIsVisible(true)}>
           <IconImage />
@@ -53,4 +54,4 @@ const ImageCarouselWithCount = (props: { images: string[] }) => {
   );
 };
 
-export default ImageCarouselWithCount
+export default ImageCarouselWithCount;

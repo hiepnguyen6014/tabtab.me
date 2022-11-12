@@ -1,4 +1,5 @@
-import {  Image, Row, Typography } from 'antd';
+import { Image, Row, Typography } from 'antd';
+
 import {
   ItemPostSpot,
   LeftPostSpot,

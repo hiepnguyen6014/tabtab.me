@@ -1,1 +1,1 @@
-export {default as RealEstateFilterMobile} from './RealEstateFilterMobile'
+export { default as RealEstateFilterMobile } from './RealEstateFilterMobile';

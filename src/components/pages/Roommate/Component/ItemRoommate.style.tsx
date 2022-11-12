@@ -3,12 +3,12 @@ import { device } from '@styles/theme/device';
 import {
   Button,
   Divider,
+  Image,
   Input,
-  Radio,
-  Typography,
   Modal,
   Pagination,
-  Image,
+  Radio,
+  Typography,
 } from 'antd';
 
 export const RoommateWrap = styled.div`
@@ -18,7 +18,7 @@ export const RoommateWrap = styled.div`
   border-radius: 24px;
 `;
 
-export const ItemRoommateWrap = styled((props) => <div {...props} />)`
+export const ItemRoommateWrap = styled(props => <div {...props} />)`
   height: 518px;
   width: 282px;
   border-radius: 24px;
@@ -258,14 +258,14 @@ export const ButtonClose = styled(Button)`
   bottom: 0%;
   @media ${device.maxMd} {
     top: -5%;
-  left: 76%;
-  right: 0;
-  bottom: 0%;
+    left: 76%;
+    right: 0;
+    bottom: 0%;
   }
   @media ${device.maxSm} {
     top: -4%;
-  left: 66%;
-  right: 0;
-  bottom: 0%;
+    left: 66%;
+    right: 0;
+    bottom: 0%;
   }
 `;

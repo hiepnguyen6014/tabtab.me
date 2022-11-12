@@ -2,7 +2,7 @@ import { styled } from '@styles/theme';
 import { colors } from '@styles/theme/colors';
 import { Button, Input } from 'antd';
 
-export const SearchInput = styled((props) => <Input allowClear {...props} />)``;
+export const SearchInput = styled(props => <Input allowClear {...props} />)``;
 
 export const ButtonSearchForm = styled(Button)`
   width: 50px;
@@ -11,19 +11,19 @@ export const ButtonSearchForm = styled(Button)`
   align-items: center;
   justify-content: center;
   background: #fff;
-  &:focus{
+  &:focus {
     background: #fff;
   }
-  &:hover{
-    border:1px solid ${colors.button}
+  &:hover {
+    border: 1px solid ${colors.button};
   }
 `;
 
 export const ButtonSearchFormReset = styled(ButtonSearchForm)`
-  svg>path{
-    fill:#767676
+  svg > path {
+    fill: #767676;
   }
-`
+`;
 
 export const SearchFormDesktop = styled.div`
   width: 100%;

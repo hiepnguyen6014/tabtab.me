@@ -1,6 +1,7 @@
 import ColPost from '@root/src/components/shared/ItemPostInfo/ColPost';
 import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
 import { Col, Divider, Row, Typography } from 'antd';
+
 import CenterCol from './CenterCol';
 import LeftCol from './LeftCol';
 import PostRow from './PostRow';

@@ -1,14 +1,15 @@
 import { Typography } from 'antd';
 import { useState } from 'react';
-import { ReportItem, ListReportWrapper } from './PopupReport.style';
+
+import { ListReportWrapper, ReportItem } from './PopupReport.style';
 
 interface Props {
   valueReply: any;
   setValueReply: Function;
-  t:any
+  t: any;
 }
 const ListReport = (props: Props) => {
-  const { valueReply, setValueReply,t:translate } = props;
+  const { valueReply, setValueReply, t: translate } = props;
   const listReport = [
     { title: translate('detail.report.popup.listReport.op1') },
     { title: translate('detail.report.popup.listReport.op2') },
@@ -19,10 +20,10 @@ const ListReport = (props: Props) => {
     { title: translate('detail.report.popup.listReport.op7') },
   ];
   const onSelectReport = (title: string) => {
-    if(title == valueReply.ReportTitle){
-      setValueReply({...valueReply, reportTitle: ''})
-    }else{
-      setValueReply({...valueReply, reportTitle: title})
+    if (title == valueReply.ReportTitle) {
+      setValueReply({ ...valueReply, reportTitle: '' });
+    } else {
+      setValueReply({ ...valueReply, reportTitle: title });
     }
   };
   return (
@@ -32,7 +33,7 @@ const ListReport = (props: Props) => {
           {translate('detail.report.popup.whyChoice')}
         </Typography.Title>
         <Typography.Text>
-        {translate('detail.report.popup.subChoice')}
+          {translate('detail.report.popup.subChoice')}
         </Typography.Text>
       </div>
       <div>
@@ -42,7 +43,7 @@ const ListReport = (props: Props) => {
               onClick={() => onSelectReport(value.title)}
               key={key}
               className={
-                valueReply['reportTitle']=== value.title ? 'selected' : ''
+                valueReply['reportTitle'] === value.title ? 'selected' : ''
               }
             >
               {value.title}

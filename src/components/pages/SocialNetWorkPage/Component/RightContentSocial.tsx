@@ -2,6 +2,7 @@ import { SRC_IMAGE } from '@core';
 import { VectorNotification } from '@root/public/icons';
 import { PaginationWrap } from '@root/src/components/shared/PaginationCustom/PaginationCustom.style';
 import { Divider, Image, Typography } from 'antd';
+
 import { BoxWrap, Flex } from '../SocialNetworkPage.style';
 
 const RightContentSocial: React.FC<{}> = () => {
@@ -28,11 +29,14 @@ const RightContentSocial: React.FC<{}> = () => {
   return (
     <>
       <BoxWrap>
-        <Flex style={{margin:'0px'}}>
+        <Flex style={{ margin: '0px' }}>
           <VectorNotification />
           <Typography className="title-box__text">Notification</Typography>
         </Flex>
-        <Divider type="horizontal" style={{marginTop: "16px", marginBottom: "12px"}}/>
+        <Divider
+          type="horizontal"
+          style={{ marginTop: '16px', marginBottom: '12px' }}
+        />
         {GROUPLIST.map((item, key) => {
           return (
             <Flex key={key}>
@@ -51,8 +55,8 @@ const RightContentSocial: React.FC<{}> = () => {
         })}
         <PaginationWrap defaultCurrent={9} total={30} />
       </BoxWrap>
-      <Image alt='image' src={SRC_IMAGE.AD1} preview={false}/>
-    </> 
+      <Image alt="image" src={SRC_IMAGE.AD1} preview={false} />
+    </>
   );
 };
 

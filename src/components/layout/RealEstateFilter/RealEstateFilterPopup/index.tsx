@@ -1,9 +1,11 @@
 import { FilterContext } from '@root/src/core/contexts/filterContext';
 import { Fragment, useContext, useState } from 'react';
-import { FContentItemPopup } from '../RealEstateFilterItem/FContentItemPopup';
-import { FDropdown, FMenuDropdown } from '../RealEstateFilterDesktop.style';
-import { FMenuItemPopup, FMenuPopupWrap } from './RealEstateFilterPopup.style';
+
 import { FilterProps } from '..';
+import { FDropdown, FMenuDropdown } from '../RealEstateFilterDesktop.style';
+import { FContentItemPopup } from '../RealEstateFilterItem/FContentItemPopup';
+import { FMenuItemPopup, FMenuPopupWrap } from './RealEstateFilterPopup.style';
+
 interface Props {
   listFilter: FilterProps[];
 }
@@ -13,13 +15,13 @@ export const RealEstateFilterPopup = (props: Props) => {
 
   return (
     <FMenuPopupWrap>
-      {listFilter.map((item) => (
+      {listFilter.map(item => (
         <Fragment key={item.idQuery}>
           <h1>{item.label}</h1>
           <FDropdown
             overlay={
               <FMenuDropdown>
-                {item.list.map((value) => (
+                {item.list.map(value => (
                   <FMenuItemPopup
                     onClick={(e: any) =>
                       onChangeValue(item.idQuery, value[item.keyId])
@@ -40,7 +42,7 @@ export const RealEstateFilterPopup = (props: Props) => {
                   item.idQuery,
                   item.list,
                   item.keyId,
-                  item.keyName
+                  item.keyName,
                 )}
               />
             </div>

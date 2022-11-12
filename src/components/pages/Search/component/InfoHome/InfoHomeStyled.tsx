@@ -1,7 +1,6 @@
-import { Button, Divider, Image } from 'antd';
-
-import { device } from '@styles/theme/device';
 import styled from '@emotion/styled';
+import { device } from '@styles/theme/device';
+import { Button, Divider, Image } from 'antd';
 
 export const BoxWrapper = styled.div``;
 
@@ -96,7 +95,7 @@ export const BoxTitleHomeMini = styled.div`
     margin-top: 0px;
     font-size: 9.33333px;
     line-height: 12px;
-    max-width:160px;
+    max-width: 160px;
   }
 `;
 
@@ -204,20 +203,18 @@ export const BoxDivider = styled(Divider)`
 `;
 
 export const BoxImage = styled(Image)`
-  width:36px;
-  height:36px;
+  width: 36px;
+  height: 36px;
   @media ${device.maxSm} {
     margin-top: 8px;
-    margin-right:11px;
+    margin-right: 11px;
   }
-`
-
-
+`;
 
 export const BoxImageMobile = styled(Image)`
-  width:36px;
-  height:36px;
+  width: 36px;
+  height: 36px;
   @media ${device.maxSm} {
-   display:none;
+    display: none;
   }
-`
+`;

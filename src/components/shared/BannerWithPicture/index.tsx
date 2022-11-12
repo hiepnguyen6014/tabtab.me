@@ -1,1 +1,1 @@
-export {default as BannerWithPicture} from './BannerWithPicture'
+export { default as BannerWithPicture } from './BannerWithPicture';

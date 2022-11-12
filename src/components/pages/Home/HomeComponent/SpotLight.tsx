@@ -103,7 +103,7 @@ const SpotLight: React.FC<{}> = () => {
   return (
     <WrapperSpot>
       <GeneralText>
-        <Link href="/spotlight-page">
+        <Link href="/spotlight-page" legacyBehavior>
           <Typography.Title className="title-general">
             Tin nổi bật
             <Typography.Text className="title-hide">HIDE</Typography.Text>
@@ -130,7 +130,7 @@ const SpotLight: React.FC<{}> = () => {
         <div>
           <Row>
             <Col sm={24} lg={16} className="my-2">
-              <Link href="/spotlight-page">
+              <Link href="/spotlight-page" legacyBehavior>
                 <BannerSpotWrapper>
                   <BannerWrap>
                     <div className="bookmark">
@@ -210,7 +210,7 @@ const SpotLight: React.FC<{}> = () => {
               <div style={{ marginTop: '20px' }} className="px-2 right">
                 {ITEMSPOTLIGHTSIDE.map((items, key) => {
                   return (
-                    <Link href="/detail-spotlight" key={key}>
+                    <Link href="/detail-spotlight" key={key} legacyBehavior>
                       <ItemSide item={items} />
                     </Link>
                   );
@@ -230,7 +230,7 @@ const SpotLight: React.FC<{}> = () => {
             {ITEMSPOTLIGHTLIST.map((item, key) => {
               return (
                 <ColA className="gutter-row" sm={24} lg={6} key={key}>
-                  <Link href="/detail-spotlight">
+                  <Link href="/detail-spotlight" legacyBehavior>
                     <ItemSpotlight item={item} />
                   </Link>
                 </ColA>

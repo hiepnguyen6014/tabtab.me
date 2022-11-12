@@ -1,6 +1,5 @@
-import { Button, Checkbox, Divider, Image, Row, Typography } from 'antd';
-
 import { styled } from '@styles/theme';
+import { Button, Checkbox, Divider, Image, Row, Typography } from 'antd';
 
 export const BoxContainer = styled.div`
   padding: 12;

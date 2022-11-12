@@ -1,3 +1,3 @@
 export interface IErrorPage {
-    statusCode: number;
-  }
+  statusCode: number;
+}

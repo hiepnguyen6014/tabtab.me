@@ -1,3 +1,3 @@
-export * from "./Home"
-export * from "./HotNews"
-export * from "./MyNotification"
+export * from './Home';
+export * from './HotNews';
+export * from './MyNotification';

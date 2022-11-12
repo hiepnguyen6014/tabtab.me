@@ -1,6 +1,7 @@
 import { filterKey } from '@contexts';
 import { Typography } from 'antd';
 import { useRouter } from 'next/router';
+
 import { BreadcrumbCustom } from '../../shared/Breadcrum/index';
 
 interface Props {
@@ -26,4 +27,4 @@ export const TitlePage = (props: Props) => {
       )}
     </>
   );
-}
+};

@@ -4,8 +4,9 @@ import { device } from '@styles/theme/device';
 import { Button, Radio } from 'antd';
 
 export const Container = styled.div`
-  padding-top: ${({hasTopPadding}: {hasTopPadding: boolean}) => hasTopPadding ? '80px' : '0'};
-`
+  padding-top: ${({ hasTopPadding }: { hasTopPadding: boolean }) =>
+    hasTopPadding ? '80px' : '0'};
+`;
 
 export const DefaultRowHeader = styled.div`
   height: 96px;
@@ -39,7 +40,7 @@ export const DefaultWrapperWithBg = styled.div`
     color: ${colors.common};
   }
   @media ${device.maxMd} {
-    padding: ${(props) => (props.typeof == 'fullScreen' ? 0 : '')};
+    padding: ${props => (props.typeof == 'fullScreen' ? 0 : '')};
   }
 `;
 
@@ -69,15 +70,15 @@ export const DefaultContentNoGrid = styled.div`
   margin: auto;
   padding: 30px 0;
   @media ${device.maxMd} {
-    padding: ${(props) => (props.typeof == 'fullScreen' ? '0' : '')};
-    width: ${(props) => (props.typeof == 'fullScreen' ? '100%' : '')};
+    padding: ${props => (props.typeof == 'fullScreen' ? '0' : '')};
+    width: ${props => (props.typeof == 'fullScreen' ? '100%' : '')};
   }
 `;
-export const DefaultContentInWrapper = styled((props) => <div {...props} />)`
+export const DefaultContentInWrapper = styled(props => <div {...props} />)`
   max-width: 1200px;
   padding: 30px 0;
   width: 95%;
-  ${(props) =>
+  ${props =>
     props.grid
       ? {
           'grid-template-columns': '69% 30%',
@@ -137,43 +138,43 @@ export const LandingWrapContent = styled.div`
     line-height: 24px;
   }
 `;
-export const ButtonWrap = styled((props) => <Button {...props} />)`
-    width: 170px;
-    display: flex;
-    gap:10px;
-    align-items: center;
-    ${(props) =>
-      props.background
-        ? {
-            background: props.background,
-          }
-        : {
-            background: '#ffffff',
-          }}
-    padding-top: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 24px;
-    border-radius: 8px;
+export const ButtonWrap = styled(props => <Button {...props} />)`
+  width: 170px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  ${props =>
+    props.background
+      ? {
+          background: props.background,
+        }
+      : {
+          background: '#ffffff',
+        }}
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  border-radius: 8px;
 `;
 
-export const ButtonWrapProperties = styled((props) => <Button {...props} />)`
-    display: flex;
-    gap:10px;
-    align-items: center;
-    ${(props) =>
-      props.background
-        ? {
-            background: props.background,
-          }
-        : {
-            background: '#ffffff',
-          }}
-    padding-top: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 24px;
-    border-radius: 8px;
+export const ButtonWrapProperties = styled(props => <Button {...props} />)`
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  ${props =>
+    props.background
+      ? {
+          background: props.background,
+        }
+      : {
+          background: '#ffffff',
+        }}
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  border-radius: 8px;
 `;
 
 export const RadioWrap = styled(Radio.Group)`

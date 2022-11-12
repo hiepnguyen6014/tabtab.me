@@ -1,35 +1,36 @@
-import {
-  IconCompany,
-  IconArea,
-  IconType,
-  IconDirection,
-  IconBedRoom,
-  IconBathroom,
-  IconCharacterist,
-  IconCoin,
-  IconApartment,
-  IconFurniture,
-  IconJuridical,
-  IconDeposit,
-  IconHouse,
-  IconBluePrint,
-  IconBed,
-  IconPark,
-  IconListed,
-  IconApartement,
-  IconBedTabTab,
-  IconDoor,
-  IconTitle,
-  IconProperty,
-  IconAuction,
-  IconNewHouse,
-} from 'public/icons';
-import { ListWrapper } from './Utilities.style';
-import { getDataFilter } from '@root/src/core/services/dataFilter';
-import { useEffect, useState } from 'react';
 import { MPostDetail } from '@models/MPostDetail';
+import { getDataFilter } from '@root/src/core/services/dataFilter';
 import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import moment from 'moment';
+import {
+  IconApartement,
+  IconApartment,
+  IconArea,
+  IconAuction,
+  IconBathroom,
+  IconBed,
+  IconBedRoom,
+  IconBedTabTab,
+  IconBluePrint,
+  IconCharacterist,
+  IconCoin,
+  IconCompany,
+  IconDeposit,
+  IconDirection,
+  IconDoor,
+  IconFurniture,
+  IconHouse,
+  IconJuridical,
+  IconListed,
+  IconNewHouse,
+  IconPark,
+  IconProperty,
+  IconTitle,
+  IconType,
+} from 'public/icons';
+import { useEffect, useState } from 'react';
+
+import { ListWrapper } from './Utilities.style';
 
 const ListUtility = (props: { post: MPostDetail; t: any }) => {
   const {
@@ -60,12 +61,12 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
   });
 
   const getName = (arr: any[], keyId: string, keyName: string, id: number) => {
-    const data = arr.filter((item) => id == item[keyId])[0];
+    const data = arr.filter(item => id == item[keyId])[0];
     return data ? data[keyName] : '';
   };
 
   useEffect(() => {
-    getDataFilter(realEstatePostTypeId).then((data) => {
+    getDataFilter(realEstatePostTypeId).then(data => {
       setTypeData({
         direction: data.dataDirection,
         type: data.dataRealEstateType,
@@ -81,7 +82,7 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
         typeData.category,
         'realEstateCategoryId',
         'realEstateCategoryName',
-        realEstateCategoryId
+        realEstateCategoryId,
       ),
       label: t('detail.utilityItem.typeRealEstate'),
     },
@@ -91,7 +92,7 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
         typeData.type,
         'realEstatePostTypeId',
         'realEstatePostTypeName',
-        realEstatePostTypeId
+        realEstatePostTypeId,
       ),
       label: t('detail.utilityItem.type'),
     },
@@ -161,8 +162,8 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
   const ListTabTab = [
     {
       icon: <IconHouse />,
-      value: "123",
-      label: "Total units:",
+      value: '123',
+      label: 'Total units:',
     },
     {
       icon: <IconApartement />,
@@ -173,78 +174,83 @@ const ListUtility = (props: { post: MPostDetail; t: any }) => {
         typeData.type,
         'realEstatePostTypeId',
         'realEstatePostTypeName',
-        realEstatePostTypeId
+        realEstatePostTypeId,
       ),
       label: t('detail.utilityItem.type'),
     },
     {
       icon: <IconBedTabTab />,
       value: realEstateHouseBedRooms,
-      label: "Beds in a unit:",
+      label: 'Beds in a unit:',
     },
     {
       icon: <IconBluePrint />,
       value: realEstateLandRealitySquare + ' m²',
-      label: "Floor areas:",
+      label: 'Floor areas:',
     },
     {
       icon: <IconDoor />,
-      value: "25",
-      label: "Floors:",
+      value: '25',
+      label: 'Floors:',
     },
     {
       icon: <IconTitle />,
-      value: "Hard Title",
-      label: "Title:",
+      value: 'Hard Title',
+      label: 'Title:',
     },
     {
       icon: <IconAuction />,
-      value: "CC Peninsula Co., LTD",
-      label: "Developer:",
+      value: 'CC Peninsula Co., LTD',
+      label: 'Developer:',
     },
     {
       icon: <IconPark />,
-      value: "40%",
-      label: "Greening rate:",
+      value: '40%',
+      label: 'Greening rate:',
     },
     {
       icon: <IconListed />,
       value: moment(createdAt).fromNow(),
-      label: "Listed",
+      label: 'Listed',
     },
     {
       icon: <IconNewHouse />,
       value: moment(updatedAt).fromNow(),
-      label: "Updated:",
+      label: 'Updated:',
     },
     {
       icon: <IconProperty />,
       value: realEstateId,
-      label: "Property ID:",
-    }
-  ]
+      label: 'Property ID:',
+    },
+  ];
 
   return (
     <ListWrapper>
       {ListTabTab.map((prop, key) =>
         prop.value ? (
-          <div style={{ display: 'flex', marginBottom: 15 }} role="item" key={key}>
-            <div style={{ marginBottom: 20, marginRight: 12 }}>
-              {prop.icon}
-            </div>
+          <div
+            style={{ display: 'flex', marginBottom: 15 }}
+            role="item"
+            key={key}
+          >
+            <div style={{ marginBottom: 20, marginRight: 12 }}>{prop.icon}</div>
             <div>
-              <div style={{ fontSize: 16, fontWeight: "500", fontFamily: 'Inter' }}>
+              <div
+                style={{ fontSize: 16, fontWeight: '500', fontFamily: 'Inter' }}
+              >
                 {prop.label}
               </div>
-              <div style={{ fontSize: 16, fontWeight: "700", fontFamily: 'Inter' }}>
+              <div
+                style={{ fontSize: 16, fontWeight: '700', fontFamily: 'Inter' }}
+              >
                 {prop.value}
               </div>
             </div>
-
           </div>
         ) : (
           ''
-        )
+        ),
       )}
     </ListWrapper>
   );

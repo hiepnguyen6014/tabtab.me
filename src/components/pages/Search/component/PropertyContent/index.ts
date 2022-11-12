@@ -1,1 +1,1 @@
-export {default} from "./PropertyContent"
+export { default } from './PropertyContent';

@@ -1,6 +1,6 @@
 import { CalendarSun } from '@root/public/icons';
-import { Image } from 'antd';
 import DateIcon from '@root/public/static/Event-date.png';
+import { Image } from 'antd';
 
 const BannerThumbnail = ({ src }) => {
   return (

@@ -33,7 +33,7 @@ export const mixin = {
   `,
 
   // row | row-reverse | column | column-reverse
-  flexDirection: (argument) => `
+  flexDirection: argument => `
     -webkit-flex-direction: ${argument};
        -moz-flex-direction: ${argument};
         -ms-flex-direction: ${argument};
@@ -41,7 +41,7 @@ export const mixin = {
   `,
 
   // nowrap | wrap | wrap-reverse
-  flexWrap: (argument) => `
+  flexWrap: argument => `
     -webkit-flex-wrap: ${argument};
        -moz-flex-wrap: ${argument};
         -ms-flex-wrap: ${argument};
@@ -49,7 +49,7 @@ export const mixin = {
   `,
 
   // <flex-direction> || <flex-wrap>
-  flexFlow: (argument) => `
+  flexFlow: argument => `
     -webkit-flex-flow: ${argument};
        -moz-flex-flow: ${argument};
         -ms-flex-flow: ${argument};
@@ -57,7 +57,7 @@ export const mixin = {
   `,
 
   // <number>
-  flexGrow: (argument) => `
+  flexGrow: argument => `
     -webkit-flex-grow: ${argument};
        -moz-flex-grow: ${argument};
         -ms-flex-grow: ${argument};
@@ -65,7 +65,7 @@ export const mixin = {
   `,
 
   // <number>
-  flexShrink: (argument) => `
+  flexShrink: argument => `
     -webkit-flex-shrink: ${argument};
        -moz-flex-shrink: ${argument};
         -ms-flex-shrink: ${argument};
@@ -73,7 +73,7 @@ export const mixin = {
   `,
 
   // <number>
-  flexBasis: (argument) => `
+  flexBasis: argument => `
     -webkit-flex-basis: ${argument};
        -moz-flex-basis: ${argument};
         -ms-flex-basis: ${argument};
@@ -121,13 +121,13 @@ export const mixin = {
             box-sizing: ${type};
   `,
 
-  boxShadow: (argument) => `
+  boxShadow: argument => `
     -webkit-box-shadow: ${argument};
        -moz-box-shadow: ${argument};
             box-shadow: ${argument};
   `,
 
-  transform: (argument) => `
+  transform: argument => `
     -webkit-transform: ${argument};
        -moz-transform: ${argument};
         -ms-transform: ${argument};
@@ -135,7 +135,7 @@ export const mixin = {
             transform: ${argument};
   `,
 
-  rotate: (factor) => `
+  rotate: factor => `
     -webkit-transform: rotate(${factor}deg);
        -moz-transform: rotate(${factor}deg);
         -ms-transform: rotate(${factor}deg);
@@ -143,7 +143,7 @@ export const mixin = {
             transform: rotate(${factor}deg);
   `,
 
-  scale: (factor) => `
+  scale: factor => `
     -webkit-transform: scale(${factor});
        -moz-transform: scale(${factor});
         -ms-transform: scale(${factor});
@@ -159,7 +159,7 @@ export const mixin = {
             transform: translate(${x}, ${y});
   `,
 
-  translateX: (x) => `
+  translateX: x => `
     -webkit-transform: translateX(${x});
        -moz-transform: translateX(${x});
         -ms-transform: translateX(${x});
@@ -167,7 +167,7 @@ export const mixin = {
             transform: translateX(${x});
   `,
 
-  translateY: (y) => `
+  translateY: y => `
     -webkit-transform: translateY(${y});
        -moz-transform: translateY(${y});
         -ms-transform: translateY(${y});
@@ -183,7 +183,7 @@ export const mixin = {
             transform: skew(${x}, ${y});
   `,
 
-  transformOrigin: (argument) => `
+  transformOrigin: argument => `
     -webkit-transform-origin: ${argument};
     	 -moz-transform-origin: ${argument};
 	      -ms-transform-origin: ${argument};
@@ -191,7 +191,7 @@ export const mixin = {
   `,
 
   // <integer>
-  order: (val) => `
+  order: val => `
     -webkit-box-ordinal-group: ${val};
        -moz-box-ordinal-group: ${val};
   	           -ms-flex-order: ${val};
@@ -201,7 +201,8 @@ export const mixin = {
 
   opacity: (opacity = 0.5) => `
     opacity: ${opacity};
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=${opacity * 100
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=${
+      opacity * 100
     })";
     filter: alpha(opacity=${opacity * 100});
   `,
@@ -218,7 +219,7 @@ export const mixin = {
         -ms-user-select: ${argument};
             user-select: ${argument};
   `,
-  
+
   cutString: (argument = 0.875, line = 2, padding = 0) => `
     overflow: hidden;
     text-overflow: ellipsis;
@@ -230,7 +231,7 @@ export const mixin = {
     visibility: visible;
     ${padding && `padding: ${padding}rem;`}
   `,
-  rowCols: (count) => `
+  rowCols: count => `
     > * {
       flex: 0 0 ${100 / count}%;
       max-width: ${100 / count}%;

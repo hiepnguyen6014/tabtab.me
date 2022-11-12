@@ -1,16 +1,17 @@
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { SRC_IMAGE } from '@core';
+import { MPostDetail } from '@models/MPostDetail';
+import { VectorHeart } from '@root/public/icons';
 import { Image, Typography } from 'antd';
 import React from 'react';
+
 import {
-  PostThumbnailWrapper,
   ContentInItem,
   ContentInItemPost,
-  TypographyText,
   ContentItem,
+  PostThumbnailWrapper,
+  TypographyText,
 } from '../PostItem.style';
-import { SRC_IMAGE } from '@core';
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { VectorHeart } from '@root/public/icons';
-import { MPostDetail } from '@models/MPostDetail';
 
 interface DemoProperty {
   name?: string;
@@ -44,18 +45,14 @@ export const PostThumbnail: React.FC<{
           <ContentInItem>
             <div className="pad-bottom">
               <div className="pad-top">
-                <div
-                  className='badge-sale-off'
-                >
+                <div className="badge-sale-off">
                   <Typography.Text className="inContentItem mx-2">
                     SALE 15% OFF
                   </Typography.Text>
                 </div>
                 <VectorHeart />
               </div>
-              <div
-                className='badge-cut-loss'
-              >
+              <div className="badge-cut-loss">
                 <Typography.Text className="inContentItem mx-2">
                   Cắt lỗ 15%
                 </Typography.Text>

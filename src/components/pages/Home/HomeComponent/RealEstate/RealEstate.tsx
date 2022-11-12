@@ -1,13 +1,13 @@
-import { Autoplay, Navigation, Pagination } from 'swiper';
-import { GeneralText, GeneralWrap, WrapperSpot } from '../../Home.style';
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import { DATA_HOME_PAGE } from '../HomeData';
 import { IconQuotes } from '@root/public/icons';
-import ItemPostUpComing from '../../UpComing/ItemPostUpComing';
 import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
 import { Typography } from 'antd';
+import React, { useState } from 'react';
+import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { GeneralText, GeneralWrap, WrapperSpot } from '../../Home.style';
+import ItemPostUpComing from '../../UpComing/ItemPostUpComing';
+import { DATA_HOME_PAGE } from '../HomeData';
 
 const RealEstate = () => {
   const [showContent, setShowContent] = useState(true);
@@ -30,7 +30,7 @@ const RealEstate = () => {
               </Typography.Title>
             </div>
             <div
-              onClick={(e) => setShowContent(showContent ? false : true)}
+              onClick={e => setShowContent(showContent ? false : true)}
               style={{ cursor: 'pointer' }}
             >
               <Typography.Text className="content-hide">HIDE</Typography.Text>

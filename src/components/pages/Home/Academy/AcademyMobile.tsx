@@ -2,6 +2,7 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { SRC_IMAGE } from '@core';
 import { IconQuotes } from '@root/public/icons';
 import { Col, Image, Row, Typography } from 'antd';
+
 import { AcademyText, AcademyWrap } from './Academy.style';
 import CenterNews from './CenterNews';
 import InOtherNews from './InOtherNews';
@@ -86,138 +87,154 @@ const AcademyMobile: React.FC<{}> = () => {
         <div className="horizontal-line" />
         <div className="d-flex">
           <div className="d-flex">
-            <IconQuotes className="mx-2" width="30px"/>
+            <IconQuotes className="mx-2" width="30px" />
             <Typography className="content-other-news">
               Despite popular opinion, the French love Britain more
             </Typography>
           </div>
 
           <div className="d-flex">
-            <IconQuotes className="mx-2" width="30px"/>
+            <IconQuotes className="mx-2" width="30px" />
             <Typography className="content-other-news">
               Despite popular opinion, the French love Britain more
             </Typography>
           </div>
         </div>
         <div>
-        <div className="d-flex justify-content-between align-items-center">
-        <div className="height-50 d-flex align-items-center">
-          <Typography className="title-head">Outstanding</Typography>
-        </div>
-        <div>
-          <div className="d-flex">
-            <div className="cirle-nav d-flex justify-content-center align-items-center mx-2">
-              <LeftOutlined style={{ color: '#141414' }} />
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="height-50 d-flex align-items-center">
+              <Typography className="title-head">Outstanding</Typography>
             </div>
-            <div className="cirle-nav d-flex justify-content-center align-items-center">
-              <RightOutlined style={{ color: '#141414' }} />
+            <div>
+              <div className="d-flex">
+                <div className="cirle-nav d-flex justify-content-center align-items-center mx-2">
+                  <LeftOutlined style={{ color: '#141414' }} />
+                </div>
+                <div className="cirle-nav d-flex justify-content-center align-items-center">
+                  <RightOutlined style={{ color: '#141414' }} />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="user-box">
-        <div className="d-flex m-user-box align-items-center">
-          <Image alt="picture" src={SRC_IMAGE.ACADEMY5} preview={false}/>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">200</Typography>
-            <Typography className="content-outstanding">Lesson</Typography>
+          <div className="user-box">
+            <div className="d-flex m-user-box align-items-center">
+              <Image alt="picture" src={SRC_IMAGE.ACADEMY5} preview={false} />
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">200</Typography>
+                <Typography className="content-outstanding">Lesson</Typography>
+              </div>
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">7000</Typography>
+                <Typography className="content-outstanding">Student</Typography>
+              </div>
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">4</Typography>
+                <Typography className="content-outstanding">
+                  Experience
+                </Typography>
+              </div>
+            </div>
+            <div className="m-user-box mb-4">
+              <Typography className="title-outstanding">
+                Kathryn Murphy
+              </Typography>
+              <div className="d-flex my-1">
+                <Typography className="content-text">Merchandising</Typography>
+                <Typography className="content-text mx-2">|</Typography>
+                <Typography className="content-text">Zalo Corp</Typography>
+              </div>
+            </div>
           </div>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">7000</Typography>
-            <Typography className="content-outstanding">Student</Typography>
-          </div>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">4</Typography>
-            <Typography className="content-outstanding">Experience</Typography>
-          </div>
-        </div>
-        <div className='m-user-box mb-4'>
-          <Typography className="title-outstanding">Kathryn Murphy</Typography>
-          <div className='d-flex my-1'>
-            <Typography className="content-text">Merchandising</Typography>
-            <Typography className="content-text mx-2">|</Typography>
-            <Typography className="content-text">Zalo Corp</Typography>
-          </div>
-        </div>
-      </div>
 
-      <div className="user-box">
-        <div className="d-flex m-user-box align-items-center">
-          <Image alt="picture" src={SRC_IMAGE.ACADEMY5} preview={false}/>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">200</Typography>
-            <Typography className="content-outstanding">Lesson</Typography>
+          <div className="user-box">
+            <div className="d-flex m-user-box align-items-center">
+              <Image alt="picture" src={SRC_IMAGE.ACADEMY5} preview={false} />
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">200</Typography>
+                <Typography className="content-outstanding">Lesson</Typography>
+              </div>
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">7000</Typography>
+                <Typography className="content-outstanding">Student</Typography>
+              </div>
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">4</Typography>
+                <Typography className="content-outstanding">
+                  Experience
+                </Typography>
+              </div>
+            </div>
+            <div className="m-user-box mb-4">
+              <Typography className="title-outstanding">
+                Kathryn Murphy
+              </Typography>
+              <div className="d-flex my-1">
+                <Typography className="content-text">Merchandising</Typography>
+                <Typography className="content-text mx-2">|</Typography>
+                <Typography className="content-text">Zalo Corp</Typography>
+              </div>
+            </div>
           </div>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">7000</Typography>
-            <Typography className="content-outstanding">Student</Typography>
-          </div>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">4</Typography>
-            <Typography className="content-outstanding">Experience</Typography>
-          </div>
-        </div>
-        <div className='m-user-box mb-4'>
-          <Typography className="title-outstanding">Kathryn Murphy</Typography>
-          <div className='d-flex my-1'>
-            <Typography className="content-text">Merchandising</Typography>
-            <Typography className="content-text mx-2">|</Typography>
-            <Typography className="content-text">Zalo Corp</Typography>
-          </div>
-        </div>
-      </div>
 
-      <div className="user-box">
-        <div className="d-flex m-user-box align-items-center">
-          <Image alt="picture" src={SRC_IMAGE.ACADEMY5} preview={false}/>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">200</Typography>
-            <Typography className="content-outstanding">Lesson</Typography>
+          <div className="user-box">
+            <div className="d-flex m-user-box align-items-center">
+              <Image alt="picture" src={SRC_IMAGE.ACADEMY5} preview={false} />
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">200</Typography>
+                <Typography className="content-outstanding">Lesson</Typography>
+              </div>
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">7000</Typography>
+                <Typography className="content-outstanding">Student</Typography>
+              </div>
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">4</Typography>
+                <Typography className="content-outstanding">
+                  Experience
+                </Typography>
+              </div>
+            </div>
+            <div className="m-user-box mb-4">
+              <Typography className="title-outstanding">
+                Kathryn Murphy
+              </Typography>
+              <div className="d-flex my-1">
+                <Typography className="content-text">Merchandising</Typography>
+                <Typography className="content-text mx-2">|</Typography>
+                <Typography className="content-text">Zalo Corp</Typography>
+              </div>
+            </div>
           </div>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">7000</Typography>
-            <Typography className="content-outstanding">Student</Typography>
-          </div>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">4</Typography>
-            <Typography className="content-outstanding">Experience</Typography>
-          </div>
-        </div>
-        <div className='m-user-box mb-4'>
-          <Typography className="title-outstanding">Kathryn Murphy</Typography>
-          <div className='d-flex my-1'>
-            <Typography className="content-text">Merchandising</Typography>
-            <Typography className="content-text mx-2">|</Typography>
-            <Typography className="content-text">Zalo Corp</Typography>
-          </div>
-        </div>
-      </div>
 
-      <div className="user-box">
-        <div className="d-flex m-user-box align-items-center">
-          <Image alt="picture" src={SRC_IMAGE.ACADEMY5} preview={false}/>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">200</Typography>
-            <Typography className="content-outstanding">Lesson</Typography>
+          <div className="user-box">
+            <div className="d-flex m-user-box align-items-center">
+              <Image alt="picture" src={SRC_IMAGE.ACADEMY5} preview={false} />
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">200</Typography>
+                <Typography className="content-outstanding">Lesson</Typography>
+              </div>
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">7000</Typography>
+                <Typography className="content-outstanding">Student</Typography>
+              </div>
+              <div className="px-3 text-center">
+                <Typography className="title-list-news">4</Typography>
+                <Typography className="content-outstanding">
+                  Experience
+                </Typography>
+              </div>
+            </div>
+            <div className="m-user-box mb-4">
+              <Typography className="title-outstanding">
+                Kathryn Murphy
+              </Typography>
+              <div className="d-flex my-1">
+                <Typography className="content-text">Merchandising</Typography>
+                <Typography className="content-text mx-2">|</Typography>
+                <Typography className="content-text">Zalo Corp</Typography>
+              </div>
+            </div>
           </div>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">7000</Typography>
-            <Typography className="content-outstanding">Student</Typography>
-          </div>
-          <div className="px-3 text-center">
-            <Typography className="title-list-news">4</Typography>
-            <Typography className="content-outstanding">Experience</Typography>
-          </div>
-        </div>
-        <div className='m-user-box mb-4'>
-          <Typography className="title-outstanding">Kathryn Murphy</Typography>
-          <div className='d-flex my-1'>
-            <Typography className="content-text">Merchandising</Typography>
-            <Typography className="content-text mx-2">|</Typography>
-            <Typography className="content-text">Zalo Corp</Typography>
-          </div>
-        </div>
-      </div>
         </div>
       </AcademyText>
     </div>
