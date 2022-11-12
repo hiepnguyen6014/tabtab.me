@@ -1,12 +1,10 @@
 import { PUBLIC_ROUTES } from '@constants';
-import { useRoute } from '@utils';
-import dynamic from 'next/dynamic';
 import React, { useEffect, useMemo, useState } from 'react';
-
 import { HeaderContainer, HeaderWrapper } from './Header.style';
+import dynamic from 'next/dynamic';
 import HeaderDesktop from './HeaderDesktop';
 import HeaderMobile from './HeaderMobile';
-
+import { useRoute } from '@utils';
 interface Props {
   showHeaderMobile?: boolean;
   t: any;
@@ -36,7 +34,7 @@ export default function HeaderComponent(props?: Props) {
   const tabCurrent = useMemo(() => {
     const pathCurrent = router.pathname;
     const key = Object.keys(PUBLIC_ROUTES).filter(
-      item => pathCurrent.indexOf(PUBLIC_ROUTES[item].href) > -1,
+      (item) => pathCurrent.indexOf(PUBLIC_ROUTES[item].href) > -1
     );
     return key.length > 1 ? '' : PUBLIC_ROUTES[key[0]];
   }, [router.pathname]);

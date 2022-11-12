@@ -1,5 +1,4 @@
 import { ImageNull } from './../core/constants/enum';
-
 export class MLinkApp {
   address?: string;
   hotline?: string;

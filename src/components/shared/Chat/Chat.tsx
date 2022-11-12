@@ -9,7 +9,6 @@ import {
 import { Button, Divider, Image, Typography } from 'antd';
 import Link from 'next/link';
 import { useState } from 'react';
-
 import {
   ChatWrap,
   DotMessage,
@@ -75,15 +74,15 @@ const Chat = ({ openChat, hiddenChat }) => {
     },
   ];
 
-  const [openChatPerson, setOpenChatPerson] = useState(false);
+  const [openChatPerson, setOpenChatPerson] = useState(false)
 
   const showChatPerson = () => {
-    setOpenChatPerson(true);
-  };
+    setOpenChatPerson(true)
+  }
 
   const hiddenChatPerson = () => {
-    setOpenChatPerson(false);
-  };
+    setOpenChatPerson(false)
+  }
 
   return (
     <>
@@ -105,7 +104,7 @@ const Chat = ({ openChat, hiddenChat }) => {
               </Flex>
               <Flex>
                 <VectorEdit />
-                <div onClick={e => hiddenChat()} style={{ cursor: 'pointer' }}>
+                <div onClick={(e) => hiddenChat()} style={{cursor:"pointer"}}>
                   <VectorDown />
                 </div>
               </Flex>
@@ -117,12 +116,8 @@ const Chat = ({ openChat, hiddenChat }) => {
             />
             {CHATLIST.map((item, key) => {
               return (
-                <Flex
-                  key={key}
-                  onClick={e => showChatPerson()}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <div style={{ position: 'relative' }}>
+                <Flex key={key} onClick={e => showChatPerson()} style={{cursor:"pointer"}}>
+                  <div style={{ position: 'relative' }} >
                     <Image
                       alt="user"
                       src={item.image}

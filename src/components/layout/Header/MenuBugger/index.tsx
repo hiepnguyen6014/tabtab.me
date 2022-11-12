@@ -1,1 +1,1 @@
-export { default as MenuBugger } from './MenuBugger';
+export {default as MenuBugger} from './MenuBugger'

@@ -1,14 +1,13 @@
-import { Plus, SearchYellow } from '@root/public/icons';
-import { Col, Divider, Input, Row, Typography } from 'antd';
-import React, { useEffect, useState } from 'react';
-
-import { getListRealEstate, getPostByRating } from '../../../core/services';
-import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout';
-import About from './About';
-import ContactInfo from './ContactInfo';
+import React, { useState, useEffect } from 'react';
 import { FDesktop, SwapAdd } from './ELearning.style';
-import RatedClasses from './RatedClasses';
+import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout';
+import { Col, Divider, Input, Row, Typography } from 'antd';
+import { Plus, SearchYellow } from '@root/public/icons';
+import { getPostByRating, getListRealEstate } from '../../../core/services';
+import ContactInfo from './ContactInfo';
+import About from './About';
 import RatingReview from './RatingReview';
+import RatedClasses from './RatedClasses';
 
 export default function ELearning({ translate }) {
   const [data, setData] = useState([]);

@@ -5,7 +5,6 @@ import { MPostDetail } from '@models/MPostDetail';
 import { getDataArea } from '@root/src/core/services/dataFilter';
 import dynamic from 'next/dynamic';
 import { useContext, useEffect, useState } from 'react';
-
 import { DefaultContentNoGrid, DefaultWrapperWithBg } from '../../layout';
 import { ChartPlace } from './ValuationComponent/ValuationCharts/valuationCharts.style';
 import { ValuationFilter } from './ValuationComponent/ValuationFilter';
@@ -16,35 +15,34 @@ interface Props {
   listCare: MPostDetail[];
 }
 export enum CONSTANT_VALUATION {
-  HCM_ID = 2,
-  HN_ID = 4,
+    HCM_ID = 2,
+    HN_ID = 4
 }
 const Valuation = (props: Props) => {
   const { t: translate, listCare } = props;
   const [listHCM, setListHCM] = useState([]);
   const [listHN, setListHN] = useState([]);
   const DynamicRowPost = dynamic(
-    () => import('../../../components/pages/Home/HomeComponent/RowPosts'),
+    () => import('../../../components/pages/Home/HomeComponent/RowPosts')
   );
   const DynamicValuationRefer: any = dynamic(() =>
     import('./ValuationComponent/ValuationRefer/index').then(
-      (mod: any) => mod.ValuationRefer,
-    ),
+      (mod: any) => mod.ValuationRefer
+    )
   );
   const DynamicChartCard = dynamic(
-    () => import('./ValuationComponent/ValuationCharts/index'),
-  );
+    () => import('./ValuationComponent/ValuationCharts/index'));
   const { listUserSave } = useContext(UserContext);
 
   // Get list RES refer: res HCM & res HN
   useEffect(() => {
     let mouted = true;
-    getDataArea('', CONSTANT_VALUATION.HCM_ID).then(res => {
+    getDataArea('',CONSTANT_VALUATION.HCM_ID).then((res) => {
       if (res && mouted) {
         setListHCM(res.data);
       }
     });
-    getDataArea('', CONSTANT_VALUATION.HN_ID).then(res => {
+    getDataArea('', CONSTANT_VALUATION.HN_ID).then((res) => {
       if (res && mouted) {
         setListHN(res.data);
       }
@@ -57,9 +55,11 @@ const Valuation = (props: Props) => {
   return (
     <>
       <DefaultWrapperWithBg>
-        <DefaultContentNoGrid>
-          <ValuationFilter t={translate} />
 
+        <DefaultContentNoGrid>
+
+          <ValuationFilter t={translate} />
+          
           <ChartPlace>
             <DynamicChartCard t={translate} />
           </ChartPlace>
@@ -75,19 +75,21 @@ const Valuation = (props: Props) => {
             listRefer={listHN}
             provinceId={CONSTANT_VALUATION.HN_ID}
           />
+
         </DefaultContentNoGrid>
+
       </DefaultWrapperWithBg>
 
       {/* BDS da luu */}
       {listUserSave?.data?.length ? (
         <DefaultWrapperWithBg>
-          <DynamicRowPost
-            t={translate}
-            title={translate('home.realEstateSaved')}
-            subTitle={'home.subSaved'}
-            posts={listUserSave?.data}
-            pathName={POST_TYPE_PARAMS.POST_SAVED.params}
-          />
+            <DynamicRowPost
+              t={translate}              
+              title={translate('home.realEstateSaved')}
+              subTitle={'home.subSaved'}
+              posts={listUserSave?.data}
+              pathName={POST_TYPE_PARAMS.POST_SAVED.params}
+            />
         </DefaultWrapperWithBg>
       ) : (
         <></>
@@ -97,10 +99,10 @@ const Valuation = (props: Props) => {
       {listCare?.length ? (
         <DefaultWrapperWithBg>
           <DynamicRowPost
-            t={translate}
-            title={'home.resMaybeCare'}
-            subTitle={'home.subResMaybeCare'}
-            posts={listCare}
+           t={translate} 
+           title={'home.resMaybeCare'}
+           subTitle={'home.subResMaybeCare'}
+           posts={listCare} 
           />
         </DefaultWrapperWithBg>
       ) : (

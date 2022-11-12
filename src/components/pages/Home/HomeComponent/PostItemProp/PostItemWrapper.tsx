@@ -1,5 +1,4 @@
 import { PUBLIC_ROUTES, ROUTES } from '@constants';
-
 import { PostWrapper } from './PostItem.style';
 
 interface Props {

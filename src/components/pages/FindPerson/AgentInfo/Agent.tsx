@@ -269,7 +269,7 @@ export default function Person(props: { post: MPostDetail; t: any }) {
           </div>
           <WidgetAction>
             <TextEmail t={t} email={contactRecord.email}>
-              <Link href="/" legacyBehavior>
+              <Link href="/">
                 <ButtonChat
                   style={{
                     borderRadius: 8,

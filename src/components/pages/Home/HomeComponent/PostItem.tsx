@@ -1,8 +1,4 @@
-import { ROUTES } from '@constants';
-import { SRC_IMAGE } from '@core';
-import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import { Button, Col, Divider, Image, Row, Skeleton, Typography } from 'antd';
-import { useRouter } from 'next/router';
 import {
   VectorBuilding,
   VectorCalendar,
@@ -13,19 +9,23 @@ import {
   VectorTree,
   VectorUser,
 } from 'public/icons';
-
+import { ItemWrapper } from './PostItem/PostItemWrapper';
 import { PostThumbnail } from './PostItem/PostComponent/PostThumbnail';
 import {
   PostContent,
   PostMiddle,
-  PostMiddleFooter,
   PostMiddleItem,
   PostTitle,
+  PostMiddleFooter,
   TypographyText,
 } from './PostItem/PostItem.style';
-import { ItemWrapper } from './PostItem/PostItemWrapper';
+import { SRC_IMAGE } from '@core';
+import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
+import { useRouter } from 'next/router';
+import {ROUTES} from "@constants"
 
-const PostItemSell = () => {
+const PostItemSell= () => {
+
   // const {
   //   realEstateId,
   //   agency,
@@ -59,7 +59,7 @@ const PostItemSell = () => {
           action: () => handleRedirect(realEstateId)
         }}
         /> */}
-        <PostContent>
+        <PostContent >
           <TypographyText>
             <PostTitle>
               <Row>
@@ -87,20 +87,19 @@ const PostItemSell = () => {
                   </div>
                 </Col>
               </Row>
-              <Row className="wrap-post">
-                <Typography.Title
-                  className="detailPost"
-                  style={{ overflow: 'clip' }}
-                ></Typography.Title>
+              <Row className='wrap-post'>
+                <Typography.Title className="detailPost" style={{overflow:'clip'}}>
+                </Typography.Title>
                 <Typography.Title
                   className="addressPost"
                   style={{ marginTop: '0px' }}
-                ></Typography.Title>
+                >
+                </Typography.Title>
               </Row>
             </PostTitle>
             <Divider />
 
-            <PostMiddle className="wrap-post">
+            <PostMiddle className='wrap-post'>
               <PostMiddleItem>
                 {
                   <>
@@ -135,14 +134,14 @@ const PostItemSell = () => {
                 }
               </PostMiddleItem>
             </PostMiddle>
-            <PostMiddle className="wrap-post">
+            <PostMiddle className='wrap-post'>
               <PostMiddleItem>
                 {
                   <>
                     <VectorHouse />
                     <Typography.Text className="textPostMiddle">
-                      {/* {post.realEstateLandRealitySquare} */}
-                      {/* {parseFloat(post.realEstateLandRealitySquare).toLocaleString()} */}
+                    {/* {post.realEstateLandRealitySquare} */}
+                    {/* {parseFloat(post.realEstateLandRealitySquare).toLocaleString()} */}
                     </Typography.Text>
                   </>
                 }
@@ -171,7 +170,7 @@ const PostItemSell = () => {
               </PostMiddleItem>
             </PostMiddle>
             <Divider style={{ marginTop: '5px', marginBottom: '7px' }} />
-            <PostMiddle className="wrap-post">
+            <PostMiddle className='wrap-post'>
               <PostMiddleFooter>
                 {
                   <span style={{ display: 'flex', alignItems: 'center' }}>
@@ -195,7 +194,9 @@ const PostItemSell = () => {
                       }}
                     >
                       <VectorTalk />
-                      <label className="textPostMiddle">CHAT NOW</label>
+                      <label className="textPostMiddle">
+                        CHAT NOW
+                      </label>
                     </Button>
                   </>
                 }

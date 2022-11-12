@@ -1,1 +1,1 @@
-export { default as ListUtility } from './ListUtilities';
+export {default as ListUtility} from './ListUtilities'

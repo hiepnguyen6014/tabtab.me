@@ -58,7 +58,7 @@ export const XprofileWrap = styled.div`
     width: 28px;
     height: 28px;
   }
-  .margin-X--30 {
+  .margin-X--30{
     margin-left: 30px;
     margin-right: 30px;
   }

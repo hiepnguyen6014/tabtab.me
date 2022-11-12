@@ -10,7 +10,6 @@ import {
   VectorVideoCamera,
 } from '@root/public/icons';
 import { Col, Divider, Image, Row, Typography } from 'antd';
-
 import {
   BoxWrap,
   ButtonConnect,
@@ -60,7 +59,7 @@ const BoxComment = () => {
         away from Grandmother, I ran away from the hare. And I can run away from
         you, grey wolf!» says the bun and runs away.
       </Typography>
-      <Divider type="horizontal" style={{ margin: '0px 0px' }} />
+      <Divider type="horizontal" style={{ margin: '0px 0px' }}/>
 
       <Row justify="space-around" align="middle">
         <Col>
@@ -84,7 +83,7 @@ const BoxComment = () => {
           </Flex>
         </Col>
       </Row>
-      <Divider type="horizontal" style={{ margin: '0px 0px' }} />
+      <Divider type="horizontal" style={{ margin: '0px 0px' }}/>
 
       <Flex style={{ margin: '0px 0px' }}>
         <Image alt="pic" src={SRC_IMAGE.ACADEMY8} height="36px" width="36px" />

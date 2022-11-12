@@ -36,7 +36,7 @@ const SlideDiscoveryPost = () => {
           return (
             <>
               <DivA key={key}>
-                <Link href="/detail-spotlight" legacyBehavior>
+                <Link href="/detail-spotlight">
                   <Flex>
                     <ImageWrap
                       alt="property"

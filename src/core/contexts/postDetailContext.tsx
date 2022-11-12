@@ -9,7 +9,7 @@ export const PostDetailContext = React.createContext<PostDetailContextProps>({
   focusComment: false,
 });
 
-export const PostDetailContextProvider = props => {
+export const PostDetailContextProvider = (props) => {
   const [focusComment, setFocusComment] = useState<boolean>(false);
 
   const handleFocusComment = () => {

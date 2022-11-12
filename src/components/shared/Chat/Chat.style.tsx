@@ -1,6 +1,7 @@
-import { styled } from '@styles/theme';
-import { device } from '@styles/theme/device';
 import { Input, Typography } from 'antd';
+
+import { device } from '@styles/theme/device';
+import { styled } from '@styles/theme';
 
 export const ChatWrap = styled.div`
   position: fixed;
@@ -49,7 +50,7 @@ export const SearchMessage = styled(Input)`
   width: 242px;
   height: 32px;
   margin: 5px 0px;
-  .ant-input {
+  .ant-input{
     background: #e9e9e9;
   }
 `;

@@ -19,14 +19,26 @@ const CenterCol: React.FC<{}> = () => {
               <Image preview={false} alt="info" src={SRC_IMAGE.ACADEMY8} />
             </div>
             <div className="mx-2">
-              <Typography className="name-center">Floyd Miles</Typography>
+              <Typography className='name-center'>Floyd Miles</Typography>
               <span className="align-items-center d-flex">
-                <label className="role-person">Sale Manager</label>
+                <label
+                  className='role-person'
+                >
+                  Sale Manager
+                </label>
                 <Divider type="vertical" />
-                <label className="role-person">CMC Corp</label>
+                <label
+                  className='role-person'
+                >
+                  CMC Corp
+                </label>
                 <Divider type="vertical" />
                 <div className="align-items-center d-flex">
-                  <label className="coin-person">24t</label>
+                  <label
+                    className='coin-person'
+                  >
+                    24t
+                  </label>
                   <IconCoinTabTab style={{ marginLeft: 5 }} />
                 </div>
               </span>
@@ -45,7 +57,7 @@ const CenterCol: React.FC<{}> = () => {
           </Col>
         </Row>
         <Row className="m-3">
-          <Typography className="content-center">
+          <Typography className='content-center'>
             The bun runs along the road and meets a wolf. «Little bun, little
             bun, I want to eat you!» says the wolf. «I ran away from
             Grandfather, I ran away from Grandmother, I ran away from the hare.
@@ -56,19 +68,19 @@ const CenterCol: React.FC<{}> = () => {
         <Row className="pb-4">
           <div className="d-flex mx-4">
             <VectorCoin />
-            <Typography className="icon-center">Tặng Tabcoin</Typography>
+            <Typography className='icon-center'>Tặng Tabcoin</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorTalk />
-            <Typography className="icon-center">Comment</Typography>
+            <Typography className='icon-center'>Comment</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorShare />
-            <Typography className="icon-center">Share</Typography>
+            <Typography className='icon-center'>Share</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorSend />
-            <Typography className="icon-center">Send</Typography>
+            <Typography className='icon-center'>Send</Typography>
           </div>
         </Row>
       </div>
@@ -79,18 +91,30 @@ const CenterCol: React.FC<{}> = () => {
               <Image preview={false} alt="info" src={SRC_IMAGE.ACADEMY8} />
             </div>
             <div className="mx-2">
-              <Typography className="name-person">Floyd Miles</Typography>
+              <Typography className='name-person'>Floyd Miles</Typography>
               <span className="align-items-center d-flex">
-                <label className="role-person">Sale Manager</label>
+                <label
+                  className='role-person'
+                >
+                  Sale Manager
+                </label>
                 <Divider type="vertical" />
-                <label className="role-person">CMC Corp</label>
+                <label
+                  className='role-person'
+                >
+                  CMC Corp
+                </label>
                 <Divider type="vertical" />
                 <div className="align-items-center d-flex">
-                  <label className="coin-person">24t</label>
+                  <label
+                    className='coin-person'
+                  >
+                    24t
+                  </label>
                   <IconCoinTabTab style={{ marginLeft: 5 }} />
                 </div>
               </span>
-              <Typography className="date-time">3 phút trước</Typography>
+              <Typography className='date-time'>3 phút trước</Typography>
             </div>
             <div></div>
           </Col>
@@ -106,37 +130,32 @@ const CenterCol: React.FC<{}> = () => {
           </Col>
         </Row>
         <Row className="m-3">
-          <Typography className="content-center">
+          <Typography className='content-center'>
             The bun runs along the road and meets a wolf. «Little bun, little
             bun, I want to eat you!» says the wolf. «I ran away from
             Grandfather, I ran away from Grandmother, I ran away from the hare.
             And I can run away from you, grey wolf!» says the bun and runs away.
           </Typography>
-          <Image
-            preview={false}
-            alt="pic"
-            src={SRC_IMAGE.ACADEMY3}
-            width="100%"
-          />
+          <Image preview={false} alt="pic" src={SRC_IMAGE.ACADEMY3} width="100%"/>
 
           <div className="horizontal-line" />
         </Row>
         <Row className="pb-4">
           <div className="d-flex mx-4">
             <VectorCoin />
-            <Typography className="icon-center">Tặng Tabcoin</Typography>
+            <Typography className='icon-center'>Tặng Tabcoin</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorTalk />
-            <Typography className="icon-center">Comment</Typography>
+            <Typography className='icon-center'>Comment</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorShare />
-            <Typography className="icon-center">Share</Typography>
+            <Typography className='icon-center'>Share</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorSend />
-            <Typography className="icon-center">Send</Typography>
+            <Typography className='icon-center'>Send</Typography>
           </div>
         </Row>
       </div>
@@ -147,18 +166,30 @@ const CenterCol: React.FC<{}> = () => {
               <Image preview={false} alt="info" src={SRC_IMAGE.ACADEMY8} />
             </div>
             <div className="mx-2">
-              <Typography className="name-person">Floyd Miles</Typography>
+              <Typography className='name-person'>Floyd Miles</Typography>
               <span className="align-items-center d-flex">
-                <label className="role-person">Sale Manager</label>
+                <label
+                  className='role-person'
+                >
+                  Sale Manager
+                </label>
                 <Divider type="vertical" />
-                <label className="role-person">CMC Corp</label>
+                <label
+                  className='role-person'
+                >
+                  CMC Corp
+                </label>
                 <Divider type="vertical" />
                 <div className="align-items-center d-flex">
-                  <label className="coin-person">24t</label>
+                  <label
+                    className='coin-person'
+                  >
+                    24t
+                  </label>
                   <IconCoinTabTab style={{ marginLeft: 5 }} />
                 </div>
               </span>
-              <Typography className="date-time">3 phút trước</Typography>
+              <Typography className='date-time'>3 phút trước</Typography>
             </div>
             <div></div>
           </Col>
@@ -174,7 +205,7 @@ const CenterCol: React.FC<{}> = () => {
           </Col>
         </Row>
         <Row className="m-3">
-          <Typography className="content-center">
+          <Typography className='content-center'>
             The bun runs along the road and meets a wolf. «Little bun, little
             bun, I want to eat you!» says the wolf. «I ran away from
             Grandfather, I ran away from Grandmother, I ran away from the hare.
@@ -185,19 +216,19 @@ const CenterCol: React.FC<{}> = () => {
         <Row className="pb-4">
           <div className="d-flex mx-4">
             <VectorCoin />
-            <Typography className="icon-center">Tặng Tabcoin</Typography>
+            <Typography className='icon-center'>Tặng Tabcoin</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorTalk />
-            <Typography className="icon-center">Comment</Typography>
+            <Typography className='icon-center'>Comment</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorShare />
-            <Typography className="icon-center">Share</Typography>
+            <Typography className='icon-center'>Share</Typography>
           </div>
           <div className="d-flex mx-4">
             <VectorSend />
-            <Typography className="icon-center">Send</Typography>
+            <Typography className='icon-center'>Send</Typography>
           </div>
         </Row>
       </div>

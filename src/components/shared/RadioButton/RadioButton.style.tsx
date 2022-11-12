@@ -2,9 +2,9 @@ import { styled } from '@styles/theme';
 import { device } from '@styles/theme/device';
 import { Radio } from 'antd';
 
-export const RadBtn = styled(props => <Radio.Button {...props} />)`
+export const RadBtn = styled((props) => <Radio.Button {...props} />)`
   width: 100%;
-  height: ${props => (props.height ? props.height + 'px' : '32px')};
+  height: ${(props) => (props.height ? props.height + 'px' : '32px')};
   border-radius: 8px;
   margin-right: 2px;
   font-weight: 700;

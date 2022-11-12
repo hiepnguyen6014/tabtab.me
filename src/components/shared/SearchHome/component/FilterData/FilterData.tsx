@@ -121,6 +121,7 @@ export const PROVINCE_DATA = [
   },
 ];
 
+
 export const DISTRICT_DATA = [
   {
     id: '1',
@@ -154,7 +155,8 @@ export const DISTRICT_DATA = [
     id: '8',
     value: 'Nhà Bè',
   },
-];
+]
+
 
 export const WARDS_DATA = [
   {
@@ -189,7 +191,7 @@ export const WARDS_DATA = [
     id: '8',
     value: 'Nguyễn Thái Bình',
   },
-];
+]
 
 export const STREET_DATA = [
   {
@@ -224,7 +226,7 @@ export const STREET_DATA = [
     id: '8',
     value: 'Cao Bá Nhạ',
   },
-];
+]
 
 export const PROJECT_DATA = [
   {
@@ -259,4 +261,4 @@ export const PROJECT_DATA = [
     id: '8',
     value: 'Chelsea Residential',
   },
-];
+]

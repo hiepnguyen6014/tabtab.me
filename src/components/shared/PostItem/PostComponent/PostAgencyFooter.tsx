@@ -1,24 +1,15 @@
-import { MPostDetail } from '@models/MPostDetail';
-import { IconDiscount } from 'public/icons';
-import React from 'react';
+import { MPostDetail } from "@models/MPostDetail";
+import { IconDiscount } from "public/icons";
+import React from "react";
+import { PostItemFooter } from "../PostItem.style";
 
-import { PostItemFooter } from '../PostItem.style';
-
-export const PostAgencyFooter: React.FC<{ post: MPostDetail; t: any }> = ({
-  post,
-  t,
-}) => {
-  const { agencyPercent } = post;
+export const PostAgencyFooter: React.FC<{ post: MPostDetail,t:any }> = ({ post,t }) => {
+  const {
+    agencyPercent
+  }= post
   const listInfo = [
-    { icon: <IconDiscount />, value: t('common.commission') },
-    {
-      icon: (
-        <h3>
-          <strong>{agencyPercent} %</strong>
-        </h3>
-      ),
-      value: ' ',
-    },
+    { icon: <IconDiscount />, value:t('common.commission') },
+    { icon:<h3><strong>{agencyPercent} %</strong></h3>, value:" "}
   ];
 
   return (
@@ -31,7 +22,7 @@ export const PostAgencyFooter: React.FC<{ post: MPostDetail; t: any }> = ({
           </span>
         ) : (
           <></>
-        ),
+        )
       )}
     </PostItemFooter>
   );

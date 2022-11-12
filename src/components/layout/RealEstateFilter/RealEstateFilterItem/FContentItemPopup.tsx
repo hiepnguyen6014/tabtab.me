@@ -1,12 +1,11 @@
 import { FilterContext } from '@contexts';
-import dynamic from 'next/dynamic';
 import { useContext, useState } from 'react';
-
+import { FMenuPopupSelect } from '../RealEstateFilterPopup/RealEstateFilterPopup.style';
 import {
   BtnDeleteItemDark,
   FButtonArrow,
 } from '../RealEstateFilterDesktop.style';
-import { FMenuPopupSelect } from '../RealEstateFilterPopup/RealEstateFilterPopup.style';
+import dynamic from 'next/dynamic';
 
 interface Props {
   idQuery: string;
@@ -25,7 +24,7 @@ export const FContentItemPopup = (props: Props) => {
       <FButtonArrow />
     );
   const DynamicButton = dynamic(() =>
-    import('../RealEstateFilterDesktop.style').then(mod => mod.FButtonItem),
+    import('../RealEstateFilterDesktop.style').then((mod) => mod.FButtonItem)
   );
   return (
     <FMenuPopupSelect

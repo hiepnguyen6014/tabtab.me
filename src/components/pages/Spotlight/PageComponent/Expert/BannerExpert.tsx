@@ -1,14 +1,13 @@
 import { SRC_IMAGE } from '@core';
-import { VectorBookmark } from '@root/public/icons';
 import { Image, Typography } from 'antd';
-
 import {
   BannerExpertWrap,
-  BannerWrap,
   DivWrap,
+  BannerWrap,
   ImageBannerWrap,
   TextBanner,
 } from './Expert.style';
+import { VectorBookmark } from '@root/public/icons';
 
 const BannerExpert = () => {
   return (

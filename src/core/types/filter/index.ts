@@ -1,3 +1,5 @@
+
+
 export interface IAreaData {
   areaDataId: number;
   areaDataName: string;
@@ -6,9 +8,9 @@ export interface IAreaData {
 }
 
 type Detail = {
-  total: number;
+  total:number;
   defineName: string;
-};
+}
 
 export interface SearchDataProps {
   AreaCountryName: string;

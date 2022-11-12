@@ -1,17 +1,16 @@
-import { FilterContext } from '@root/src/core/contexts/filterContext';
 import { useContext } from 'react';
-
-import { FilterProps } from '.';
-import { REFormSearchInput, REReset } from './FilterSearch';
-import { SearchFormDesktop } from './FilterSearch/FilterSearch.style';
 import {
-  FDesktop,
   FDropdown,
-  FMenuDropdown,
+  FDesktop,
+  FMenuDropdown
 } from './RealEstateFilterDesktop.style';
+import { FilterContext } from '@root/src/core/contexts/filterContext';
+import { SearchFormDesktop } from './FilterSearch/FilterSearch.style';
+import { REFormSearchInput, REReset } from './FilterSearch';
 import { FContentItem } from './RealEstateFilterItem/FContentItem';
-import { FToggle } from './RealEstateFilterItem/FToggle';
+import { FilterProps } from '.';
 import { FMenuItemPopup } from './RealEstateFilterPopup/RealEstateFilterPopup.style';
+import { FToggle } from './RealEstateFilterItem/FToggle';
 
 interface Props {
   listFilter: FilterProps[];
@@ -25,47 +24,45 @@ const RealEstateFilterDesktop = (props: Props) => {
 
   return (
     <FDesktop>
-      {listFilter.map((item, key) =>
-        item.toggle ? (
-          <FToggle onChangeValue={onChangeValue} {...item} />
-        ) : (
-          <FDropdown
-            key={key}
-            overlay={
-              item.subMenu ? (
-                item.subMenu
-              ) : (
-                <FMenuDropdown>
-                  {item.list.map(value => (
-                    <FMenuItemPopup
-                      onClick={(e: any) =>
-                        onChangeValue(item.idQuery, value[item.keyId])
-                      }
-                      key={value[item.keyId]}
-                    >
-                      {value[item.keyName]}
-                    </FMenuItemPopup>
-                  ))}
-                </FMenuDropdown>
-              )
-            }
-          >
-            <div>
-              <FContentItem
-                idQuery={item.idQuery}
-                initValue={initValue(
-                  item.idQuery,
-                  item.list,
-                  item.keyId,
-                  item.keyName,
-                  translate,
-                )}
-                placeholder={item.placeholder}
-              />
-            </div>
-          </FDropdown>
-        ),
-      )}
+      {listFilter.map((item, key) => (
+        item.toggle ? <FToggle onChangeValue={onChangeValue} {...item}/> 
+        :
+        <FDropdown
+          key={key}
+          overlay={
+            item.subMenu ? (
+              item.subMenu
+            ) : (
+              <FMenuDropdown>
+                {item.list.map((value) => (
+                  <FMenuItemPopup
+                    onClick={(e: any) =>
+                      onChangeValue(item.idQuery, value[item.keyId])
+                    }
+                    key={value[item.keyId]}
+                  >
+                    {value[item.keyName]}
+                  </FMenuItemPopup>
+                ))}
+              </FMenuDropdown>
+            )
+          }
+        >
+          <div>
+            <FContentItem
+              idQuery={item.idQuery}
+              initValue={initValue(
+                item.idQuery,
+                item.list,
+                item.keyId,
+                item.keyName,
+                translate
+              )}
+              placeholder={item.placeholder}
+            />
+          </div>
+        </FDropdown>
+      ))}
 
       <SearchFormDesktop>
         <REFormSearchInput t={translate} />
@@ -75,4 +72,4 @@ const RealEstateFilterDesktop = (props: Props) => {
   );
 };
 
-export default RealEstateFilterDesktop;
+export default RealEstateFilterDesktop

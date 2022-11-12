@@ -10,7 +10,6 @@ import {
   VectorVideoCamera,
 } from '@root/public/icons';
 import { Col, Divider, Image, Row, Typography } from 'antd';
-
 import {
   BoxWrap,
   ButtonConnect,
@@ -55,9 +54,7 @@ const BoxText = () => {
         </Flex>
       </Flex>
       <Typography className="content-social__text my-3">
-        developments in the Labour party have once again highlighted how,
-        despite the leader’s promise to end factionalism, internal divisions are
-        alive and well. The party agreed last month to ban four groups
+      developments in the Labour party have once again highlighted how, despite the leader’s promise to end factionalism, internal divisions are alive and well. The party agreed last month to ban four groups
       </Typography>
       <Divider type="horizontal" style={{ margin: '0px 0px' }} />
       <Row justify="space-around" align="middle">

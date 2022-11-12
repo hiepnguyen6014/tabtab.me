@@ -1,26 +1,6 @@
-import TenXLogo from '@root/public/static/Ten-X-Logo.png';
-import ThumbnailCard from '@root/public/static/images-recommend.png';
-import ThumbnailCard2 from '@root/public/static/thumbnail2.png';
-import { Divider } from 'antd';
-import Image from 'next/image';
-import {
-  NextArrow,
-  PrevArrow,
-  SFavorite,
-  VectorBuilding,
-  VectorCalendar,
-  VectorDirection,
-  VectorHouse,
-  VectorSquare,
-  VectorTree,
-  VectorUser,
-} from 'public/icons';
-import React from 'react';
-import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {
   CardBottom,
@@ -33,6 +13,28 @@ import {
   Prices,
   Wrapper,
 } from './Recommend.style';
+import { Navigation, Pagination } from 'swiper';
+import {
+  NextArrow,
+  PrevArrow,
+  SFavorite,
+  VectorBuilding,
+  VectorCalendar,
+  VectorDirection,
+  VectorHouse,
+  VectorSquare,
+  VectorTalk,
+  VectorTree,
+  VectorUser,
+} from 'public/icons';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { Divider } from 'antd';
+import Image from 'next/image';
+import React from 'react';
+import TenXLogo from '@root/public/static/Ten-X-Logo.png';
+import ThumbnailCard from '@root/public/static/images-recommend.png';
+import ThumbnailCard2 from '@root/public/static/thumbnail2.png';
 
 export interface PostItem {
   price?: string;
@@ -112,7 +114,7 @@ export function RecommendItem(props: PostItem) {
           </CardTitle>
 
           <DetailItem>
-            {detailItemList.map(item => (
+            {detailItemList.map((item) => (
               <div className="item" key={item.id}>
                 {item.icon}
                 <div className="item-content">{item.content}</div>

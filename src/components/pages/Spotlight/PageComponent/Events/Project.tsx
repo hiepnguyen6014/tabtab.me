@@ -1,6 +1,5 @@
 import { VectorLocationL } from '@root/public/icons';
 import { Divider, Typography } from 'antd';
-
 import { DivA } from '../../../Home/Spotlight/ItemSpotlight.style';
 import { DividerH, Flex } from '../../SpotlightPage.style';
 

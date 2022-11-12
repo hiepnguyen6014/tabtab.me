@@ -1,1 +1,1 @@
-export { DiscoverRealEstate } from './DiscoverRealEstate';
+export { DiscoverRealEstate} from './DiscoverRealEstate'

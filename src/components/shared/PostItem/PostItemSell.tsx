@@ -1,8 +1,4 @@
-import { ROUTES, TRACKING_GOOGLE } from '@constants';
-import { MPostDetail } from '@models/MPostDetail';
-import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import { Divider, Skeleton, Typography } from 'antd';
-import { useRouter } from 'next/router';
 import {
   IconAI,
   IconCoin,
@@ -10,20 +6,23 @@ import {
   IconLineChart,
   IconMark,
 } from 'public/icons';
-
-import { PostAgencyFooter } from './PostComponent/PostAgencyFooter';
 import { PostProjectFooter } from './PostComponent/PostProjectFooter';
+import { ItemWrapper } from './PostItemWrapper';
 import { PostThumbnail } from './PostComponent/PostThumbnail';
+import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import {
   PostContent,
   PostMiddle,
   PostMiddleItem,
   PostTitle,
 } from './PostItem.style';
-import { ItemWrapper } from './PostItemWrapper';
-
+import { useRouter } from 'next/router';
+import { MPostDetail } from '@models/MPostDetail';
+import { PostAgencyFooter } from './PostComponent/PostAgencyFooter';
+import { ROUTES, TRACKING_GOOGLE } from '@constants';
 // import { useEffect } from 'react';
 // import * as ga from '@ga';
+
 
 const PostItemSell: React.FC<{
   post: MPostDetail;
@@ -50,13 +49,13 @@ const PostItemSell: React.FC<{
     });
   };
 
-  //   useEffect(() => {
-  //   if (agency === 0) {
-  //     ga.event(window, TRACKING_GOOGLE.AGENCY_POST)
-  //   } else {
-  //     ga.event(window, TRACKING_GOOGLE.USER_POST)
-  //   };
-  // }, []);
+//   useEffect(() => {
+//   if (agency === 0) {
+//     ga.event(window, TRACKING_GOOGLE.AGENCY_POST)
+//   } else {
+//     ga.event(window, TRACKING_GOOGLE.USER_POST)
+//   };
+// }, []);
 
   if (post?.isHidden === 1) return <></>;
 

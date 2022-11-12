@@ -1,14 +1,13 @@
-import { SearchHome } from '@components';
-import { SRC_LOGO } from '@constants';
 import { Carousel, Typography } from 'antd';
-
+import { SearchHome } from '@components';
 import {
-  BackgroundGradient,
-  BannerImage,
   BannerWrapper,
   ContentInBanner,
+  BannerImage,
   SearchWrapper,
+  BackgroundGradient,
 } from './Home.style';
+import { SRC_LOGO } from '@constants';
 
 export const BannerHome = (props: { t: any }) => {
   const arrayImg = [

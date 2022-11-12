@@ -18,23 +18,22 @@ import {
 } from '@root/public/icons';
 import { Button, Col, Divider, Image, Modal, Row, Typography } from 'antd';
 import { useState } from 'react';
-
 import {
   BannerRoommate,
-  ButtonChat,
-  ButtonClose,
-  ButtonDetail,
-  ButtonShadow,
-  DetailRoommate,
   DividerItem,
-  Flex,
-  ImageWrap,
   ItemRoommateText,
   ItemRoommateWrap,
-  ModalRoommate,
-  RoommateWrap,
   SearchingForWrap,
   TextInBanner,
+  Flex,
+  ModalRoommate,
+  DetailRoommate,
+  RoommateWrap,
+  ButtonDetail,
+  ButtonChat,
+  ButtonShadow,
+  ButtonClose,
+  ImageWrap,
 } from './ItemRoommate.style';
 
 const ItemRoommate = ({ items, key }) => {
@@ -185,11 +184,7 @@ const ItemRoommate = ({ items, key }) => {
         <ItemRoommateText>
           <Row>
             <Col xs={24} sm={24} lg={10}>
-              <ImageWrap
-                alt="roommate"
-                src={SRC_IMAGE.ROOMMATE4}
-                preview={false}
-              />
+              <ImageWrap alt="roommate" src={SRC_IMAGE.ROOMMATE4} preview={false} />
             </Col>
             <Col xs={24} sm={24} lg={14} style={{ padding: '10px' }}>
               <Flex>

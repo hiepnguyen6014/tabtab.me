@@ -1,23 +1,22 @@
-import { SRC_IMAGE } from '@core';
+import React, { useEffect, useState } from 'react';
+import { FDesktop, SwapAdd, FDesktopSecond } from './FindPersonDetails.style';
+import HeaderComponent from '../../layout/Header';
+import { useTranslation } from 'next-i18next';
+import { checkIsHomePage } from '@utils';
+import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout';
+import { Divider, Typography } from 'antd';
 import {
   IconEmailTabTab,
   IconPhoneTabTab,
   Logo5Team,
   Plus,
 } from '@root/public/icons';
-import { getListRealEstate, getPostByRating } from '@root/src/core/services';
-import { checkIsHomePage } from '@utils';
-import { Divider, Typography } from 'antd';
-import { useTranslation } from 'next-i18next';
-import React, { useEffect, useState } from 'react';
-
-import DefaultLayout from '../../layout/DefaultLayout/DefaultLayout';
-import HeaderComponent from '../../layout/Header';
 import ContactInfo from './ContactInfo';
-import { FDesktop, FDesktopSecond, SwapAdd } from './FindPersonDetails.style';
-import Recommend from './Recommend';
-import Review from './Review';
+import { SRC_IMAGE } from '@core';
 import TeamListing from './TeamListing';
+import Review from './Review';
+import { getListRealEstate, getPostByRating } from '@root/src/core/services';
+import Recommend from './Recommend';
 
 const data = {
   firstName: 'An',

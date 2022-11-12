@@ -31,7 +31,7 @@ const HeaderMobile = (props: Props) => {
       <MainContentMobile>
         <RowContentMobile>
           <ColContentMobile span={3}>
-            <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}`} legacyBehavior>
+            <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}`}>
               <Image
                 alt="icon"
                 src={SRC_IMAGE.ICONUSER}

@@ -1,1 +1,1 @@
-export { default as ImageCarouselWithCount } from './ImageCarouseWithCount';
+export {default as ImageCarouselWithCount} from './ImageCarouseWithCount'

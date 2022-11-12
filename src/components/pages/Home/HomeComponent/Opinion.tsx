@@ -1,18 +1,17 @@
-import { SRC_IMAGE } from '@constants';
-import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
-import { Image, Row, Typography } from 'antd';
-import { IconQuotes } from 'public/icons';
-import { useState } from 'react';
-
+import { Row, Typography, Image } from 'antd';
 import {
+  WrapperSpot,
+  TextWrap,
   ColWrap,
+  VerticalLine,
+  SpotlightText,
   GeneralText,
   GeneralWrap,
-  SpotlightText,
-  TextWrap,
-  VerticalLine,
-  WrapperSpot,
 } from '../Home.style';
+import { IconQuotes } from 'public/icons';
+import { SRC_IMAGE } from '@constants';
+import { useState } from 'react';
+import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
 
 const Opinion: React.FC<{}> = () => {
   const [showContent, setShowContent] = useState(true);
@@ -33,7 +32,7 @@ const Opinion: React.FC<{}> = () => {
               </Typography.Title>
             </div>
             <div
-              onClick={e => setShowContent(showContent ? false : true)}
+              onClick={(e) => setShowContent(showContent ? false : true)}
               style={{ cursor: 'pointer' }}
             >
               <Typography.Text className="content-hide">HIDE</Typography.Text>

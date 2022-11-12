@@ -8,18 +8,17 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
-import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaultLayout';
+import HeaderAboutUs from '../../components/pages/AboutUs/Component/HeaderAboutUs';
 import {
   AboutUsText,
   AboutUsWrap,
 } from '@root/src/components/pages/AboutUs/AboutUs.style';
-import BoardManagement from '@root/src/components/pages/AboutUs/Component/BoardManagement';
 import ContentAboutUs from '@root/src/components/pages/AboutUs/Component/ContentAboutUs';
 import Recruitment from '@root/src/components/pages/AboutUs/Component/Recruitment';
 import WhyUs from '@root/src/components/pages/AboutUs/Component/WhyUs';
+import BoardManagement from '@root/src/components/pages/AboutUs/Component/BoardManagement';
+import DefaultLayout from '@root/src/components/layout/DefaultLayout/DefaultLayout';
 import { useTranslation } from 'react-i18next';
-
-import HeaderAboutUs from '../../components/pages/AboutUs/Component/HeaderAboutUs';
 
 const AboutUs: React.FC<{}> = () => {
   const { t: translate } = useTranslation('common');

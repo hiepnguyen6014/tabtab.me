@@ -1,16 +1,15 @@
 import { SearchYellow } from '@root/public/icons';
 import { Col, Row, Typography } from 'antd';
-
 import { SearchInput } from '../HelpCenter.style';
 
 const HelpSearch: React.FC<{}> = () => {
   return (
     <div>
       <div className="d-flex justify-content-center">
-        <Typography className="header-typography">Help Center</Typography>
+          <Typography className="header-typography">Help Center</Typography>
       </div>
       <div className="d-flex justify-content-center search">
-        <p>Hỗ trợ hướng dẫn, phần mềm và thông tin hữu ích khác</p>
+          <p>Hỗ trợ hướng dẫn, phần mềm và thông tin hữu ích khác</p>
       </div>
       <SearchInput
         // style={{

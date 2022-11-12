@@ -1,3 +1,11 @@
+
+import { BreadcrumbCustom } from '../../../shared/Breadcrum/index';
+import { ButtonSave } from '../../../shared/ButtonSave/index';
+import { ButtonShare } from '../../../shared/ButtonShare';
+import { TextParagraph } from '../../../shared/TextParagraph';
+import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
+import { Block } from './Component.style';
+import type { ColumnsType } from 'antd/es/table';
 import { PUBLIC_ROUTES, ROUTES } from '@constants';
 import { filterKey } from '@contexts';
 import { MPostDetail } from '@models/MPostDetail';
@@ -5,30 +13,16 @@ import { IconCheck, IconMark, IconTimer, Logo1 } from '@root/public/icons';
 import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import { colors } from '@styles/theme/colors';
 import { Col, Divider, Row, Table, Typography } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
-import dynamic from 'next/dynamic';
 import { useState } from 'react';
-
 import {
   DefaultContentInWrapper,
   DefaultLinkText,
   DefaultRowTitle,
   DefaultWrapperWithBg,
 } from '..';
-import { BreadcrumbCustom } from '../../../shared/Breadcrum/index';
-import { ButtonSave } from '../../../shared/ButtonSave/index';
-import { ButtonShare } from '../../../shared/ButtonShare';
-import { TextParagraph } from '../../../shared/TextParagraph';
-import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
-import { Block } from './Component.style';
-import { DefaultContentInWrapperMajor } from './Component.style';
-import {
-  RowActions,
-  RowPrice,
-  RowPriceLeft,
-  RowPriceRight,
-  TagProperty,
-} from './Component.style';
+import { DefaultContentInWrapperMajor } from './Component.style'
+import { TagProperty, RowPrice, RowActions, RowPriceLeft, RowPriceRight } from './Component.style';
+import dynamic from 'next/dynamic';
 
 interface DataType {
   key: React.Key;
@@ -42,7 +36,7 @@ for (let i = 0; i < 3; i++) {
   data.push({
     key: i,
     installment: `Edward King ${i}`,
-    milestone: 'Property',
+    milestone: "Property",
     payment: 123,
   });
 }
@@ -61,37 +55,16 @@ export const LayoutPaymentPlans = (props: {
           <div>
             <RowPrice>
               <RowPriceLeft className="container-fluid">
-                <label
-                  style={{
-                    fontFamily: 'Inter',
-                    fontSize: 28,
-                    fontWeight: '700',
-                    marginBottom: 20,
-                  }}
-                >
-                  Payment Plans
-                </label>
+                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Payment Plans</label>
                 <div style={{ display: 'flex' }}>
-                  <div style={{ marginRight: 24 }}>
+                  <div style={{marginRight:24}}>
                     <div style={{ backgroundColor: '#F9C41F', padding: 15 }}>
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>
                         First Option
                       </label>
                     </div>
                     <div style={{ padding: 15 }}>
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>
                         Second Option
                       </label>
                     </div>
@@ -102,17 +75,8 @@ export const LayoutPaymentPlans = (props: {
                       dataIndex="install"
                       key="install"
                       render={status => (
-                        <span>
-                          <label
-                            style={{
-                              marginLeft: 5,
-                              fontFamily: 'Inter',
-                              fontSize: 16,
-                              fontWeight: '700',
-                            }}
-                          >
-                            Pay installment over 8 months
-                          </label>
+                        <span >
+                          <label style={{ marginLeft: 5, fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>Pay installment over 8 months</label>
                         </span>
                       )}
                     />
@@ -121,15 +85,7 @@ export const LayoutPaymentPlans = (props: {
                       dataIndex="milestone"
                       key="milestone"
                       render={status => (
-                        <label
-                          style={{
-                            fontFamily: 'Inter',
-                            fontSize: 16,
-                            fontWeight: '700',
-                          }}
-                        >
-                          30%
-                        </label>
+                        <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>30%</label>
                       )}
                     />
                     <Table.Column
@@ -137,15 +93,7 @@ export const LayoutPaymentPlans = (props: {
                       dataIndex="payment"
                       key="payment"
                       render={status => (
-                        <label
-                          style={{
-                            fontFamily: 'Inter',
-                            fontSize: 16,
-                            fontWeight: '700',
-                          }}
-                        >
-                          Depends on the actual unit price
-                        </label>
+                        <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>Depends on the actual unit price</label>
                       )}
                     />
                   </Table>
@@ -153,7 +101,9 @@ export const LayoutPaymentPlans = (props: {
               </RowPriceLeft>
             </RowPrice>
           </div>
-          <div></div>
+          <div>
+
+          </div>
         </DefaultContentInWrapperMajor>
       </DefaultWrapperWithBg>
     </>

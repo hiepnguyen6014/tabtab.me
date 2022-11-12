@@ -1,15 +1,13 @@
-import { IconArrowDown } from '@root/public/icons';
-import { FilterProvider } from '@root/src/core/contexts/filterContext';
+import { FilterBackground, RowHeader, FDesktop } from './Container.style';
 import { checkIsHomePage } from '@utils';
-import { Col, Row } from 'antd';
+import { FilterProvider } from '@root/src/core/contexts/filterContext';
 import dynamic from 'next/dynamic';
-
 import HeaderComponent from '../Header/index';
 import RealEstateFilter from '../RealEstateFilter';
 import { FMenuDropdown } from '../RealEstateFilter/RealEstateFilterDesktop.style';
 import { FMenuItemPopup } from '../RealEstateFilter/RealEstateFilterPopup/RealEstateFilterPopup.style';
-import { FDesktop, FilterBackground, RowHeader } from './Container.style';
-
+import { IconArrowDown } from '@root/public/icons';
+import { Col, Row } from 'antd';
 interface Props {
   children?: any;
   fullWidth?: boolean;

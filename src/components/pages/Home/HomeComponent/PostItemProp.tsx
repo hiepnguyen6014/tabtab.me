@@ -1,8 +1,4 @@
-import { ROUTES } from '@constants';
-import { SRC_IMAGE } from '@core';
-import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import { Button, Col, Divider, Image, Row, Skeleton, Typography } from 'antd';
-import { useRouter } from 'next/router';
 import {
   VectorBuilding,
   VectorCalendar,
@@ -13,19 +9,23 @@ import {
   VectorTree,
   VectorUser,
 } from 'public/icons';
-
+import { ItemWrapper } from './PostItemProp/PostItemWrapper';
 import { PostThumbnail } from './PostItemProp/PostComponent/PostThumbnail';
 import {
   PostContent,
   PostMiddle,
-  PostMiddleFooter,
   PostMiddleItem,
   PostTitle,
+  PostMiddleFooter,
   TypographyText,
 } from './PostItemProp/PostItem.style';
-import { ItemWrapper } from './PostItemProp/PostItemWrapper';
+import { SRC_IMAGE } from '@core';
+import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
+import { useRouter } from 'next/router';
+import { ROUTES } from "@constants"
 
 const PostItemProp = ({ post, t }) => {
+
   const {
     realEstateId,
     agency,
@@ -55,7 +55,7 @@ const PostItemProp = ({ post, t }) => {
           t={t}
           demo={{
             name: realEstateJuridical,
-            action: () => handleRedirect(realEstateId),
+            action: () => handleRedirect(realEstateId)
           }}
         />
         <PostContent onClick={() => handleRedirect(realEstateId)}>
@@ -86,11 +86,8 @@ const PostItemProp = ({ post, t }) => {
                   </div>
                 </Col>
               </Row>
-              <Row className="wrap-post">
-                <Typography.Title
-                  className="detailPost"
-                  style={{ overflow: 'clip' }}
-                >
+              <Row className='wrap-post'>
+                <Typography.Title className="detailPost" style={{ overflow: 'clip' }}>
                   {post.realEstateTitle}
                 </Typography.Title>
                 <Typography.Title
@@ -102,25 +99,16 @@ const PostItemProp = ({ post, t }) => {
               </Row>
             </PostTitle>
 
-            <Divider style={{ marginTop: '5px', marginBottom: '7px' }} />
 
-            <PostMiddle className="wrap-post">
+            <Divider style={{ marginTop: '5px', marginBottom: '7px' }} />
+            
+            <PostMiddle className='wrap-post'>
               <PostMiddleFooter>
                 {
                   <span style={{ display: 'flex', alignItems: 'center' }}>
                     <VectorCalendar />
-                    <label
-                      style={{
-                        fontSize: 13,
-                        fontWeight: '500',
-                        marginLeft: 5,
-                        fontFamily: 'Inter',
-                      }}
-                      className="textPostMiddle"
-                    >
-                      {`${post.realEstateTotalDate.total || ''} ${t(
-                        post.realEstateTotalDate.defineName,
-                      )}`}
+                    <label style={{ fontSize: 13, fontWeight: "500", marginLeft: 5, fontFamily: "Inter" }} className="textPostMiddle">
+                      {`${post.realEstateTotalDate.total || ''} ${t(post.realEstateTotalDate.defineName)}`}
                     </label>
                   </span>
                 }
@@ -138,7 +126,9 @@ const PostItemProp = ({ post, t }) => {
                       }}
                     >
                       <VectorTalk />
-                      <label className="textPostMiddle">CHAT NOW</label>
+                      <label className="textPostMiddle">
+                        CHAT NOW
+                      </label>
                     </Button>
                   </>
                 }

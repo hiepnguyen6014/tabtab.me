@@ -1,18 +1,17 @@
+import { Notification } from '../../../shared/Notification';
+import { BoxVideo } from '../../../shared/BoxVideo';
 import { MPostDetail } from '@models/MPostDetail';
 import dynamic from 'next/dynamic';
-
 import {
   DefaultContentInWrapper,
   DefaultRowTitle,
   DefaultWrapperWithBg,
 } from '..';
-import { BoxVideo } from '../../../shared/BoxVideo';
-import { Notification } from '../../../shared/Notification';
 
 export const LayoutDetailAttach = (props: { t: any; post: MPostDetail }) => {
   const { t: translate, post } = props;
   const DynamicImageAttach = dynamic(
-    () => import('../../../shared/ImageCarouseWithCount/ImageCarouseWithCount'),
+    () => import('../../../shared/ImageCarouseWithCount/ImageCarouseWithCount')
   );
   return (
     <>
@@ -32,14 +31,14 @@ export const LayoutDetailAttach = (props: { t: any; post: MPostDetail }) => {
             )}
             <br />
             <br />
-            {post.arrayImage.length ? (
-              <>
+            {
+              post.arrayImage.length ? <>
                 <DefaultRowTitle>
                   <h1 typeof="title-detail">{translate('detail.image')}</h1>
                 </DefaultRowTitle>
                 <DynamicImageAttach images={post.arrayImage} />
-              </>
-            ) : null}
+              </> : null
+            }
             <Notification t={translate} idPost={post.realEstateId} />
           </div>
         </DefaultContentInWrapper>

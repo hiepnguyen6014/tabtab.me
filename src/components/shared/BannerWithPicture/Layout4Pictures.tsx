@@ -1,5 +1,4 @@
 import { Image } from 'antd';
-
 import { BannerLeft, BannerRight4Pic, ImageWrapper } from './Banner.style';
 
 interface Props {

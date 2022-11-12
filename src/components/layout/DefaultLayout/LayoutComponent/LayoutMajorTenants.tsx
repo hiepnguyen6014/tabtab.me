@@ -1,3 +1,11 @@
+
+import { BreadcrumbCustom } from '../../../shared/Breadcrum/index';
+import { ButtonSave } from '../../../shared/ButtonSave/index';
+import { ButtonShare } from '../../../shared/ButtonShare';
+import { TextParagraph } from '../../../shared/TextParagraph';
+import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
+import { Block } from './Component.style';
+import type { ColumnsType } from 'antd/es/table';
 import { PUBLIC_ROUTES, ROUTES } from '@constants';
 import { filterKey } from '@contexts';
 import { MPostDetail } from '@models/MPostDetail';
@@ -5,30 +13,16 @@ import { IconCheck, IconMark, IconTimer, Logo1 } from '@root/public/icons';
 import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import { colors } from '@styles/theme/colors';
 import { Col, Divider, Row, Table, Typography } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
-import dynamic from 'next/dynamic';
 import { useState } from 'react';
-
 import {
   DefaultContentInWrapper,
   DefaultLinkText,
   DefaultRowTitle,
   DefaultWrapperWithBg,
 } from '..';
-import { BreadcrumbCustom } from '../../../shared/Breadcrum/index';
-import { ButtonSave } from '../../../shared/ButtonSave/index';
-import { ButtonShare } from '../../../shared/ButtonShare';
-import { TextParagraph } from '../../../shared/TextParagraph';
-import { WidgetUserInfo } from '../../../shared/WidgetUserInfo';
-import { Block } from './Component.style';
-import { DefaultContentInWrapperMajor } from './Component.style';
-import {
-  RowActions,
-  RowPrice,
-  RowPriceLeft,
-  RowPriceRight,
-  TagProperty,
-} from './Component.style';
+import { DefaultContentInWrapperMajor } from './Component.style'
+import { TagProperty, RowPrice, RowActions, RowPriceLeft, RowPriceRight } from './Component.style';
+import dynamic from 'next/dynamic';
 
 interface DataType {
   key: React.Key;
@@ -37,7 +31,7 @@ interface DataType {
   type: string;
   floor: number;
 }
-interface DataType2 {
+interface DataType2{
   key: React.Key;
   size: string;
   pricerange: any;
@@ -51,7 +45,7 @@ for (let i = 0; i < 5; i++) {
     key: i,
     title: <IconCheck />,
     name: `Edward King ${i}`,
-    type: 'Property',
+    type: "Property",
     floor: 123,
   });
 }
@@ -60,17 +54,17 @@ const data1: DataType2[] = [];
 for (let i = 0; i < 5; i++) {
   data1.push({
     key: i,
-    size: '56.16m²',
-    pricerange: '123',
-    unit: '123',
+    size:"56.16m²",
+    pricerange:"123",
+    unit:"123",
     floorplans: 123,
   });
 }
 
-const DynamicNotifyOutdate = dynamic(() =>
-  import('../../../shared/WidgetUserInfo/NotifyOutdate').then(
-    (mod: any) => mod.NotifyOutdate,
-  ),
+const DynamicNotifyOutdate = dynamic(
+  () => import('../../../shared/WidgetUserInfo/NotifyOutdate').then(
+    (mod: any) => mod.NotifyOutdate
+  )
 );
 
 export const LayoutMajorTenants = (props: {
@@ -80,40 +74,19 @@ export const LayoutMajorTenants = (props: {
 }) => {
   const { t: translate, post, hrefMain } = props;
 
-  const [pathname, setPathname] = useState(
-    {
-      1: ROUTES.MAIN_FLOOR.href,
-      2: ROUTES.BROKERAGE_FLOOR_PAGE.href,
-      default: ROUTES.MAIN_FLOOR.href,
-    }[post.agency],
-  );
+  const [pathname, setPathname] = useState({
+    1: ROUTES.MAIN_FLOOR.href,
+    2: ROUTES.BROKERAGE_FLOOR_PAGE.href,
+    default: ROUTES.MAIN_FLOOR.href
+  }[post.agency])
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const arrHref = [
     hrefMain,
-    {
-      name: post.AreaProvinceName,
-      href: pathname,
-      query: { [filterKey.areaProvinceId.idQuery]: post.AreaProvinceId },
-    },
-    {
-      name: post.AreaDistrictName,
-      href: pathname,
-      query: {
-        [filterKey.areaProvinceId.idQuery]: post.AreaProvinceId,
-        [filterKey.areaDistrictId.idQuery]: post.AreaDistrictId,
-      },
-    },
-    {
-      name: post.AreaWardName,
-      href: pathname,
-      query: {
-        [filterKey.areaProvinceId.idQuery]: post.AreaProvinceId,
-        [filterKey.areaDistrictId.idQuery]: post.AreaDistrictId,
-        [filterKey.areaWardId.idQuery]: post.AreaWardId,
-      },
-    },
+    { name: post.AreaProvinceName, href: pathname, query: { [filterKey.areaProvinceId.idQuery]: post.AreaProvinceId } },
+    { name: post.AreaDistrictName, href: pathname, query: { [filterKey.areaProvinceId.idQuery]: post.AreaProvinceId, [filterKey.areaDistrictId.idQuery]: post.AreaDistrictId } },
+    { name: post.AreaWardName, href: pathname, query: { [filterKey.areaProvinceId.idQuery]: post.AreaProvinceId, [filterKey.areaDistrictId.idQuery]: post.AreaDistrictId, [filterKey.areaWardId.idQuery]: post.AreaWardId } },
   ];
 
   const start = () => {
@@ -142,16 +115,7 @@ export const LayoutMajorTenants = (props: {
           <div>
             <RowPrice>
               <RowPriceLeft className="container-fluid">
-                <label
-                  style={{
-                    fontFamily: 'Inter',
-                    fontSize: 28,
-                    fontWeight: '700',
-                    marginBottom: 20,
-                  }}
-                >
-                  Major Tenants
-                </label>
+                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Major Tenants</label>
 
                 <Table dataSource={data}>
                   <Table.Column
@@ -161,16 +125,7 @@ export const LayoutMajorTenants = (props: {
                     render={status => (
                       <span style={{ width: 80 }}>
                         <Logo1 />
-                        <label
-                          style={{
-                            marginLeft: 5,
-                            fontFamily: 'Inter',
-                            fontSize: 16,
-                            fontWeight: '700',
-                          }}
-                        >
-                          Ten-X
-                        </label>
+                        <label style={{ marginLeft: 5, fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>Ten-X</label>
                       </span>
                     )}
                   />
@@ -179,15 +134,7 @@ export const LayoutMajorTenants = (props: {
                     dataIndex="name"
                     key="name"
                     render={status => (
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
-                        Tên công ty có thể rất dài tới khúc này
-                      </label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>Tên công ty có thể rất dài tới khúc này</label>
                     )}
                   />
                   <Table.Column
@@ -195,15 +142,7 @@ export const LayoutMajorTenants = (props: {
                     dataIndex="type"
                     key="type"
                     render={status => (
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
-                        Property
-                      </label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>Property</label>
                     )}
                   />
                   <Table.Column
@@ -211,32 +150,17 @@ export const LayoutMajorTenants = (props: {
                     dataIndex="floor"
                     key="floor"
                     render={status => (
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
-                        123
-                      </label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>123</label>
                     )}
                   />
                 </Table>
+
               </RowPriceLeft>
+
             </RowPrice>
-            <RowPrice style={{ marginTop: 30 }}>
+            <RowPrice style={{marginTop:30}}>
               <RowPriceLeft className="container-fluid">
-                <label
-                  style={{
-                    fontFamily: 'Inter',
-                    fontSize: 28,
-                    fontWeight: '700',
-                    marginBottom: 20,
-                  }}
-                >
-                  Price
-                </label>
+                <label style={{ fontFamily: "Inter",fontSize:28, fontWeight:"700", marginBottom:20 }}>Price</label>
 
                 <Table dataSource={data1}>
                   <Table.Column
@@ -244,16 +168,7 @@ export const LayoutMajorTenants = (props: {
                     dataIndex="type"
                     key="type"
                     render={status => (
-                      <label
-                        style={{
-                          marginLeft: 5,
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
-                        Studio
-                      </label>
+                      <label style={{ marginLeft: 5, fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>Studio</label>
                     )}
                   />
                   <Table.Column
@@ -261,15 +176,7 @@ export const LayoutMajorTenants = (props: {
                     dataIndex="size"
                     key="size"
                     render={status => (
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
-                        237.27m²
-                      </label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>237.27m²</label>
                     )}
                   />
                   <Table.Column
@@ -277,15 +184,7 @@ export const LayoutMajorTenants = (props: {
                     dataIndex="pricerange"
                     key="pricerange"
                     render={status => (
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
-                        $343,824 - $616,902
-                      </label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>$343,824 - $616,902</label>
                     )}
                   />
                   <Table.Column
@@ -293,15 +192,7 @@ export const LayoutMajorTenants = (props: {
                     dataIndex="unit"
                     key="unit"
                     render={status => (
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      >
-                        32
-                      </label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}>32</label>
                     )}
                   />
                   <Table.Column
@@ -309,23 +200,20 @@ export const LayoutMajorTenants = (props: {
                     dataIndex="floorplans"
                     key="floorplans"
                     render={status => (
-                      <label
-                        style={{
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: '700',
-                        }}
-                      ></label>
+                      <label style={{ fontFamily: "Inter", fontSize: 16, fontWeight: "700" }}></label>
                     )}
                   />
                 </Table>
+
               </RowPriceLeft>
+
             </RowPrice>
           </div>
           <div>
-            <RowActions></RowActions>
+            <RowActions>
+            </RowActions>
             <WidgetUserInfo t={translate} post={props.post} />
-            <DynamicNotifyOutdate />
+            <DynamicNotifyOutdate/>
           </div>
         </DefaultContentInWrapperMajor>
       </DefaultWrapperWithBg>

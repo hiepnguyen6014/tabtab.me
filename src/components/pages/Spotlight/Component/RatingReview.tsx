@@ -95,9 +95,11 @@ const RatingReview: React.FC<{}> = () => {
           </Typography>
         </Col>
       </Row>
-      <div className="d-flex justify-content-center my-5">
-        <Button className="button-seemore">
-          <Typography className="seemore-text">See more</Typography>
+      <div className='d-flex justify-content-center my-5'>
+        <Button className='button-seemore'>
+            <Typography className='seemore-text'>
+                See more
+            </Typography>
         </Button>
       </div>
     </>

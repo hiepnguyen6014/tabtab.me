@@ -1,14 +1,13 @@
-import { SRC_IMAGE } from '@core';
-import { Image, Row, Typography } from 'antd';
+import { SRC_IMAGE } from "@core";
+import { Image, Row, Typography } from "antd";
+import { ColWrap, TextWrap, VerticalLine } from "../../Home/Home.style";
+import { WrapperAboutUs } from "../AboutUs.style";
 
-import { ColWrap, TextWrap, VerticalLine } from '../../Home/Home.style';
-import { WrapperAboutUs } from '../AboutUs.style';
 
 const ItemBoard: React.FC<{}> = () => {
   return (
     <div className="my-adjust">
-      <Row
-        className="container-fluild"
+      <Row className="container-fluild"
         gutter={{
           xs: 8,
           sm: 16,
@@ -70,7 +69,7 @@ const ItemBoard: React.FC<{}> = () => {
                 height="100%"
                 preview={false}
               />
-              <div className="horizotalLine" style={{ marginTop: '-5px' }} />
+              <div className="horizotalLine" style={{marginTop:"-5px"}}/>
             </div>
           </div>
           {/* <div className="horizotalLine"/> */}
@@ -123,9 +122,11 @@ const ItemBoard: React.FC<{}> = () => {
                 height="100%"
                 preview={false}
               />
-              <div className="horizotalLine" style={{ marginTop: '-5px' }} />
+            <div className="horizotalLine" style={{marginTop:"-5px"}}/>
             </div>
           </div>
+          
+
         </ColWrap>
         <ColWrap className="gutter-row" xs={12} md={6}>
           <TextWrap>
@@ -173,9 +174,10 @@ const ItemBoard: React.FC<{}> = () => {
                 height="100%"
                 preview={false}
               />
-              <div className="horizotalLine" style={{ marginTop: '-5px' }} />
+              <div className="horizotalLine" style={{marginTop:"-5px"}}/>
             </div>
           </div>
+
         </ColWrap>
         <ColWrap className="gutter-row" xs={12} md={6}>
           <TextWrap>
@@ -225,9 +227,10 @@ const ItemBoard: React.FC<{}> = () => {
                 height="100%"
                 preview={false}
               />
-              <div className="horizotalLine" style={{ marginTop: '-5px' }} />
+              <div className="horizotalLine" style={{marginTop:"-5px"}}/>
             </div>
           </div>
+
         </ColWrap>
       </Row>
     </div>
