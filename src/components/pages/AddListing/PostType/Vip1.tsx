@@ -1,6 +1,4 @@
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import ThumbnailCard from '@root/public/static/images-recommend.png';
-import Person6 from '@root/public/static/preson6.png';
 import ThumbnailCard2 from '@root/public/static/thumbnail2.png';
 import {
   Avatar,
@@ -40,6 +38,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { CardThumbnail } from '../../Home/Recommend/Recommend.style';
 import {
   ContentInItem,
   ContentInItemPost,
@@ -61,6 +60,8 @@ type Props = {
 };
 
 const Vip1 = () => {
+  const prevRef = React.useRef(null);
+  const nextRef = React.useRef(null);
   const detailItemList = [
     { id: 1, icon: <VectorSquare />, content: '72m²' },
     { id: 2, icon: <VectorTree />, content: '---' },
@@ -78,51 +79,42 @@ const Vip1 = () => {
   return (
     <PostWrapper>
       <PostThumbnailWrapper>
-        <Image src={ThumbnailCard} alt="vip" layout="fill" />
-        {/* <Swiper
-          modules={[Navigation, Pagination]}
-          pagination={{ dynamicBullets: true }}
-          draggable
-          spaceBetween={10}
-          slidesPerGroup={1}
-          speed={750}
-          
-          className="swiper-img"
-        >
-          {imageSrc.map((item, idx) => {
-            return (
-              <SwiperSlide key={item.id}>
-                <Vip>
-                  <Image src={item.src} alt="recomend-image"  />
-                </Vip>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper> */}
-        <ContentInItemPost>
-          <TypographyText>
-            <ContentInItem>
-              <div className="pad-bottom">
-                <div className="pad-top">
-                  <div
-                    style={{
-                      width: 118,
-                      height: 24,
-                      background: '#FFFFFF',
-                      marginBottom: '8px',
-                      borderRadius: '4px',
-                    }}
-                  >
-                    <Typography.Text className="inContentItem mx-2">
-                      SALE 15% OFF
-                    </Typography.Text>
+        <CardThumbnail>
+          <div className="sale-off">sale 15% off</div>
+          <button className="btn-prev" ref={prevRef}>
+            <PrevArrow />
+          </button>
+          <button className="btn-next" ref={nextRef}>
+            <NextArrow />
+          </button>
+          <div className="icon-favorite">
+            <SFavorite />
+          </div>
+
+          <Swiper
+            modules={[Navigation, Pagination]}
+            pagination={{ dynamicBullets: true }}
+            draggable
+            spaceBetween={10}
+            slidesPerGroup={1}
+            speed={750}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            className="swiper-img"
+          >
+            {imageSrc.map((item, idx) => {
+              return (
+                <SwiperSlide key={item.id}>
+                  <div>
+                    <Image src={item.src} alt="recomend-image" />
                   </div>
-                  <SFavorite />
-                </div>
-              </div>
-            </ContentInItem>
-          </TypographyText>
-        </ContentInItemPost>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </CardThumbnail>
       </PostThumbnailWrapper>
       <PostContent>
         <TypographyText>
