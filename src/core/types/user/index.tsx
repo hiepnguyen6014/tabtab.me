@@ -21,7 +21,7 @@ export interface IUser {
   lastActiveAt?:string;
   twoFACode?: string;
   twoFAQR?: string;
-  userAvatar?: null;
+  userAvatar?: string;
   socialInfo?: null;
   identityNumber?: string;
   imageBeforeIdentityCard?: null;
