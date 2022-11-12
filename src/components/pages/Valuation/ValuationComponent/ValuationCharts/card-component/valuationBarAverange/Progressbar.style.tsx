@@ -9,7 +9,7 @@ export const Wrap = styled.div`
   background: #e5e5e5;
   border-radius: 2px;
   margin-bottom: 8px;
-  ${(props) =>
+  ${props =>
     props.typeof == 'left' && {
       transform: 'rotateY(180deg)',
     }}
@@ -33,7 +33,7 @@ export const BarMark = styled.div`
   justify-content: center;
   align-items: center;
   top: 20px;
-  ${(props) =>
+  ${props =>
     props.typeof == 'right'
       ? { left: 'calc(70% - 60px)' } /* 100% - width of BarMark */
       : { right: 'calc(70% - 60px)' }}
@@ -43,16 +43,16 @@ export const BarMark = styled.div`
     white-space: nowrap;
     font-weight: 400;
   }
-  @media ${device.maxMd}{
-    width:100%;
-    label{
+  @media ${device.maxMd} {
+    width: 100%;
+    label {
       white-space: normal;
       width: 50%;
-      text-align: ${props=> props.typeof == 'right' ? 'right':'left'};
+      text-align: ${props => (props.typeof == 'right' ? 'right' : 'left')};
     }
-    ${(props) =>
-    props.typeof == 'right'
-      ? { left: '0', alignItems:'flex-end'}
-      : { right: '0',alignItems:'flex-start' }}
+    ${props =>
+      props.typeof == 'right'
+        ? { left: '0', alignItems: 'flex-end' }
+        : { right: '0', alignItems: 'flex-start' }}
   }
 `;

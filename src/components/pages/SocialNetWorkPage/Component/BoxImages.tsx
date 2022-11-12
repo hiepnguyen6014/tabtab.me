@@ -49,19 +49,19 @@ const BoxImages = ({ arrayImage, showButton = false }) => {
 
   const content = (
     <div style={{ width: 280 }}>
-      <Link href="/roommate">
+      <Link href="/roommate" legacyBehavior>
         <ButtonMenu>
           <IconSave />
           <Typography>Save</Typography>
         </ButtonMenu>
       </Link>
-      <Link href="/roommate">
+      <Link href="/roommate" legacyBehavior>
         <ButtonMenu>
           <IconCopy />
           <Typography>Copy link</Typography>
         </ButtonMenu>
       </Link>
-      <Link href="/roommate">
+      <Link href="/roommate" legacyBehavior>
         <ButtonMenu>
           <IconReport />
           <Typography>Report</Typography>

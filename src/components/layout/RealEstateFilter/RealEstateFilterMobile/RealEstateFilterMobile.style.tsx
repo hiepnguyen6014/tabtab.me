@@ -3,25 +3,25 @@ import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
 
 export const FMobile = styled.div`
-    display:none; 
-    @media ${device.maxMd} {
-      display: block;
-    }
+  display: none;
+  @media ${device.maxMd} {
+    display: block;
+  }
 `;
 
 export const FMobileTop = styled.div`
-   & > div{
-       padding: 0 15px;
-       display: flex;
-       justify-content: center;
-       align-items: flex-end;
-       height: 150px;
-       background: ${colors.common};
-       padding-bottom: 20px;
-       input{
-           height:30px;
-       }
-   }
+  & > div {
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 150px;
+    background: ${colors.common};
+    padding-bottom: 20px;
+    input {
+      height: 30px;
+    }
+  }
 `;
 
 // Bottom

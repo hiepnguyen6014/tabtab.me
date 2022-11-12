@@ -44,7 +44,7 @@ export const PolicyWrap = styled.div`
     margin-bottom: 30px;
   }
   @media ${device.maxMd} {
-    padding: 6px
+    padding: 6px;
   }
 `;
 
@@ -61,7 +61,7 @@ export const Vertical = styled.div`
 `;
 
 // export const PolicyText = styled(Typography)`
-export const PolicyText = styled((props) => <Typography {...props} />)`
+export const PolicyText = styled(props => <Typography {...props} />)`
   font-family: Inter;
   font-style: normal;
   .text-header {

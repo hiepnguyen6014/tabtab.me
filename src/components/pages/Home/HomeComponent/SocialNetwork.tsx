@@ -18,7 +18,7 @@ const SocialNetwork = () => {
       <SocialText>
         <SocialWrap>
           <GeneralText>
-            <Link href="/social-network">
+            <Link href="/social-network" legacyBehavior>
               <Typography.Title className="title-general">
                 Social network
               </Typography.Title>

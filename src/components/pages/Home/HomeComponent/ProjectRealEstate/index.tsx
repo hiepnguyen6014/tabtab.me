@@ -1,1 +1,1 @@
-export {default} from "./ProjectRealEstate"
+export { default } from './ProjectRealEstate';

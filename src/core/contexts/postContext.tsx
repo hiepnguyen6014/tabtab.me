@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 interface Post {
   id: string;
 }
@@ -21,13 +22,13 @@ export const PostContext = React.createContext<PostContextProps>({
   removedPost: null,
 });
 
-export const PostContextProvider = (props) => {
-  const [postType, setPostType] = useState<string>(''); //check contentType post when show post create in component 
+export const PostContextProvider = props => {
+  const [postType, setPostType] = useState<string>(''); //check contentType post when show post create in component
   const [crudSuccess, setCrudSuccess] = useState<boolean>(false);
   const [updatedPost, setUpdatedPost] = useState<Post>(null);
   const [removedPost, setRemovedPost] = useState<Post>(null);
 
-  const setCrudStatus = (val) => {
+  const setCrudStatus = val => {
     setCrudSuccess(val);
   };
 
@@ -41,7 +42,7 @@ export const PostContextProvider = (props) => {
 
   const handleSetContentType = (val: string) => {
     setPostType(val);
-  }
+  };
 
   return (
     <PostContext.Provider
@@ -53,7 +54,7 @@ export const PostContextProvider = (props) => {
         setCrudStatus,
         setEditedPost,
         setDeletedPost,
-        handleSetContentType
+        handleSetContentType,
       }}
     >
       {React.Children.toArray(props.children)}

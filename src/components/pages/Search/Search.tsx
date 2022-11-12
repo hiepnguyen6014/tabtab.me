@@ -1,7 +1,15 @@
+import { SRC_IMAGE } from '@core';
+import { IconArrowDown, IconBell } from '@root/public/icons';
+import { Favorite } from '@root/public/icons';
+import { SearchDataProps } from '@root/src/core/types/filter';
+import { Button, Col, Image, Popover, Row, Typography } from 'antd';
+import React, { useEffect, useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import { getListRealEstate } from '../../../core/services';
+import SwiperGlobal from '../../shared/SwiperGlobal';
 import {
   BoxFavorite,
   BoxFavoriteOne,
@@ -28,24 +36,15 @@ import {
   SpanPrice,
   WrapperHideMap,
 } from './Search.style';
-import { Button, Col, Image, Popover, Row, Typography } from 'antd';
-import { IconArrowDown, IconBell } from '@root/public/icons';
-import React, { useEffect, useState } from 'react';
+import InfoHome from './component/InfoHome';
+import MoreFiler from './component/MoreFiler';
+import PriceContent from './component/PriceContent';
+import PropertyContent from './component/PropertyContent';
 import {
   SEARCH_DATA,
   SEARCH_DATA_MINI,
   SEARCH_DATA_ROW,
 } from './component/SearchData';
-
-import { Favorite } from '@root/public/icons';
-import InfoHome from './component/InfoHome';
-import MoreFiler from './component/MoreFiler';
-import PriceContent from './component/PriceContent';
-import PropertyContent from './component/PropertyContent';
-import { SRC_IMAGE } from '@core';
-import { SearchDataProps } from '@root/src/core/types/filter';
-import SwiperGlobal from '../../shared/SwiperGlobal';
-import { getListRealEstate } from '../../../core/services';
 
 interface Props {
   posts: SearchDataProps;
@@ -414,12 +413,9 @@ export default function Search(props: Props) {
               </Col>
             </Row>
           </BoxHiddenMobile>
-          <BoxWrapperLable >
+          <BoxWrapperLable>
             <IconBell />
-            <BoxLabelEndow
-            >
-              Ưu đãi khách hàng tháng 8/2021.
-            </BoxLabelEndow>
+            <BoxLabelEndow>Ưu đãi khách hàng tháng 8/2021.</BoxLabelEndow>
           </BoxWrapperLable>
           {!hideMap && (
             <WrapperHideMap
@@ -453,7 +449,7 @@ export default function Search(props: Props) {
                 </Col>
               ))}
               {SEARCH_DATA_ROW.slice(0, 1).map((search, index) => (
-                <Col sm={24} lg={24}>
+                <Col sm={24} lg={24} key={index}>
                   <div
                     style={{
                       display: 'flex',
@@ -584,7 +580,14 @@ export default function Search(props: Props) {
               </Col>
             ))}
             {SEARCH_DATA_ROW.map((search, index) => (
-              <Col sm={24} md={24} lg={24} xl={12} style={{ maxWidth:'700px'}}>
+              <Col
+                sm={24}
+                md={24}
+                lg={24}
+                xl={12}
+                style={{ maxWidth: '700px' }}
+                key={index}
+              >
                 <BoxWrapperRowContent key={index}>
                   <BoxImageSlide>
                     <SwiperGlobal

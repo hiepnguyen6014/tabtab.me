@@ -1,12 +1,12 @@
 import { PARAMS, PUBLIC_ROUTES, ROUTES } from '@constants';
+import { filterKey } from '@contexts';
+import { MFilter } from '@models/MFilter';
+import { MPostDetail } from '@models/MPostDetail';
+import LayoutCategory from '@root/src/components/layout/LayoutCategory/LayoutCategory';
 import { getListRealEstate } from '@root/src/core/services';
 import { removeEmptyType } from '@utils';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
-import { MPostDetail } from '@models/MPostDetail';
-import { MFilter } from '@models/MFilter';
-import LayoutCategory from '@root/src/components/layout/LayoutCategory/LayoutCategory';
-import { filterKey } from '@contexts';
 
 const Landing: React.FC<{
   postList: MPostDetail[];
@@ -38,10 +38,10 @@ export async function getServerSideProps(context: any) {
   const filter = removeEmptyType({
     ...new MFilter(query),
   });
-  if(!query[filterKey.realEstatePostType.idQuery]){
-    filter['filter'] = {...filter['filter'], realEstatePostTypeId: 1}  
+  if (!query[filterKey.realEstatePostType.idQuery]) {
+    filter['filter'] = { ...filter['filter'], realEstatePostTypeId: 1 };
   }
-  filter['filter'] = {...filter['filter'], agency : 0}
+  filter['filter'] = { ...filter['filter'], agency: 0 };
   const data: any = await getListRealEstate(filter, query[PARAMS.PAGE]);
 
   return {

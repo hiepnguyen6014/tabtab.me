@@ -5,12 +5,12 @@ import { Col, Divider, Image, Row, Typography } from 'antd';
 const LeftCol = () => {
   return (
     <>
-      <div className='mx-2'>
-      <Image alt='qc' src={SRC_IMAGE.AD1} preview={false}/>
-    </div>
-    <div className='mx-2'>
-      <Image alt='qc' src={SRC_IMAGE.AD1} preview={false}/>
-    </div>
+      <div className="mx-2">
+        <Image alt="qc" src={SRC_IMAGE.AD1} preview={false} />
+      </div>
+      <div className="mx-2">
+        <Image alt="qc" src={SRC_IMAGE.AD1} preview={false} />
+      </div>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { VectorBookmark } from '@root/public/icons';
 import { Image, Typography } from 'antd';
+
 import {
   ArticleWrap,
   DivWrap,

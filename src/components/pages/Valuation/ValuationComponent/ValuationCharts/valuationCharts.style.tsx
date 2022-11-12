@@ -4,7 +4,7 @@ import { device } from '@styles/theme/device';
 
 export const ChartPlace = styled.div`
   min-height: 500px;
-`
+`;
 export const CardWrap = styled.div`
   width: 100%;
   padding: 24px;
@@ -83,26 +83,26 @@ export const UnitLabel = styled.label`
 
 export const BtnWatchPost = styled.div`
   font-size: 16px;
-  width:230px;
+  width: 230px;
   height: 35px;
   margin: auto;
-  margin-top:30px;
+  margin-top: 30px;
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  color:${colors.common};
+  color: ${colors.common};
   background: #ffffff;
   border: 1px solid #d9d9d9;
   box-sizing: border-box;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.016);
   border-radius: 2px;
-  opacity: ${(props) => (props.accessKey ? 0.3 : 1)};
-  cursor: ${(props) => (props.accessKey ? "not-allowed" : 'pointer')};
+  opacity: ${props => (props.accessKey ? 0.3 : 1)};
+  cursor: ${props => (props.accessKey ? 'not-allowed' : 'pointer')};
 `;
 
 export const BtnContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;

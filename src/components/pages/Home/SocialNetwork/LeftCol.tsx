@@ -1,6 +1,7 @@
 import { SRC_IMAGE } from '@core';
 import { VectorDollar } from '@root/public/icons';
 import { Button, Col, Image, Row, Typography } from 'antd';
+
 import { DivA, RowA } from '../Spotlight/ItemSpotlight.style';
 
 const LeftCol: React.FC<{}> = () => {

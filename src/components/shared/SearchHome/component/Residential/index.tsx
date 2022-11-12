@@ -1,1 +1,1 @@
-export {default} from "./Residential"
+export { default } from './Residential';

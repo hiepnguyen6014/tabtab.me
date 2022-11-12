@@ -1,21 +1,24 @@
-import { Col, Image, Row, Typography } from 'antd';
 import { SRC_IMAGE } from '@constants';
+import { VectorLocation } from '@root/public/icons';
+import { Col, Image, Row, Typography } from 'antd';
+
 import BannerThumbnail from './BannerThumbnail';
 import { ItemPostText, ItemPostWrap } from './ItemPostInfo.style';
-import { VectorLocation } from '@root/public/icons';
 
 const InfoPost = () => {
   return (
-      <div className='item__margin--10'>
-        <Typography className='item__text--date'>21 DEC 2021 AT 13:00</Typography>
-        <Typography className='item__text--content'>
-          Will COVID lockdowns end the love affair with Australian cities?
+    <div className="item__margin--10">
+      <Typography className="item__text--date">21 DEC 2021 AT 13:00</Typography>
+      <Typography className="item__text--content">
+        Will COVID lockdowns end the love affair with Australian cities?
+      </Typography>
+      <div className="d-flex align-items-center">
+        <VectorLocation className="" />
+        <Typography className="item__text--location">
+          1 Sandal Road, London
         </Typography>
-        <div className="d-flex align-items-center">
-          <VectorLocation className="" />
-          <Typography className='item__text--location'>1 Sandal Road, London</Typography>
-        </div>
       </div>
+    </div>
   );
 };
 

@@ -1,5 +1,6 @@
 import { MPostDetail } from '@models/MPostDetail';
 import dynamic from 'next/dynamic';
+
 import {
   DefaultContentInWrapper,
   DefaultRowTitle,
@@ -9,9 +10,9 @@ import {
 export const LayDetailUtility = (props: { t: any; post: MPostDetail }) => {
   const { t: translate, post } = props;
   const DynamicCheckBox: any = dynamic(() =>
-    import('../../../shared/ListCheckBox').then((mod: any) => mod.ListCheckBox)
+    import('../../../shared/ListCheckBox').then((mod: any) => mod.ListCheckBox),
   );
-  if(!post.realEstateUtilData.length) return <></>
+  if (!post.realEstateUtilData.length) return <></>;
   return (
     <>
       <DefaultWrapperWithBg>

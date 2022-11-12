@@ -2,13 +2,14 @@
 import { ROUTES } from '@constants';
 import Config from '@root/config';
 import { TToken } from '@types';
+import { Navigator, reactLocalStorage } from '@utils';
 import { Typography } from 'antd';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import { Loading } from '../../components/shared/Loading';
 import { useEffect } from 'react';
-import { Navigator, reactLocalStorage } from '@utils';
+
+import { Loading } from '../../components/shared/Loading';
 import { getUserInfo } from '../../core/services/user';
 
 const AutoLogin: React.FC<{
@@ -16,17 +17,18 @@ const AutoLogin: React.FC<{
   redirectUrl?: string;
   logout?: boolean;
 }> = ({ token, redirectUrl, logout }) => {
-
   const router = useRouter();
   const { t } = useTranslation('common');
-  useEffect(()=>{
-    const isLogin = Object.keys(reactLocalStorage.getObject(Config.INFO_USER_KEY,'')).length
+  useEffect(() => {
+    const isLogin = Object.keys(
+      reactLocalStorage.getObject(Config.INFO_USER_KEY, ''),
+    ).length;
     if (token) {
       // Handle login
-      if(!isLogin){
-        getUserInfo(token).then(data=>{
-          if(data) reactLocalStorage.setObject(Config.INFO_USER_KEY, data)
-        })
+      if (!isLogin) {
+        getUserInfo(token).then(data => {
+          if (data) reactLocalStorage.setObject(Config.INFO_USER_KEY, data);
+        });
       }
       if (redirectUrl) {
         Navigator.client.jump(redirectUrl);
@@ -35,17 +37,16 @@ const AutoLogin: React.FC<{
       }
     } else if (logout) {
       // Handle logout
-      if(isLogin){
-        reactLocalStorage.removeItem(Config.INFO_USER_KEY)
-        Navigator.client.jump(Config.AUTO_LOGOUT)
-      }else{
-        router.push(ROUTES.HOME)
+      if (isLogin) {
+        reactLocalStorage.removeItem(Config.INFO_USER_KEY);
+        Navigator.client.jump(Config.AUTO_LOGOUT);
+      } else {
+        router.push(ROUTES.HOME);
       }
-      
     } else if (!redirectUrl) {
       router.push(ROUTES.HOME);
     }
-  },[])
+  }, []);
   return (
     <>
       <Typography.Title
@@ -54,7 +55,7 @@ const AutoLogin: React.FC<{
       >
         {t(logout ? 'loading.logout' : 'loading.login')}...{'  '}
       </Typography.Title>
-      <Loading/>
+      <Loading />
     </>
   );
 };

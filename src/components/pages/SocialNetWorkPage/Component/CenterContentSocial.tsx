@@ -1,4 +1,5 @@
 import { SRC_IMAGE } from '@core';
+
 import BoxComment from './BoxComment';
 import BoxImages from './BoxImages';
 import BoxSearch from './BoxSearch';
@@ -7,7 +8,6 @@ import BoxTextImage from './BoxTextImage';
 import InterestPerson from './InterestedPerson';
 
 const CenterContentSocial: React.FC<{}> = () => {
-
   let arrayOfImages1 = [];
   arrayOfImages1.push(SRC_IMAGE.EXAMPLE1);
   arrayOfImages1.push(SRC_IMAGE.EXAMPLE2);
@@ -23,7 +23,7 @@ const CenterContentSocial: React.FC<{}> = () => {
   let arrayOfImages3 = [];
   arrayOfImages3.push(SRC_IMAGE.EXAMPLE1);
   arrayOfImages3.push(SRC_IMAGE.EXAMPLE2);
-  
+
   let arrayOfImages4 = [];
   arrayOfImages4.push(SRC_IMAGE.EXAMPLE1);
 
@@ -32,10 +32,10 @@ const CenterContentSocial: React.FC<{}> = () => {
       <BoxSearch />
       <BoxComment />
       <InterestPerson />
-      <BoxImages arrayImage={arrayOfImages1}/>
-      <BoxImages arrayImage={arrayOfImages2} showButton={true}/>
-      <BoxImages arrayImage={arrayOfImages3} showButton={true}/>
-      <BoxImages arrayImage={arrayOfImages4}/>
+      <BoxImages arrayImage={arrayOfImages1} />
+      <BoxImages arrayImage={arrayOfImages2} showButton={true} />
+      <BoxImages arrayImage={arrayOfImages3} showButton={true} />
+      <BoxImages arrayImage={arrayOfImages4} />
       <BoxText />
       <BoxTextImage />
     </div>

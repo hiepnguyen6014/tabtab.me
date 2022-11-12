@@ -1,6 +1,7 @@
-import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 import stringify from 'qs-stringify';
+import { useCallback } from 'react';
+
 export const RETURN_HREF_QUERY_PARAM = '_UCR_return_href';
 
 /**
@@ -27,15 +28,15 @@ export function useContextualRouting() {
   // @NOTE JSON.stringify might be replaced with any hashing solution
   const queryHash = JSON.stringify(watchedQuery);
   const makeContextualHref = useCallback(
-    (extraParams) =>
+    extraParams =>
       router.pathname +
       '?' +
       stringify(
         Object.assign({}, router.query, extraParams, {
           [RETURN_HREF_QUERY_PARAM]: returnHref,
-        })
+        }),
       ),
-    [queryHash, returnHref]
+    [queryHash, returnHref],
   );
 
   return { returnHref, makeContextualHref };

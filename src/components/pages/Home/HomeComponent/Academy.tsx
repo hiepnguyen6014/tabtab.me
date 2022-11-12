@@ -11,7 +11,7 @@ const Academy: React.FC<{}> = () => {
   return (
     <AcademyBigWrap>
       <GeneralText>
-        <Link href="/academy">
+        <Link href="/academy" legacyBehavior>
           <Typography.Title className="title-general">Academy</Typography.Title>
         </Link>
         <GeneralWrap>

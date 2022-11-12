@@ -31,7 +31,7 @@ export const PostWrapper = styled(props => <div {...props} />)`
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px, rgba(0, 0, 0, 0.1) 0px 6px 6px;
   }
   @media ${device.maxLg} {
-    height: 500px;  
+    height: 500px;
     width: 100%;
   }
   @media ${device.maxSm} {
@@ -120,7 +120,7 @@ export const PostTitle = styled.div`
       margin-right: 5px;
     }
   }
-  .wrap-post{
+  .wrap-post {
     min-height: 90px;
     @media ${device.maxSm} {
       min-height: auto;

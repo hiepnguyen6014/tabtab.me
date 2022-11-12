@@ -1,7 +1,7 @@
-import { styled } from "@styles/theme";
+import { styled } from '@styles/theme';
 
 export const AdvertisingWrap = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

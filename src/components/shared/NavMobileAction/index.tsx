@@ -1,1 +1,1 @@
-export { default as NavMobileAction } from './NavMobileAction'
+export { default as NavMobileAction } from './NavMobileAction';

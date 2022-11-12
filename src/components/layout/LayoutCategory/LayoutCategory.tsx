@@ -1,6 +1,7 @@
 import { MPostDetail } from '@models/MPostDetail';
 import { Typography } from 'antd';
 import dynamic from 'next/dynamic';
+
 import CategoryLayout from '.';
 import {
   DefaultContentNoGrid,
@@ -14,15 +15,22 @@ import { RowCountResult } from '../../shared/RowCountResult';
 interface Props {
   posts?: MPostDetail[];
   t: any;
-  children?:any;
+  children?: any;
   total?: number;
   title?: string;
-  toggle?:boolean;
+  toggle?: boolean;
   arrayHref?: any[];
 }
 
 const LayoutCategory = (props: Props) => {
-  const { t: translate, posts, total, title, arrayHref, toggle = false } = props;
+  const {
+    t: translate,
+    posts,
+    total,
+    title,
+    arrayHref,
+    toggle = false,
+  } = props;
 
   const renderTotal = (total, range) => {
     return `${range[0]} - ${range[1]} của ${total} tin`;
@@ -32,13 +40,13 @@ const LayoutCategory = (props: Props) => {
     () => import('../../shared/PostItem/PostItemSell'),
     {
       loading: () => <PlaceHolderLoading height="300px" />,
-    }
+    },
   );
 
   const DynamicPagination: any = dynamic(() =>
     import('../../shared/Pagination/index').then(
-      (mod: any) => mod.PaginationCustom
-    )
+      (mod: any) => mod.PaginationCustom,
+    ),
   );
 
   const renderItems = !posts?.length ? (
@@ -46,7 +54,9 @@ const LayoutCategory = (props: Props) => {
       {translate('common.noResult')}
     </Typography.Title>
   ) : (
-    posts.map((post, key) => <DynamicDefaultItem t={translate} post={post} key={key}/>)
+    posts.map((post, key) => (
+      <DynamicDefaultItem t={translate} post={post} key={key} />
+    ))
   );
 
   return (
@@ -59,16 +69,17 @@ const LayoutCategory = (props: Props) => {
         </DefaultContentNoGrid>
       </DefaultWrapperWithBg>
 
-      {
-        props.children ? props.children : 
+      {props.children ? (
+        props.children
+      ) : (
         <DefaultWrapperWithBg>
           <DefaultContentNoGrid>
-            <RowCountResult t={translate} count={total}/>
+            <RowCountResult t={translate} count={total} />
             <DefaultProductWrapper>{renderItems}</DefaultProductWrapper>
-            <DynamicPagination total={total} showTotal={renderTotal}/>
+            <DynamicPagination total={total} showTotal={renderTotal} />
           </DefaultContentNoGrid>
         </DefaultWrapperWithBg>
-      }
+      )}
     </CategoryLayout>
   );
 };

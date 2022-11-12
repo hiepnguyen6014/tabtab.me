@@ -1,11 +1,12 @@
 import { SRC_IMAGE } from '@core';
 import {
   CalendarTue,
-  VectorCalendar,
   VectorCRM,
+  VectorCalendar,
   VectorLocation,
 } from '@root/public/icons';
 import { Button, Col, Row, Typography } from 'antd';
+
 import {
   ArticleWrap,
   DivWrap,

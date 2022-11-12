@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 export type LoadingHookValues = { message?: string; isLoading: boolean };
 
@@ -15,7 +15,7 @@ export type LoadingHookMethods = {
  */
 export const useLoading = (
   initState: boolean = false,
-  initMessage?: string
+  initMessage?: string,
 ): [LoadingHookValues, LoadingHookMethods] => {
   const [isLoading, setIsLoading] = useState<boolean>(initState);
   const [message, setMessage] = useState<string | undefined>(initMessage);

@@ -1,6 +1,7 @@
 import { SRC_IMAGE } from '@core';
 import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
 import { Col, Row } from 'antd';
+
 import ItemRoommate from './ItemRoommate';
 
 const RoommateList: React.FC<{}> = () => {
@@ -34,7 +35,7 @@ const RoommateList: React.FC<{}> = () => {
       searchFor2: 'Male',
       searchFor3: 'Quận 1 , HCM city',
       distance: '800m',
-      colorWrap: "#ff0000"
+      colorWrap: '#ff0000',
     },
     {
       avatar: SRC_IMAGE.ROOMMATE3,
@@ -50,7 +51,7 @@ const RoommateList: React.FC<{}> = () => {
       searchFor2: 'Male',
       searchFor3: 'Quận 1 , HCM city',
       distance: '800m',
-      colorWrap: "#6d656b"
+      colorWrap: '#6d656b',
     },
     {
       avatar: SRC_IMAGE.ROOMMATE1,
@@ -66,7 +67,7 @@ const RoommateList: React.FC<{}> = () => {
       searchFor2: 'Male',
       searchFor3: 'Quận 1 , HCM city',
       distance: '800m',
-      colorWrap: "#ff0000"
+      colorWrap: '#ff0000',
     },
     {
       avatar: SRC_IMAGE.ROOMMATE3,
@@ -97,7 +98,7 @@ const RoommateList: React.FC<{}> = () => {
       searchFor2: 'Male',
       searchFor3: 'Quận 1 , HCM city',
       distance: '800m',
-      colorWrap: "#6d656b"
+      colorWrap: '#6d656b',
     },
     {
       avatar: SRC_IMAGE.ROOMMATE2,
@@ -113,7 +114,7 @@ const RoommateList: React.FC<{}> = () => {
       searchFor2: 'Male',
       searchFor3: 'Quận 1 , HCM city',
       distance: '800m',
-      colorWrap: "#6d656b"
+      colorWrap: '#6d656b',
     },
     {
       avatar: SRC_IMAGE.ROOMMATE1,
@@ -189,7 +190,7 @@ const RoommateList: React.FC<{}> = () => {
       searchFor2: 'Male',
       searchFor3: 'Quận 1 , HCM city',
       distance: '800m',
-      colorWrap: "#6d656b"
+      colorWrap: '#6d656b',
     },
   ];
   return (
@@ -217,7 +218,7 @@ const RoommateList: React.FC<{}> = () => {
           );
         })}
       </Row>
-      <PaginationWrapCustom  total={5} pageSize={1} />
+      <PaginationWrapCustom total={5} pageSize={1} />
     </>
   );
 };

@@ -1,3 +1,12 @@
+import { SRC_IMAGE } from '@core';
+import {
+  Advantage,
+  CalendarTue,
+  VectorCalendar,
+  VectorLocation,
+} from '@root/public/icons';
+import { Button, Typography } from 'antd';
+
 import {
   ArticleWrap,
   DivWrap,
@@ -5,15 +14,7 @@ import {
   ItemUpcoming,
   SpotlightText,
 } from '../Home.style';
-import { Button, Typography } from 'antd';
-import {
-  CalendarTue,
-  VectorCalendar,
-  VectorLocation,
-  Advantage,
-} from '@root/public/icons';
 import { UpComingFooterButton } from './UpComing.style';
-import { SRC_IMAGE } from '@core';
 
 const ItemPostUpComing = ({ items }) => {
   return (

@@ -1,5 +1,6 @@
 import { MPostDetail } from '@models/MPostDetail';
 import dynamic from 'next/dynamic';
+
 import {
   DefaultContentInWrapper,
   DefaultLinkText,
@@ -14,10 +15,10 @@ export const LayoutDetailRESLocation = (props: {
   const { t: translate, post } = props;
   const DynamicLocation: any = dynamic(() =>
     import('../../../shared/LocationRealEstate').then(
-      (mod: any) => mod.LocationRealEstate
-    )
+      (mod: any) => mod.LocationRealEstate,
+    ),
   );
-  if(!post.linkLocation) return <></>
+  if (!post.linkLocation) return <></>;
   return (
     <>
       <DefaultWrapperWithBg>

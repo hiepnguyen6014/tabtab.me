@@ -1,11 +1,12 @@
 import { SRC_IMAGE } from '@core';
 import { VectorBuildingL, VectorTalkL } from '@root/public/icons';
 import { Col, Image, Row } from 'antd';
+
 import { AboutUsParagraph } from '../AboutUs.style';
 
 const ContentAboutUs: React.FC<{}> = () => {
   return (
-    <div className='my-3'>
+    <div className="my-3">
       <AboutUsParagraph>
         <div className="article">
           <Image
@@ -25,19 +26,21 @@ const ContentAboutUs: React.FC<{}> = () => {
             <div className="horizontal-divider" />
           </div>
         </div>
-        
-        <Row gutter={{
-          xs: 8,
-          sm: 16,
-          md: 24,
-          lg: 40,
-        }}>
+
+        <Row
+          gutter={{
+            xs: 8,
+            sm: 16,
+            md: 24,
+            lg: 40,
+          }}
+        >
           <Col xs={24} sm={24} lg={12} className="gutter-row res-col">
             <div className="text-center">
-              <VectorTalkL className="my-5"/>
+              <VectorTalkL className="my-5" />
               <h3 className="my-4">A brokerage of unparalleled agents</h3>
             </div>
-            <p className='content-p'>
+            <p className="content-p">
               As an innovative residential real estate firm, we empower our
               agents so they have more time for advising their clients. With the
               solutions-driven mindset of a startup and the sophistication of a
@@ -46,10 +49,10 @@ const ContentAboutUs: React.FC<{}> = () => {
           </Col>
           <Col xs={24} sm={24} lg={12} className="gutter-row res-col">
             <div className="text-center">
-              <VectorBuildingL className="my-5"/>
+              <VectorBuildingL className="my-5" />
               <h3 className="my-4">A tech company reinventing the space</h3>
             </div>
-            <p className='content-p'>
+            <p className="content-p">
               To lead the industry requires the smartest tools built by the
               brightest minds across engineering, design, and strategy. Through
               our proprietary platform, Compass is changing how agents and

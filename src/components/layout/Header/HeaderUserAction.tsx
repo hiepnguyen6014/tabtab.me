@@ -1,11 +1,10 @@
 import { ROUTES } from '@constants';
-import {
-  AvartarDefault,
-  IconLogout,
-} from '@root/public/icons';
-import { Avatar, Badge, Dropdown } from 'antd';
-import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '@contexts';
+import { AvartarDefault, IconLogout } from '@root/public/icons';
+import { Avatar, Badge, Dropdown } from 'antd';
+import { useRouter } from 'next/router';
+import { useContext, useEffect, useState } from 'react';
+
 import {
   Account,
   DropdownAccount,
@@ -17,32 +16,31 @@ import {
   PostInDrop,
   TextUserName,
 } from './Header.style';
-import { useRouter } from 'next/router';
 
 interface Props {
   themeLight?: boolean;
   onRedirect: (href: string) => void;
-  t?:any
+  t?: any;
 }
 
 const HeaderUserAction = (props: Props) => {
-  const { themeLight, onRedirect,t } = props;
+  const { themeLight, onRedirect, t } = props;
 
   const { currentUser, userLogout } = useContext(UserContext);
-  const isLogin  = Object.keys(currentUser).length > 0
-  
-  const onLogin = (href:string)=>{
+  const isLogin = Object.keys(currentUser).length > 0;
+
+  const onLogin = (href: string) => {
     router.push({
-      pathname:`${href}/${window.location.pathname}`,
-      query: {...router.query}
-    })
+      pathname: `${href}/${window.location.pathname}`,
+      query: { ...router.query },
+    });
     // console.log(`http://${href}/${window.location.pathname}`);
     // router.push({
     //   pathname: 'http://localhost:3001/autologin',
     //   query: {...router.query}
     // });
-  }
- 
+  };
+
   // List item in dropdown account
   const { firstName, lastName, userAvatar, username } = currentUser;
   const ACCOUNT_ROUTES = {
@@ -51,14 +49,14 @@ const HeaderUserAction = (props: Props) => {
       count: currentUser?.unreadMessage || 0,
     },
     MANAGER_TRANSACTION: {
-      default: ROUTES.MANAGER_TRANSACTION
+      default: ROUTES.MANAGER_TRANSACTION,
     },
     MANAGER_ACCOUNT: {
       default: ROUTES.MANAGER_ACCOUNT,
     },
   };
-  const router = useRouter()
-  
+  const router = useRouter();
+
   const dropdownAccount = (
     <DropdownAccount>
       <ManagerPostInDrop>
@@ -69,7 +67,7 @@ const HeaderUserAction = (props: Props) => {
       </ManagerPostInDrop>
 
       <PostInDrop>
-      <DropdownItem>
+        <DropdownItem>
           {ROUTES.POST.icon}
           <a href={ROUTES.POST.href}>{t('header.post')}</a>
         </DropdownItem>
@@ -81,13 +79,19 @@ const HeaderUserAction = (props: Props) => {
             {t(ACCOUNT_ROUTES[item].default.name)}
           </a>
           <div>
-            <Badge style={{ marginLeft: "-10px" }} count={ACCOUNT_ROUTES[item].count} />
+            <Badge
+              style={{ marginLeft: '-10px' }}
+              count={ACCOUNT_ROUTES[item].count}
+            />
           </div>
         </DropdownItem>
-      ))}    
-      <DropdownItem onClick={userLogout} style={{ boxShadow: 'inset 0px 1px 0px #F0F0F0' }}>
+      ))}
+      <DropdownItem
+        onClick={userLogout}
+        style={{ boxShadow: 'inset 0px 1px 0px #F0F0F0' }}
+      >
         <IconLogout />
-        <a >{t(ROUTES.LOGOUT.name)}</a>
+        <a>{t(ROUTES.LOGOUT.name)}</a>
       </DropdownItem>
     </DropdownAccount>
   );
@@ -96,7 +100,7 @@ const HeaderUserAction = (props: Props) => {
       <HeaderAction>
         {isLogin ? (
           <>
-            <ManagerPost              
+            <ManagerPost
               typeof={`${themeLight}`}
               onClick={() => onRedirect(ROUTES.MANAGER_POST.href)}
             >
@@ -107,37 +111,46 @@ const HeaderUserAction = (props: Props) => {
               {ROUTES.POST.icon}
               {t('header.post')}
             </Post>
-              <Dropdown
-                placement="bottomRight"
-                overlay={dropdownAccount}
-                trigger={['click']}
-                >
-                <Account>
-                  <span >
-                    <Badge count={ACCOUNT_ROUTES.NOTIFYCATION.count > 0 ? ACCOUNT_ROUTES.NOTIFYCATION.count : 0}>
-                      {userAvatar ? (
-                        <Avatar size="large" src={userAvatar} />
-                      ) : (
-                        <AvartarDefault />
-                      )}
-                    </Badge>
-                  </span>
-                  {/* overflowCount */}
-                  <TextUserName
-                    typeof={`${themeLight}`}
-                  >{firstName || lastName ? `${firstName +''+ lastName}` : username}</TextUserName>
-            </Account>
-              </Dropdown>
+            <Dropdown
+              placement="bottomRight"
+              overlay={dropdownAccount}
+              trigger={['click']}
+            >
+              <Account>
+                <span>
+                  <Badge
+                    count={
+                      ACCOUNT_ROUTES.NOTIFYCATION.count > 0
+                        ? ACCOUNT_ROUTES.NOTIFYCATION.count
+                        : 0
+                    }
+                  >
+                    {userAvatar ? (
+                      <Avatar size="large" src={userAvatar} />
+                    ) : (
+                      <AvartarDefault />
+                    )}
+                  </Badge>
+                </span>
+                {/* overflowCount */}
+                <TextUserName typeof={`${themeLight}`}>
+                  {firstName || lastName
+                    ? `${firstName + '' + lastName}`
+                    : username}
+                </TextUserName>
+              </Account>
+            </Dropdown>
           </>
         ) : (
           <TextUserName typeof={`${themeLight}`}>
-            <a onClick={()=> onLogin(ROUTES.LOGIN.href)}>{t(`${ROUTES.LOGIN.name}`)}</a>
-          </TextUserName> 
+            <a onClick={() => onLogin(ROUTES.LOGIN.href)}>
+              {t(`${ROUTES.LOGIN.name}`)}
+            </a>
+          </TextUserName>
         )}
       </HeaderAction>
     </>
   );
 };
 
-
-export default HeaderUserAction
+export default HeaderUserAction;

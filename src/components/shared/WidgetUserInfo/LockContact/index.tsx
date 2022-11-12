@@ -1,13 +1,14 @@
 import { ROUTES } from '@constants';
 import { UserContext } from '@contexts';
-import { getDetailPost, paymentRecord } from '../../../../core/services';
-import { STATUS_PAYMENT } from '../../../../core/constants/common';
 import { MPaymentRecord } from '@models/MPaymentRecord';
 import { MPostDetail } from '@models/MPostDetail';
 import { IconLocked } from '@root/public/icons';
-import { message, Popconfirm, Typography } from 'antd';
+import { Popconfirm, Typography, message } from 'antd';
 import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
+
+import { STATUS_PAYMENT } from '../../../../core/constants/common';
+import { getDetailPost, paymentRecord } from '../../../../core/services';
 import { LockWrap } from './LockContact.style';
 
 interface Props {
@@ -31,7 +32,7 @@ export const LockContact = (props: Props) => {
   const router = useRouter();
 
   const isLogin = Object.keys(currentUser).length > 0; // Check if the user is logged in or not: T = logged, F = not logged
-  
+
   const keyContent = 'processing'; // Feature loading in antd
 
   if (
@@ -42,10 +43,10 @@ export const LockContact = (props: Props) => {
 
   const textConfirm = {
     title: translate(
-      !isLogin ? 'detail.widgetUser.logged' : 'detail.widgetUser.payment'
+      !isLogin ? 'detail.widgetUser.logged' : 'detail.widgetUser.payment',
     ),
     ok: translate(
-      !isLogin ? 'detail.widgetUser.okLogin' : 'detail.widgetUser.okPayment'
+      !isLogin ? 'detail.widgetUser.okLogin' : 'detail.widgetUser.okPayment',
     ),
     cancel: translate('detail.widgetUser.cancel'),
   };
@@ -87,8 +88,11 @@ export const LockContact = (props: Props) => {
               phone: res?.data?.realEstatePhone,
             });
           });
-        } else{
-          message.warning({content:translate('detail.widgetUser.problem'), key:keyContent})
+        } else {
+          message.warning({
+            content: translate('detail.widgetUser.problem'),
+            key: keyContent,
+          });
         }
       });
     } else {

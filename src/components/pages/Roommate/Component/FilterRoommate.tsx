@@ -1,7 +1,8 @@
 import { PlusCircleFilled } from '@ant-design/icons';
-import { Button, Col, Row, Typography } from 'antd';
-import { ButtonAdd, DivWrap, Flex } from '../Roomate.style';
 import { IconDownSquare, IconSearchColor } from '@root/public/icons';
+import { Button, Col, Row, Typography } from 'antd';
+
+import { ButtonAdd, DivWrap, Flex } from '../Roomate.style';
 
 const FilterRoommate: React.FC<{}> = () => {
   return (
@@ -11,13 +12,13 @@ const FilterRoommate: React.FC<{}> = () => {
           <Typography className="title-text-style">Text Demo</Typography>
           <ButtonAdd>
             <PlusCircleFilled />
-            <span className='span-none'>
+            <span className="span-none">
               Add as{' '}
               <span style={{ textDecoration: 'underline' }}>Roommate</span>
             </span>
           </ButtonAdd>
         </Flex>
-        <Row className='device__justify-between'>
+        <Row className="device__justify-between">
           <Col xs={24} sm={24} lg={4}>
             <Typography className="field-filter--style">Category</Typography>
             <DivWrap borderColor="#F9C41F">

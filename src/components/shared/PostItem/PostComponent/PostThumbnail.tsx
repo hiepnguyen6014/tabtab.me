@@ -1,15 +1,16 @@
 import { MPostDetail } from '@models/MPostDetail';
+import { colors } from '@styles/theme/colors';
 import { Image } from 'antd';
-import { ButtonSave } from '../../ButtonSave/index'
 import React from 'react';
+
+import { ButtonSave } from '../../ButtonSave/index';
 import {
+  PostThumbnailDate,
+  PostThumbnailSave,
   PostThumbnailTop,
   PostThumbnailWrapper,
-  PostThumbnailDate,
   TagProperty,
-  PostThumbnailSave,
 } from '../PostItem.style';
-import { colors } from '@styles/theme/colors';
 
 interface DemoProperty {
   name?: string;
@@ -20,9 +21,10 @@ interface DemoProperty {
 export const PostThumbnail: React.FC<{
   post: MPostDetail;
   demo?: DemoProperty;
-  t:any
-}> = ({ post, demo,t }) => {
-  const { realEstateImage, createdAt, realEstateTotalDate, realEstateId } = post;
+  t: any;
+}> = ({ post, demo, t }) => {
+  const { realEstateImage, createdAt, realEstateTotalDate, realEstateId } =
+    post;
 
   const handleRedirect = () => {
     if (demo.action) demo.action();
@@ -31,7 +33,7 @@ export const PostThumbnail: React.FC<{
     <PostThumbnailWrapper>
       <Image
         alt=""
-        src={realEstateImage || "error"}
+        src={realEstateImage || 'error'}
         height="100%"
         width="100%"
         preview={false}
@@ -40,20 +42,24 @@ export const PostThumbnail: React.FC<{
       />
       {demo?.name ? (
         <TagProperty
-          style={{ background: {
-            0:colors.common,
-            1:colors.button
-          }[post.agency] }}
+          style={{
+            background: {
+              0: colors.common,
+              1: colors.button,
+            }[post.agency],
+          }}
         >
           {demo.name}
         </TagProperty>
       ) : (
         ''
       )}
-      <PostThumbnailSave typeof="action">        
-        <ButtonSave t={t} idPost={realEstateId} text=' ' bordered={"false"}/>
+      <PostThumbnailSave typeof="action">
+        <ButtonSave t={t} idPost={realEstateId} text=" " bordered={'false'} />
       </PostThumbnailSave>
-      <PostThumbnailDate>{`${realEstateTotalDate.total || ''} ${t(realEstateTotalDate.defineName)}`}</PostThumbnailDate>
+      <PostThumbnailDate>{`${realEstateTotalDate.total || ''} ${t(
+        realEstateTotalDate.defineName,
+      )}`}</PostThumbnailDate>
     </PostThumbnailWrapper>
   );
 };

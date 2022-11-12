@@ -18,7 +18,6 @@ import {
   SpotlightText,
   SpotlightWrap,
 } from '@root/src/components/pages/Spotlight/Spotlight.style';
-
 import { Col, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
 

@@ -1,9 +1,11 @@
-import { message, Typography } from 'antd';
+import { Typography, message } from 'antd';
 import { IconFace, IconFlag } from 'public/icons';
 import { useCallback, useContext, useState } from 'react';
-import { ContentRight, NotifyWrapper } from './Notification.style';
-import { PopupReport } from '../Popup';
+
 import { UserContext } from '../../../core/contexts';
+import { PopupReport } from '../Popup';
+import { ContentRight, NotifyWrapper } from './Notification.style';
+
 export const Notification = (props: { idPost: string | number; t: any }) => {
   const { t } = props;
   const { currentUser } = useContext(UserContext);

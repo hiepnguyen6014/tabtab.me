@@ -11,10 +11,10 @@ export const RoommateWrap = styled.div`
     margin-left: 10px;
     display: flex;
   }
-  .device__justify-between{
+  .device__justify-between {
     @media ${device.maxMd} {
-    justify-content: space-between;
-  }
+      justify-content: space-between;
+    }
   }
 `;
 
@@ -47,7 +47,7 @@ export const ButtonAdd = styled(Button)`
     height: 40px;
     padding: 0px 0px;
     justify-content: center;
-    .span-none{
+    .span-none {
       display: none;
     }
   }
@@ -76,7 +76,7 @@ export const RoommateText = styled(Typography)`
     line-height: 24px;
     color: #7a7a7a;
     @media ${device.maxMd} {
-      span{
+      span {
         display: none;
       }
     }
@@ -89,7 +89,7 @@ export const RoommateText = styled(Typography)`
   }
 `;
 
-export const DivWrap = styled((props) => <div {...props} />)`
+export const DivWrap = styled(props => <div {...props} />)`
   ${({ borderColor }) =>
     borderColor
       ? {

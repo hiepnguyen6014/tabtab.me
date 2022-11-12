@@ -1,3 +1,4 @@
+import { SRC_IMAGE } from '@core';
 import {
   Advantage,
   AgentIcon,
@@ -7,6 +8,9 @@ import {
   IconPark,
   IconSafari,
 } from '@root/public/icons';
+import { Divider, Image } from 'antd';
+import React, { FC } from 'react';
+
 import {
   BoxArea,
   BoxContact,
@@ -28,10 +32,6 @@ import {
   BoxWrapper,
   ButtonMessage,
 } from './InfoHomeStyled';
-import { Divider, Image } from 'antd';
-import React, { FC } from 'react';
-
-import { SRC_IMAGE } from '@core';
 
 interface InfoHomeTypeProps {
   dataHome: any;
@@ -78,15 +78,14 @@ const InfoHome: FC<InfoHomeTypeProps> = ({
             src={SRC_IMAGE.PERSON6}
           />
         ) : (
-          <> {!changeImage ? (
-            <BoxImage
-              preview={false}
-              src={SRC_IMAGE.PERSON6}
-            />
-          ) : (
-            <BoxImageMobile  preview={false}
-            src={SRC_IMAGE.PERSON6}/>
-          )}</>
+          <>
+            {' '}
+            {!changeImage ? (
+              <BoxImage preview={false} src={SRC_IMAGE.PERSON6} />
+            ) : (
+              <BoxImageMobile preview={false} src={SRC_IMAGE.PERSON6} />
+            )}
+          </>
         )}
       </BoxFlex>
       {!titleDownPx ? (

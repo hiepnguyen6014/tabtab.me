@@ -148,7 +148,7 @@ export const SocialNetWorkText = styled(Typography)`
   }
 `;
 
-export const DivWrap = styled((props) => <div {...props} />)`
+export const DivWrap = styled(props => <div {...props} />)`
   ${({ borderColor }) =>
     borderColor
       ? {

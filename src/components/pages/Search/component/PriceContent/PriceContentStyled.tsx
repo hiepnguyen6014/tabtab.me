@@ -1,6 +1,5 @@
-import { Button, Divider, Image, Row, Typography } from 'antd';
-
 import { styled } from '@styles/theme';
+import { Button, Divider, Image, Row, Typography } from 'antd';
 
 export const Box = styled.div`
   padding: 12px;

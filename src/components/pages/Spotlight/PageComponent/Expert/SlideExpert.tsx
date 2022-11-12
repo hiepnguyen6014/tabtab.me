@@ -62,7 +62,7 @@ const SlideExpert = () => {
       <div style={{ marginTop: '20px' }} className="px-2 right">
         {ITEMSPOTLIGHTSIDE.map((items, key) => {
           return (
-            <Link href="/detail-spotlight" key={key}>
+            <Link href="/detail-spotlight" key={key} legacyBehavior>
               <ItemSide item={items} />
             </Link>
           );

@@ -1,3 +1,11 @@
+import { SRC_IMAGE } from '@core';
+import {
+  VectorBookmark,
+  VectorPlay,
+  VectorPodcast,
+  VectorStar,
+  VectorUp,
+} from '@root/public/icons';
 import {
   ArticleWrap,
   DivWrap,
@@ -5,24 +13,16 @@ import {
   ItemPostSpot,
   TypographyWrap,
 } from '@root/src/components/pages/Home/Home.style';
-import { ButtonClick, SpotlightText, SpotlightWrap } from '../Spotlight.style';
 import { Col, Image, Row, Typography } from 'antd';
-import {
-  VectorBookmark,
-  VectorPlay,
-  VectorPodcast,
-  VectorStar,
-  VectorUp
-} from '@root/public/icons';
-
 import Link from 'next/link';
-import { SRC_IMAGE } from '@core';
+
+import { ButtonClick, SpotlightText, SpotlightWrap } from '../Spotlight.style';
 
 interface CheckoutProps {
   clicktoPageHeader: () => void;
 }
 
-const CheckOutArticles: React.FC<CheckoutProps> = ({clicktoPageHeader}) => {
+const CheckOutArticles: React.FC<CheckoutProps> = ({ clicktoPageHeader }) => {
   return (
     <>
       <div
@@ -258,13 +258,14 @@ const CheckOutArticles: React.FC<CheckoutProps> = ({clicktoPageHeader}) => {
             </SpotlightText>
           </ItemPostSpot>
         </Col>
-       <Link href="/detail-spotlight">
-       <ButtonClick
-                    // onClick={(e) => clicktoPageHeader()}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <VectorUp />
-                  </ButtonClick></Link>
+        <Link href="/detail-spotlight" legacyBehavior>
+          <ButtonClick
+            // onClick={(e) => clicktoPageHeader()}
+            style={{ cursor: 'pointer' }}
+          >
+            <VectorUp />
+          </ButtonClick>
+        </Link>
       </Row>
     </>
   );

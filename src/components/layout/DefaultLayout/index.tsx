@@ -1,1 +1,1 @@
-export * from './DefaultComponent.style'
+export * from './DefaultComponent.style';

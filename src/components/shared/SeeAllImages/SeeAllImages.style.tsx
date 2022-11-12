@@ -41,16 +41,17 @@ export const SwiperWrap = styled(Swiper)`
   height: 75%;
   width: 100%;
   text-align: center;
-  .swiper-button-prev,.swiper-button-next{
-    position:absolute;
-    top:50%;
-    z-index:9;
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    z-index: 9;
   }
-  .swiper-button-prev{
-    left:0%;
+  .swiper-button-prev {
+    left: 0%;
   }
-  .swiper-button-next{
-    right:0%;
+  .swiper-button-next {
+    right: 0%;
   }
 
   .swiper-slide {
@@ -65,20 +66,20 @@ export const SwiperWrap = styled(Swiper)`
 `;
 
 export const ContentSwiperMini = styled.div`
-  height:25%;
-  margin-top:15px;
-  background:black;
-  position:relative;
-  padding:5px 10px;
-  border-radius:5px;
-`
+  height: 25%;
+  margin-top: 15px;
+  background: black;
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 5px;
+`;
 export const ActionInContent = styled.div`
-  height:20%;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:#fff;
-`
+  height: 20%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+`;
 
 export const SwiperWrapMini = styled(Swiper)`
   height: 80%;
@@ -92,8 +93,7 @@ export const SwiperWrapMini = styled(Swiper)`
     border-radius: 5px;
     overflow: hidden;
     border: 2px solid transparent;
-    transition:all 0.3s ease;
-    
+    transition: all 0.3s ease;
   }
   .swiper-slide-thumb-active {
     opacity: 1;
@@ -108,10 +108,9 @@ export const SwiperWrapMini = styled(Swiper)`
     height: 100%;
     object-fit: cover;
   }
-  @media ${device.maxSm}{
-    .swiper-slide{
-      width:50% !important;
+  @media ${device.maxSm} {
+    .swiper-slide {
+      width: 50% !important;
     }
   }
 `;
-

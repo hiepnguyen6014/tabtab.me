@@ -28,7 +28,7 @@ export const HelpCenterWrap = styled.div`
   }
 `;
 
-export const SearchInput = styled((props) => <Input allowClear {...props} />)`
+export const SearchInput = styled(props => <Input allowClear {...props} />)`
   border-width: 0;
   border-radius: 56px;
   padding: 5px 5px 5px 10px;
@@ -97,7 +97,7 @@ export const RadioWrap = styled(Radio.Group)`
   align-items: center;
 `;
 
-export const RadioButton = styled((props) => <Radio.Button {...props} />)`
+export const RadioButton = styled(props => <Radio.Button {...props} />)`
   ${({ bg }) =>
     bg
       ? {

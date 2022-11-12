@@ -52,7 +52,7 @@ const ColBottom = () => {
           return (
             <>
               <ColA xs={24} sm={24} lg={12} key={key}>
-                <Link href="/detail-spotlight">
+                <Link href="/detail-spotlight" legacyBehavior>
                   <Flex>
                     <div className="width--50">
                       <Image

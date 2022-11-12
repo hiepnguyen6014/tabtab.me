@@ -1,13 +1,13 @@
 import { PARAMS, POST_TYPE_PARAMS, PUBLIC_ROUTES, ROUTES } from '@constants';
-import { getListRealEstate } from '@root/src/core/services';
-import { removeEmptyType } from '@utils';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
+import { UserContext, filterKey } from '@contexts';
 import { MFilter } from '@models/MFilter';
 import { MPostDetail } from '@models/MPostDetail';
 import LayoutCategory from '@root/src/components/layout/LayoutCategory/LayoutCategory';
+import { getListRealEstate } from '@root/src/core/services';
+import { removeEmptyType } from '@utils';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useContext } from 'react';
-import { filterKey, UserContext } from '@contexts';
 
 const ProjectPage: React.FC<{
   postList: MPostDetail[];

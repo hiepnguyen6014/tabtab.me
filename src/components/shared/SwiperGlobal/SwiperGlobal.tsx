@@ -1,14 +1,13 @@
 // Import Swiper styles
-
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-import { BoxWrapper, ImageHome, ImageHomeRow } from './SwipperGlobal';
-// import required modules
-import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
 import { NextArrow, PrevArrow } from 'public/icons';
 import React, { FC } from 'react';
+// import required modules
+import { Keyboard, Mousewheel, Navigation, Pagination } from 'swiper';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { BoxWrapper, ImageHome, ImageHomeRow } from './SwipperGlobal';
 
 interface SwipperSlice {
   arrayImage: any[];
@@ -46,7 +45,7 @@ const SwiperGlobal: FC<SwipperSlice> = ({
             }}
             className="mySwiperRow"
           >
-            {arrayImage.map((image) => (
+            {arrayImage.map(image => (
               <SwiperSlide key={image.id}>
                 <ImageHomeRow
                   width={width}
@@ -77,7 +76,7 @@ const SwiperGlobal: FC<SwipperSlice> = ({
             }}
             className="mySwiper"
           >
-            {arrayImage.map((image) => (
+            {arrayImage.map(image => (
               <SwiperSlide key={image.id}>
                 <ImageHome
                   width={width}

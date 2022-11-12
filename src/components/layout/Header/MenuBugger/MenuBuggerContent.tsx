@@ -4,6 +4,7 @@ import { IconCloseMenu } from '@root/public/icons';
 import { Avatar, Badge, Image, Menu } from 'antd';
 import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
+
 import {
   ButtonClose,
   ButtonPost,
@@ -17,60 +18,91 @@ import {
 
 interface Props {
   setVisible: Function;
-  onRedirect?:(href:string)=>void,
+  onRedirect?: (href: string) => void;
   tabCurrent?: string;
-  isLogin?:boolean;
+  isLogin?: boolean;
   t: any;
 }
 const MenuBuggerContent = (props: Props) => {
   const router = useRouter();
   const { t: translate, setVisible, tabCurrent, isLogin, onRedirect } = props;
   const { currentUser, userLogout } = useContext(UserContext);
-  
-  const onLogin = ()=>{
-    const href = !isLogin ? ROUTES.LOGIN.href : ROUTES.MANAGER_ACCOUNT.href
+
+  const onLogin = () => {
+    const href = !isLogin ? ROUTES.LOGIN.href : ROUTES.MANAGER_ACCOUNT.href;
     router.push({
-      pathname:`${href}/${window.location.pathname}`,
-      query: {...router.query}
-    })}
+      pathname: `${href}/${window.location.pathname}`,
+      query: { ...router.query },
+    });
+  };
   const listMenu = [
     {
       icon: ROUTES.NOTIFICATION.icon,
       title: ROUTES.NOTIFICATION.name,
       count: currentUser?.unreadMessage,
-      click:()=> onRedirect(ROUTES.NOTIFICATION.href)
+      click: () => onRedirect(ROUTES.NOTIFICATION.href),
     },
     {
       icon: ROUTES.MANAGER_POST.icon,
-      title:  ROUTES.MANAGER_POST.name,
+      title: ROUTES.MANAGER_POST.name,
       subMenu: [
-        { title: ROUTES.MANAGER_POST.subMenu.post.title, click: ()=> onRedirect(ROUTES.MANAGER_POST.subMenu.post.href) },
-        { title: ROUTES.MANAGER_POST.subMenu.viewNews.title, click: ()=> onRedirect(ROUTES.MANAGER_POST.subMenu.viewNews.href) },
-        { title: ROUTES.MANAGER_POST.subMenu.saveNews.title, click: ()=> onRedirect(ROUTES.MANAGER_POST.subMenu.saveNews.href) }
+        {
+          title: ROUTES.MANAGER_POST.subMenu.post.title,
+          click: () => onRedirect(ROUTES.MANAGER_POST.subMenu.post.href),
+        },
+        {
+          title: ROUTES.MANAGER_POST.subMenu.viewNews.title,
+          click: () => onRedirect(ROUTES.MANAGER_POST.subMenu.viewNews.href),
+        },
+        {
+          title: ROUTES.MANAGER_POST.subMenu.saveNews.title,
+          click: () => onRedirect(ROUTES.MANAGER_POST.subMenu.saveNews.href),
+        },
       ],
     },
     {
       icon: ROUTES.MANAGER_TRANSACTION.icon,
       title: ROUTES.MANAGER_TRANSACTION.name,
       subMenu: [
-        { title: ROUTES.MANAGER_TRANSACTION.subMenu.accountBalance.title, click: ()=> onRedirect(ROUTES.MANAGER_TRANSACTION.subMenu.accountBalance.href) },
-        { title: ROUTES.MANAGER_TRANSACTION.subMenu.transactionHistory.title, click: ()=> onRedirect(ROUTES.MANAGER_TRANSACTION.subMenu.transactionHistory.href)  },
+        {
+          title: ROUTES.MANAGER_TRANSACTION.subMenu.accountBalance.title,
+          click: () =>
+            onRedirect(ROUTES.MANAGER_TRANSACTION.subMenu.accountBalance.href),
+        },
+        {
+          title: ROUTES.MANAGER_TRANSACTION.subMenu.transactionHistory.title,
+          click: () =>
+            onRedirect(
+              ROUTES.MANAGER_TRANSACTION.subMenu.transactionHistory.href,
+            ),
+        },
       ],
     },
     {
       icon: ROUTES.MANAGER_ACCOUNT.icon,
       title: ROUTES.MANAGER_ACCOUNT.name,
       subMenu: [
-        { title: ROUTES.MANAGER_ACCOUNT.subMenu.presonalInfo.title, click: ()=> onRedirect(ROUTES.MANAGER_ACCOUNT.subMenu.presonalInfo.href) },
-        { title: ROUTES.MANAGER_ACCOUNT.subMenu.veritify.title, click: ()=> onRedirect(ROUTES.MANAGER_ACCOUNT.subMenu.veritify.href) },
-        { title: ROUTES.MANAGER_ACCOUNT.subMenu.changePass.title, click: ()=> onRedirect(ROUTES.MANAGER_ACCOUNT.subMenu.changePass.href) }
+        {
+          title: ROUTES.MANAGER_ACCOUNT.subMenu.presonalInfo.title,
+          click: () =>
+            onRedirect(ROUTES.MANAGER_ACCOUNT.subMenu.presonalInfo.href),
+        },
+        {
+          title: ROUTES.MANAGER_ACCOUNT.subMenu.veritify.title,
+          click: () => onRedirect(ROUTES.MANAGER_ACCOUNT.subMenu.veritify.href),
+        },
+        {
+          title: ROUTES.MANAGER_ACCOUNT.subMenu.changePass.title,
+          click: () =>
+            onRedirect(ROUTES.MANAGER_ACCOUNT.subMenu.changePass.href),
+        },
       ],
     },
     {
       icon: ROUTES.LOGOUT.icon,
       title: ROUTES.LOGOUT.name,
-      click: userLogout
-    }
+      click: userLogout,
+    },
   ];
   return (
     <>
@@ -98,10 +130,10 @@ const MenuBuggerContent = (props: Props) => {
               ? currentUser.firstName || currentUser.lastName
                 ? currentUser.firstName + ' ' + `${currentUser.lastName || ''}`
                 : currentUser.username
-              : translate('user.login')}            
+              : translate('user.login')}
           </span>
         </MenuUserRow>
-        <ButtonPost  onClick={() => onRedirect(ROUTES.POST.href)}>
+        <ButtonPost onClick={() => onRedirect(ROUTES.POST.href)}>
           {ROUTES.POST.icon}
           {translate('header.post')}
         </ButtonPost>
@@ -139,18 +171,18 @@ const MenuBuggerContent = (props: Props) => {
               <React.Fragment key={key}>
                 <DividerCustom />
                 <Menu.Item onClick={menu.click} icon={menu?.icon || <></>}>
-                  {translate(menu.title)} <Badge count={menu?.count || 0}/>
+                  {translate(menu.title)} <Badge count={menu?.count || 0} />
                 </Menu.Item>
                 <DividerCustom />
               </React.Fragment>
-            )
+            ),
           )}
         </MenuUserLink>
       ) : (
         <></>
       )}
     </>
-  )
-}
+  );
+};
 
-export default MenuBuggerContent
+export default MenuBuggerContent;

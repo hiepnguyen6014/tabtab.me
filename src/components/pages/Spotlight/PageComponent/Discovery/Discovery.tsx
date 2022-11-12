@@ -1,6 +1,7 @@
 import ColPost from '@root/src/components/shared/ItemPostInfo/ColPost';
 import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
 import { Col, Divider, Row, Typography } from 'antd';
+
 import ColBottom from './ColBottom';
 import { DiscoveryText, DiscoveryWrap } from './Discovery.styled';
 import LeftColTop from './LeftColTop';

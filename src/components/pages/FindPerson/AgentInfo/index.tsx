@@ -101,7 +101,7 @@ export default function AgentInfo() {
             md={12}
             xs={24}
           >
-            <Link href="/find-person-detail">
+            <Link href="/find-person-detail" legacyBehavior>
               <Agent post={item} t={translate} />
             </Link>
           </ColWrap>

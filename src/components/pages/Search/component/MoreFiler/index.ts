@@ -1,1 +1,1 @@
-export {default} from "./MoreFiler"
+export { default } from './MoreFiler';

@@ -1,11 +1,12 @@
 import { MPostDetail } from '@models/MPostDetail';
 import {
   IconArea,
+  IconBathroom,
   IconBedRoom,
   IconDirection,
-  IconBathroom,
 } from 'public/icons';
 import React from 'react';
+
 import { PostItemFooter } from '../PostItem.style';
 
 export const PostProjectFooter: React.FC<{ post: MPostDetail }> = ({
@@ -21,7 +22,11 @@ export const PostProjectFooter: React.FC<{ post: MPostDetail }> = ({
       icon: <IconArea />,
       value: `${realEstateLandRealitySquare} m²`,
     },
-    { icon: <IconBedRoom />, value: realEstateHouseBedRooms == 0 ? "--" : `${realEstateHouseBedRooms} PN`},
+    {
+      icon: <IconBedRoom />,
+      value:
+        realEstateHouseBedRooms == 0 ? '--' : `${realEstateHouseBedRooms} PN`,
+    },
     { icon: <IconDirection />, value: derectionHouseName },
   ];
   return (
@@ -34,7 +39,7 @@ export const PostProjectFooter: React.FC<{ post: MPostDetail }> = ({
           </span>
         ) : (
           ''
-        )
+        ),
       )}
     </PostItemFooter>
   );

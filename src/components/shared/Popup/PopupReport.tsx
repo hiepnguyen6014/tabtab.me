@@ -1,22 +1,23 @@
-import { Radio, Typography, Button, message } from 'antd';
-import { useState } from 'react';
-import {
-  PopupWrapper,
-  ContentWrapper,
-  ReportFooter,
-  ButtonSubmit,
-  ButtonNext,
-} from './PopupReport.style';
-import MoreInfomation from './MoreInfomation';
-import ListReport from './ListReport';
 import { reportProblem } from '@root/src/core/services';
 import { checkEmail } from '@utils';
+import { Button, Radio, Typography, message } from 'antd';
+import { useState } from 'react';
+
+import ListReport from './ListReport';
+import MoreInfomation from './MoreInfomation';
+import {
+  ButtonNext,
+  ButtonSubmit,
+  ContentWrapper,
+  PopupWrapper,
+  ReportFooter,
+} from './PopupReport.style';
 
 interface Props {
   id: string | number;
   isShow: boolean;
   setIsShow: Function;
-  token?:string;
+  token?: string;
   t: any;
 }
 export const Popup = (props: Props) => {
@@ -32,27 +33,27 @@ export const Popup = (props: Props) => {
   const handleSubmit = async (value: any) => {
     const submit = {};
     for (let key in value) {
-      if((key == "reportEmail" || key=="reportPhoneNumber") && !value[key]){
-        message.error(translate(`detail.report.${key}`))
-        return 
+      if ((key == 'reportEmail' || key == 'reportPhoneNumber') && !value[key]) {
+        message.error(translate(`detail.report.${key}`));
+        return;
       }
-      if (value[key]){
-        if(key == "reportEmail"){
-          if(!checkEmail(value['reportEmail'])){
-            message.error(translate('detail.report.responseEmailFail'))   
-            return          
+      if (value[key]) {
+        if (key == 'reportEmail') {
+          if (!checkEmail(value['reportEmail'])) {
+            message.error(translate('detail.report.responseEmailFail'));
+            return;
           }
         }
         submit[key] = value[key];
       }
     }
-    
-    if(Object.keys(submit).length <= 1){
-      message.error(translate('detail.report.responseNull'))
-      return
+
+    if (Object.keys(submit).length <= 1) {
+      message.error(translate('detail.report.responseNull'));
+      return;
     } //Do co id mac dinh nen phai lon hon 1
-    await reportProblem(submit, token).finally(()=>{
-      message.success(translate('detail.report.responeSuccess'))
+    await reportProblem(submit, token).finally(() => {
+      message.success(translate('detail.report.responeSuccess'));
       setReply({
         realEstateId: props.id,
         reportTitle: '',
@@ -60,8 +61,8 @@ export const Popup = (props: Props) => {
         reportEmail: '',
         reportPhoneNumber: '',
       });
-      setCurrentPage(0)
-      setIsShow(false);    
+      setCurrentPage(0);
+      setIsShow(false);
     });
   };
 
@@ -74,14 +75,12 @@ export const Popup = (props: Props) => {
     />,
     <MoreInfomation
       t={translate}
-      handleSubmit={()=>handleSubmit(reply)}
+      handleSubmit={() => handleSubmit(reply)}
       key={2}
       valueReply={reply}
       setValueReply={setReply}
     />,
   ];
-
-  
 
   return (
     <PopupWrapper
@@ -95,7 +94,7 @@ export const Popup = (props: Props) => {
         <ReportFooter>
           <Button
             disabled={currentPage == 0}
-            onClick={() => setCurrentPage((e) => (e -= 1))}
+            onClick={() => setCurrentPage(e => (e -= 1))}
             type="text"
           >
             {translate('button.back')}
@@ -105,7 +104,10 @@ export const Popup = (props: Props) => {
               {translate('button.submit')}
             </ButtonSubmit>
           ) : (
-            <ButtonNext disabled={!reply.reportTitle} onClick={() => setCurrentPage((e) => (e += 1))}>
+            <ButtonNext
+              disabled={!reply.reportTitle}
+              onClick={() => setCurrentPage(e => (e += 1))}
+            >
               {translate('button.next')}
             </ButtonNext>
           )}

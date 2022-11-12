@@ -6,7 +6,7 @@ export const ItemWrapSpotlight = styled.div`
   width: 100%;
 `;
 
-export const TextColor = styled((props) => <Typography {...props} />)`
+export const TextColor = styled(props => <Typography {...props} />)`
   ${({ colorText }) =>
     colorText
       ? {

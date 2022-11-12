@@ -1,3 +1,9 @@
+import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
+import { RadioSearch } from '@root/src/components/shared/SearchHome/SearchHome.style';
+import { Button, Pagination, Radio, Row, Typography } from 'antd';
+import { IconQuotes, NextArrow, PrevArrow } from 'public/icons';
+import React, { useState } from 'react';
+
 import {
   AllItem,
   ButtonNav,
@@ -9,20 +15,14 @@ import {
   WrapperContent,
   WrapperSpot,
 } from '../../Home/Home.style';
-import { Button, Pagination, Radio, Row, Typography } from 'antd';
+import ListItem from '../../Home/HomeComponent/ListItem';
+import RecommendProperty from '../../Home/HomeComponent/Recommend';
+import { PostItem, RecommendItem } from '../../Home/Recommend';
 import {
   ContentWrapper,
   RowWrap,
   TypographyText,
 } from '../FindPersonDetails.style';
-import { IconQuotes, NextArrow, PrevArrow } from 'public/icons';
-import { PostItem, RecommendItem } from '../../Home/Recommend';
-import React, { useState } from 'react';
-
-import ListItem from '../../Home/HomeComponent/ListItem';
-import PaginationWrapCustom from '@root/src/components/shared/PaginationCustom/PaginationCustom';
-import { RadioSearch } from '@root/src/components/shared/SearchHome/SearchHome.style';
-import RecommendProperty from '../../Home/HomeComponent/Recommend';
 
 const Recommend = ({ data, t, fontSize }) => {
   const [limitItems, setLimitItems] = React.useState(12);
