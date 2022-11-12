@@ -3,12 +3,12 @@ import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
 import { Button, Col, Radio, Row, Typography } from 'antd';
 
-export const FDesktop = styled(props => <div {...props} />)`
+export const FDesktop = styled((props) => <div {...props} />)`
   position: relative;
   max-width: 1200px;
   width: 95%;
   margin: auto;
-  ${props =>
+  ${(props) =>
     props.grid
       ? {
           'grid-template-columns': '30% 69%',
@@ -39,12 +39,12 @@ export const ContentWrapper = styled.div`
   row-gap: 32px;
 `;
 
-export const FDesktopSecond = styled(props => <div {...props} />)`
+export const FDesktopSecond = styled((props) => <div {...props} />)`
   position: relative;
   max-width: 1200px;
   width: 95%;
   margin: auto;
-  ${props =>
+  ${(props) =>
     props.grid
       ? {
           'grid-template-columns': '30% 69%',
@@ -182,7 +182,7 @@ export const WidgetWrapContact = styled.div`
   }
 `;
 
-export const PostWrapper = styled(props => <div {...props} />)`
+export const PostWrapper = styled((props) => <div {...props} />)`
   overflow: hidden;
   box-shadow: 0px 4px 16px rgba(34, 34, 34, 0.08);
   border-radius: 16px;
@@ -275,15 +275,17 @@ export const DefaultWrapperWithBg = styled.div`
     color: ${colors.common};
   }
   @media ${device.maxMd} {
-    padding: ${props => (props.typeof == 'fullScreen' ? 0 : '')};
+    padding: ${(props) => (props.typeof == 'fullScreen' ? 0 : '')};
   }
 `;
 
-export const DefaultContentInWrapperMajor = styled(props => <div {...props} />)`
+export const DefaultContentInWrapperMajor = styled((props) => (
+  <div {...props} />
+))`
   max-width: 1200px;
   padding: 30px 0;
   width: 95%;
-  ${props =>
+  ${(props) =>
     props.grid
       ? {
           'grid-template-columns': '69% 30%',
@@ -312,13 +314,13 @@ export const RowPrice = styled.div`
     display: block;
   }
 `;
-export const RowPriceLeft = styled(props => <div {...props} />)`
+export const RowPriceLeft = styled((props) => <div {...props} />)`
   span {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    ${props =>
+    ${(props) =>
       props.gap
         ? {
             gap: '12px',

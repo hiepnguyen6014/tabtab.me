@@ -148,7 +148,7 @@ a {
 
 .ant-btn:not(.disable-custom-btn) {
   &:not(.disable-hover):hover {
-    background-color: $color-common ;
+    background-color: $color-common !important;
     color: #fff !important;
     transform: scale(1.05);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

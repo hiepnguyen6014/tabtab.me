@@ -473,7 +473,7 @@ export const RadioWrap = styled(Radio.Group)`
   padding: 5px;
 `;
 
-export const RadioButton = styled(props => <Radio.Button {...props} />)`
+export const RadioButton = styled((props) => <Radio.Button {...props} />)`
   /* ${({ bg }) =>
     bg
       ? {
@@ -499,8 +499,8 @@ export const RadioButton = styled(props => <Radio.Button {...props} />)`
   display: flex;
   align-items: center;
   justify-content: center;
-  .ant-radio-button {
-    background: #f9bd06 !important;
+  .ant-radio-button{
+    background: #F9BD06 !important;
     border-radius: 8px !important;
   }
 `;

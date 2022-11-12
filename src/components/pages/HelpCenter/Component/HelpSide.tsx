@@ -1,13 +1,5 @@
-import {
-  VectorAgent,
-  VectorDocument,
-  VectorListing,
-  VectorResidential,
-  VectorResidentialL,
-  VectorSetting,
-} from '@root/public/icons';
+import { VectorAgent, VectorDocument, VectorListing, VectorResidential, VectorResidentialL, VectorSetting } from '@root/public/icons';
 import { Col, Divider, Row, Typography } from 'antd';
-
 import { Flex, RadioButton, RadioWrap } from '../HelpCenter.style';
 
 const HelpSide: React.FC<{}> = () => {

@@ -1,6 +1,5 @@
 import { IconTriangle } from '@root/public/icons';
 import React from 'react';
-
 import { THEME_COLOR } from '../../ChartCard';
 import { BarMark, Wrap, WrapBar } from './Progressbar.style';
 

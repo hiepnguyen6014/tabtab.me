@@ -22,7 +22,7 @@ export const LockWrap = styled.div`
     color: #d54640;
     font-weight: 500;
     font-size: 15px;
-    text-align: center;
+    text-align:center;
     cursor: pointer;
     user-select: none;
     &:hover {

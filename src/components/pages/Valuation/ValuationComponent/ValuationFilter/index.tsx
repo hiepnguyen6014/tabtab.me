@@ -1,8 +1,7 @@
-import { FilterValuationContext, filterKey } from '@contexts';
+import { filterKey, FilterValuationContext } from '@contexts';
 import { IconChart } from '@root/public/icons';
 import { Form, Select } from 'antd';
 import { useContext } from 'react';
-
 import { FVSubmit, ValFilter } from './ValuationFilter.styled';
 
 interface Props {
@@ -49,7 +48,7 @@ export const ValuationFilter = (props: Props) => {
         {FILTER_COMPONENT.map((item, key) => (
           <Form.Item name={item.field} key={key}>
             <Select
-              onChange={value => onChangeValue(value, item.field, item.keyId)}
+              onChange={(value) => onChangeValue(value, item.field, item.keyId)}
               optionFilterProp="children"
               showSearch
               filterOption={(input, option) =>
@@ -57,7 +56,7 @@ export const ValuationFilter = (props: Props) => {
                 option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
             >
-              {item.list.map(selectVal => {
+              {item.list.map((selectVal) => {
                 return (
                   <Select.Option
                     key={selectVal[item.keyId]}

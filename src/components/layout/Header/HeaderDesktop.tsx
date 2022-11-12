@@ -39,7 +39,7 @@ interface Props {
   isTransparentBg: boolean;
   isShowSearchBar: boolean;
   tabCurrent?: string;
-  onRedirect: (href: string) => void;
+  onRedirect?: (href: string) => void;
 }
 const HeaderDesktop = ({
   t: translate,
@@ -154,7 +154,7 @@ const HeaderDesktop = ({
           </FilterProvider>
         )}
         <div className="d-flex">
-          <Link href="/find-person" legacyBehavior>
+          <Link href="/find-person">
             <TextPost
               style={{
                 color: isTransparentBg ? '#FEFFFF' : '#222222',
@@ -164,7 +164,7 @@ const HeaderDesktop = ({
               Find person
             </TextPost>
           </Link>
-          <Link href={ROUTES.ADD_LISTING.href}>
+          <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}post-news`}>
             <TextPost
               style={{
                 color: isTransparentBg ? '#FEFFFF' : '#222222',

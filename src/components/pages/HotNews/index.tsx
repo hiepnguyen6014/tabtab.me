@@ -1,1 +1,1 @@
-export { default as HotNews } from './HotNews';
+export { default as HotNews } from './HotNews'

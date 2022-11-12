@@ -1,1 +1,1 @@
-export { default } from './SwiperGlobal';
+export {default} from "./SwiperGlobal"

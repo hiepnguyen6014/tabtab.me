@@ -1,8 +1,4 @@
-import { ROUTES } from '@constants';
-import { SRC_IMAGE } from '@core';
-import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
 import { Button, Col, Divider, Image, Row, Skeleton, Typography } from 'antd';
-import { useRouter } from 'next/router';
 import {
   VectorBuilding,
   VectorCalendar,
@@ -13,19 +9,23 @@ import {
   VectorTree,
   VectorUser,
 } from 'public/icons';
-
+import { ItemWrapper } from './PostItemV/PostItemWrapper';
 import { PostThumbnail } from './PostItemV/PostComponent/PostThumbnail';
 import {
   PostContent,
   PostMiddle,
-  PostMiddleFooter,
   PostMiddleItem,
   PostTitle,
+  PostMiddleFooter,
   TypographyText,
 } from './PostItemV/PostItem.style';
-import { ItemWrapper } from './PostItemV/PostItemWrapper';
+import { SRC_IMAGE } from '@core';
+import { formatNumToUnit } from '@root/src/core/utils/HandleNumber';
+import { useRouter } from 'next/router';
+import { ROUTES } from "@constants"
 
 const PostItemV = ({ post, t }) => {
+
   const {
     realEstateId,
     agency,
@@ -55,7 +55,7 @@ const PostItemV = ({ post, t }) => {
           t={t}
           demo={{
             name: realEstateJuridical,
-            action: () => handleRedirect(realEstateId),
+            action: () => handleRedirect(realEstateId)
           }}
         />
         <PostContent onClick={() => handleRedirect(realEstateId)}>
@@ -86,11 +86,8 @@ const PostItemV = ({ post, t }) => {
                   </div>
                 </Col>
               </Row>
-              <div className="">
-                <Typography.Title
-                  className="detailPost"
-                  style={{ overflow: 'clip' }}
-                >
+              <div className=''>
+                <Typography.Title className="detailPost" style={{overflow:'clip'}}>
                   {post.realEstateTitle}
                 </Typography.Title>
                 <Typography.Title
@@ -102,26 +99,13 @@ const PostItemV = ({ post, t }) => {
               </div>
             </PostTitle>
 
-            <Row
-              style={{ justifyContent: 'space-between', padding: '9px 5px' }}
-            >
-              <Col
-                lg={11}
-                md={24}
-                xs={24}
-                style={{
-                  justifyContent: 'space-between',
-                  display: 'flex',
-                  marginBottom: 10,
-                }}
-              >
+            <Row style={{justifyContent: 'space-between', padding: "9px 5px"}}>
+              <Col lg={11} md={24} xs={24} style={{ justifyContent: 'space-between', display:'flex', marginBottom:10 }}>
                 <div>
                   <VectorSquare />
                   <Typography.Text className="textPostMiddle">
                     {/* {post.realEstateLandRealitySquare} */}
-                    {parseFloat(
-                      post.realEstateLandRealitySquare,
-                    ).toLocaleString()}
+                    {parseFloat(post.realEstateLandRealitySquare).toLocaleString()}
                   </Typography.Text>
                 </div>
                 <div>
@@ -137,23 +121,12 @@ const PostItemV = ({ post, t }) => {
                   </Typography.Text>
                 </div>
               </Col>
-              <Col
-                lg={11}
-                md={24}
-                xs={24}
-                style={{
-                  justifyContent: 'space-between',
-                  display: 'flex',
-                  marginBottom: 10,
-                }}
-              >
+              <Col lg={11} md={24} xs={24} style={{ justifyContent: 'space-between', display:'flex', marginBottom: 10  }}>
                 <div>
                   <VectorHouse />
                   <Typography.Text className="textPostMiddle">
                     {/* {post.realEstateLandRealitySquare} */}
-                    {parseFloat(
-                      post.realEstateLandRealitySquare,
-                    ).toLocaleString()}
+                    {parseFloat(post.realEstateLandRealitySquare).toLocaleString()}
                   </Typography.Text>
                 </div>
                 <div>
@@ -171,15 +144,13 @@ const PostItemV = ({ post, t }) => {
               </Col>
             </Row>
             <Divider style={{ marginTop: '5px', marginBottom: '7px' }} />
-            <PostMiddle className="wrap-post">
+            <PostMiddle className='wrap-post' >
               <PostMiddleFooter>
                 {
                   <span style={{ display: 'flex', alignItems: 'center' }}>
                     <VectorCalendar />
                     <Typography.Text className="textPostMiddle">
-                      {`${post.realEstateTotalDate.total || ''} ${t(
-                        post.realEstateTotalDate.defineName,
-                      )}`}
+                      {`${post.realEstateTotalDate.total || ''} ${t(post.realEstateTotalDate.defineName)}`}
                     </Typography.Text>
                   </span>
                 }
@@ -197,7 +168,9 @@ const PostItemV = ({ post, t }) => {
                       }}
                     >
                       <VectorTalk />
-                      <label className="textPostMiddle">CHAT NOW</label>
+                      <label className="textPostMiddle">
+                        CHAT NOW
+                      </label>
                     </Button>
                   </>
                 }

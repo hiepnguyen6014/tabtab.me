@@ -11,7 +11,6 @@ import {
   VectorSearchGrey,
 } from '@root/public/icons';
 import { Divider, Image, Typography } from 'antd';
-
 import {
   BoxFriend,
   BoxUser,
@@ -24,7 +23,7 @@ import {
   SearchMessageText,
 } from './Chat.style';
 
-const ChatPerson = ({ hiddenChatPerson }) => {
+const ChatPerson = ({hiddenChatPerson}) => {
   return (
     <>
       <ChatPersonWrap>
@@ -43,10 +42,7 @@ const ChatPerson = ({ hiddenChatPerson }) => {
               </Typography>
             </Flex>
             <Flex>
-              <VectorClose
-                style={{ cursor: 'pointer' }}
-                onClick={e => hiddenChatPerson()}
-              />
+              <VectorClose style={{cursor:"pointer"}} onClick={e => hiddenChatPerson()}/>
             </Flex>
           </div>
           <Divider

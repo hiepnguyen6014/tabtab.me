@@ -110,7 +110,11 @@ const ColSlide: React.FC<{}> = () => {
         <div className="vertical-line" />
 
         <div>
-          <Image alt="pic" src={SRC_IMAGE.AD1} preview={false} />
+          <Image
+            alt="pic"
+            src={SRC_IMAGE.AD1}
+            preview={false}
+          />
         </div>
       </div>
     </>

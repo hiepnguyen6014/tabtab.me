@@ -1,1 +1,1 @@
-export { default as ListPostsHorizontal } from './ListPostsHorizontal';
+export {default as ListPostsHorizontal} from './ListPostsHorizontal'

@@ -77,13 +77,13 @@ export const DiscoveryWrap = styled.div`
     border-radius: 6px;
     margin-bottom: 8px;
   }
-  .margin-md-style {
+  .margin-md-style{
     @media ${device.maxMd} {
-      margin: 20px;
-    }
-    @media ${device.maxSm} {
-      margin: 50px;
-    }
+    margin: 20px;
+  }
+  @media ${device.maxSm} {
+    margin: 50px;
+  }
   }
   .hidden-on-small {
     @media ${device.maxLg} {
@@ -211,6 +211,7 @@ export const DiscoveryText = styled(Typography)`
     text-transform: uppercase;
     color: #eb4e27;
     margin-bottom: 5px;
+
   }
   .title-discovery__text--style {
     font-weight: 700;
@@ -230,11 +231,11 @@ export const DividerH = styled(Divider)`
 export const Flex = styled.div`
   display: flex;
   align-items: center;
-  .margin-left-post {
+  .margin-left-post{
     margin-left: 16px;
   }
 `;
 
 export const ImageWrap = styled(Image)`
-  border-radius: 6px;
-`;
+border-radius: 6px;
+`

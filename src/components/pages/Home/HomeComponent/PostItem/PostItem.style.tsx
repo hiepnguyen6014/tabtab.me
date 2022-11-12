@@ -4,7 +4,7 @@ import { device } from '@styles/theme/device';
 import { Button, Col, Image, Radio, Row, Typography } from 'antd';
 
 // PROJECT, AGENCY
-export const Wrapper = styled(props => <div {...props} />)`
+export const Wrapper = styled((props) => <div {...props} />)`
   height: 520px;
   /* min-width: 280px; */
   width: 100%;
@@ -44,7 +44,7 @@ export const PostContent = styled.div`
   height: 100%;
 `;
 
-export const PostThumbnailWrapper = styled(props => <div {...props} />)`
+export const PostThumbnailWrapper = styled((props) => <div {...props} />)`
   width: 100%;
   height: 36%;
   border-radius: 6px 6px 0 0;

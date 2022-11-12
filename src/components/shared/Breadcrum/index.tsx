@@ -1,12 +1,10 @@
 import { useRouter } from 'next/router';
-
 import { BreadcrumbItem, BreadcrumbWrapper } from './breadcrum.style';
-
 interface Props {
   arrHref: {
     name: string;
     href?: string;
-    query?: any;
+    query?:any
   }[];
   t: any;
   colorItem?: string;
@@ -30,10 +28,7 @@ export const BreadcrumbCustom = (props: Props) => {
           {props.t('header.home')}
         </BreadcrumbItem>
         {props.arrHref?.map((value, key) => (
-          <BreadcrumbItem
-            key={key}
-            onClick={() => onRedirect(value.href, value.query)}
-          >
+          <BreadcrumbItem key={key} onClick={() => onRedirect(value.href, value.query)}>
             {value.name}
           </BreadcrumbItem>
         ))}

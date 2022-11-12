@@ -1,9 +1,9 @@
-import { Checkbox, Col, Row, Typography } from 'antd';
-import React from 'react';
-
-import { ButtonApply, ButtonClear } from '../../Search.style';
-import { MORE_FILER_DATA } from '../SearchData';
 import { BoxTypography, Text } from './MofilterStyled';
+import { ButtonApply, ButtonClear } from '../../Search.style';
+import { Checkbox, Col, Row, Typography } from 'antd';
+
+import { MORE_FILER_DATA } from '../SearchData';
+import React from 'react';
 
 const MoreFiler = () => {
   return (

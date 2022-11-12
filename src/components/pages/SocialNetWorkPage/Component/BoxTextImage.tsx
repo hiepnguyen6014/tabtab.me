@@ -28,19 +28,19 @@ import {
 const BoxTextImage = () => {
   const content1 = (
     <div style={{ width: 280 }}>
-      <Link href="/roommate" legacyBehavior>
+      <Link href="/roommate">
         <ButtonMenu>
           <IconSave />
           <Typography>Save</Typography>
         </ButtonMenu>
       </Link>
-      <Link href="/detai-spotlight" legacyBehavior>
+      <Link href="/detai-spotlight">
         <ButtonMenu>
           <IconCopy />
           <Typography>Copy link</Typography>
         </ButtonMenu>
       </Link>
-      <Link href="/spotlight-page" legacyBehavior>
+      <Link href="/spotlight-page">
         <ButtonMenu>
           <IconReport />
           <Typography>Report</Typography>
@@ -51,13 +51,13 @@ const BoxTextImage = () => {
 
   const content2 = (
     <div style={{ width: 280 }}>
-      <Link href="/policy" legacyBehavior>
+      <Link href="/policy">
         <ButtonMenu>
           <IconMessages />
           <Typography>Message</Typography>
         </ButtonMenu>
       </Link>
-      <Link href="/help-center" legacyBehavior>
+      <Link href="/help-center">
         <ButtonMenu>
           <IconSend />
           <Typography>Send to Community</Typography>

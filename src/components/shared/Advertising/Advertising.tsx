@@ -1,6 +1,5 @@
-import { SRC_IMAGE } from '@constants';
 import { Image } from 'antd';
-
+import { SRC_IMAGE } from '@constants';
 import { AdvertisingWrap } from './Advertising.style';
 
 const Advertising = ({ className }) => {

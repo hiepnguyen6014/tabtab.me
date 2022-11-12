@@ -1,6 +1,6 @@
 import { styled } from '@styles/theme';
 import { device } from '@styles/theme/device';
-import { Button, Image } from 'antd';
+import { Image, Button } from 'antd';
 
 export const BannerWrapper = styled.div`
   max-height: 500px;

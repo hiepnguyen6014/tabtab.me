@@ -1,4 +1,3 @@
-import { SRC_IMAGE } from '@core';
 import {
   AirConditioning,
   BikeStorage,
@@ -21,6 +20,8 @@ import {
   Support247,
   Water,
 } from '@root/public/icons';
+
+import { SRC_IMAGE } from '@core';
 
 export const SEARCH_DATA = [
   {

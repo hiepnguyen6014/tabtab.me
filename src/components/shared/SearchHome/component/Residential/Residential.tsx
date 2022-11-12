@@ -1,6 +1,3 @@
-import { Button, Divider, InputNumber, Select, Slider, Typography } from 'antd';
-import React, { useState } from 'react';
-
 import {
   AREA_DATA_SELECT,
   DISTRICT_DATA,
@@ -10,20 +7,22 @@ import {
   WARDS_DATA,
 } from '../FilterData/FilterData';
 import { BoxAction, BoxContainer, BoxMargin } from './ResidentialStyled';
+import { Button, Divider, InputNumber, Select, Slider, Typography } from 'antd';
+import React, { useState } from 'react';
 
 const Residential = () => {
   const { Title } = Typography;
   const { Option } = Select;
+  
 
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
 
+  
   return (
     <BoxContainer>
-      <Title level={4} style={{ color: '#7A7A7A' }}>
-        Khu vực & dự án
-      </Title>
+      <Title level={4} style={{color:"#7A7A7A"}}>Khu vực & dự án</Title>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         <BoxMargin>
           <Select
@@ -31,7 +30,7 @@ const Residential = () => {
             style={{ width: '100%' }}
             onChange={handleChange}
           >
-            {PROVINCE_DATA.map(select => (
+            {PROVINCE_DATA.map((select) => (
               <Option key={select.value}>{select.value}</Option>
             ))}
           </Select>
@@ -42,7 +41,7 @@ const Residential = () => {
             style={{ width: '100%' }}
             onChange={handleChange}
           >
-            {DISTRICT_DATA.map(select => (
+            {DISTRICT_DATA.map((select) => (
               <Option key={select.value}>{select.value}</Option>
             ))}
           </Select>
@@ -53,7 +52,7 @@ const Residential = () => {
             style={{ width: '100%' }}
             onChange={handleChange}
           >
-            {WARDS_DATA.map(select => (
+            {WARDS_DATA.map((select) => (
               <Option key={select.value}>{select.value}</Option>
             ))}
           </Select>
@@ -64,7 +63,7 @@ const Residential = () => {
             style={{ width: '100%' }}
             onChange={handleChange}
           >
-            {STREET_DATA.map(select => (
+            {STREET_DATA.map((select) => (
               <Option key={select.value}>{select.value}</Option>
             ))}
           </Select>
@@ -75,16 +74,19 @@ const Residential = () => {
             style={{ width: '100%' }}
             onChange={handleChange}
           >
-            {PROJECT_DATA.map(select => (
+            {PROJECT_DATA.map((select) => (
               <Option key={select.value}>{select.value}</Option>
             ))}
           </Select>
         </BoxMargin>
       </div>
       <div>
-        <Divider style={{ marginTop: '30px' }} />
+        <Divider style={{ marginTop:"30px" }} />
         <BoxAction>
-          <Button style={{ background: '#fff' }} type="text">
+          <Button
+            style={{ background: '#fff' }}
+            type="text"
+          >
             Đặt lại
           </Button>
           <Button>Áp dụng</Button>

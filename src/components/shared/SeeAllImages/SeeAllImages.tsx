@@ -1,20 +1,11 @@
 /* eslint-disable react/display-name */
-
 /* eslint-disable jsx-a11y/alt-text */
-
 /* eslint-disable @next/next/no-img-element */
 import { Image } from 'antd';
-import { memo, useRef, useState } from 'react';
-import SwiperCore, { FreeMode, Lazy, Navigation, Thumbs } from 'swiper';
+import { useRef, useState, memo } from 'react';
+import SwiperCore, { FreeMode, Navigation, Thumbs, Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import {
-  ActionInContent,
-  ContentSwiperMini,
-  ModalWrap,
-  SwiperWrap,
-  SwiperWrapMini,
-} from './SeeAllImages.style';
+import { ActionInContent, ContentSwiperMini, ModalWrap, SwiperWrap, SwiperWrapMini } from './SeeAllImages.style';
 
 SwiperCore.use([Lazy, FreeMode, Navigation, Thumbs]);
 interface Props {

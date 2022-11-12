@@ -15,19 +15,19 @@ const Event = () => {
         <Col lg={18}>
           <div className="d-flex justify-content-between ">
             <DivA>
-              <Link href="/detail-spotlight" legacyBehavior>
+              <Link href="/detail-spotlight">
                 <ColPost />
               </Link>
             </DivA>
             <DivA>
-              <Link href="/detail-spotlight" legacyBehavior>
+              <Link href="/detail-spotlight">
                 <ColPost />
               </Link>
             </DivA>
 
             <LayoutFake>
               <DivA>
-                <Link href="/detail-spotlight" legacyBehavior>
+                <Link href="/detail-spotlight">
                   <ColPost />
                 </Link>
               </DivA>

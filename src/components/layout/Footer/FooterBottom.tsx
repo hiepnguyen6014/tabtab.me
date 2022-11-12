@@ -25,7 +25,7 @@ export const FooterBottom = () => {
               </Typography.Text>
             </div>
             <div className="footerBottom">
-              <Link href="/policy" legacyBehavior>
+              <Link href="/policy">
                 <Typography.Text className="text-Footer">
                   Privacy Policy
                 </Typography.Text>

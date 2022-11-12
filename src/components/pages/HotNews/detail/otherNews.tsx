@@ -1,14 +1,13 @@
+import {
+  DefaultContentNoGrid,
+  DefaultWrapperWithBg
+} from '../../../layout/DefaultLayout/DefaultComponent.style';
+import PostItemHotNews from '../../../shared/PostItem/PostItemHotNews';
 import { PUBLIC_ROUTES } from '@constants';
 import { MNewsPost } from '@models/MNewsPost';
 import { Typography } from 'antd';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-
-import {
-  DefaultContentNoGrid,
-  DefaultWrapperWithBg,
-} from '../../../layout/DefaultLayout/DefaultComponent.style';
-import PostItemHotNews from '../../../shared/PostItem/PostItemHotNews';
 import {
   ButtonShowMore,
   ButtonShowMoreMobile,

@@ -1,4 +1,3 @@
-import { SRC_IMAGE } from '@core';
 import {
   ArrowRight,
   DollarMoney,
@@ -11,6 +10,7 @@ import {
 } from '@root/public/icons';
 import { Button, Col, Image, Row, Typography } from 'antd';
 
+import { SRC_IMAGE } from '@core';
 import { SpotlightText } from '../Spotlight.style';
 
 const ColContent: React.FC<{}> = () => {
@@ -141,11 +141,8 @@ const ColContent: React.FC<{}> = () => {
             <Typography className="mx-2 review-text">.</Typography>
             <Typography className="review-text">17 đánh giá</Typography>
           </div>
-          <div className="horizontal-line-content" style={{ width: '100%' }} />
-          <div
-            className="d-flex justify-content-around"
-            style={{ marginBottom: '30px' }}
-          >
+          <div className="horizontal-line-content" style={{width:"100%"}} />
+          <div className="d-flex justify-content-around" style={{marginBottom:"30px"}}>
             <div className="side-vertical-content">
               <VectorCoin />
             </div>

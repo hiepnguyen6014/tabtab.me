@@ -6,20 +6,20 @@ export const BoxVideoWrap = styled.div`
   position: relative;
   width: 100%;
   max-height: 400px;
-  background: #222222;
-  text-align: center;
+  background:#222222;
+  text-align:center;
 `;
 
 export const ButtonCloseModal = styled(IconCloseCircle)`
-  transform: scale(1.7);
-  & > path {
-    fill: #fff;
+  transform:scale(1.7);
+  &>path{
+    fill:#fff
   }
-`;
+`
 export const ThumbnailVideo = styled(Image)`
-  max-height: 400px;
-  object-fit: contain;
-  object-position: center;
+  max-height:400px;
+  object-fit:contain;
+  object-position:center;
 `;
 export const ModalButtonPlay = styled.div`
   position: absolute;

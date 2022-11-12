@@ -1,15 +1,13 @@
 import { Avatar, Button, Typography } from 'antd';
 import { IconAgency, IconLocked, IconPhone } from 'public/icons';
-
 import {
-  TicketAgency,
   WidgetAction,
-  WidgetFooter,
   WidgetHeader,
-  WidgetLocked,
   WidgetWrap,
+  WidgetFooter,
+  TicketAgency,
+  WidgetLocked,
 } from './Widget.style';
-
 export const WidgetAgencyInfo = () => {
   return (
     <>
@@ -21,10 +19,7 @@ export const WidgetAgencyInfo = () => {
               <Typography.Title level={5} ellipsis={{ rows: 1 }}>
                 Môi giới #1
               </Typography.Title>
-              <TicketAgency>
-                <IconAgency />
-                Môi giới
-              </TicketAgency>
+              <TicketAgency><IconAgency />Môi giới</TicketAgency>
             </span>
           </span>
           <span>
@@ -33,7 +28,7 @@ export const WidgetAgencyInfo = () => {
         </WidgetHeader>
         <WidgetAction>
           <WidgetLocked ghost icon={<IconLocked />}>
-            Đổi điểm để mở khoá Thông tin liên hệ
+            Đổi điểm để mở khoá Thông tin liên  hệ
           </WidgetLocked>
         </WidgetAction>
         <WidgetFooter>Xem thêm 15 BĐS cùng người đăng</WidgetFooter>

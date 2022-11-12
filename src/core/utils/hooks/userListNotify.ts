@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { UserContext } from '@contexts';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
-
-import { deleteMessage, getListCustomerMessage } from '../../services/user';
+import { UserContext } from '@contexts';
 import { markReadMessage } from './../../services/user/index';
+import { getListCustomerMessage, deleteMessage } from '../../services/user';
+import { useState, useEffect, useContext } from 'react';
 
 export function UserListNotify<T>() {
   const { currentUser } = useContext(UserContext);
@@ -15,18 +14,16 @@ export function UserListNotify<T>() {
     total: 0,
   });
 
-  const {
-    query: { page },
-  } = useRouter();
+  const {query: { page }} = useRouter();
 
   const filter = {
     customerId: currentUser.appUserId,
-  };
+  }
 
   useEffect(() => {
     let unmounted = false;
     getListCustomerMessage(filter, !Array.isArray(page) ? page : '').then(
-      data => {
+      (data) => {
         if (!unmounted) {
           setListNotify({
             latest: data.data.latest,
@@ -34,12 +31,12 @@ export function UserListNotify<T>() {
             total: data.total || 0,
           });
         }
-      },
+      }
     );
     return () => {
       unmounted = true;
     };
-  }, [page, currentUser.appUserId]);
+  }, [page,currentUser.appUserId]);
 
   // Action
   const onDeleteMessage = (messageId: number) => {
@@ -60,9 +57,12 @@ export function UserListNotify<T>() {
       }
     }
   };
-  const markRead = async (messageCustomerId: number) => {
+  const markRead = async(messageCustomerId: number) => {
     await markReadMessage(messageCustomerId);
   };
+
+
+  
 
   return { listNotify, onDeleteMessage, markRead };
 }

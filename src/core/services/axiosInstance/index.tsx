@@ -1,11 +1,11 @@
-import { AUTH_TOKEN_KEY, ENDPOINTS } from '@constants';
-import { ROUTES, reactLocalStorage } from '@core';
-import Config, { USER_URL } from '@root/config';
-import { TToken } from '@types';
-import { Message } from '@utils';
-import { message } from 'antd';
 import Axios from 'axios';
 import { Cookies } from 'react-cookie';
+import Config, { USER_URL } from '@root/config';
+import { message } from 'antd';
+import { TToken } from '@types';
+import { ENDPOINTS, AUTH_TOKEN_KEY } from '@constants';
+import { reactLocalStorage, ROUTES } from '@core';
+import { Message } from '@utils';
 
 const PUBLIC_URLS = [ENDPOINTS.LOGIN];
 
@@ -20,25 +20,25 @@ axios.interceptors.request.use(
     if (
       PUBLIC_URLS.indexOf(config.url) >= 0 ||
       config.url.indexOf('public') >= 0
-    ) {
-      return config;
-    }
-    //if token is passed in server side
-    if (config && config.token) {
-      //modify header here to include token
-      Object.assign(config.headers, {
-        Authorization: `Bearer ${config.token}`,
-      });
-    } else {
-      Object.assign(config.headers, { Authorization: '' });
-    }
-
+      ) {
+        return config;
+      }
+      //if token is passed in server side
+      if (config && config.token) {
+        //modify header here to include token
+        Object.assign(config.headers, {
+          Authorization: `Bearer ${config.token}`,
+        });
+      } else {
+        Object.assign(config.headers, { Authorization:""});
+      }
+      
     return config;
   },
   function (error) {
     // Do something with request error
     return;
-  },
+  }
 );
 
 axios.interceptors.response.use(
@@ -52,16 +52,16 @@ axios.interceptors.response.use(
     // Do something with response error
     const status = error.response?.status ?? '';
     if (status == 401 || status == 403 || status == 505) {
-      reactLocalStorage.removeItem(Config.INFO_USER_KEY);
-      message.loading('Token verifed');
-      setTimeout(() => {
-        if (window) {
-          window.location.reload();
+      reactLocalStorage.removeItem(Config.INFO_USER_KEY)
+      message.loading('Token verifed')
+      setTimeout(()=>{
+        if(window){
+          window.location.reload()
         }
-      }, 500);
+      },500)
     }
     return error.response?.data;
-  },
+  }
 );
 
 const API = {
@@ -72,7 +72,7 @@ const API = {
     data: any = {},
     token?: TToken,
     cancelToken?: any,
-    config?: any,
+    config?: any
   ) => axios.post(endpoint, data, { token, ...config }, { cancelToken }),
   put: (endpoint: string, data: any = {}, token?: TToken) =>
     axios.put(endpoint, data, { token }),

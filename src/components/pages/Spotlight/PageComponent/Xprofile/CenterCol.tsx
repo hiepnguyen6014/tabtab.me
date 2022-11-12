@@ -1,13 +1,12 @@
 import { SRC_IMAGE } from '@core';
 import ColPost from '@root/src/components/shared/ItemPostInfo/ColPost';
 import { Col, Divider, Image, Row, Typography } from 'antd';
-
 import { DivA } from '../../../Home/Spotlight/ItemSpotlight.style';
 
 const CenterCol = () => {
   return (
     <DivA>
-      <div className="margin-X--30">
+      <div className='margin-X--30'>
         <Image
           alt="imgnews"
           src={SRC_IMAGE.ACADEMY4}

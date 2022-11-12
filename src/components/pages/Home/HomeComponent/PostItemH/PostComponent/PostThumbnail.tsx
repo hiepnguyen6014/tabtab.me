@@ -1,17 +1,16 @@
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { SRC_IMAGE } from '@core';
-import { MPostDetail } from '@models/MPostDetail';
-import { VectorHeart } from '@root/public/icons';
 import { Image, Typography } from 'antd';
 import React from 'react';
-
 import {
+  PostThumbnailWrapper,
   ContentInItem,
   ContentInItemPost,
-  ContentItem,
-  PostThumbnailWrapper,
   TypographyText,
+  ContentItem,
 } from '../PostItem.style';
+import { SRC_IMAGE } from '@core';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { VectorHeart } from '@root/public/icons';
+import { MPostDetail } from '@models/MPostDetail';
 
 interface DemoProperty {
   name?: string;
@@ -30,7 +29,7 @@ export const PostThumbnail: React.FC<{
   };
 
   return (
-    <PostThumbnailWrapper onClick={handleRedirect}>
+    <PostThumbnailWrapper onClick={handleRedirect}> 
       <Image
         alt=""
         height={290}
@@ -44,37 +43,37 @@ export const PostThumbnail: React.FC<{
         <TypographyText>
           <ContentInItem>
             <div className="pad-bottom">
-              <div className="pad-top">
-                <div
-                  style={{
-                    width: 118,
-                    height: 24,
-                    background: '#FFFFFF',
-                    marginBottom: '8px',
-                    borderRadius: '4px',
-                  }}
-                >
-                  <Typography.Text className="inContentItem mx-2">
-                    SALE 15% OFF
-                  </Typography.Text>
-                </div>
-                <VectorHeart />
-              </div>
+            <div className="pad-top">
               <div
                 style={{
-                  width: 98,
+                  width: 118,
                   height: 24,
                   background: '#FFFFFF',
-                  marginBottom: '20px',
+                  marginBottom: '8px',
                   borderRadius: '4px',
                 }}
               >
                 <Typography.Text className="inContentItem mx-2">
-                  Cắt lỗ 15%
+                  SALE 15% OFF
                 </Typography.Text>
               </div>
+              <VectorHeart />
             </div>
-
+            <div
+              style={{
+                width: 98,
+                height: 24,
+                background: '#FFFFFF',
+                marginBottom: '20px',
+                borderRadius: '4px',
+              }}
+            >
+              <Typography.Text className="inContentItem mx-2">
+                Cắt lỗ 15%
+              </Typography.Text>
+            </div>
+            </div>
+            
             <div
               style={{ marginBottom: '28%' }}
               className="d-flex justify-content-between"

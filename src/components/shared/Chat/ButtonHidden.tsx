@@ -1,7 +1,3 @@
-import { SRC_IMAGE } from '@core';
-import { VectorEdit, VectorUp } from '@root/public/icons';
-import { Image, Typography } from 'antd';
-
 import {
   ChatSmallWrap,
   DotMessage,
@@ -9,6 +5,10 @@ import {
   MessageBox,
   SearchMessageText,
 } from './Chat.style';
+import { Image, Typography } from 'antd';
+import { VectorEdit, VectorUp } from '@root/public/icons';
+
+import { SRC_IMAGE } from '@core';
 
 const ButtonHidden = ({ openChat, showChat }) => {
   return (
@@ -36,7 +36,10 @@ const ButtonHidden = ({ openChat, showChat }) => {
                 </Flex>
                 <Flex>
                   <VectorEdit />
-                  <div onClick={e => showChat()} style={{ cursor: 'pointer' }}>
+                  <div
+                    onClick={(e) => showChat()}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <VectorUp />
                   </div>
                 </Flex>

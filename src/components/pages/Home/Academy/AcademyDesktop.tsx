@@ -18,7 +18,7 @@ const AcademyDesktop: React.FC<{}> = () => {
                 <InOtherNews />
               </Col>
               <Col span={17}>
-                <Link href="/academy" legacyBehavior>
+                <Link href="/academy">
                   <CenterNews />
                 </Link>
               </Col>

@@ -1,10 +1,9 @@
-import { SRC_IMAGE } from '@constants';
 import { Col, Row } from 'antd';
-
+import { SRC_IMAGE } from '@constants';
 import BannerThumbnail from './BannerThumbnail';
-import ButtonAdd from './ButtonAdd';
-import InfoPost from './InfoPost';
 import { ItemPostText, ItemPostWrap } from './ItemPostInfo.style';
+import InfoPost from './InfoPost';
+import ButtonAdd from './ButtonAdd';
 
 const ColPost = () => {
   return (

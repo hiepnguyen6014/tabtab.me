@@ -5,13 +5,8 @@ const CenterNews: React.FC<{}> = () => {
   return (
     <div>
       <div className="height-50" />
-      <Image
-        alt="imgnews"
-        src={SRC_IMAGE.ACADEMY4}
-        height="363px"
-        preview={false}
-      />
-      <div className="d-flex py-1">
+      <Image alt="imgnews" src={SRC_IMAGE.ACADEMY4} height="363px" preview={false}/>
+      <div className='d-flex py-1'>
         <Typography className="category-text m-right-14">Villa</Typography>
         <Typography className="date-text">30 minutes ago</Typography>
       </div>

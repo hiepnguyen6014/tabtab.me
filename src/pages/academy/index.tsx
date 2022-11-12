@@ -1,12 +1,12 @@
 import { PARAMS, POST_TYPE_PARAMS, PUBLIC_ROUTES, ROUTES } from '@constants';
-import { UserContext, filterKey } from '@contexts';
-import { MFilter } from '@models/MFilter';
-import { MPostDetail } from '@models/MPostDetail';
-import AcademyComponent from '@root/src/components/pages/Academy';
 import { getListRealEstate, getPostByRating } from '@root/src/core/services';
 import { removeEmptyType } from '@utils';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import { MFilter } from '@models/MFilter';
+import { MPostDetail } from '@models/MPostDetail';
+import { filterKey, UserContext } from '@contexts';
+import AcademyComponent from "@root/src/components/pages/Academy"
 
 const Academy: React.FC<{
   postList: MPostDetail[];
@@ -18,11 +18,12 @@ const Academy: React.FC<{
   const arrHref = [
     { name: translate(ROUTES.MAIN_FLOOR.name), href: ROUTES.MAIN_FLOOR.href },
   ];
-
+  
   return (
     <>
       <AcademyComponent translate={translate} />
     </>
+
   );
 };
 

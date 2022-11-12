@@ -1,11 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import router, { useRouter } from 'next/router';
-import React, { useEffect, useMemo, useState } from 'react';
-
+import React, { useState, useEffect, useMemo } from 'react';
 import { getDataArea, getDataFilter } from '../services/dataFilter';
 import { IAreaData } from '../types/filter';
-import { formatNumToUnit } from '../utils/HandleNumber';
 import { getPostTypeId } from '../utils/handleArray';
+import { formatNumToUnit } from '../utils/HandleNumber';
 
 interface FilterContextProps {
   provinces: IAreaData[];
@@ -24,38 +23,38 @@ interface FilterContextProps {
     keyId?: string, // key detect id in object item
     keyName?: string, // key detect item in object item
     placeholder?: string, // if init value undefine, placeholder will be return
-    t?: any, // translate
+    t?:any // translate
   ) => string;
 }
 
 export const filterKey = {
-  realEstatePostType: {
-    idQuery: 'loai',
-    id: 'value',
-    name: 'label',
+  realEstatePostType:{
+    idQuery:'loai',
+    id:'value',
+    name:'label'
   },
   realEstateCategoryId: {
     idQuery: 'loaiBDS',
     id: 'realEstateCategoryId',
     name: 'realEstateCategoryName',
-    field: 'realEstateCategory',
+    field: "realEstateCategory"
   },
-  realEstateSubCategoryId: {
-    idQuery: 'loaihinhBDS',
-    id: '',
-    name: '',
+  realEstateSubCategoryId:{
+    idQuery:'loaihinhBDS',
+    id:'',
+    name:''
   },
   areaProvinceId: {
     idQuery: 'tinh',
     id: 'areaDataId',
     name: 'areaDataName',
-    field: 'areaProvince',
+    field: "areaProvince"
   },
   areaDistrictId: {
     idQuery: 'quan',
     id: 'areaDataId',
     name: 'areaDataName',
-    field: 'areaDistrict',
+    field: "areaDistrict"
   },
   areaWardId: {
     idQuery: 'xa',
@@ -77,15 +76,15 @@ export const filterKey = {
     idQuery: 'tukhoa',
   },
   realEstateSx: {
-    idQuery: 'sx',
+    idQuery: 'sx'
   },
   realEstateSxLoai: {
-    idQuery: 'sx_loai',
-  },
+    idQuery: 'sx_loai'
+  }
 };
 
 export const FilterContext = React.createContext<FilterContextProps>(null);
-export const FilterProvider = props => {
+export const FilterProvider = (props) => {
   const { query } = useRouter();
 
   const [provinces, setProvinces] = useState([]);
@@ -93,76 +92,70 @@ export const FilterProvider = props => {
   const [wards, setWards] = useState([]);
   const [directionList, setDirection] = useState([]);
   const [categoryList, setCategory] = useState([]);
-  const [subCategoryList, setSubcategoryList] = useState([]);
+  const [subCategoryList, setSubcategoryList] = useState([])
 
   // Handler
-  function handleFilterData(postTypeId = 1, mounted = true) {
-    getDataFilter(postTypeId).then(response => {
-      if (mounted) {
-        setCategory(response.dataRealEstateCategory);
-        if (!directionList.length) setDirection(response.dataDirection);
-      }
-    });
+  function handleFilterData (postTypeId = 1, mounted = true ){
+    getDataFilter(postTypeId)
+      .then(response => {
+        if(mounted){
+          setCategory(response.dataRealEstateCategory)
+          if(!directionList.length) setDirection(response.dataDirection)
+        }
+      })
   }
 
-  function handleProvinces(parentId = 1, mounted = true) {
-    getDataArea('', parentId).then(response => {
-      if (mounted) setProvinces(response.data);
-    });
+  function handleProvinces(parentId = 1, mounted = true){
+    getDataArea('',parentId)
+      .then(response =>{if(mounted) setProvinces(response.data)})
   }
 
-  function handleDistrics(parentId?: number, mounted = true) {
-    if (!parentId) {
-      setDistricts([]);
-      return;
+  function handleDistrics(parentId ?:number, mounted = true){
+    if(!parentId){
+      setDistricts([])
+      return
     }
-    getDataArea('', parentId).then(response => {
-      if (mounted) setDistricts(response.data);
-    });
+    getDataArea('',parentId)
+      .then(response =>{if(mounted) setDistricts(response.data)})
   }
 
-  function handleWards(parentId?: number, mounted = true) {
-    if (!parentId) {
-      setWards([]);
-      return;
+  function handleWards(parentId ?:number, mounted = true){
+    if(!parentId){
+      setWards([])
+      return
     }
-    getDataArea('', parentId).then(response => {
-      if (mounted) setWards(response.data);
-    });
+    getDataArea('',parentId)
+      .then(response =>{if(mounted) setWards(response.data)})
   }
 
   // Fetch api in first render
   useEffect(() => {
-    let mounted = true;
-    const defaultFilter = query[filterKey.realEstatePostType.idQuery]
-      ? ~~query[filterKey.realEstatePostType.idQuery]
-      : 1;
-    handleFilterData(defaultFilter, mounted);
-    handleProvinces(defaultFilter, mounted);
-    return () => {
-      mounted = false;
-    };
+    let mounted = true
+    const defaultFilter = query[filterKey.realEstatePostType.idQuery] ? ~~query[filterKey.realEstatePostType.idQuery] : 1
+    handleFilterData(defaultFilter, mounted)
+    handleProvinces(defaultFilter, mounted)
+    return()=>{mounted = false}
   }, []);
 
   // Get list depen
   useEffect(() => {
-    handleDistrics(~~query[filterKey.areaProvinceId.idQuery]);
+    handleDistrics(~~query[filterKey.areaProvinceId.idQuery])
   }, [query[filterKey.areaProvinceId.idQuery]]);
 
   useEffect(() => {
-    handleWards(~~query[filterKey.areaDistrictId.idQuery]);
+    handleWards(~~query[filterKey.areaDistrictId.idQuery])
   }, [query[filterKey.areaDistrictId.idQuery]]);
 
   useEffect(() => {
     if (query[filterKey.realEstatePostType.idQuery]) {
-      handleFilterData(~~query[filterKey.realEstatePostType.idQuery]);
+      handleFilterData(~~query[filterKey.realEstatePostType.idQuery])
     }
   }, [query[filterKey.realEstatePostType.idQuery]]);
 
   // Hanlde event
   const onChangeValue = (
     keyName: string,
-    e: string | [string, string | undefined],
+    e: string | [string, string | undefined]
   ) => {
     onSubmit(keyName, e);
   };
@@ -170,11 +163,11 @@ export const FilterProvider = props => {
   const onSubmit = (key: string, value: string | [string, string]) => {
     if (key == undefined) return;
     const queryValue = { ...query }; // clone value in url
-    if (key == filterKey.areaProvinceId.idQuery) {
-      delete queryValue[filterKey.areaDistrictId.idQuery];
-      delete queryValue[filterKey.areaWardId.idQuery];
-    } else if (key == filterKey.areaDistrictId.idQuery) {
-      delete queryValue[filterKey.areaWardId.idQuery];
+    if(key == filterKey.areaProvinceId.idQuery){
+      delete queryValue[filterKey.areaDistrictId.idQuery]
+      delete queryValue[filterKey.areaWardId.idQuery]
+    }else if(key == filterKey.areaDistrictId.idQuery){
+      delete queryValue[filterKey.areaWardId.idQuery]
     }
     if (value == undefined || value == '') {
       delete queryValue[key];
@@ -210,14 +203,10 @@ export const FilterProvider = props => {
     listData: any[],
     keyId: string,
     keyName: string,
-    t: any,
+    t:any
   ) => {
     // InitValue always change if query[idQuery] change
-    if (
-      !query.hasOwnProperty(idQuery) ||
-      idQuery == undefined ||
-      (!listData && idQuery !== filterKey.searchText.idQuery)
-    )
+    if (!query.hasOwnProperty(idQuery) || idQuery == undefined || !listData && idQuery !== filterKey.searchText.idQuery)
       return undefined;
     // Init value for input search
     if (idQuery == filterKey.searchText.idQuery) {
@@ -227,16 +216,16 @@ export const FilterProvider = props => {
     if (idQuery == filterKey.realEstateValueSalePrice.idQuery) {
       const splitValue = query[idQuery].toString().split(/\-/);
       return splitValue.length > 1
-        ? formatNumToUnit(Number(splitValue[0]) * 1000000, t, false) +
-            ' -> ' +
-            formatNumToUnit(Number(splitValue[1]) * 1000000, t)
-        : '> ' + formatNumToUnit(Number(splitValue[0]) * 1000000, t);
+        ? formatNumToUnit(Number(splitValue[0]) * 1000000,t,false) +' -> ' + 
+            formatNumToUnit(Number(splitValue[1]) * 1000000,t)
+        : '> ' +formatNumToUnit(Number(splitValue[0]) * 1000000,t);
     }
     // Init value for land square | Coppy code vi dang dung component chung nen khong the dat ben ngoai duoc
     if (idQuery == filterKey.realEstateLandRealitySquare.idQuery) {
       const splitValue = query[idQuery].toString().split(/\-/);
       return splitValue.length > 1
-        ? splitValue[0] + ' -> ' + splitValue[1] + ' m²'
+        ? splitValue[0] +' -> '+ 
+            splitValue[1] + ' m²'
         : '> ' + splitValue[0] + 'm²';
     }
 

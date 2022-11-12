@@ -7,7 +7,7 @@ const LeftColTop = () => {
   return (
     <>
       <div className="margin-X--30" style={{ cursor: 'pointer' }}>
-        <Link href="/detail-spotlight" legacyBehavior>
+        <Link href="/detail-spotlight">
           <Image
             alt="imgnews"
             src={SRC_IMAGE.ACADEMY4}

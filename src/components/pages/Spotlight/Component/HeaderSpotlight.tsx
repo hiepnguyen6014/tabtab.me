@@ -5,7 +5,7 @@ const HeaderSpotLight: React.FC<{}> = () => {
     <Row className="row-header">
       <Col className="col-header">
         <Typography className="text-header">Text demmo 1</Typography>
-        <div className="horizontal-line" />
+        <div className='horizontal-line' />
       </Col>
       <Col className="col-header">
         <Typography className="text-header">Text demmo 2</Typography>

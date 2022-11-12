@@ -1,19 +1,18 @@
-import { ROUTES } from '@constants';
-import { MNotify } from '@models/MNotify';
-import { Typography } from 'antd';
-
-import {
-  DefaultContentNoGrid,
-  DefaultWrapperWithBg,
-} from '../../../layout/DefaultLayout/DefaultComponent.style';
 import DefaultLayout from '../../../layout/DefaultLayout/DefaultLayout';
+import {
+  DefaultWrapperWithBg,
+  DefaultContentNoGrid,
+} from '../../../layout/DefaultLayout/DefaultComponent.style';
 import { BreadcrumbCustom } from '../../../shared/Breadcrum';
+import { Typography } from 'antd';
+import { ROUTES } from '@constants';
 import {
   DetailContentCol,
   DetailContentRow,
   DetailImage,
   RowHeaderNotify,
 } from './detail.style';
+import { MNotify } from '@models/MNotify';
 
 interface Props {
   translate: any;

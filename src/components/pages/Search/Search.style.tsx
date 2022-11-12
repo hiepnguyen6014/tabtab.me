@@ -1,7 +1,8 @@
-import { styled } from '@styles/theme';
-import { device } from '@styles/theme/device';
 import { Button, Image, Row } from 'antd';
+
 import { Swiper } from 'swiper/react';
+import { device } from '@styles/theme/device';
+import { styled } from '@styles/theme';
 
 export const FDesktop = styled.div`
   position: relative;
@@ -62,9 +63,11 @@ export const WrapperHideMap = styled(Row)`
   margin-top: 16px;
   @media ${device.maxMd} {
     margin-top: 30px;
-    padding: 0 16px;
+    padding:0 16px;
   }
 `;
+
+
 
 export const BoxIntroduce = styled.div`
   margin-top: 120px;
@@ -79,7 +82,7 @@ export const BoxWrapper = styled.div`
   border-radius: 8px;
   height: 560px;
   @media ${device.maxSm} {
-    height: 365px;
+    height: 365px
   }
 `;
 
@@ -92,24 +95,27 @@ export const BoxWrapperOne = styled.div`
 `;
 
 export const BoxWrapperMini = styled.div`
-  background: #ffffff;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  border-radius: 8px;
-  height: 498px;
-  @media ${device.maxSm} {
-    height: 406px;
-  }
-`;
+background: #ffffff;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+border-radius: 8px;
+height: 498px;
+ @media ${device.maxSm} {
+ 
+  height: 406px;
+ }
+`
 
 export const BoxWrapperFooter = styled.div`
-  background: #ffffff;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  border-radius: 8px;
-  height: 404px;
-  @media ${device.maxSm} {
-    height: 345px;
-  }
-`;
+background: #ffffff;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+border-radius: 8px;
+height: 404px;
+ @media ${device.maxSm} {
+ 
+   height: 345px;
+ }
+
+`
 
 export const BoxSalePrice = styled.div`
   z-index: 1;
@@ -118,29 +124,29 @@ export const BoxSalePrice = styled.div`
   left: 30px;
   padding: 2px 8px;
   @media ${device.maxSm} {
-    top: 0px;
+    top:0px;
     left: 0px;
   }
 `;
 
 export const BoxStopLoss = styled.div`
-  background: #ffffff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  z-index: 1;
-  position: absolute;
-  top: 45px;
-  left: 30px;
-  @media ${device.maxSm} {
-    padding: 1.16667px 4.66667px;
-  }
-`;
+background: #ffffff;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+z-index: 1;
+position: absolute;
+top: 45px;
+left: 30px;
+@media ${device.maxSm} {
+  padding: 1.16667px 4.66667px;
+}
+`
 
 export const SpanPrice = styled.span`
-  background: #ffffff;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  padding: 2px 8px;
+background: #ffffff;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+padding: 2px 8px;
   font-family: 'Inter';
   font-weight: 600;
   font-size: 14px;
@@ -166,8 +172,8 @@ export const BoxLogoX = styled.div`
   @media ${device.maxSm} {
     transform: translateY(-14px);
     right: 8px;
-    width: 67px;
-    height: 21px;
+    width:67px;
+    height:21px;
     border-radius: 4px;
   }
 `;
@@ -195,6 +201,7 @@ export const BoxFavorite = styled.div`
   cursor: pointer;
   @media ${device.maxSm} {
     right: 15px;
+    
   }
 `;
 
@@ -219,8 +226,8 @@ export const BoxHiddenMobile = styled.div`
 
 export const BoxPaddingRow = styled.div`
   padding: 8px 16px 11px 17px;
-  @media (max-width: 1200px) {
-    width: 100%;
+  @media(max-width:1200px) {
+    width:100%;
   }
   @media ${device.maxSm} {
     padding: 8px 4px 11px 10px;
@@ -228,43 +235,45 @@ export const BoxPaddingRow = styled.div`
 `;
 
 export const BoxWrapperData = styled.div`
-  padding: '14px 16px 16px 18px';
-  @media ${device.maxSm} {
-    padding: 14px 10px 16px 10px;
-  }
-`;
+padding: '14px 16px 16px 18px';
+@media ${device.maxSm} {
+  padding: 14px 10px 16px 10px;
+}
+`
 
 export const BoxWrapperRowContent = styled.div`
-  display: flex;
-  background: #ffffff;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  border-radius: '8px';
-  height: 304px;
+display: flex;
+background: #FFFFFF;
+box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+border-radius: '8px';
+height: 304px;
 
-  @media ${device.maxSm} {
-    height: 220px;
-    max-width: 380px;
-    width: 100%;
-  }
-`;
+@media ${device.maxSm} {
+  height: 220px;
+  max-width:380px;
+  width:100%;
+}
+`
 
 export const BoxImageSlide = styled.div`
-  max-width: 282px;
-`;
+  max-width:282px;
+`
 
 export const BoxLabelEndow = styled.div`
-  font-size: 14px;
-  font-weight: bold;
-  font-family: 'Inter';
-  color: #4e4e4e;
-  margin-left: 10px;
-`;
+font-size: 14px;
+font-weight: bold;
+font-family: 'Inter';
+color: #4E4E4E;
+margin-left: 10px;
+`
 
 export const BoxWrapperLable = styled.div`
   display: flex;
   align-items: center;
   @media ${device.maxSm} {
     margin-left: 10px;
-    margin-top: 30px;
+    margin-top:30px;
   }
-`;
+`
+
+

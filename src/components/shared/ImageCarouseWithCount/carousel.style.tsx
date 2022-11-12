@@ -7,19 +7,19 @@ export const ImageAttach = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
-  img {
-    object-fit: cover;
+  img{
+    object-fit:cover;
   }
-  @media ${device.maxMd} {
-    img {
-      height: 200px !important;
+  @media ${device.maxMd}{
+    img{
+      height:200px !important;
     }
   }
 `;
 
 export const SwiperWrap = styled(Swiper)`
-  .ant-image {
-    height: 100% !important;
+  .ant-image{
+    height:100% !important
   }
 `;
 

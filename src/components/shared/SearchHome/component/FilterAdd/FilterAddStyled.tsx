@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import { Typography } from 'antd';
+import styled from '@emotion/styled';
 
 export const BoxContainer = styled.div`
   width: 348px;
@@ -47,6 +47,6 @@ export const BoxDirectionHorizontal = styled.div`
 `;
 
 export const BoxAction = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
+  display:flex;
+  justify-content:space-between;
+`

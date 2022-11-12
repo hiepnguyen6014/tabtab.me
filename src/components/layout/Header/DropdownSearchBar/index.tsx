@@ -1,7 +1,6 @@
 import { IconArrowDown } from '@root/public/icons';
 import { Col, Dropdown, Menu, Row, Space, Typography } from 'antd';
 import { useState } from 'react';
-
 import { MenuBox, TextWrap } from './DropdownSearchBar.style';
 
 export const DropdownSearchBar = (props: { t: any }) => {
@@ -12,7 +11,7 @@ export const DropdownSearchBar = (props: { t: any }) => {
     { label: 'Rent', query: 'lease' },
   ];
 
-  const handleSelect = item => {
+  const handleSelect = (item) => {
     setFilter(item.label);
   };
 

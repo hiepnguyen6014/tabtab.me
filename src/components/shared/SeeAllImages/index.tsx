@@ -1,1 +1,1 @@
-export { SeeAllImages } from './SeeAllImages';
+export {SeeAllImages} from './SeeAllImages'

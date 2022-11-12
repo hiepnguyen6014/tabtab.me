@@ -1,8 +1,9 @@
-import { styled } from '@styles/theme';
+import { Button, Col, Row, Select, Typography } from 'antd';
+
+import Image from 'next/image';
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
-import { Button, Col, Row, Select, Typography } from 'antd';
-import Image from 'next/image';
+import { styled } from '@styles/theme';
 
 const COLOR_LIGHT = '#fff';
 const COLOR_DARK = '#222222';
@@ -132,11 +133,11 @@ export const LinksWrap = styled.div`
   width: 100%;
   min-width: 250px;
   height: 100%;
-  color: ${props => changeTheme(props.typeof)};
+  color: ${(props) => changeTheme(props.typeof)};
   a {
     position: relative;
     padding: 0;
-    color: ${props => changeTheme(props.typeof)};
+    color: ${(props) => changeTheme(props.typeof)};
     white-space: nowrap;
   }
   [typeof='current'] {
@@ -161,11 +162,11 @@ export const TabTabWrap = styled.div`
   min-width: 250px;
   height: 100%;
   margin-right: 48px;
-  color: ${props => changeTheme(props.typeof)};
+  color: ${(props) => changeTheme(props.typeof)};
   a {
     position: relative;
     padding: 0;
-    color: ${props => changeTheme(props.typeof)};
+    color: ${(props) => changeTheme(props.typeof)};
     white-space: nowrap;
   }
   [typeof='current'] {
@@ -202,10 +203,10 @@ export const HeaderButton = styled(Button)`
 // UserAction
 
 export const ManagerPost = styled(HeaderButton)`
-  border: 1px solid ${props => changeTheme(props.typeof)};
-  color: ${props => changeTheme(props.typeof)};
+  border: 1px solid ${(props) => changeTheme(props.typeof)};
+  color: ${(props) => changeTheme(props.typeof)};
   svg > path {
-    fill: ${props => changeTheme(props.typeof)};
+    fill: ${(props) => changeTheme(props.typeof)};
   }
   @media (max-width: 1190px) {
     display: none;
@@ -230,9 +231,9 @@ export const Account = styled(HeaderAction)`
 `;
 export const TextUserName = styled.span`
   a {
-    color: ${props => changeTheme(props.typeof)};
+    color: ${(props) => changeTheme(props.typeof)};
   }
-  color: ${props => changeTheme(props.typeof)};
+  color: ${(props) => changeTheme(props.typeof)};
   cursor: pointer;
   user-select: none;
   max-width: 100px;
@@ -297,8 +298,8 @@ export const MainContentMobile = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  @media ${device.maxMd} {
-    padding-right: 10px;
+  @media ${device.maxMd}{
+    padding-right:10px
   }
 `;
 
@@ -386,7 +387,7 @@ export const TextWrap = styled(Typography)`
     color: #7a7a7a;
   }
 `;
-export const ButtonWrap = styled(props => <div {...props} />)`
+export const ButtonWrap = styled((props) => <div {...props} />)`
   display: flex;
   padding: 5px;
   align-items: center;
@@ -396,7 +397,7 @@ export const ButtonWrap = styled(props => <div {...props} />)`
     background-color: #0000000d;
   }
 `;
-export const ButtonWrapLogin = styled(props => <div {...props} />)`
+export const ButtonWrapLogin = styled((props) => <div {...props} />)`
   display: flex;
   padding: 10px;
   align-items: center;

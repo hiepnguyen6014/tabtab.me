@@ -2,12 +2,12 @@ import { styled } from '@styles/theme';
 import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
 
-export const ListWrapper = styled(props => <div {...props} />)`
+export const ListWrapper = styled((props) => <div {...props} />)`
   display: grid;
   grid-template-columns: 24% 24% 24% 24%;
   /* flex-wrap: wrap; */
   justify-content: space-between;
-  ${props =>
+  ${(props) =>
     props.nowrap == 'true' && {
       flexWrap: 'nowrap',
       overflow: 'auto',
@@ -30,14 +30,14 @@ export const ListWrapper = styled(props => <div {...props} />)`
     justify-content: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
-    &::-webkit-scrollbar {
-      height: 5px;
+    &::-webkit-scrollbar{
+        height:5px;
+      }
+    &::-webkit-scrollbar-thumb{
+       background-color: ${colors.common};
     }
-    &::-webkit-scrollbar-thumb {
-      background-color: ${colors.common};
-    }
-    &::-webkit-scrollbar-track {
-      background-color: #ecf0f1;
+    &::-webkit-scrollbar-track{
+       background-color: #ecf0f1;
     }
     & > div {
       min-width: 275px;

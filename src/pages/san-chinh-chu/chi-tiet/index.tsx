@@ -1,14 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { PARAMS, ROUTES } from '@constants';
-import { TRACKING_GOOGLE } from '@constants';
-import * as ga from '@ga';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import dynamic from 'next/dynamic';
-import { useEffect } from 'react';
-
+import { useTranslation } from 'next-i18next';
 import DefaultLayout from '../../../components/layout/DefaultLayout/DefaultLayout';
 import { PlaceHolderLoading } from '../../../components/shared/Loading';
+import dynamic from 'next/dynamic';
+import * as ga from '@ga';
+import { TRACKING_GOOGLE } from '@constants';
+import { useEffect } from 'react';
 
 const DetailProjectPage: React.FC<{ query: any }> = ({ query }) => {
   const { t: translate } = useTranslation('common');
@@ -16,7 +15,7 @@ const DetailProjectPage: React.FC<{ query: any }> = ({ query }) => {
     () => import('../../../components/layout/DefaultLayout/LayoutDetail'),
     {
       loading: () => <PlaceHolderLoading height="500px" />,
-    },
+    }
   );
   const hrefMain = {
     name: translate(`${ROUTES.MAIN_FLOOR.name}`),

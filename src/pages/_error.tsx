@@ -1,6 +1,7 @@
-import { IErrorPage } from '@types';
 import { NextPage } from 'next';
 import { useTranslation } from 'react-i18next';
+
+import { IErrorPage } from '@types';
 
 const ErrorPage: NextPage<IErrorPage> = ({ statusCode }) => {
   const { t } = useTranslation();

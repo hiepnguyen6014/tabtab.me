@@ -1,59 +1,48 @@
-import Config from '@root/config';
-import {
-  IconAccount,
-  IconBell,
-  IconLogout,
-  IconManagerPost,
-  IconPost,
-  IconTable,
-} from '@root/public/icons';
+import { IconAccount, IconBell, IconLogout, IconManagerPost, IconPost, IconTable } from "@root/public/icons";
 
-export const GG_MAP_URL = 'https://www.google.com/maps/search/';
+import Config from "@root/config";
 
-let USER_URL = process.env.NEXT_PUBLIC_USER_WEB;
+export const GG_MAP_URL = "https://www.google.com/maps/search/"
+
+let USER_URL = process.env.NEXT_PUBLIC_USER_WEB
 
 export const ROUTES = {
-  HOME: '/',
+  HOME: "/",
   MAIN_FLOOR: {
-    name: 'header.main_floor',
-    href: '/san-chinh-chu',
-    title: 'titleList.main_floor',
+    name: "header.main_floor",
+    href: "/san-chinh-chu",
+    title: "titleList.main_floor"
   },
   SEARCH_PAGE: {
-    name: 'header.main_floor',
-    href: '/search',
-    title: 'titleList.main_floor',
-  },
-  ADD_LISTING: {
-    name: 'header.add_listing',
-    href: '/addListing',
-    title: 'titleList.addlisting',
+    name: "header.main_floor",
+    href: "/search",
+    title: "titleList.main_floor"
   },
   BROKERAGE_FLOOR_PAGE: {
-    name: 'header.brokerage_floor',
-    href: '/san-moi-gioi',
-    title: 'titleList.brokerage_floor',
+    name: "header.brokerage_floor",
+    href: "/san-moi-gioi",
+    title: "titleList.brokerage_floor"
   },
   LEASE_PAGE: {
-    name: 'header.lease',
-    href: '/cho-thue',
-    title: 'titleList.lease',
+    name: "header.lease",
+    href: "/cho-thue",
+    title: "titleList.lease"
   },
   HOTNEWS_PAGE: {
-    name: 'header.news',
-    href: '/tin-tuc',
-    title: 'titleList.news',
+    name: "header.news",
+    href: "/tin-tuc",
+    title: "titleList.news"
   },
   VALUATION_PAGE: {
-    name: 'header.valuation',
-    href: '/dinh-gia',
-    title: 'titleList.valuation',
+    name: "header.valuation",
+    href: "/dinh-gia",
+    title: "titleList.valuation",
   },
   NOTIFICATION: {
     icon: <IconBell />,
-    name: 'header.notify',
-    href: '/thong-bao',
-    title: 'titleList.notify',
+    name: "header.notify",
+    href: "/thong-bao",
+    title: "titleList.notify"
   },
   MANAGER_POST: {
     icon: <IconManagerPost />,
@@ -62,7 +51,7 @@ export const ROUTES = {
     subMenu: {
       post: {
         title: 'header.post',
-        href: USER_URL + 'pagepost',
+        href: USER_URL + 'pagepost'
       },
       viewNews: {
         title: 'header.viewNews',
@@ -70,9 +59,9 @@ export const ROUTES = {
       },
       saveNews: {
         title: 'header.saveNews',
-        href: USER_URL + 'news-user-saved',
-      },
-    },
+        href: USER_URL + 'news-user-saved'
+      }
+    }
   },
   POST: {
     icon: <IconPost />,
@@ -80,27 +69,27 @@ export const ROUTES = {
   },
   MANAGER_TRANSACTION: {
     icon: <IconTable />,
-    name: 'header.transaction',
+    name: "header.transaction",
     href: USER_URL + 'transaction-history',
     subMenu: {
       accountBalance: {
         title: 'header.accountBalance',
-        href: USER_URL + 'transaction-history',
+        href: USER_URL + 'transaction-history'
       },
       transactionHistory: {
         title: 'header.transactionHistory',
         href: USER_URL + 'transaction-history',
-      },
-    },
+      }
+    }
   },
   MANAGER_ACCOUNT: {
     icon: <IconAccount />,
-    name: 'header.account',
+    name: "header.account",
     href: USER_URL + 'account-information',
     subMenu: {
       presonalInfo: {
         title: 'header.presonalInfo',
-        href: USER_URL + 'account-information',
+        href: USER_URL + 'account-information'
       },
       veritify: {
         title: 'header.veritify',
@@ -108,48 +97,49 @@ export const ROUTES = {
       },
       changePass: {
         title: 'header.changePass',
-        href: USER_URL + 'change-password',
-      },
-    },
+        href: USER_URL + 'change-password'
+      }
+    }
   },
   USER_BALANCE: {
-    name: '',
-    href: USER_URL + 'account-balance',
+    name: "",
+    href: USER_URL + "account-balance"
   },
   LOGOUT: {
     icon: <IconLogout />,
-    name: 'header.logout',
-    href: '/autologin',
+    name: "header.logout",
+    href: "/autologin"
   },
   LOGOUT_USER: {
-    href: USER_URL + 'redirect-logout',
+    href: USER_URL + 'redirect-logout'
   },
-  SIGNUP: '/signup',
+  SIGNUP: "/signup",
   LOGIN: {
-    name: 'header.login',
-    href: USER_URL + 'autologin/',
+    name: "header.login",
+    href: USER_URL + 'autologin/'
   },
-  P404: '',
+  P404: "",
   DETAIL: {
-    name: 'detail.title',
-    href: '/chi-tiet',
+    name: "detail.title",
+    href: "/chi-tiet"
   },
   HISTORY_TRANSACTION: USER_URL + 'transaction-history',
   INTRODUCE_LANDING: {
-    name: 'landing_page.introduce',
-    title: 'landing_page.introduce_title',
-    href: '/gioi-thieu',
+    name: "landing_page.introduce",
+    title: "landing_page.introduce_title",
+    href: "/gioi-thieu"
   },
   RULES_LANDING: {
-    name: 'landing_page.rules',
-    title: 'landing_page.rules_title',
-    href: '/nguyen-tac-chung',
+    name: "landing_page.rules",
+    title: "landing_page.rules_title",
+    href: "/nguyen-tac-chung"
   },
   QA_LANDING: {
-    name: 'landing_page.qa',
-    title: 'landing_page.qa_title',
-    href: '/cau-hoi',
-  },
+    name: "landing_page.qa",
+    title: "landing_page.qa_title",
+    href: "/cau-hoi"
+  }
+
 };
 
 export const PUBLIC_ROUTES = {
@@ -157,52 +147,55 @@ export const PUBLIC_ROUTES = {
   SEARCH_PAGE: ROUTES.SEARCH_PAGE,
   BROKERAGE_FLOOR: ROUTES.BROKERAGE_FLOOR_PAGE,
   VALUATION: ROUTES.VALUATION_PAGE,
-  HOTNEWS: ROUTES.HOTNEWS_PAGE,
-};
+  HOTNEWS: ROUTES.HOTNEWS_PAGE
+}
 
 export const INFOMATION_ROUTES = {
   INTRODUCE: ROUTES.INTRODUCE_LANDING,
   RULES: ROUTES.RULES_LANDING,
-  QA: ROUTES.QA_LANDING,
-};
+  QA: ROUTES.QA_LANDING
+}
 export const POST_TYPE_PARAMS = {
   POST_LATEST: {
-    name: 'titleList.latest',
-    params: '',
+    name: "titleList.latest",
+    params: ""
   },
   POST_LOCATION: {
-    name: 'titleList.location',
-    params: 'post-location',
+    name: "titleList.location",
+    params: "post-location"
   },
   POST_PRICE: {
-    name: 'titleList.price',
-    params: 'post-price',
+    name: "titleList.price",
+    params: "post-price"
   },
   POST_SAVED: {
-    name: 'titleList.saved',
-    params: USER_URL + 'news-user-saved',
-  },
-};
+    name: "titleList.saved",
+    params: USER_URL + "news-user-saved"
+  }
+}
 
 export const PARAMS = {
   PAGE: 'page',
-  DETAIL_POST: 'id',
-};
+  DETAIL_POST: 'id'
+}
 
-export const NO_LOGIN_ROUTES = [ROUTES.LOGIN, ROUTES.SIGNUP];
+export const NO_LOGIN_ROUTES = [
+  ROUTES.LOGIN,
+  ROUTES.SIGNUP
+];
 
 export const TRACKING_GOOGLE = {
   HOME_PAGE_ACCESS: {
-    action: 'Trang chủ',
+    action: "Trang chủ",
   },
   AGENCY_POST: {
-    action: 'Sàn môi giới',
+    action: "Sàn môi giới",
   },
   USER_POST: {
-    action: 'Sàn chính chủ',
+    action: "Sàn chính chủ",
   },
   NEWS_POST: {
-    action: 'Tin tức',
+    action: "Tin tức",
   },
   // SEARCH_FILTER:{
   //   action:"Tìm kiếm",
@@ -210,4 +203,4 @@ export const TRACKING_GOOGLE = {
   //   label:"News",
   //   value:"News",
   // },
-};
+}
