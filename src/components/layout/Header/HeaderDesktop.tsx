@@ -164,7 +164,7 @@ const HeaderDesktop = ({
               Find person
             </TextPost>
           </Link>
-          <Link href={`${process.env.NEXT_PUBLIC_USER_WEB}post-news`}>
+          <Link href={ROUTES.ADD_LISTING.href}>
             <TextPost
               style={{
                 color: isTransparentBg ? '#FEFFFF' : '#222222',

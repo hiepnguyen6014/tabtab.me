@@ -4,7 +4,7 @@ import { device } from '@styles/theme/device';
 import { Button, Col, Image, Radio, Row, Typography } from 'antd';
 
 // PROJECT, AGENCY
-export const Wrapper = styled(props => <div {...props} />)`
+export const Wrapper = styled.div`
   display: flex;
   /* justify-content: center; */
   /* align-items: center; */
