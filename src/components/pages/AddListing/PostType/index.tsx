@@ -25,7 +25,7 @@ import {
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ContainerInfo, PostTypeWrapper } from '../AddListing.style';
+import { ContainerInfo } from '../AddListing.style';
 import Normal from './Normal';
 import Vip1 from './Vip1';
 import Vip2 from './Vip2';
@@ -81,11 +81,11 @@ const PostType = (): React.ReactElement => {
   const { tabs } = state;
   const { t: translate } = useTranslation();
   return (
-    <PostTypeWrapper>
+    <div>
       <Title className="mt-2 d-flex align-items-center " level={2}>
         Chọn tin đăng
       </Title>
-      <Radio.Group defaultValue={'a'}>
+      <Radio.Group defaultValue="a">
         <Radio.Button
           value="a"
           onClick={() => setState(p => ({ ...p, tabs: 1 }))}
@@ -685,7 +685,7 @@ const PostType = (): React.ReactElement => {
           </Button>
         </div>
       </Form>
-    </PostTypeWrapper>
+    </div>
   );
 };
 

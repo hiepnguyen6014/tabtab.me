@@ -369,12 +369,13 @@ export const PostWrapper = styled.div`
   max-width: 100%;
   margin-top: 0px;
   font-size: 100% !important;
+  /* max-width:280px; */
   border-radius: 6px;
   background-color: #fff;
   border: 2px solid #f0f0f0;
   overflow: hidden;
   box-shadow: 0px 4px 16px rgba(34, 34, 34, 0.08);
-  transition: all 0.2s ease;
+  transition: all.2s ease;
   cursor: pointer;
   [role='separator'] {
     margin: 0;
@@ -403,10 +404,6 @@ export const PostThumbnailWrapper = styled.div`
   position: relative;
   object-fit: contain;
   object-position: center;
-  img {
-    width: 100%;
-    height: 300px;
-  }
 `;
 export const ContentInItemPost = styled.div`
   position: absolute;
@@ -568,8 +565,7 @@ export const DetailItem = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr;
   gap: 8px;
-  padding: 0 10px;
-  /* margin-top: 24px; */
+  margin-top: 24px;
   .item {
     display: flex;
     justify-content: flex-start;
@@ -606,77 +602,5 @@ export const Vip1Image = styled.div`
       width: 342px !important;
       height: 228px !important;
     }
-  }
-`;
-export const Vip2Wrapper = styled.div`
-  width: 588px;
-  height: 304px;
-  display: flex;
-  background-color: #fff;
-  border: 2px solid #f0f0f0;
-  overflow: hidden;
-  box-shadow: 0px 4px 16px rgba(34, 34, 34, 0.08);
-  border-radius: 8px;
-  margin-top: 35px;
-`;
-export const PostTypeWrapper = styled.div`
-  .ant-radio-button-wrapper:hover {
-    color: #333 !important;
-  }
-`;
-export const Vip3Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 282px;
-  height: 490px;
-  max-width: 100%;
-  margin-top: 20px;
-  border-radius: 6px;
-  background-color: #fff;
-  border: 2px solid #f0f0f0;
-  overflow: hidden;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  transition: all 0.2s ease;
-  cursor: pointer;
-  margin-left: 22em;
-
-  @media ${device.minSm} {
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px,
-        rgba(0, 0, 0, 0.1) 0px 6px 6px;
-    }
-  }
-  @media ${device.maxSm} {
-    height: auto;
-    width: 100%;
-  }
-`;
-export const NormalWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 282px;
-  height: 415px;
-  max-width: 100%;
-  margin-top: 20px;
-  border-radius: 6px;
-  background-color: #fff;
-  border: 2px solid #f0f0f0;
-  overflow: hidden;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
-  transition: all 0.2s ease;
-  cursor: pointer;
-  margin-left: 22em;
-
-  @media ${device.minSm} {
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px,
-        rgba(0, 0, 0, 0.1) 0px 6px 6px;
-    }
-  }
-  @media ${device.maxSm} {
-    height: auto;
-    width: 100%;
   }
 `;
