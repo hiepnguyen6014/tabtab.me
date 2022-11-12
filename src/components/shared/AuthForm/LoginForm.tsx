@@ -10,6 +10,7 @@ import {
   MobileOutlined,
 } from '@ant-design/icons';
 import { doLogin } from '@core';
+import Config from '@root/config';
 import { reactLocalStorage } from '@utils';
 import { convertPhoneNumber } from '@utils';
 import {
@@ -40,8 +41,7 @@ interface LoginRequest {
 }
 
 const { Title, Text } = Typography;
-
-export default function Login(props: any): ReactElement {
+export const Login = (props: any): ReactElement => {
   const { t: translation } = useTranslation();
   const [step, setStep] = useState('LOGIN_FORM');
   const [loading, setLoading] = useState(false);
@@ -52,10 +52,9 @@ export default function Login(props: any): ReactElement {
     setLoading(true);
     const areaCodePhone = convertPhoneNumber(values.phoneNumber);
     const loginData = { phoneNumber: areaCodePhone, password: values.password };
-    //dùng kiểu thủ công do tạo function bị lỗi not a function bực quá :((
     var config = {
       method: 'post',
-      url: 'https://cdn.tabtab.imazin.asia/AppUsers/loginByPhone',
+      url: `${Config.API_URL}/AppUsers/loginByPhone`,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -444,4 +443,4 @@ export default function Login(props: any): ReactElement {
       )} */}
     </ModalWrapper>
   );
-}
+};

@@ -23,7 +23,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 
-import Login from '../../shared/AuthForm/LoginForm';
+import { Login } from '../../shared/AuthForm';
 import { REFormSearchInput } from '../RealEstateFilter/FilterSearch';
 import {
   ButtonWrap,
