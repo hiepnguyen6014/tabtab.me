@@ -1,5 +1,3 @@
-
-
 .container {
   padding: 0 2rem;
 }
@@ -109,8 +107,6 @@
   height: 1em;
   margin-left: 0.5rem;
 }
-
-
 
 @media (max-width: 600px) {
   .grid {
