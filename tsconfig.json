@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -23,51 +19,21 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@components": [
-        "src/components"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@models/*": [
-        "src/models/*"
-      ],
-      "@pages": [
-        "src/pages"
-      ],
-      "@icons/*": [
-        "public/images/icons/*"
-      ],
-      "@core": [
-        "src/core"
-      ],
-      "@types": [
-        "src/core/types"
-      ],
-      "@utils": [
-        "src/core/utils"
-      ],
-      "@constants": [
-        "src/core/constants"
-      ],
-      "@ga": [
-        "lib/ga"
-      ],
-      "@contexts": [
-        "src/core/contexts"
-      ],
-      "@root/*": [
-        "*"
-      ]
+      "@components": ["src/components"],
+      "@styles/*": ["src/styles/*"],
+      "@models/*": ["src/models/*"],
+      "@pages": ["src/pages"],
+      "@icons/*": ["public/images/icons/*"],
+      "@core": ["src/core"],
+      "@types": ["src/core/types"],
+      "@utils": ["src/core/utils"],
+      "@constants": ["src/core/constants"],
+      "@ga": ["lib/ga"],
+      "@contexts": ["src/core/contexts"],
+      "@root/*": ["*"]
     },
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

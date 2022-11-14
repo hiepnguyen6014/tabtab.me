@@ -24,7 +24,8 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "no-console": "warn",
-    "no-warning-comments": "warn"
+    "no-warning-comments": "warn",
+    "react/prop-types": "off"
   },
   "overrides": [
     {
@@ -33,9 +34,7 @@
       "parserOptions": {
         "project": "./tsconfig.json"
       },
-      "plugins": [
-        "@typescript-eslint/eslint-plugin"
-      ],
+      "plugins": ["@typescript-eslint/eslint-plugin"],
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"

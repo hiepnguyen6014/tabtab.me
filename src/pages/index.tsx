@@ -1,13 +1,3 @@
-import { HomePage } from '../components/pages';
-import DefaultLayout from '../components/layout/DefaultLayout/DefaultLayout';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { getPostByRating, getPostByPrice } from '../core/services';
-import { useTranslation } from 'next-i18next';
-import { MPostDetail } from '@models/MPostDetail';
-import dynamic from 'next/dynamic';
-import { Loading } from '../components/shared';
-import { useEffect } from 'react';
-import * as ga from '@ga';
 import { TRACKING_GOOGLE } from '@constants';
 import '@fontsource/inter';
 import '@fontsource/inter/100.css';
@@ -19,6 +9,17 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
+import * as ga from '@ga';
+import { MPostDetail } from '@models/MPostDetail';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
+
+import DefaultLayout from '../components/layout/DefaultLayout/DefaultLayout';
+import { HomePage } from '../components/pages';
+import { Loading } from '../components/shared';
+import { getPostByPrice, getPostByRating } from '../core/services';
 
 const Home: React.FC<{
   postsByRating: MPostDetail[];
@@ -29,7 +30,7 @@ const Home: React.FC<{
     () => import('../components/pages/Home/Home'),
     {
       loading: () => <Loading />,
-    }
+    },
   );
 
   useEffect(() => {

@@ -1,15 +1,15 @@
+// libs
+import { DoubleRightOutlined } from '@ant-design/icons';
 import { SRC_IMAGE } from '@constants';
 import { PlaceHolderIcon, ProtectIcon } from '@root/public/icons';
-import { getArea, getAreaStreet } from '@root/src/core/services/addlisting';
-import { Checkbox, Col, Divider, Form, Row, Select, Typography } from 'antd';
+import {
+  DISTRICT_DATA,
+  PROVINCE_DATA,
+} from '@root/src/components/shared/AddListing';
+import { reactLocalStorage } from '@utils';
+import { Checkbox, Col, Divider, Form, Row, Typography } from 'antd';
 import Image from 'next/image';
-import React, {
-  ReactElement,
-  useEffect,
-  useLayoutEffect,
-  useState,
-} from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect } from 'react';
 
 import { HideOnMobile } from '../../Home/Home.style';
 import {
@@ -18,16 +18,42 @@ import {
   LocateSelect,
   Location3,
 } from '../AddListing.style';
+import { ButtonNextStep } from '../AddListing.style';
 
 const { Title } = Typography;
 
-const ChooseLocate = (): ReactElement => {
+const ChooseLocate: React.FC<{
+  onClickNext: () => void;
+}> = ({ onClickNext }) => {
+  const [form] = Form.useForm();
+
+  const onSubmit = () => {
+    const data = form.getFieldsValue();
+
+    // check data not have value undefined
+    const isDataValid = Object.values(data).every(value => value !== undefined);
+
+    if (isDataValid) {
+      reactLocalStorage.setObject('add-listing-step-1', data);
+      onClickNext();
+    } else {
+      form.validateFields();
+    }
+  };
+
+  useEffect(() => {
+    const data = reactLocalStorage.getObject('add-listing-step-1', {});
+    form.setFieldsValue(data);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <AddListingWrapper>
       <Title className="mt-2 d-flex align-items-center" level={2}>
         Chọn vị trí
       </Title>
-      <Form layout="vertical">
+      <Form layout="vertical" form={form} onFinish={onClickNext}>
         <Row>
           <Col lg={8} sm={6}>
             <ProtectIcon />
@@ -50,9 +76,18 @@ const ChooseLocate = (): ReactElement => {
                     Tên dự án
                     <label style={{ color: 'red', marginLeft: 5 }}>*</label>
                   </div>
-                  <Form.Item style={{ marginTop: 0 }} name="">
+                  <Form.Item
+                    style={{ marginTop: 0 }}
+                    name="projectName"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Vui lòng nhập tên dự án',
+                      },
+                    ]}
+                  >
                     <LocateAutoComplete
-                      placeholder={'Chọn dự án'}
+                      placeholder={'Tên dự án'}
                       bordered={false}
                     />
                   </Form.Item>
@@ -74,10 +109,19 @@ const ChooseLocate = (): ReactElement => {
                     Tỉnh / Thành phố
                     <label style={{ color: 'red', marginLeft: 5 }}>*</label>
                   </div>
-                  <Form.Item name="areaProvinceId">
+                  <Form.Item
+                    name="areaProvinceId"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Vui lòng chọn tỉnh / thành phố',
+                      },
+                    ]}
+                  >
                     <LocateSelect
                       placeholder={'Chọn Tỉnh/ Thành Phố'}
                       bordered={false}
+                      options={PROVINCE_DATA}
                     />
                   </Form.Item>
                 </div>
@@ -98,10 +142,20 @@ const ChooseLocate = (): ReactElement => {
                     Quận / Huyện
                     <label style={{ color: 'red', marginLeft: 5 }}>*</label>
                   </div>
-                  <Form.Item style={{}} name="areaDistrictId">
+                  <Form.Item
+                    style={{}}
+                    name="areaDistrictId"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Vui lòng chọn quận / huyện',
+                      },
+                    ]}
+                  >
                     <LocateSelect
                       placeholder={'Chọn Quận/ Huyện'}
                       bordered={false}
+                      options={DISTRICT_DATA}
                     />
                   </Form.Item>
                 </div>
@@ -122,10 +176,19 @@ const ChooseLocate = (): ReactElement => {
                     Phường / Xã
                     <label style={{ color: 'red', marginLeft: 5 }}>*</label>
                   </div>
-                  <Form.Item name="areaWardId">
+                  <Form.Item
+                    name="areaWardId"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Vui lòng chọn phường / xã',
+                      },
+                    ]}
+                  >
                     <LocateSelect
                       placeholder={'Chọn Phường / Xã'}
                       bordered={false}
+                      options={DISTRICT_DATA}
                     />
                   </Form.Item>
                 </div>
@@ -143,12 +206,21 @@ const ChooseLocate = (): ReactElement => {
                       fontWeight: '500',
                     }}
                   >
-                    Đường / Phố
+                    Đường
                     <label style={{ color: 'red', marginLeft: 5 }}>*</label>
                   </div>
-                  <Form.Item style={{ marginTop: 0 }} name="areaStreetId">
+                  <Form.Item
+                    style={{ marginTop: 0 }}
+                    name="areaStreetId"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Vui lòng chọn đường',
+                      },
+                    ]}
+                  >
                     <LocateAutoComplete
-                      placeholder={'Chọn Đường / Phố'}
+                      placeholder={'Nguyễn Văn Linh'}
                       bordered={false}
                     />
                   </Form.Item>
@@ -173,8 +245,17 @@ const ChooseLocate = (): ReactElement => {
                   <Form.Item
                     style={{ marginTop: 0 }}
                     name="realEstateLocationHomeNumber"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Vui lòng nhập địa chỉ cụ thể',
+                      },
+                    ]}
                   >
-                    <LocateAutoComplete bordered={false} />
+                    <LocateAutoComplete
+                      bordered={false}
+                      placeholder="Số nhà, tên đường"
+                    />
                   </Form.Item>
                 </div>
               </div>
@@ -184,7 +265,13 @@ const ChooseLocate = (): ReactElement => {
             <PlaceHolderIcon />
             <label> tới đúng vị trí của bất động sản trên bản đồ.</label>
             <div style={{ padding: '0 10px 0 10px', marginTop: '22px' }}>
-              <Image src={SRC_IMAGE.MAP} width={384} height={470} alt="map" />
+              <Image
+                src={SRC_IMAGE.MAP}
+                width={384}
+                height={470}
+                alt="map"
+                priority
+              />
             </div>
           </Col>
           <HideOnMobile>
@@ -392,6 +479,12 @@ const ChooseLocate = (): ReactElement => {
           </HideOnMobile>
         </Row>
       </Form>
+      <div style={{ display: 'flex', justifyContent: 'end' }}>
+        <ButtonNextStep onClick={() => onSubmit()}>
+          Next
+          <DoubleRightOutlined />
+        </ButtonNextStep>
+      </div>
     </AddListingWrapper>
   );
 };

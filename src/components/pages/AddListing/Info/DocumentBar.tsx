@@ -22,7 +22,7 @@ export default function DocumentBar() {
           <ButtonDocumentWrap className="mx-2">
             <span style={{ marginBottom: 5, marginRight: 5 }}>
               <LanguageIcon />{' '}
-            </span>{' '}
+            </span>
             Thêm ngôn ngữ
           </ButtonDocumentWrap>
         </div>

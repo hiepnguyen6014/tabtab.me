@@ -1,7 +1,7 @@
 import { styled } from '@styles/theme';
-import { colors } from '@styles/theme/colors';
 import { device } from '@styles/theme/device';
 import { AutoComplete, Button, Input, Select, Tag, Typography } from 'antd';
+import { forwardRef } from 'react';
 
 export const PageContainer = styled.div`
   width: 100%;
@@ -90,7 +90,7 @@ export const AutoCompleteWrap = styled(AutoComplete)`
     justify-content: space-between;
   }
 `;
-export const LocateAutoComplete = styled(AutoComplete)`
+export const LocateAutoComplete = styled(Input)`
   width: 100% !important;
   box-shadow: transparent;
   border-color: none;
@@ -112,6 +112,7 @@ export const LocateAutoComplete = styled(AutoComplete)`
     justify-content: space-between;
   }
 `;
+
 export const Location3 = styled.div`
   border: 1px solid #39b4f333;
   border-radius: 12px;

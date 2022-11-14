@@ -1,8 +1,7 @@
-import { DoubleLeftOutlined, DoubleRightOutlined } from '@ant-design/icons';
-import { Breadcrumb, Form, Steps } from 'antd';
+import { Breadcrumb, Steps } from 'antd';
 import React, { useState } from 'react';
 
-import { ButtonNextStep, ContentHeaderWrapper } from './AddListing.style';
+import { ContentHeaderWrapper } from './AddListing.style';
 import ChooseLocate from './ChooseLocate';
 import Info from './Info';
 import PostType from './PostType';
@@ -12,16 +11,24 @@ import UploadFileComponent from './UploadFile';
 
 const AddListingComponent = () => {
   const [current, setCurrent] = useState(0);
-  const [form] = Form.useForm();
   const { Step } = Steps;
+
+  const onClickNext = () => {
+    setCurrent(p => p + 1);
+  };
+
+  const onClickPrev = () => {
+    setCurrent(p => p - 1);
+  };
+
   const steps = [
     {
       id: 1,
-      content: <ChooseLocate />,
+      content: <ChooseLocate onClickNext={onClickNext} />,
     },
     {
       id: 2,
-      content: <Info />,
+      content: <Info onClickPrev={onClickPrev} onClickNext={onClickNext} />,
     },
     {
       id: 3,
@@ -40,12 +47,7 @@ const AddListingComponent = () => {
       content: <PostType />,
     },
   ];
-  const next = () => {
-    setCurrent(p => p + 1);
-  };
-  const prev = () => {
-    setCurrent(p => p - 1);
-  };
+
   return (
     <>
       <div className="container">
@@ -61,8 +63,10 @@ const AddListingComponent = () => {
               <Step key={item.id} />
             ))}
           </Steps>
+          {/* Content */}
           <div>{steps[current].content}</div>
-          <div className={current > 0 ? 'btn-bottom' : ''}>
+          {/* navigate */}
+          {/* <div className={current > 0 ? 'btn-bottom' : ''}>
             {current > 0 && (
               <div>
                 <ButtonNextStep onClick={() => prev()}>
@@ -79,7 +83,7 @@ const AddListingComponent = () => {
                 </ButtonNextStep>
               </div>
             )}
-          </div>
+          </div> */}
         </ContentHeaderWrapper>
       </div>
     </>

@@ -204,10 +204,10 @@ export const TRACKING_GOOGLE = {
   NEWS_POST: {
     action: 'Tin tức',
   },
-  // SEARCH_FILTER:{
-  //   action:"Tìm kiếm",
-  //   category: "Search",
-  //   label:"News",
-  //   value:"News",
-  // },
+  SEARCH_FILTER: {
+    action: 'Tìm kiếm',
+    category: 'Search',
+    label: 'News',
+    value: 'News',
+  },
 };
