@@ -1,5 +1,4 @@
 import { ROUTES } from '@constants';
-import { POST_TYPE_PARAMS, filterKey } from '@core';
 import { Typography } from 'antd';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';

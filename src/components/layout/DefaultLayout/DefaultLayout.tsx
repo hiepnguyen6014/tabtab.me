@@ -1,5 +1,4 @@
-import { checkIsHomePage, useRoute } from '@utils';
-import { useRouter } from 'next/router';
+import { useRoute } from '@utils';
 import React from 'react';
 
 import ChatCustom from '../../shared/Chat/ChatCustom';
